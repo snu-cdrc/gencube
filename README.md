@@ -504,13 +504,38 @@ options:
 
 #### Examples
 ```bash
-$ gencube seqmeta --organism dog --strategy chip,chip_seq
+# Search for specific sequencing data for a specific species
+$ gencube seqmeta --organism human --strategy chip,chip_seq
+$ gencube seqmeta --organism homo_sapiens --strategy chip,chip_seq
+$ gencube seqmeta --organism homo_sapiens --strategy rna_seq
 
-$ gencube seqmeta --organism dog --strategy chip,chip_seq liver,lung cancer,tumor
+# Search for cancer data for specific tissues
+$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor
 
-$ gencube seqmeta --organism dog --strategy chip,chip_seq liver,lung cancer,tumor --exclude crispr,
+# Exclude results containing specific keywords
+$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line,crispr
 
-((((("human"[Organism]) AND ("rna seq"[Strategy])) AND ("illumina"[Platform])) AND ("public"[Access])) AND (("liver" OR "lung") AND ("cancer" OR "tumor"))) NOT "crispr"
+# Use wild card (*) to search for a broader range of results
+$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer*,tumor*
+
+# Use ^ for phrase (not word) search
+$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line^,crispr
+
+# Search using accession
+python -m gencube seqmeta PRJNA838583
+python -m gencube seqmeta SRP375422
+(or specifically)
+python -m gencube seqmeta --bioproject PRJNA838583
+python -m gencube seqmeta --accession SRP375422
+
+# Search using custom queries
+python -m gencube seqmeta '(((human[Organism]) AND ("chip"[Strategy] OR "chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor)))'
+
+# Output the number of search results for each option and keyword
+$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line,crispr --detail
+
+# Save the integrated metadata
+$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line,crispr --metadata
 ```
 ---
 
