@@ -86,12 +86,12 @@ def seqmeta(
                     else:
                         print(f'    {key}: {out_count}')
                 else:
-                    print(f'  Intersection (Options): {out_count}')
+                    print(f'  Intersection (options): {out_count}')
             print('')
         
         # Keywords
         if keywords:
-            print('- Keywords with Options')
+            print('- Keywords with options')
             for key in list(dic_query_kwds.keys()):
                 if 'space' in key:
                     continue
@@ -101,7 +101,7 @@ def seqmeta(
         
         # Keywords for exclusion
         if exclude:
-            print('- Keywords for exclusion with Options')
+            print('- Keywords for exclusion with options')
             for key in list(dic_query_excs.keys()):
                 out_count = search_sra(dic_query_excs[key])["Count"]
                 print(f'  {key}: {out_count}')

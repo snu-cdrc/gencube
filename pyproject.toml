@@ -62,9 +62,9 @@ dev = [
 
 [project.urls]
 Homepage = "https://keun-hong.github.io/"
-Repository = "https://github.com/keun-hong/gencube"
-Bugs = "https://github.com/keun-hong/gencube/issues"
-Changelog = "https://github.com/keun-hong/gencube/blob/master/changelog.md"
+Repository = "https://github.com/snu-cdrc/gencube"
+Bugs = "https://github.com/snu-cdrc/gencube/issues"
+Changelog = "https://github.com/snu-cdrc/gencube/blob/master/changelog.md"
 
 [project.scripts]
 gencube = "gencube.__main__:main"
