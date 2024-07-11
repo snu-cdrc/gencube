@@ -528,7 +528,7 @@ python -m gencube seqmeta SRP375422
 python -m gencube seqmeta --bioproject PRJNA838583
 python -m gencube seqmeta --accession SRP375422
 
-# Search using custom queries
+# Search using custom query
 python -m gencube seqmeta '(((human[Organism]) AND ("chip"[Strategy] OR "chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor)))'
 
 # Output the number of search results for each option and keyword
