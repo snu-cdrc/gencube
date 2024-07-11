@@ -32,7 +32,7 @@ Gencube
 ---
 `gencube` enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve metadata for sequencing-based experimental data suitable for specific requirements.
 
-![gencube_overview](https://github.com/keun-hong/gencube/blob/master/figures/gencube_overview.jpg?raw=true)
+![gencube_overview](https://github.com/snu-cdrc/gencube/blob/master/figures/gencube_overview.jpg?raw=true)
 
 ### Databases accessed from gencube
 - [GenBank](https://www.ncbi.nlm.nih.gov/genbank/): NCBI GenBank Nucleotide Sequence Database
@@ -363,7 +363,7 @@ $ gencube sequence GCF_011100685.1 --download toga_homology,toga_align_codon
 ---
 
 ### `seqmeta`: Search, fetch, and integrate metadata of experimental sequencing data
-![seqmeta_scheme](https://github.com/keun-hong/gencube/blob/master/figures/seqmeta_scheme.jpg?raw=true)
+![seqmeta_scheme](https://github.com/snu-cdrc/gencube/blob/master/figures/seqmeta_scheme.jpg?raw=true)
 ```plaintext
 $ gencube seqmeta
 usage: gencube seqmeta [-h] [-o string] [-st string] [-sr string] [-pl string] [-sl string] [-fi string] [-pr string] [-ly string] [-ac string] [-bp string] [-bs string]
