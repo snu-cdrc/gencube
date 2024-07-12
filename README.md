@@ -513,13 +513,13 @@ $ gencube seqmeta --organism homo_sapiens --strategy rna_seq
 $ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor
 
 # Exclude results containing specific keywords
-$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line,crispr
+$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor
 
 # Use wild card (*) to search for a broader range of results
 $ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer*,tumor*
 
 # Use ^ for phrase (not word) search
-$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line^,crispr
+$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line^,crispr liver,lung cancer,tumor
 
 # Search using accession
 python -m gencube seqmeta PRJNA838583
@@ -532,10 +532,10 @@ python -m gencube seqmeta --accession SRP375422
 python -m gencube seqmeta '(((human[Organism]) AND ("chip"[Strategy] OR "chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor)))'
 
 # Output the number of search results for each option and keyword
-$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line,crispr --detail
+$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --detail
 
 # Save the integrated metadata
-$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor --exclude cell_line,crispr --metadata
+$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --metadata
 ```
 ---
 
