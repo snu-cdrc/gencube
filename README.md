@@ -56,11 +56,11 @@ Gencube
 ## Installation
 The latest release can be installed with
 ```bash
-pip install gencube
+$ pip install gencube
 ```
 Alternative
 ```bash
-conda install -c bioconda gencube
+$ conda install -c bioconda gencube
 ```
 ## Email and NCBI API key for E-utilities
 When you first run `gencube`, you'll be prompted for your email and NCBI API key, which are saved in the `.gencube_entrez_info` file in your home directory for future use. To update these details, edit this file.
