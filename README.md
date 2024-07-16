@@ -359,7 +359,7 @@ options:
 gencube crossgenome GCF_011100685.1
 
 # Download multiple crossgenome data
-$ gencube sequence GCF_011100685.1 --download toga_homology,toga_align_codon
+$ gencube crossgenome GCF_011100685.1 --download toga_homology,toga_align_codon
 ```
 ---
 
