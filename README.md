@@ -540,14 +540,14 @@ $ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer*,t
 $ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line^,crispr liver,lung cancer,tumor
 
 # Search using accession
-python -m gencube seqmeta PRJNA838583
-python -m gencube seqmeta SRP375422
+$ gencube seqmeta PRJNA838583
+$ gencube seqmeta SRP375422
 (or specifically)
-python -m gencube seqmeta --bioproject PRJNA838583
-python -m gencube seqmeta --accession SRP375422
+$ gencube seqmeta --bioproject PRJNA838583
+$ gencube seqmeta --accession SRP375422
 
 # Search using custom query
-python -m gencube seqmeta '(((human[Organism]) AND ("chip"[Strategy] OR "chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor)))'
+$ gencube seqmeta '(((human[Organism]) AND ("chip"[Strategy] OR "chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor)))'
 
 # Output the number of search results for each option and keyword
 $ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --detail
