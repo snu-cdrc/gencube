@@ -10,6 +10,10 @@ Gencube
 ![python versions](https://img.shields.io/pypi/pyversions/gencube)
 [![pypi downloads](https://img.shields.io/pypi/dm/gencube)](https://pypi.org/project/gencube/)
 [![license](https://img.shields.io/pypi/l/gencube)](LICENSE)
+<br>
+![linux](https://img.shields.io/badge/platform-linux--x86__64-green)
+![macos x86_64](https://img.shields.io/badge/platform-macOSX--x86__64-blue)
+![macos arm64](https://img.shields.io/badge/platform-macOSX--arm64-orange)
 
 <!-- 4. GitHub Actions CI Status Badge:
 ![status](https://github.com/keun-hong/gencube/workflows/CI/badge.svg) -->
