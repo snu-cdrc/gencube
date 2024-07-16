@@ -82,21 +82,22 @@ $ gencube info
 ```
 
 ## Tutorials
-`gencube` consists of six subcommands
+`gencube` consists of six main subcommands excluding `info`
 ```plaintext
 $ gencube
-usage: gencube [-h] {genome,geneset,sequence,annotation,crossgenome,seqmeta} ...
+usage: gencube [-h] {genome,geneset,annotation,sequence,crossgenome,seqmeta,info} ...
 
 gencube v1.0.0
 
 positional arguments:
-  {genome,geneset,annotation,sequence,crossgenome,seqmeta}
+  {genome,geneset,annotation,sequence,crossgenome,seqmeta,info}
     genome              Search, download, and modify chromosome labels for genome assemblies
     geneset             Search, download, and modify chromosome labels for genesets (gene annotations)
     annotation          Search, download, and modify chromosome labels for various genome annotations, such as gaps and repeats
     sequence            Search and download sequence data of genesets
     crossgenome         Search and download comparative genomics data, such as homology, and codon or protein alignments
     seqmeta             Search, retrive, and integrate metadata of experimental sequencing data
+    info                Resubmit email and NCBI API key for use with NCBI's Entrez Utilities (E-Utilities)
 
 options:
   -h, --help            show this help message and exit
