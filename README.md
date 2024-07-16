@@ -122,8 +122,8 @@ options:
 #### Examples
 ```bash
 # Search using scientific or common name
-$ gencube genome homo_sapiens canis_lupus_familiaris
-$ gencube genome human dog
+$ gencube genome homo_sapiens
+$ gencube genome human
 
 # Search using assembly name
 $ gencube genome T2T-CHM13v2.0 GRCh38
