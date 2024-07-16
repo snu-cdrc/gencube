@@ -55,7 +55,7 @@ Gencube
 - [Ensembl Rapid Release Help & Docs](https://rapid.ensembl.org/info/index.html) & [Ensembl 2023 paper](https://academic.oup.com/nar/article/51/D1/D933/6786199?login=false) - `genome`, `geneset`, `sequence`, `crossgenome`
 - [Zoonomia TOGA README.txt](https://genome.senckenberg.de/download/TOGA/README.txt) & [Paper](https://www.science.org/doi/10.1126/science.abn3107) - `geneset`, `crossgenome`
 - [Search in SRA Entrez](https://www.ncbi.nlm.nih.gov/sra/docs/srasearch/), [Entrez Help](https://www.ncbi.nlm.nih.gov/books/NBK3837/) & [SRA Advanced Search Builder](https://www.ncbi.nlm.nih.gov/sra/advanced) - `seqmeta`
-
+<br>
 
 ## Installation
 The latest release can be installed with
@@ -67,6 +67,8 @@ Alternative
 # Still setting up!!
 $ conda install -c bioconda gencube
 ```
+<br>
+
 ## Email and NCBI API key for E-utilities
 When you first run `gencube`, you'll be prompted for your email and NCBI API key, which are saved in the `.gencube_entrez_info` file in your home directory for future use.
 
@@ -80,6 +82,7 @@ To update the submitted information, run the following command.
 ```plaintext
 $ gencube info
 ```
+<br>
 
 ## Tutorials
 `gencube` consists of six main subcommands excluding `info`
@@ -180,6 +183,7 @@ $ gencube genome GCF_000001405.40 GCA_021950905.1
 |  2 | GRCh38.p14             |    9606 | 2022/02/03 | GCF_000001405.40 | hg38   | v        |           |
 +----+------------------------+---------+------------+------------------+--------+----------+-----------+
 ```
+<br>
 
 ---
 ### `genome`: Search, download, and modify chromosome labels for genome assemblies
@@ -229,6 +233,8 @@ $ gencube genome GCF_011100685.1 --download --database refseq,genark,ensembl
 # Change the chromosome labels to the GENCODE style and set the compression level of the file to 2.
 $ gencube genome GCF_011100685.1 --download --chr_style gencode --compresslevel 2
 ```
+<br>
+
 ---
 
 ### `geneset`: Search, download, and modify chromosome labels for genesets (gene annotations)
@@ -272,8 +278,9 @@ gencube geneset GCF_011100685.1
 # Download multiple genesets from various databases
 $ gencube geneset GCF_011100685.1 --download refseq_gtf,agustus,toga_gtf
 ```
----
+<br>
 
+---
 ### `annotation`: Search, download, and modify chromosome labels for various genome annotations, such as gaps and repeats
 ```plaintext
 options:
@@ -309,8 +316,9 @@ gencube annotation GCF_011100685.1
 # Download multiple annotations
 gencube annotation GCF_011100685.1 --download sr,td,rmsk,gc
 ```
----
+<br>
 
+---
 ### `sequence`: Search and download sequence data of genesets
 ```plaintext
 options:
@@ -340,10 +348,9 @@ gencube sequence GCF_011100685.1
 # Download multiple genesets from various databases
 $ gencube sequence GCF_011100685.1 --download refseq_rna,ensembl_cdna,refseq_pep,ensembl_pep
 ```
+<br>
+
 ---
-
-
-
 ### `crossgenome`: Search and download comparative genomics data, such as homology, and codon or protein alignment
 ```plaintext
 options:
@@ -370,8 +377,9 @@ gencube crossgenome GCF_011100685.1
 # Download multiple crossgenome data
 $ gencube crossgenome GCF_011100685.1 --download toga_homology,toga_align_codon
 ```
----
+<br>
 
+---
 ### `seqmeta`: Search, fetch, and integrate metadata of experimental sequencing data
 ![seqmeta_scheme](https://github.com/snu-cdrc/gencube/blob/main/figures/seqmeta_scheme.jpg?raw=true)
 ```plaintext
@@ -547,7 +555,8 @@ $ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,
 # Save the integrated metadata
 $ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --metadata
 ```
----
+<br>
 
+---
 #### Credits
 This package was created with [`Cookiecutter`](https://github.com/audreyr/cookiecutter) and the [`audreyr/cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage) project template.
