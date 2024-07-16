@@ -8,6 +8,7 @@ from .gencube_annotation import annotation
 from .gencube_sequence import sequence
 from .gencube_crossgenome import crossgenome
 from .gencube_seqmeta import seqmeta
+from .gencube_info import info
 
 # Custom functions
 from .utils import (
@@ -26,7 +27,7 @@ from .constants import (
 
 def main():
     # Get email and api key information for E-utility
-    get_entrez_info()
+    info_save = get_entrez_info()
     
     # Define parent parser
     parser = argparse.ArgumentParser(
@@ -744,7 +745,18 @@ def main():
         action='store_true', 
         help='Save integrated metadata\n '
         )
-
+    
+    ## ---------------------------------------------
+    ## gencube info
+    ## ---------------------------------------------
+    # gencube info subparser
+    info_desc = (
+        "Resubmit email and NCBI API key for use with NCBI's Entrez Utilities (E-Utilities)"
+    )
+    parser_info = subparsers.add_parser(
+        'info', description=info_desc, help=info_desc, add_help=True, 
+        formatter_class=argparse.RawTextHelpFormatter
+        )
     
     ## Define return values
     args = parser.parse_args()
@@ -860,5 +872,9 @@ def main():
                 detail=args.detail,
                 metadata=args.metadata,
         )
+    # Gencube info
+    elif args.command == 'info':
+        info(info_save)
+        
     else:
         parser.print_help()

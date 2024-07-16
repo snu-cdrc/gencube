@@ -8,9 +8,10 @@ from .utils import (
     json_to_dataframe,
     check_access_database,
     check_access_full_geneset,
+    mkdir_raw_output,
     download_geneset,
     convert_chr_label_geneset,
-    #save_pickle,
+    save_pickle,
     )
 from .constants import (
     LS_GENCUBE_GENSET_LABEL,
@@ -61,12 +62,13 @@ def geneset (
     
         # Save geneset files
         if download:
+            mkdir_raw_output()
             dic_download = download_geneset(df_full_geneset, df_genome_plus, dic_ensembl_meta, dic_genark_meta, df_zoonomia, download, recursive)
             # Change chromosome label style
-            convert_chr_label_geneset (df_genome_plus, dic_download, chr_style)
+            convert_chr_label_geneset (df_genome_plus, dic_download, chr_style, recursive)
             
 
-    # To save the variables as pickle files for tests:
+    # To save the variables as pickle files for input of test:
     #save_pickle(ls_search, 'utils_search_assembly')
     #save_pickle(df_genome, 'utils_json_to_dataframe')
     #save_pickle(df_genome_plus, 'utils_check_access_database_geneset')

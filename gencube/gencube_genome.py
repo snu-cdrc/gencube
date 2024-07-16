@@ -7,6 +7,7 @@ from .utils import (
     search_assembly, 
     json_to_dataframe,
     check_access_database,
+    mkdir_raw_output,
     save_metadata,
     download_genome,
     convert_chr_label_genome,
@@ -59,6 +60,9 @@ def genome (
         
         print(tabulate(df_genome_plus[LS_GENCUBE_GENOME_LABEL], headers='keys', tablefmt='grid'))
         print('')
+        
+        if metadata or download:
+            mkdir_raw_output()
         
         # Save metadata
         if metadata:

@@ -6,6 +6,7 @@ from .utils import (
     search_sra, 
     fetch_meta, 
     convert_format,
+    mkdir_raw_output,
     save_seq_metadata,
     )
 # Constant variables
@@ -120,6 +121,7 @@ def seqmeta(
     
     # Fetch metadata, re-format, and save study-level and experiment-level tables
     if metadata:
+        mkdir_raw_output()
         out_fetch = fetch_meta(search_ids)
         df_study, df_experiment = convert_format(out_fetch, query)
         save_seq_metadata(df_study, df_experiment, now)

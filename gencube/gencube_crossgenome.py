@@ -8,6 +8,7 @@ from .utils import (
     json_to_dataframe,
     check_access_database,
     check_access_full_crossgenome,
+    mkdir_raw_output,
     download_crossgenome,
     )
 from .constants import (
@@ -58,4 +59,5 @@ def crossgenome (
     
         # Save comparative genomics files
         if download:
+            mkdir_raw_output()
             download_crossgenome(df_full_crossgenome, df_genome, dic_ensembl_meta, df_zoonomia, download, recursive)

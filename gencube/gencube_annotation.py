@@ -8,6 +8,7 @@ from .utils import (
     json_to_dataframe,
     check_access_database,
     check_access_full_annotation,
+    mkdir_raw_output,
     download_annotation,
     convert_chr_label_annotation,
     )
@@ -60,6 +61,7 @@ def annotation (
     
         # Save annotation files
         if download:
+            mkdir_raw_output()
             dic_download = download_annotation(df_full_annotation, df_genome_plus, dic_genark_meta, download, recursive)
             # Change chromosome label style
             convert_chr_label_annotation (df_genome_plus, dic_download, chr_style, recursive)

@@ -59,7 +59,9 @@ from .constants import (
 DOWNLOAD_FOLDER_NAME = 'gencube_raw_download'
 OUT_FOLDER_NAME = 'gencube_output'
 script_dir = os.path.dirname(os.path.abspath(__file__))
-
+## -----------------------------------------------------------
+## gencube all subcommands
+## -----------------------------------------------------------
 # Get email and api key information for E-utilities
 def get_entrez_info():
     global api_key
@@ -75,25 +77,54 @@ def get_entrez_info():
             api_key = lines[2].split('=')[1].strip()
     else:
         # Prompt the user for email with validation
-        email = ""
+        print(
+            "\n"
+            '--------------------------------------------------------------------------------------\n'
+            "All gencube subcommands use NCBI's Entrez Utilities (E-Utilities), requiring an email.\n"
+            "Without an NCBI API key, you can make 3 requests per second; with an NCBI API key,\n"
+            "this limit increases to 10 requests per second.\n"
+            "If you submit your NCBI API key, you can perform tasks at more than three times \n"
+            "the speed when using the seqmeta subcommand, especially when fetching metadata.\n"
+            "If possible, it is recommended to submit your API key.\n"
+            "\n"
+            "The submitted information is stored in the file at the path below for reuse.\n"
+            f"Path: {config_file}\n"
+            "\n"
+            "If you want to resubmit this information, run '$ gencube info'.\n"
+            '--------------------------------------------------------------------------------------\n'
+        )
+        # Prompt the user for email
+        email = ''
         while not re.match(r"[^@]+@[^@]+\.[^@]+", email):
             email = input("Email address: ")
+            print('')
             if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
-                print("Invalid email format. Please try again.")
+                print('Invalid email format. Please try again\n')
 
         # Prompt the user for API key with skip option
-        api_key = input("NCBI API key (type 'no' to skip): ").strip()
-        if api_key.lower() in ['no', 'n']:
-            api_key = ""
-
+        api_key = ''
+        api_skip = False
+        while not re.match(r'^[a-zA-Z0-9]{36}$', api_key) and not api_skip:
+            api_key = input("NCBI API key (type 'no' to skip): ").strip()
+            if api_key.lower() in ['no', 'n']:
+                api_key = ''
+                api_skip = True
+            elif not re.match(r'^[a-zA-Z0-9]{36}$', api_key):
+                print(
+                    'The key should be a 36-character mix of letters and numbers.\n'
+                    'Invalid API key format. Please try again\n'
+                    )
+    
         # Save the information to the file
-        with open(config_file, 'w') as file:
-            file.write("# This information is used in E-utilities.\n")
-            file.write(f"email = {email}\n")
-            file.write(f"api_key = {api_key}\n")
+        with open(config_file, 'w') as out_f:
+            out_f.write("# This information is used in E-utilities\n")
+            out_f.write(f"email = {email}\n")
+            out_f.write(f"api_key = {api_key}\n")
             
         # Inform the user where the information is saved
         print(f'\n!! The information is saved to "{config_file}"\n')
+        
+        return True
 
     Entrez.email = email
     if api_key:
@@ -102,6 +133,474 @@ def get_entrez_info():
 ## -----------------------------------------------------------
 ## gencube genome, geneset, sequence, annotation, crossgenome
 ## -----------------------------------------------------------
+# Save variables as pickle format
+def save_pickle (in_variable, out_file_name):
+    out_file = f'tests/data/{out_file_name}.pkl'
+    # Save the file using two different methods depending on the data type
+    if isinstance(in_variable, pd.DataFrame):
+        in_variable.to_pickle(out_file)
+    else:
+        with open(out_file, 'wb') as file:
+            pickle.dump(in_variable, file)
+
+# Load variables from pickle format file
+def load_pickle (in_file_name, type=False):
+    # Save the file using two different methods depending on the data type
+    in_file = f'tests/data/{in_file_name}.pkl'
+    if type == 'dataframe':
+        return pd.read_pickle(in_file)
+    else:
+        with open(in_file, 'rb') as file:
+            return pickle.load(file)
+
+# Check starting time
+def check_now ():
+    now = datetime.now()
+    formatted_now = now.strftime("%y%m%d_%H%M%S")
+    return formatted_now
+
+# Merge strings with comma
+def add_string (pre, string):
+    if pre:
+        pre += f', {string}'
+    else:
+        pre = string
+        
+    return pre
+
+# Check right and wrong inputs
+def check_argument (input, ls, str):
+    
+    if input:
+        ls_input_raw = input.split(',')
+        ls_input = []
+        ls_wrong = []
+        
+        # Check right inputs
+        for input_tmp in ls:
+            
+            if input_tmp in ls_input_raw:
+                ls_input.append(input_tmp)
+        
+        # Check wrong inputs    
+        for type_raw in ls_input_raw:
+            if type_raw not in ls_input:
+                ls_wrong.append(type_raw)   
+        
+        if len(ls_wrong) > 0:
+            print_arg = ''
+            for wrong in ls_wrong:
+                print_arg = add_string(print_arg, wrong)
+            
+            print(f'Invalid argument {str}: {print_arg}')
+            
+        return ls_wrong
+    else:
+        tmp = []
+        return tmp
+
+# Check url
+def check_url(url, verify=True, show_output=True, file_name=''):
+    try:
+        if not file_name:
+            file_name = url.split('/')[-1]
+        # Use the HEAD request to fetch only the headers of the resource and allow redirects.
+        response = requests.head(url, allow_redirects=True, verify=verify)  
+        # Check for successful response and file accessibility.
+        if response.status_code == 200:
+            return True
+        # Check if the response is a redirect, and the file might still be accessible.
+        elif response.status_code in (301, 302, 307):
+            if show_output:
+                print(f"  {file_name}: !! Redirected to {response.headers['Location']}")
+            return True
+        elif response.status_code == 403:
+            if show_output:
+                print(f"  {file_name}: !! Access denied. File cannot be downloaded")
+            return False
+        elif response.status_code == 404:
+            if show_output:
+                print(f"  {file_name}: !! File not found")
+            return False
+        elif response.status_code == 429:
+            if show_output:
+                print(f"  {file_name}: !! Too many requests. Please try again later")
+            return False
+        elif response.status_code >= 500:
+            if show_output:
+                print(f"  {file_name}: !! Server error. Please try again later")
+            return False
+        else:
+            # Handle any other unexpected status codes.
+            if show_output:
+                print(f"  {file_name}: !! Unexpected status code: {response.status_code}")
+            return False
+    except requests.exceptions.RequestException as e:
+        # Handle any exceptions that occur during the request.
+        if show_output:
+            print(f"  {file_name}: !! Error checking URL: {e}")
+        return False
+
+# Fetch information of folders located in ftp server
+def list_ftp_directory(host, directory):
+    ftp = ftplib.FTP(host)
+    ftp.login()  # Login (anonymous access)
+    ftp.cwd(directory)  # Change to the specified directory
+    files = ftp.nlst()  # Retrieve directory listing
+    ftp.quit()  # Close FTP connection
+    return files
+
+# Fetch information of folders located in ftp server
+def list_http_folders(url):
+    try:
+        # Send a GET request to the URL
+        response = requests.get(url, verify=False)
+        response.raise_for_status()  # Check for request errors
+
+        # Parse the HTML content
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        # Find all links that are directories
+        folders = []
+        for link in soup.find_all('a'):
+            href = link.get('href')
+            if href and href.endswith('/') and not href.startswith('/'):
+                folders.append(href.replace('/', ''))
+
+        return folders
+    
+    except requests.exceptions.RequestException as e:
+        print(f"Error accessing URL: {e}")
+        return []
+    
+# Fetch information of files located in an HTTP server directory
+def list_http_files(url):
+    try:
+        # Send a GET request to the URL
+        response = requests.get(url, verify=False)
+        response.raise_for_status()  # Check for request errors
+
+        # Parse the HTML content
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        # Find all links that are files
+        files = []
+        for link in soup.find_all('a'):
+            href = link.get('href')
+            if href and not href.endswith('/') and not href.startswith('/'):
+                files.append(href)
+
+        return files
+    
+    except requests.exceptions.RequestException as e:
+        print(f"Error accessing URL: {e}")
+        return []
+
+# Fetch infomration using url
+def download_csv(url, verify=True):
+    # Download the file with SSL verification disabled
+    response = requests.get(url, verify=verify)
+    response.raise_for_status()  # Check for request errors
+    return StringIO(response.text)
+
+# Make download and output forder
+def mkdir_raw_output ():
+    # Make download folder
+    if not os.path.exists(DOWNLOAD_FOLDER_NAME):
+        os.mkdir(DOWNLOAD_FOLDER_NAME)
+    if not os.path.exists(OUT_FOLDER_NAME):
+        os.mkdir(OUT_FOLDER_NAME)
+
+# Save metadata
+def save_metadata (df, function, keywords, level, now):
+    # Remove some columns not required in metadata
+    df_meta = df.drop(columns=['NCBI'])
+    
+    # Save the metadata
+    if len(keywords) != 1:
+        keyword = f'{len(keywords)}keywords'
+    else:
+        keyword = keywords[0]
+    
+    out_name = f"Meta_{function}_{keyword.replace(' ', '-')}_{level.replace(',', '-')}_{now}.txt"
+    df_meta.to_csv(f'{OUT_FOLDER_NAME}/{out_name}', sep='\t', index=False)
+    
+    print('# Metadata are saved:')
+    print(f'  {out_name}\n')
+
+# Calculate and return the MD5 hash of a file. 
+def calculate_md5(filename):
+    return hashlib.md5(open(filename,'rb').read()).hexdigest()
+
+# Download genome file and check md5sum
+def download_genome_url(url, local_filename=None, url_md5sum=None, verify=True, recursive=None):
+    # File name
+    raw_filename = url.split('/')[-1]
+    if local_filename is None:
+        local_filename = raw_filename
+    path_local_file = os.path.join(DOWNLOAD_FOLDER_NAME, local_filename)
+
+    if url_md5sum:
+        response = requests.get(url_md5sum, verify=verify)
+        # This will raise an error for bad responses
+        response.raise_for_status()
+        # Split the content by new lines and parse it
+        data = response.text.split('\n')
+        data = [line.split() for line in data if line]  # Split each line into parts and remove empty lines
+        # Create a DataFrame
+        df = pd.DataFrame(data, columns=['MD5', 'Filename'])
+
+        # Get md5sum of file
+        for idx in df.index:
+            md5sum_filename = df.loc[idx, 'Filename'].split('/')[-1]
+            if raw_filename == md5sum_filename:
+                md5sum_original = df.loc[idx, 'MD5']
+
+    count = 0
+    recursive_download = False
+    while True:
+        if url_md5sum:
+            if os.path.exists(path_local_file):
+                # Get md5sum from download file
+                md5sum_download = calculate_md5(path_local_file)
+                # If md5sums are same between original and download file
+                if md5sum_download == md5sum_original:
+                    if count == 0:
+                        if '_assembly_report.txt' in path_local_file:
+                            print('  Assembly Report was already downloaded')
+                        elif 'fa.gz' in path_local_file:
+                            print(f'  {local_filename} was already downloaded')
+                    break
+                # If md5sums are different between original and download file
+                else:
+                    print(
+                        '  md5sum value is not same with original file\n'
+                        f'  {md5sum_original}: original file \n'
+                        f'  {md5sum_download}: download file \n'
+                    )
+                    if count < 1:
+                        print('  Re-try downloading the file')
+                        os.remove(path_local_file)
+                    else:
+                        print('  Try download file again')
+                        os.remove(path_local_file)
+                        break
+        else:
+            # If there is no url_md5sum (can't be checked)
+            if 'fa.gz' in local_filename and os.path.exists(path_local_file):
+                if recursive is False:
+                    if count == 0:
+                        print(f'  {local_filename} was already downloaded')
+                    break
+                else:
+                    if recursive_download:
+                        break
+                    else:
+                        os.remove(path_local_file)   
+
+        # Check the size of the local file if it already exists.
+        existing_size = os.path.getsize(path_local_file) if os.path.exists(path_local_file) else 0
+
+        # Add the Range header to the HTTP request to download the part of the file that is not yet downloaded.
+        headers = {"Range": f"bytes={existing_size}-"}
+        response = requests.get(url, headers=headers, stream=True, verify=verify)
+        total_size = int(response.headers.get('content-length', 0)) + existing_size
+
+        # Open the file in append mode and proceed with the download.
+        with open(path_local_file, 'ab') as f, tqdm(
+            desc='  ' + local_filename,
+            initial=existing_size,
+            total=total_size,
+            unit='B',
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as bar:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+                bar.update(len(chunk))
+                
+        count += 1
+        recursive_download = True 
+        
+    if not url_md5sum:
+        print("  !! MD5 check failed. If issues, delete and retry, or use --recursive")
+
+# Download file and check md5sum
+def download_url(url, local_filename=None, url_md5sum=None, verify=True, recursive=False, warning=True):
+    # File name
+    raw_filename = url.split('/')[-1]
+    if local_filename is None:
+        local_filename = raw_filename
+    path_local_file = os.path.join(DOWNLOAD_FOLDER_NAME, local_filename)
+
+    md5sum = False
+    if url_md5sum:
+        response = requests.get(url_md5sum, verify=verify)
+        # This will raise an error for bad responses
+        response.raise_for_status()
+        # Split the content by new lines and parse it
+        data = response.text.split('\n')
+        data = [line.split() for line in data if line]  # Split each line into parts and remove empty lines
+        # Create a DataFrame
+        df = pd.DataFrame(data, columns=['MD5', 'Filename'])
+
+        # Get md5sum of file
+        for idx in df.index:
+            md5sum_filename = df.loc[idx, 'Filename'].split('/')[-1]
+            if raw_filename == md5sum_filename:
+                md5sum_original = df.loc[idx, 'MD5']
+                md5sum = True
+
+    count = 0
+    recursive_download = False
+    while True:
+        if url_md5sum and md5sum:
+            if os.path.exists(path_local_file):
+                # Get md5sum from download file
+                md5sum_download = calculate_md5(path_local_file)
+                # If md5sums are same between original and download file
+                if md5sum_download == md5sum_original:
+                    if count == 0:
+                        print(f'  {local_filename} was already downloaded')
+                    break
+                # If md5sums are different between original and download file
+                else:
+                    print(
+                        '  md5sum value is not same with original file\n'
+                        f'  {md5sum_original}: original file \n'
+                        f'  {md5sum_download}: download file \n'
+                    )
+                    if count < 1:
+                        print('  Re-try downloading the file')
+                        os.remove(path_local_file)
+                    else:
+                        print('  Try download file again')
+                        os.remove(path_local_file)
+                        break
+        else:
+            # If there is no url_md5sum (can't be checked)
+            if os.path.exists(path_local_file):
+                if not recursive:                
+                    if count == 0:
+                        print(f'  {local_filename} was already downloaded')
+                    break
+                else:
+                    if recursive_download:
+                        break
+                    else:
+                        os.remove(path_local_file)
+
+        # Check the size of the local file if it already exists.
+        existing_size = os.path.getsize(path_local_file) if os.path.exists(path_local_file) else 0
+
+        # Add the Range header to the HTTP request to download the part of the file that is not yet downloaded.
+        headers = {"Range": f"bytes={existing_size}-"}
+        response = requests.get(url, headers=headers, stream=True, verify=verify)
+        total_size = int(response.headers.get('content-length', 0)) + existing_size
+
+        # Open the file in append mode and proceed with the download.
+        with open(path_local_file, 'ab') as f, tqdm(
+            desc='  ' + local_filename,
+            initial=existing_size,
+            total=total_size,
+            unit='B',
+            unit_scale=True,
+            unit_divisor=1024,
+        ) as bar:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+                bar.update(len(chunk))
+
+        count += 1
+        recursive_download = True 
+    
+    if not url_md5sum or not md5sum:
+        if warning:
+            print("  !! MD5 check failed. If issues, delete and retry, or use --recursive")
+
+# Fetch md5sum information
+def get_md5 (url_md5sum, verify=True):
+    response = requests.get(url_md5sum, verify=verify)
+    # This will raise an error for bad responses
+    response.raise_for_status() 
+    # Split the content by new lines and parse it
+    data = response.text.split('\n')
+    data = [line.split() for line in data if line]  # Split each line into parts and remove empty lines
+    # Create a DataFrame
+    df = pd.DataFrame(data, columns=['MD5', 'Filename'])
+    
+    return df
+
+# Remove file
+def delete_file(file_path):
+    try:
+        if os.path.exists(file_path):
+            os.remove(file_path)
+    except Exception as e:
+        print(f"Error deleting {file_path}: {e}")
+
+# Make integrative dataframe of chromosome label of databases
+def make_chr_dataframe (organism, assembly_id):
+    # read report file
+    ls_report = []
+    in_report_name = f'{DOWNLOAD_FOLDER_NAME}/{organism}-{assembly_id}_assembly_report.txt'
+    out_report_name = f'{OUT_FOLDER_NAME}/{organism}-{assembly_id}_chr_name.txt'
+    
+    if os.path.exists(in_report_name):
+        with open (in_report_name, 'r') as file:
+            for line in file:
+                tmp = line.split()
+                if len(tmp) > 0 and line[0] != '#':
+                    if line[0] == '<':
+                        break
+                    ls_report.append(line.strip().split('\t'))
+                    
+    else:
+        print(f'  {organism}-{assembly_id}_assembly_report.txt file is not found \n')
+        return ''
+    
+    df_report_raw = pd.DataFrame(ls_report, columns=LS_ASSEMBLY_REPORT_LABEL)
+    df_report = df_report_raw[['GenBank-Accn', 'RefSeq-Accn', 'Assigned-Molecule',  'UCSC-style-name']]
+    df_report_edit = df_report.copy()
+
+    # Create ensembl-style and gencode-style label
+    # - Ensembl
+    df_report_edit.loc[:, 'Ensembl'] = df_report.apply(
+        lambda row: row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'], 
+        axis=1)
+    # - Gencode
+    df_report_edit.loc[:, 'Gencode'] = df_report.apply(
+        lambda row: 'chr' + row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'], 
+        axis=1)
+    df_report_edit['Gencode'] = df_report_edit['Gencode'].replace('chrMT', 'chrM')
+    
+    df_report_edit.drop(['Assigned-Molecule'], axis=1, inplace=True)
+    # Change column names
+    df_report_edit.columns = ['GenBank', 'RefSeq', 'UCSC', 'Ensembl', 'Gencode']
+    
+    # Merge rows including chrM information
+    if len(df_report_edit[df_report_edit['Ensembl'] == 'MT'].index) == 2:
+        # Find the first valid 'GenBank' value that is not 'na' among rows where 'Ensembl' is 'MT'
+        genbank_mt = df_report_edit.loc[(df_report_edit['Ensembl'] == 'MT') & (df_report_edit['GenBank'] != 'na'), 'GenBank'].iloc[0]
+        # Replace all 'na' values in 'GenBank' for rows where 'Ensembl' is 'MT'
+        df_report_edit.loc[(df_report_edit['Ensembl'] == 'MT') & (df_report_edit['GenBank'] == 'na'), 'GenBank'] = genbank_mt
+        # After replacement, remove the rows that originally had a 'GenBank' value (that was not 'na')
+        df_report_edit = df_report_edit.drop(df_report_edit[(df_report_edit['Ensembl'] == 'MT') & (df_report_edit['RefSeq'] == 'na')].index)
+    # UCSC chrM name
+    df_report_edit.loc[df_report_edit['Ensembl'] == 'MT', 'UCSC'] = 'chrM'
+        
+    # Save dataframe
+    #df_report_edit_out = df_report_edit.copy()
+    #df_report_edit_out.columns = ['GenBank', 'RefSeq', 'UCSC', 'Ensembl', 'Gencode']
+    df_report_edit.to_csv(out_report_name, sep='\t', index=False)
+    
+    # Remove report file
+    #delete_file(in_report_name)
+
+    return df_report_edit
+
+
+
 # Search genome using users keywords
 def search_assembly (keywords):
     print('# Search assemblies in NCBI database')
@@ -109,8 +608,7 @@ def search_assembly (keywords):
     
     ls_search = []
     for keyword in keywords:
-        #keyword = keyword.replace('_', ' ')
-        
+     
         # Search keyword in NCBI Assembly database
         try:
             handle = Entrez.esearch(db="assembly", term=keyword, retmax="10000")
@@ -127,7 +625,7 @@ def search_assembly (keywords):
             
                 ls_search += record['DocumentSummarySet']['DocumentSummary']
             else:
-                print(f"  No results found for keyword '{keyword}'. \n")
+                print(f"  No results found for keyword '{keyword}'\n")
         except Exception as e:
             print(f"  !! An error occurred while searching for keyword '{keyword}': {e} \n")
             continue
@@ -135,7 +633,7 @@ def search_assembly (keywords):
     if ls_search:
         return ls_search
     else:
-        print(f"  !! No results found for all keyword.")
+        print("  !! No results found for all keyword")
 
 # Convert the data format
 def json_to_dataframe (search, level, refseq, ucsc, latest):
@@ -159,10 +657,10 @@ def json_to_dataframe (search, level, refseq, ucsc, latest):
 
     n = len(search)
     if n < 2:
-        print(f'  Total {len(search)} genomes is searched.\n')
+        print(f'  Total {len(search)} genomes is searched\n')
     else:
-        print(f'  Total {len(search)} genomes are searched.\n')
-    print('# Filter genomes based on the following criteria.')
+        print(f'  Total {len(search)} genomes are searched\n')
+    print('# Filter genomes based on the following criteria')
     for i in range(len(search)):
         df_tmp = get_values_from_keys(search[i])
 
@@ -311,11 +809,6 @@ def check_access_database (df, mode):
 ## ---------------------------------------------
 # Download genome data and assembly report
 def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
-    # Make download folder
-    if not os.path.exists(DOWNLOAD_FOLDER_NAME):
-        os.mkdir(DOWNLOAD_FOLDER_NAME)
-    if not os.path.exists(OUT_FOLDER_NAME):
-        os.mkdir(OUT_FOLDER_NAME)
     
     ls_type_raw = types.split(',')
     
@@ -366,15 +859,15 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                         
                         if check_url(refseq_fa):
                             download_genome_url(refseq_fa, out_fa_name, refseq_md5sum, recursive=recursive)
-                            ls_download.append(f'refseq.sm')
+                            ls_download.append('refseq.sm')
                             continue 
                         else:
-                            print('  !! RefSeq genome is not available. Try to download in GenBank database.')
+                            print('  !! RefSeq genome is not available. Try to download in GenBank database')
                 else:
-                    print('  !! RefSeq data is not available. Try to download in GenBank database.')
+                    print('  !! RefSeq data is not available. Try to download in GenBank database')
                         
             elif type == 'refseq':
-                print('  !! There is no RefSeq accession. Try to download using GenBank accession.')
+                print('  !! There is no RefSeq accession. Try to download using GenBank accession')
 
             # GenBank
             if not report or type == 'genbank':
@@ -399,17 +892,17 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                                 continue
                     else:
                         if not report:
-                            print('  !! Assembly_report is not found in RefSeq and GenBank.')
+                            print('  !! Assembly_report is not found in RefSeq and GenBank')
 
                         if type == 'refseq':
-                            print('  !! GenBank genome is also not available.')
+                            print('  !! GenBank genome is also not available')
                         elif type == 'genbank':
-                                print('  !! GenBank genome is not available.')
+                                print('  !! GenBank genome is not available')
                 else:
                     if type == 'refseq':
-                        print('  !! GenBank genome is also not available.')
+                        print('  !! GenBank genome is also not available')
                     elif type == 'genbank':
-                        print('  !! GenBank genome is not available.')
+                        print('  !! GenBank genome is not available')
             
             # GenArk
             if type == 'genark':
@@ -431,7 +924,7 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                         continue
                     
                 else:
-                    print('  GenArk genome is not available.')
+                    print('  GenArk genome is not available')
                     continue
 
 
@@ -470,7 +963,7 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                             continue
                         
                 else:
-                    print('  Ensembl genome is not available.')
+                    print('  Ensembl genome is not available')
                     continue 
         print('')
         dic_download[genbank_id] = ls_download
@@ -495,8 +988,8 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
             print(f'[{genbank_id} / {assembly_id}]')
         
         if not os.path.exists(f'{DOWNLOAD_FOLDER_NAME}/{organism}-{assembly_id}_assembly_report.txt'):
-            print('  !! Assembly report is not found in RefSeq and GenBank.')
-            print("     Chromosome names can't be changed. \n")
+            print('  !! Assembly report is not found in RefSeq and GenBank')
+            print("     Chromosome names can't be changed\n")
             break
         
         # Make integrative dataframe of chromosome label of databases
@@ -506,7 +999,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
         ucsc_na_count = df_report_edit['UCSC'].str.contains('na', na=False).sum()
         # UCSC check
         if style == 'ucsc' and ucsc_na_count > 1:
-            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name.')
+            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name')
             break
         
         # Convert the DataFrame to dictionaries for faster lookup
@@ -540,13 +1033,14 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
             
             if 'ensembl' in db_name and style == 'ensembl' and masking == 'soft':
                 if not os.path.exists(f'{OUT_FOLDER_NAME}/{out_file}'):
-                    print('    The downloaded file already contains Ensembl-style names and is soft-masked.')
-                    print('    Just copy to output folder.')
+                    print('    The downloaded file already contains Ensembl-style names and is soft-masked')
+                    print('    Just copy to output folder')
                     subprocess.run(['cp', f'{DOWNLOAD_FOLDER_NAME}/{in_file}', f'{OUT_FOLDER_NAME}/{out_file}'], check=True)
                     continue
                 else:
-                    print('    The converted file already exists.')
+                    print('    The converted file already exists')
                     continue
+            
 
             # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
@@ -563,7 +1057,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
                         for line in f_in:
                             ls_read.append(line)
                 except gzip.BadGzipFile:
-                    print('    !! The file is not a valid gzip file. \n')
+                    print('    !! The file is not a valid gzip file\n')
 
                 for line in ls_read:
                     if line.startswith('>'):
@@ -627,8 +1121,8 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
                 print(f'    Processing time: {int(elapsed_time)} seconds')
 
             elif out_file in ls_output_folder_files:
-                print('    The converted file already exists.')
-        print('\n  !! If the file appears to have any problems, please delete it and retry the process. \n')
+                print('    The converted file already exists')
+        print('\n  !! If the file appears to have any problems, please delete it and retry the process\n')
 
 
 ## ---------------------------------------------
@@ -734,7 +1228,7 @@ def check_access_full_geneset(df, dic_genark_meta, dic_ensembl_meta, df_zoonomia
     for label in ls_geneset:
         df_full_annotation[label] = ''
 
-    print('# Check accessible data in databases.')
+    print('# Check accessible data in databases')
 
     results = []
     with ThreadPoolExecutor() as executor:
@@ -759,15 +1253,10 @@ def check_access_full_geneset(df, dic_genark_meta, dic_ensembl_meta, df_zoonomia
 
 # Download geneset data
 def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonomia, types, recursive):
-    # Make download folder
-    if not os.path.exists(DOWNLOAD_FOLDER_NAME):
-        os.mkdir(DOWNLOAD_FOLDER_NAME)
-    if not os.path.exists(OUT_FOLDER_NAME):
-        os.mkdir(OUT_FOLDER_NAME)
         
     ls_types = types.split(',')
     
-    print('# Download geneset data.')
+    print('# Download geneset data')
     dic_download = {}
     for idx in df.index:
         # Accession or name
@@ -1006,8 +1495,8 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 download_genome_url(genbank_rp, out_rp_name, genbank_md5sum)
 
             else:
-                print('  !! Assembly report is not found in RefSeq and GenBank.')
-                print("     Chromosome names can't be changed. \n")
+                print('  !! Assembly report is not found in RefSeq and GenBank')
+                print("     Chromosome names can't be changed\n")
                 break
                 
         # Make integrative dataframe of chromosome label of databases
@@ -1017,7 +1506,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
         ucsc_na_count = df_report_edit['UCSC'].str.contains('na', na=False).sum()
         # UCSC check
         if style == 'ucsc' and ucsc_na_count > 1:
-            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name.')
+            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name')
             break
 
         df_report_edit['genbank_noversion'] = df_report_edit['GenBank'].apply(lambda x: x.split('.')[0])
@@ -1046,7 +1535,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
         ucsc_na_count = df_report_edit['UCSC'].str.contains('na', na=False).sum()
         # UCSC check
         if style == 'ucsc' and ucsc_na_count > 1:
-            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name.')
+            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name')
             break
 
         # Check downloaded files
@@ -1100,14 +1589,14 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 delete_file(f'{OUT_FOLDER_NAME}/{out_file}')
                 
             if db in ['ensembl_gtf', 'ensembl_gff'] and style == 'ensembl':
-                # print('  !! The file downloaded from the Ensembl database already has ensembl-style chromosome names.')
+                # print('  !! The file downloaded from the Ensembl database already has ensembl-style chromosome names')
                 continue
             
             # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
             ls_output_folder_files = os.listdir(OUT_FOLDER_NAME)
             
-            print(f'    Modify chromosome names')
+            print('    Modify chromosome names')
             if in_file in ls_download_files and out_file not in ls_output_folder_files:
                 
                 ls_read = []
@@ -1118,7 +1607,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                             ls_read.append(line)
                             
                 except gzip.BadGzipFile:
-                    print('  !! The file is not a valid gzip file. \n')              
+                    print('  !! The file is not a valid gzip file\n')              
                 
                 count = 0
                 for line in ls_read:
@@ -1159,36 +1648,38 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                     else:
                         ls_write.append(line)
 
-                """
-                # Write and compressed gtf, gff, and bed file
-                with gzip.open(f'{OUT_FOLDER_NAME}/{out_file}', 'wt', compresslevel=9) as f_out:
-                    for line in ls_write:
-                        f_out.write(line)
-                """
-                # Write gtf, gff, and bed file
-                with open(f'{OUT_FOLDER_NAME}/{out_file}_tmp', 'w') as f_out:
-                    for line in ls_write:
-                        f_out.write(line)
-
-                # Sort file
-                print('    Sort file')
                 format = out_file.split('.')[-1]
-                
                 # bed format
                 if format == 'bed': 
+                    # Write gtf, gff, and bed file
+                    with open(f'{OUT_FOLDER_NAME}/{out_file}_tmp', 'w') as f_out:
+                        for line in ls_write:
+                            f_out.write(line)
+
+                    # Sort file
+                    print('    Sort file')
                     with open(f'{OUT_FOLDER_NAME}/{out_file}', 'w') as f_out:
                         subprocess.run(['sort', '-k1,1', '-k2,2n', f'{OUT_FOLDER_NAME}/{out_file}_tmp'], stdout=f_out, check=True)
+                            
+                    # Remove temporary file
+                    delete_file(f'{OUT_FOLDER_NAME}/{out_file}_tmp')
+                    
+                    # Compress file
+                    subprocess.run(['gzip', '--best', '--force', f'{OUT_FOLDER_NAME}/{out_file}'], check=True)
+                
+                # gtf or gff format    
+                else:
+                     # Write and compressed gtf, gff, and bed file
+                    with gzip.open(f'{OUT_FOLDER_NAME}/{out_file}', 'wt', compresslevel=9) as f_out:
+                        for line in ls_write:
+                            f_out.write(line)       
+                
+                """
                 # gtf or gff format
                 else:
                     with open(f'{OUT_FOLDER_NAME}/{out_file}', 'w') as f_out:
-                        subprocess.run(['sort', '-k1,1', '-k4,4n', f'{OUT_FOLDER_NAME}/{out_file}_tmp'], stdout=f_out, check=True)
-                # Remove temporary file
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file}_tmp')
-
-                # Compress file
-                subprocess.run(['gzip', '--best', '--force', f'{OUT_FOLDER_NAME}/{out_file}'], check=True)
-                
-                """
+                        subprocess.run(['sort', '-k1,1', '-k4,4n', f'{OUT_FOLDER_NAME}/{out_file}_tmp'], stdout=f_out, check=True)       
+                        
                 # Make index file
                 print(f'  Make index file: {OUT_FOLDER_NAME}/{out_file}.gz')
                 if format == 'bed': # bed format
@@ -1207,8 +1698,8 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 print('')
         
             else:
-                print('  The output file already exists.')
-                print('  !! If the file appears to have any problems, please delete it and retry the process. \n')
+                print('  The output file already exists')
+                print('  !! If the file appears to have any problems, please delete it and retry the process\n')
 
 
 ## ---------------------------------------------
@@ -1221,7 +1712,6 @@ def process_row_annotation(idx, row, dic_genark_meta):
         'GenArk': ''
     }
 
-    assembly_id = row['Assembly name']
     genbank_id = row['GenBank']
     refseq_id = row['RefSeq']
     check_genark = row['GenArk']
@@ -1249,13 +1739,13 @@ def process_row_annotation(idx, row, dic_genark_meta):
                     result['GenArk'] = add_string(result['GenArk'], 'td')
                 if type == 'windowMasker':
                     result['GenArk'] = add_string(result['GenArk'], 'wm')
-                if ('.allGaps.bb' in file or '.gap.bb' in file) and gap == False:
+                if ('.allGaps.bb' in file or '.gap.bb' in file) and not gap:
                     result['GenArk'] = add_string(result['GenArk'], 'gap')
                     gap = True
-                if '.rmsk.' in file and rmsk == False:
+                if '.rmsk.' in file and not rmsk:
                     result['GenArk'] = add_string(result['GenArk'], 'rm')
                     rmsk = True
-                if '.cpgIslandExt' in file and cpg_island == False:
+                if '.cpgIslandExt' in file and not cpg_island:
                     result['GenArk'] = add_string(result['GenArk'], 'cpgisland')
                     cpg_island = True
 
@@ -1268,7 +1758,7 @@ def check_access_full_annotation(df, dic_genark_meta):
     for label in ls_annotation:
         df_full_annotation[label] = ''
 
-    print('# Check accessible data in databases.')
+    print('# Check accessible data in databases')
 
     results = []
     with ThreadPoolExecutor() as executor:
@@ -1293,15 +1783,10 @@ def check_access_full_annotation(df, dic_genark_meta):
 
 # Download annotation data
 def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
-    # Make download folder
-    if not os.path.exists(DOWNLOAD_FOLDER_NAME):
-        os.mkdir(DOWNLOAD_FOLDER_NAME)
-    if not os.path.exists(OUT_FOLDER_NAME):
-        os.mkdir(OUT_FOLDER_NAME)
         
     ls_types = types.split(',')
     
-    print('# Download annotation data.')
+    print('# Download annotation data')
     dic_download = {}
     for idx in df.index:
         # Accession or name
@@ -1546,8 +2031,8 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                 download_genome_url(genbank_rp, out_rp_name, genbank_md5sum)
 
             else:
-                print('  !! Assembly report is not found in RefSeq and GenBank.')
-                print("     Chromosome names can't be changed. \n")
+                print('  !! Assembly report is not found in RefSeq and GenBank')
+                print("     Chromosome names can't be changed\n")
                 break
                 
         # Make integrative dataframe of chromosome label of databases
@@ -1557,7 +2042,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
         ucsc_na_count = df_report_edit['UCSC'].str.contains('na', na=False).sum()
         # UCSC check
         if style == 'ucsc' and ucsc_na_count > 1:
-            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name.')
+            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name')
             break
         
         # Convert the DataFrame to dictionaries for faster lookup
@@ -1572,7 +2057,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
         ucsc_na_count = df_report_edit['UCSC'].str.contains('na', na=False).sum()
         # UCSC check
         if style == 'ucsc' and ucsc_na_count > 1:
-            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name.')
+            print(f'  {ucsc_na_count} chromosome(s) have not ucsc name')
             break
 
         # Check downloaded files
@@ -1640,8 +2125,8 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                             f_out.write(line)
                             
             else:
-                print('    The output file already exists.')
-                print('    !! If the file appears to have any problems, please delete it and retry the process. \n')
+                print('    The output file already exists')
+                print('    !! If the file appears to have any problems, please delete it and retry the process\n')
                 continue
 
             # Chrom size file
@@ -1681,7 +2166,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
 
             # Change file format (binary to readable format)
             if download == 'genark.gc5Base':
-                print(f'  Convert bedgraph to bigwig: {out_file_final}')
+                print(f'    Convert bedgraph to bigwig: {out_file_final}')
                 
                 # bigWig to bedGraph
                 subprocess.run([f'{path_bdg2bw}', f'{OUT_FOLDER_NAME}/{out_file}', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
@@ -1691,7 +2176,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                 delete_file(f'{OUT_FOLDER_NAME}/{out_file}')
                 
             else:
-                print(f'  Convert bed to bigbed: {out_file_final}')
+                print(f'    Convert bed to bigbed: {out_file_final}')
                 
                 # Sort bed file
                 with open(f'{OUT_FOLDER_NAME}/{out_file}_sorted', 'w') as f_out:
@@ -1841,7 +2326,7 @@ def check_access_full_sequence(df, dic_ensembl_meta):
     for label in ls_sequence:
         df_full_annotation[label] = ''
 
-    print('# Check accessible data in databases.')
+    print('# Check accessible data in databases')
 
     results = []
     with ThreadPoolExecutor() as executor:
@@ -1866,15 +2351,10 @@ def check_access_full_sequence(df, dic_ensembl_meta):
 
 # Download sequence data
 def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
-    # Make download folder
-    if not os.path.exists(DOWNLOAD_FOLDER_NAME):
-        os.mkdir(DOWNLOAD_FOLDER_NAME)
-    if not os.path.exists(OUT_FOLDER_NAME):
-        os.mkdir(OUT_FOLDER_NAME)
         
     ls_types = types.split(',')
     
-    print('# Download sequence data.')
+    print('# Download sequence data')
     for idx in df.index:
         # Accession or name
         assembly_id = df_genome.loc[idx]['Assembly name']
@@ -2065,7 +2545,7 @@ def check_access_full_crossgenome(df, dic_ensembl_meta, df_zoonomia):
     for label in ls_geneset:
         df_full_annotation[label] = ''
 
-    print('# Check accessible data in databases.')
+    print('# Check accessible data in databases')
 
     results = []
     with ThreadPoolExecutor() as executor:
@@ -2092,8 +2572,7 @@ def check_access_full_crossgenome(df, dic_ensembl_meta, df_zoonomia):
 def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, recursive):
     ls_types = types.split(',')
     
-    print('# Download geneset data.')
-    dic_download = {}
+    print('# Download geneset data')
     for idx in df.index:
         # Accession or name
         assembly_id = df_genome.loc[idx]['Assembly name']
@@ -2109,8 +2588,6 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
         else:
             print(f'[{genbank_id} / {assembly_id}]')
-        
-        ls_download = []
                 
         # Ensembl
         if 'ensembl_homology' in ls_types:
@@ -2209,467 +2686,6 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
 ## -----------------------------------------------------------
 ## gencube genome, geneset, sequence, annotation, crossgenome
 ## -----------------------------------------------------------
-# Save variables as pickle format
-def save_pickle (in_variable, out_file_name):
-    out_file = f'tests/data/{out_file_name}.pkl'
-    # Save the file using two different methods depending on the data type
-    if isinstance(in_variable, pd.DataFrame):
-        in_variable.to_pickle(out_file)
-    else:
-        with open(out_file, 'wb') as file:
-            pickle.dump(in_variable, file)
-
-# Load variables from pickle format file
-def load_pickle (in_file_name, type=False):
-    # Save the file using two different methods depending on the data type
-    in_file = f'tests/data/{in_file_name}.pkl'
-    if type == 'dataframe':
-        return pd.read_pickle(in_file)
-    else:
-        with open(in_file, 'rb') as file:
-            return pickle.load(file)
-
-# Check starting time
-def check_now ():
-    now = datetime.now()
-    formatted_now = now.strftime("%y%m%d_%H%M%S")
-    return formatted_now
-
-# Check right and wrong inputs
-def check_argument (input, ls, str):
-    
-    if input:
-        ls_input_raw = input.split(',')
-        ls_input = []
-        ls_wrong = []
-        
-        # Check right inputs
-        for input_tmp in ls:
-            
-            if input_tmp in ls_input_raw:
-                ls_input.append(input_tmp)
-        
-        # Check wrong inputs    
-        for type_raw in ls_input_raw:
-            if type_raw not in ls_input:
-                ls_wrong.append(type_raw)   
-        
-        if len(ls_wrong) > 0:
-            print_arg = ''
-            for wrong in ls_wrong:
-                print_arg = add_string(print_arg, wrong)
-            
-            print(f'Invalid argument {str}: {print_arg}')
-            
-        return ls_wrong
-    else:
-        tmp = []
-        return tmp
-
-# Merge strings with comma
-def add_string (pre, string):
-    if pre:
-        pre += f', {string}'
-    else:
-        pre = string
-        
-    return pre
-
-# Check url
-def check_url(url, status=False, verify=True, show_output=True, file_name=''):
-    try:
-        if not file_name:
-            file_name = url.split('/')[-1]
-        # Use the HEAD request to fetch only the headers of the resource and allow redirects.
-        response = requests.head(url, allow_redirects=True, verify=verify)  
-        # Check for successful response and file accessibility.
-        if status:
-            return  response.status_code
-        
-        if response.status_code == 200:
-            return True
-        # Check if the response is a redirect, and the file might still be accessible.
-        elif response.status_code in (301, 302, 307):
-            if show_output:
-                print(f"  {file_name}: !! Redirected to {response.headers['Location']}")
-            return True
-        elif response.status_code == 403:
-            if show_output:
-                print(f"  {file_name}: !! Access denied. File cannot be downloaded.")
-            return False
-        elif response.status_code == 404:
-            if show_output:
-                print(f"  {file_name}: !! File not found.")
-            return False
-        elif response.status_code == 429:
-            if show_output:
-                print(f"  {file_name}: !! Too many requests. Please try again later.")
-            return False
-        elif response.status_code >= 500:
-            if show_output:
-                print(f"  {file_name}: !! Server error. Please try again later.")
-            return False
-        else:
-            # Handle any other unexpected status codes.
-            if show_output:
-                print(f"  {file_name}: !! Unexpected status code: {response.status_code}")
-            return False
-    except requests.exceptions.RequestException as e:
-        # Handle any exceptions that occur during the request.
-        if show_output:
-            print(f"  {file_name}: !! Error checking URL: {e}")
-        return False
-
-# Fetch information of folders located in ftp server
-def list_ftp_directory(host, directory):
-    ftp = ftplib.FTP(host)
-    ftp.login()  # Login (anonymous access)
-    ftp.cwd(directory)  # Change to the specified directory
-    files = ftp.nlst()  # Retrieve directory listing
-    ftp.quit()  # Close FTP connection
-    return files
-
-# Fetch information of folders located in ftp server
-def list_http_folders(url):
-    try:
-        # Send a GET request to the URL
-        response = requests.get(url, verify=False)
-        response.raise_for_status()  # Check for request errors
-
-        # Parse the HTML content
-        soup = BeautifulSoup(response.content, 'html.parser')
-
-        # Find all links that are directories
-        folders = []
-        for link in soup.find_all('a'):
-            href = link.get('href')
-            if href and href.endswith('/') and not href.startswith('/'):
-                folders.append(href.replace('/', ''))
-
-        return folders
-    
-    except requests.exceptions.RequestException as e:
-        print(f"Error accessing URL: {e}")
-        return []
-    
-# Fetch information of files located in an HTTP server directory
-def list_http_files(url):
-    try:
-        # Send a GET request to the URL
-        response = requests.get(url, verify=False)
-        response.raise_for_status()  # Check for request errors
-
-        # Parse the HTML content
-        soup = BeautifulSoup(response.content, 'html.parser')
-
-        # Find all links that are files
-        files = []
-        for link in soup.find_all('a'):
-            href = link.get('href')
-            if href and not href.endswith('/') and not href.startswith('/'):
-                files.append(href)
-
-        return files
-    
-    except requests.exceptions.RequestException as e:
-        print(f"Error accessing URL: {e}")
-        return []
-
-# Fetch infomration using url
-def download_csv(url, verify=True):
-    # Download the file with SSL verification disabled
-    response = requests.get(url, verify=verify)
-    response.raise_for_status()  # Check for request errors
-    return StringIO(response.text)
-
-# Save metadata
-def save_metadata (df, function, keywords, level, now):
-    # Remove some columns not required in metadata
-    df_meta = df.drop(columns=['NCBI'])
-    
-    # Save the metadata
-    if len(keywords) != 1:
-        keyword = f'{len(keywords)}keywords'
-    else:
-        keyword = keywords[0]
-    
-    out_name = f"Meta_{function}_{keyword.replace(' ', '-')}_{level.replace(',', '-')}_{now}.txt"
-    df_meta.to_csv(f'{OUT_FOLDER_NAME}/{out_name}', sep='\t', index=False)
-    
-    print('# Metadata are saved:')
-    print(f'  {out_name}\n')
-
-# Calculate and return the MD5 hash of a file. 
-def calculate_md5(filename):
-    return hashlib.md5(open(filename,'rb').read()).hexdigest()
-
-# Download genome file and check md5sum
-def download_genome_url(url, local_filename=None, url_md5sum=None, verify=True, recursive=None):
-    # File name
-    raw_filename = url.split('/')[-1]
-    if local_filename is None:
-        local_filename = raw_filename
-    path_local_file = os.path.join(DOWNLOAD_FOLDER_NAME, local_filename)
-
-    if url_md5sum:
-        response = requests.get(url_md5sum, verify=verify)
-        # This will raise an error for bad responses
-        response.raise_for_status()
-        # Split the content by new lines and parse it
-        data = response.text.split('\n')
-        data = [line.split() for line in data if line]  # Split each line into parts and remove empty lines
-        # Create a DataFrame
-        df = pd.DataFrame(data, columns=['MD5', 'Filename'])
-
-        # Get md5sum of file
-        for idx in df.index:
-            md5sum_filename = df.loc[idx, 'Filename'].split('/')[-1]
-            if raw_filename == md5sum_filename:
-                md5sum_original = df.loc[idx, 'MD5']
-
-    count = 0
-    recursive_download = False
-    while True:
-        if url_md5sum:
-            if os.path.exists(path_local_file):
-                # Get md5sum from download file
-                md5sum_download = calculate_md5(path_local_file)
-                # If md5sums are same between original and download file
-                if md5sum_download == md5sum_original:
-                    if count == 0:
-                        if '_assembly_report.txt' in path_local_file:
-                            print('  Assembly Report was already downloaded.')
-                        elif 'fa.gz' in path_local_file:
-                            print(f'  {local_filename} was already downloaded.')
-                    break
-                # If md5sums are different between original and download file
-                else:
-                    print(
-                        '  md5sum value is not same with original file. \n'
-                        f'  {md5sum_original}: original file \n'
-                        f'  {md5sum_download}: download file \n'
-                    )
-                    if count < 1:
-                        print('  Re-try downloading the file')
-                        os.remove(path_local_file)
-                    else:
-                        print('  Try download file again.')
-                        os.remove(path_local_file)
-                        break
-        else:
-            # If there is no url_md5sum (can't be checked)
-            if 'fa.gz' in local_filename and os.path.exists(path_local_file):
-                if recursive == False:
-                    if count == 0:
-                        print(f'  {local_filename} was already downloaded.')
-                    break
-                else:
-                    if recursive_download:
-                        break
-                    else:
-                        os.remove(path_local_file)   
-
-        # Check the size of the local file if it already exists.
-        existing_size = os.path.getsize(path_local_file) if os.path.exists(path_local_file) else 0
-
-        # Add the Range header to the HTTP request to download the part of the file that is not yet downloaded.
-        headers = {"Range": f"bytes={existing_size}-"}
-        response = requests.get(url, headers=headers, stream=True, verify=verify)
-        total_size = int(response.headers.get('content-length', 0)) + existing_size
-
-        # Open the file in append mode and proceed with the download.
-        with open(path_local_file, 'ab') as f, tqdm(
-            desc='  ' + local_filename,
-            initial=existing_size,
-            total=total_size,
-            unit='B',
-            unit_scale=True,
-            unit_divisor=1024,
-        ) as bar:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
-                bar.update(len(chunk))
-                
-        count += 1
-        recursive_download = True 
-        
-    if url_md5sum == False:
-        print("  !! MD5 check failed. If issues, delete and retry, or use --recursive.")
-
-# Download file and check md5sum
-def download_url(url, local_filename=None, url_md5sum=None, verify=True, recursive=False, warning=True):
-    # File name
-    raw_filename = url.split('/')[-1]
-    if local_filename is None:
-        local_filename = raw_filename
-    path_local_file = os.path.join(DOWNLOAD_FOLDER_NAME, local_filename)
-
-    md5sum = False
-    if url_md5sum:
-        response = requests.get(url_md5sum, verify=verify)
-        # This will raise an error for bad responses
-        response.raise_for_status()
-        # Split the content by new lines and parse it
-        data = response.text.split('\n')
-        data = [line.split() for line in data if line]  # Split each line into parts and remove empty lines
-        # Create a DataFrame
-        df = pd.DataFrame(data, columns=['MD5', 'Filename'])
-
-        # Get md5sum of file
-        for idx in df.index:
-            md5sum_filename = df.loc[idx, 'Filename'].split('/')[-1]
-            if raw_filename == md5sum_filename:
-                md5sum_original = df.loc[idx, 'MD5']
-                md5sum = True
-
-    count = 0
-    recursive_download = False
-    while True:
-        if url_md5sum and md5sum:
-            if os.path.exists(path_local_file):
-                # Get md5sum from download file
-                md5sum_download = calculate_md5(path_local_file)
-                # If md5sums are same between original and download file
-                if md5sum_download == md5sum_original:
-                    if count == 0:
-                        print(f'  {local_filename} was already downloaded.')
-                    break
-                # If md5sums are different between original and download file
-                else:
-                    print(
-                        '  md5sum value is not same with original file. \n'
-                        f'  {md5sum_original}: original file \n'
-                        f'  {md5sum_download}: download file \n'
-                    )
-                    if count < 1:
-                        print('  Re-try downloading the file')
-                        os.remove(path_local_file)
-                    else:
-                        print('  Try download file again.')
-                        os.remove(path_local_file)
-                        break
-        else:
-            # If there is no url_md5sum (can't be checked)
-            if os.path.exists(path_local_file):
-                if not recursive:                
-                    if count == 0:
-                        print(f'  {local_filename} was already downloaded.')
-                    break
-                else:
-                    if recursive_download:
-                        break
-                    else:
-                        os.remove(path_local_file)
-
-        # Check the size of the local file if it already exists.
-        existing_size = os.path.getsize(path_local_file) if os.path.exists(path_local_file) else 0
-
-        # Add the Range header to the HTTP request to download the part of the file that is not yet downloaded.
-        headers = {"Range": f"bytes={existing_size}-"}
-        response = requests.get(url, headers=headers, stream=True, verify=verify)
-        total_size = int(response.headers.get('content-length', 0)) + existing_size
-
-        # Open the file in append mode and proceed with the download.
-        with open(path_local_file, 'ab') as f, tqdm(
-            desc='  ' + local_filename,
-            initial=existing_size,
-            total=total_size,
-            unit='B',
-            unit_scale=True,
-            unit_divisor=1024,
-        ) as bar:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
-                bar.update(len(chunk))
-
-        count += 1
-        recursive_download = True 
-    
-    if not url_md5sum or not md5sum:
-        if warning:
-            print("  !! MD5 check failed. If issues, delete and retry, or use --recursive.")
-
-# Fetch md5sum information
-def get_md5 (url_md5sum, verify=True):
-    response = requests.get(url_md5sum, verify=verify)
-    # This will raise an error for bad responses
-    response.raise_for_status() 
-    # Split the content by new lines and parse it
-    data = response.text.split('\n')
-    data = [line.split() for line in data if line]  # Split each line into parts and remove empty lines
-    # Create a DataFrame
-    df = pd.DataFrame(data, columns=['MD5', 'Filename'])
-    
-    return df
-
-# Remove file
-def delete_file(file_path):
-    try:
-        if os.path.exists(file_path):
-            os.remove(file_path)
-    except Exception as e:
-        print(f"Error deleting {file_path}: {e}")
-
-# Make integrative dataframe of chromosome label of databases
-def make_chr_dataframe (organism, assembly_id):
-    # read report file
-    ls_report = []
-    in_report_name = f'{DOWNLOAD_FOLDER_NAME}/{organism}-{assembly_id}_assembly_report.txt'
-    out_report_name = f'{OUT_FOLDER_NAME}/{organism}-{assembly_id}_chr_name.txt'
-    
-    if os.path.exists(in_report_name):
-        with open (in_report_name, 'r') as file:
-            for line in file:
-                tmp = line.split()
-                if len(tmp) > 0 and line[0] != '#':
-                    if line[0] == '<':
-                        break
-                    ls_report.append(line.strip().split('\t'))
-                    
-    else:
-        print(f'  {organism}-{assembly_id}_assembly_report.txt file is not found \n')
-        return ''
-    
-    df_report_raw = pd.DataFrame(ls_report, columns=LS_ASSEMBLY_REPORT_LABEL)
-    df_report = df_report_raw[['GenBank-Accn', 'RefSeq-Accn', 'Assigned-Molecule',  'UCSC-style-name']]
-    df_report_edit = df_report.copy()
-
-    # Create ensembl-style and gencode-style label
-    # - Ensembl
-    df_report_edit.loc[:, 'Ensembl'] = df_report.apply(
-        lambda row: row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'], 
-        axis=1)
-    # - Gencode
-    df_report_edit.loc[:, 'Gencode'] = df_report.apply(
-        lambda row: 'chr' + row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'], 
-        axis=1)
-    df_report_edit['Gencode'] = df_report_edit['Gencode'].replace('chrMT', 'chrM')
-    
-    df_report_edit.drop(['Assigned-Molecule'], axis=1, inplace=True)
-    # Change column names
-    df_report_edit.columns = ['GenBank', 'RefSeq', 'UCSC', 'Ensembl', 'Gencode']
-    
-    # Merge rows including chrM information
-    if len(df_report_edit[df_report_edit['Ensembl'] == 'MT'].index) == 2:
-        # Find the first valid 'GenBank' value that is not 'na' among rows where 'Ensembl' is 'MT'
-        genbank_mt = df_report_edit.loc[(df_report_edit['Ensembl'] == 'MT') & (df_report_edit['GenBank'] != 'na'), 'GenBank'].iloc[0]
-        # Replace all 'na' values in 'GenBank' for rows where 'Ensembl' is 'MT'
-        df_report_edit.loc[(df_report_edit['Ensembl'] == 'MT') & (df_report_edit['GenBank'] == 'na'), 'GenBank'] = genbank_mt
-        # After replacement, remove the rows that originally had a 'GenBank' value (that was not 'na')
-        df_report_edit = df_report_edit.drop(df_report_edit[(df_report_edit['Ensembl'] == 'MT') & (df_report_edit['RefSeq'] == 'na')].index)
-    # UCSC chrM name
-    df_report_edit.loc[df_report_edit['Ensembl'] == 'MT', 'UCSC'] = 'chrM'
-        
-    # Save dataframe
-    #df_report_edit_out = df_report_edit.copy()
-    #df_report_edit_out.columns = ['GenBank', 'RefSeq', 'UCSC', 'Ensembl', 'Gencode']
-    df_report_edit.to_csv(out_report_name, sep='\t', index=False)
-    
-    # Remove report file
-    #delete_file(in_report_name)
-
-    return df_report_edit
-
 
 ## ---------------------------------------------
 ## gencube seqmeta
@@ -2946,11 +2962,14 @@ def fetch_meta(ls_id):
         else:
             thread_num = num_cores
         print(f'  Threads: {thread_num} (NCBI API key not applied - 3 requests/sec)')
-    rate_limit = 1/thread_num
+    rate_limit = 1/(thread_num)
     
     # Wrapper function to pass rate_limit to fetch_single_meta
     def fetch_single_meta_with_limit(id):
-        return fetch_single_meta(id, api_key=api_key, rate_limit=rate_limit)
+        if api_key:
+            return fetch_single_meta(id, api_key=api_key, rate_limit=rate_limit)
+        else:
+            return fetch_single_meta(id, rate_limit=rate_limit)
     
     with ThreadPoolExecutor(max_workers=thread_num) as executor:
         results = list(tqdm(executor.map(fetch_single_meta_with_limit, ls_id), 

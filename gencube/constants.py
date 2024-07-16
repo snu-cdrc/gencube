@@ -113,6 +113,7 @@ LS_GENCUBE_GENOME_LABEL = [
     'Taxid',
     'Release',
     'NCBI',
+    'UCSC',
     'GenArk',
     'Ensembl',
     ]
@@ -121,6 +122,7 @@ LS_GENCUBE_GENSET_LABEL = [
     'Taxid',
     'Release',
     'NCBI', 
+    'UCSC',
     'GenArk',
     'Ensembl',
     'Zoonomia',
@@ -130,6 +132,7 @@ LS_GENCUBE_SEQUENCE_LABEL = [
     'Taxid',
     'Release',
     'NCBI', 
+    'UCSC',
     'Ensembl',
     ]
 LS_GENCUBE_ANNOTATION_LABEL = [
@@ -137,6 +140,7 @@ LS_GENCUBE_ANNOTATION_LABEL = [
     'Taxid',
     'Release',
     'NCBI', 
+    'UCSC',
     'GenArk',
     ]
 LS_GENCUBE_CROSSGENOME_LABEL = [
@@ -144,6 +148,7 @@ LS_GENCUBE_CROSSGENOME_LABEL = [
     'Taxid',
     'Release',
     'NCBI', 
+    'UCSC',
     'Ensembl',
     'Zoonomia',
     ]
