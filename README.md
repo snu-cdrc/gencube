@@ -60,6 +60,7 @@ $ pip install gencube
 ```
 Alternative
 ```bash
+# Still setting up!!
 $ conda install -c bioconda gencube
 ```
 ## Email and NCBI API key for E-utilities
