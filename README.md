@@ -216,8 +216,8 @@ $ gencube genome homo_sapiens --metadata
 $ gencube genome GCF_011100685.1 --download
 # Download multiple genomes from various databases
 $ gencube genome GCF_011100685.1 --download --database refseq,genark,ensembl
-# Change the chromosome labels to the GENCODE style and set the compression level of the file to 9.
-$ gencube genome GCF_011100685.1 --download --chr_style gencode --compresslevel 9
+# Change the chromosome labels to the GENCODE style and set the compression level of the file to 2.
+$ gencube genome GCF_011100685.1 --download --chr_style gencode --compresslevel 2
 ```
 ---
 
