@@ -286,7 +286,7 @@ $ gencube geneset GCF_011100685.1 --download refseq_gtf,agustus,toga_gtf
 options:
   -d types, --download types
                         Download annotation file.
-                        gaps : Genomic gaps - AGP defined (bigBed format)
+                        gap : Genomic gaps - AGP defined (bigBed format)
                         sr   : Simple tandem repeats by TRF (bigBed)
                         td   : Tandem duplications (bigBed)
                         wm   : Genomic intervals masked by WindowMasker + SDust (bigBed)
