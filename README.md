@@ -106,9 +106,9 @@ options:
   -h, --help            show this help message and exit
 ```
 ---
-### The positional arguments and options shared among the `genome`, `geneset`, `sequence`, `annotation`, and `crossgenome` subcommand
+### The positional argument and options shared among the `genome`, `geneset`, `sequence`, `annotation`, and `crossgenome` subcommand
 When using the above five subcommands, it's important to find genome assemblies required for personal research.
-Below are the positional arguments and options shared by the these subcommands to browse and search for specific genome assemblies.
+Below are the positional argument and options shared by the these subcommands to browse and search for specific genome assemblies.
 
 ```plaintext
 positional arguments:
