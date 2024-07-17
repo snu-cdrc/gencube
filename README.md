@@ -72,7 +72,7 @@ $ conda install -c bioconda gencube
 ## Email and NCBI API key for E-utilities
 When you first run `gencube`, you'll be prompted for your email and NCBI API key, which are saved in the `.gencube_entrez_info` file in your home directory for future use.
 
-All gencube subcommands use `NCBI's Entrez Utilities (E-Utilities)`, requiring an email. Without an NCBI API key, you can make 3 requests per second; with an NCBI API key, this limit increases to 10 requests per second. If you register your NCBI API key, you can perform tasks at more than three times the speed when using the seqmeta subcommand, especially when fetching metadata. If possible, it is recommended to submit your API key.
+All gencube key subcommands use `NCBI's Entrez Utilities (E-Utilities)`, requiring an email. Without an NCBI API key, you can make 3 requests per second; with an NCBI API key, this limit increases to 10 requests per second. If you submit your NCBI API key, you can perform tasks at more than three times the speed when using the seqmeta subcommand, especially when fetching metadata. If possible, it is recommended to submit your API key.
 ```plaintext
 $ gencube
 Email address: 
