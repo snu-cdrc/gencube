@@ -30,7 +30,7 @@ Gencube
 <sup>2</sup> Comparative Medicine and Disease Research Center (CDRC), Science Research Center (SRC), Seoul National University, Seoul, Korea<br>
 <sup>3</sup> BK21 PLUS Program for Creative Veterinary Science Research and Research Institute for Veterinary Science, Seoul National University, Seoul, Korea<be>
 ### Manuscript
-[**bioRxiv**]() (uploaded: 2024.07.01)
+[**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) (uploaded: 2024.07.22)
 <!-- Bioinformatics (accepted. 2024.09) -->
 
 ---
