@@ -124,7 +124,7 @@ def seqmeta(
         mkdir_raw_output()
         out_fetch = fetch_meta(search_ids)
         df_study, df_experiment = convert_format(out_fetch, query)
-        save_seq_metadata(df_study, df_experiment, now)
+        save_seq_metadata(df_study, df_experiment, organism, now)
     else:
         print('!! If you want to save the metadata of the searched datasets, please use the -m or --metadata option. \n')
 

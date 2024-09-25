@@ -1670,7 +1670,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 # gtf or gff format    
                 else:
                      # Write and compressed gtf, gff, and bed file
-                    with gzip.open(f'{OUT_FOLDER_NAME}/{out_file}', 'wt', compresslevel=9) as f_out:
+                    with gzip.open(f'{OUT_FOLDER_NAME}/{out_file}.gz', 'wt', compresslevel=9) as f_out:
                         for line in ls_write:
                             f_out.write(line)       
                 
@@ -2683,10 +2683,6 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
         print('')
 
 
-## -----------------------------------------------------------
-## gencube genome, geneset, sequence, annotation, crossgenome
-## -----------------------------------------------------------
-
 ## ---------------------------------------------
 ## gencube seqmeta
 ## ---------------------------------------------
@@ -2962,7 +2958,8 @@ def fetch_meta(ls_id):
         else:
             thread_num = num_cores
         print(f'  Threads: {thread_num} (NCBI API key not applied - 3 requests/sec)')
-    rate_limit = 1/(thread_num)
+    #rate_limit = 1/(thread_num)
+    rate_limit = 1
     
     # Wrapper function to pass rate_limit to fetch_single_meta
     def fetch_single_meta_with_limit(id):
@@ -3100,14 +3097,21 @@ def convert_format(df, query):
         return df_out_study, df_out_experiment
 
 # Save metadata
-def save_seq_metadata (df_study, df_experiment, out_name):
+def save_seq_metadata (df_study, df_experiment, organism, now):
     # Make output folder
     if not os.path.exists(OUT_FOLDER_NAME):
         os.mkdir(OUT_FOLDER_NAME)
         
-    ## Export the outputs
-    out_name_study = f'Meta_seq_{out_name}_project_n{df_study.shape[0]}.txt'
-    out_name_experiment = f'Meta_seq_{out_name}_experiment_n{df_experiment.shape[0]}.txt'
+    # Add scientific name in output name if len(organism.split(',')) == 1
+    if len(organism.split(',')) == 1:
+        sci_name = organism.replace(' ', '_').lower()
+        out_name_study = f'Meta_seq_{sci_name}_{now}_project_n{df_study.shape[0]}.txt'
+        out_name_experiment = f'Meta_seq_{sci_name}_{now}_experiment_n{df_experiment.shape[0]}.txt'
+    else:
+        out_name_study = f'Meta_seq_{now}_project_n{df_study.shape[0]}.txt'
+        out_name_experiment = f'Meta_seq_{now}_experiment_n{df_experiment.shape[0]}.txt'
+        
+    # Export the outputs
     df_study.to_csv(f'{OUT_FOLDER_NAME}/{out_name_study}', sep='\t', header=True, index=False)
     df_experiment.to_csv(f'{OUT_FOLDER_NAME}/{out_name_experiment}'
                      , sep='\t', header=True, index=False)
