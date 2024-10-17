@@ -1,5 +1,5 @@
-Gencube
-=======
+# <img src="https://github.com/snu-cdrc/gencube/blob/main/figures/logo.png" alt="gencube logo" height="70">
+
 <!-- 1. GitHub Version Badge: -->
 <!-- 2. PyPI Version Badge: -->
 <!-- 3. Supported Python Versions Badge: -->
