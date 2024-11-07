@@ -35,9 +35,9 @@
 
 ---
 
-❤️ **Your interest and contributions help Gencube evolve to meet your needs!** 🚀<br>
-⭐️ If you have any questions, ideas, or suggestions, please share them on our [**Issues page**](https://github.com/snu-cdrc/gencube/issues)
-. We'd love to hear from you! 😊
+❤️ **Your interest and contributions help Gencube evolve to meet your needs!** 👨‍🔬<br>
+⭐️ If you have any questions, ideas, or suggestions, please share them on our [**Issues page**](https://github.com/snu-cdrc/gencube/issues). 👈<br>
+🚀 We'd love to hear from you! 😊
 
 ---
 `gencube` enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve metadata for sequencing-based experimental data suitable for specific requirements.
