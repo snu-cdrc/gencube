@@ -22,7 +22,7 @@
 <!-- 7. Documentation Badge:
 [![docs](https://readthedocs.org/projects/gencube/badge/?version=latest)](https://gencube.readthedocs.io/en/latest/?badge=latest) -->
 
-### Efficient retrieval, download, and unification of genomic data from leading biodiversity databases
+### Efficient retrieval and integration of multi-omics resources from leading databases
 
 [**Keun Hong Son**](https://keun-hong.github.io/)<sup>1,2,3</sup>, and [**Je-Yoel Cho**](https://vetbio.snu.ac.kr/)<sup>1,2,3</sup>
 
@@ -32,6 +32,12 @@
 ### Manuscript
 [**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) (Posted July 22, 2024)
 <!-- Bioinformatics (accepted. 2024.09) -->
+
+---
+
+❤️ **Your interest and contributions help Gencube evolve to meet your needs!** 🚀<br>
+⭐️ If you have any questions, ideas, or suggestions, please share them on our [**Issues page**](https://github.com/snu-cdrc/gencube/issues)
+. We'd love to hear from you! 😊
 
 ---
 `gencube` enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve metadata for sequencing-based experimental data suitable for specific requirements.
