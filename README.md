@@ -35,7 +35,7 @@
 
 ---
 
-❤️ **Your interest and contributions help Gencube evolve to meet your needs!** 👨‍🔬<br>
+🔥 **Your interest and contributions help Gencube evolve to meet your needs!** 👨‍🔬<br>
 ⭐️ If you have any questions, ideas, or suggestions, please share them on our [**Issues page**](https://github.com/snu-cdrc/gencube/issues). 👈<br>
 🚀 We'd love to hear from you! 😊
 
