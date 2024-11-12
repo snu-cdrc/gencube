@@ -91,7 +91,6 @@ $ gencube info
 <br>
 
 ## Tutorials
-![data_type](https://github.com/snu-cdrc/gencube/blob/main/figures/data_type.jpg?raw=true)
 `gencube` consists of six main subcommands excluding `info`
 ```plaintext
 $ gencube
@@ -112,6 +111,8 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
 ```
+<img src="https://github.com/snu-cdrc/gencube/blob/main/figures/data_type.jpg?raw=true" width="700">
+
 ---
 ### The positional argument and options shared among the `genome`, `geneset`, `sequence`, `annotation`, and `crossgenome` subcommand
 When using the above five subcommands, it's important to find genome assemblies required for personal research.
