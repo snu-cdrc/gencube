@@ -91,6 +91,7 @@ $ gencube info
 <br>
 
 ## Tutorials
+![data_type](https://github.com/snu-cdrc/gencube/blob/main/figures/data_type.jpg?raw=true)
 `gencube` consists of six main subcommands excluding `info`
 ```plaintext
 $ gencube
@@ -141,20 +142,30 @@ options:
 #### Examples
 ```bash
 # Search using scientific or common name
-$ gencube genome homo_sapiens
+$ gencube genome homo_sapiens 
+$ gencube genome canis_lupus_familiaris
+(It is recommended to use the scientific name for a more precise search.)
 $ gencube genome human
+$ gencube genome dog
 
 # Search using assembly name
 $ gencube genome T2T-CHM13v2.0 GRCh38
+$ gencube genome GRCm39 GRCm38
 
 # Search using UCSC name
 $ gencube genome hg38 hg19
+$ gencube genome mm39 mm10
+$ gencube genome canfam4 canfam5 canfam6
 
-# Search using GenBank (GCF_*) or RefSeq (GCA_*) accession
+# Search using GenBank (GCA_*) or RefSeq (GCF_*) accession
+$ gencube genome GCA_021950905.1
+$ gencube genome GCF_000001405.40
 $ gencube genome GCF_000001405.40 GCA_021950905.1
 
 # Show searched genomes corresponding to all genome assembly levels
+$ gencube genome homo_sapiens --level complete,chromosome (default)
 $ gencube genome homo_sapiens --level complete,chromosome,scaffold,contig
+$ gencube genome homo_sapiens --level scaffold,contig
 
 # Only show genomes that have RefSeq accession and UCSC name, and correspond to the latest version
 $ gencube genome homo_sapiens --refseq --ucsc --latest
