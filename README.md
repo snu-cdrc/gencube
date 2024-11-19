@@ -143,17 +143,19 @@ options:
 #### Examples
 ```bash
 # Search using scientific or common name
+# It is recommended to use the scientific name for a more precise search.
 $ gencube genome homo_sapiens 
 $ gencube genome canis_lupus_familiaris
-(It is recommended to use the scientific name for a more precise search.)
-$ gencube genome human
-$ gencube genome dog
+$ gencube genome human # less accurate
+$ gencube genome dog   # less accurate
 
 # Search using assembly name
-$ gencube genome T2T-CHM13v2.0 GRCh38
-$ gencube genome GRCm39 GRCm38
+$ gencube genome GRCh38
+$ gencube genome grch38 # Case sensitivity is not an issue
+$ gencube genome GRCm39 GRCm38 # Multiple keywords can be searched simultaneously
 
 # Search using UCSC name
+$ gencube genome hg38
 $ gencube genome hg38 hg19
 $ gencube genome mm39 mm10
 $ gencube genome canfam4 canfam5 canfam6
@@ -164,7 +166,7 @@ $ gencube genome GCF_000001405.40
 $ gencube genome GCF_000001405.40 GCA_021950905.1
 
 # Show searched genomes corresponding to all genome assembly levels
-$ gencube genome homo_sapiens --level complete,chromosome (default)
+$ gencube genome homo_sapiens --level complete,chromosome # default
 $ gencube genome homo_sapiens --level complete,chromosome,scaffold,contig
 $ gencube genome homo_sapiens --level scaffold,contig
 
@@ -172,9 +174,8 @@ $ gencube genome homo_sapiens --level scaffold,contig
 $ gencube genome homo_sapiens --refseq --ucsc --latest
 ```
 #### Example output displayed in the terminal
+🔥 **$ gencube genome GCF_000001405.40 GCA_021950905.1**
 ```plaintext
-$ gencube genome GCF_000001405.40 GCA_021950905.1
-
 # Search assemblies in NCBI database
   Keyword: ['GCF_000001405.40', 'GCA_021950905.1']
 
@@ -244,17 +245,73 @@ options:
 ```bash
 # Download the full information metadata of searched genomes
 $ gencube genome homo_sapiens --metadata
-# Download genome files under the default conditions (RefSeq or GenBank)
+$ gencube genome canis_lupus_familiaris --metadata
+
+# Download genome file under the default conditions (RefSeq or GenBank)
 $ gencube genome GCF_011100685.1 --download
+$ gencube genome GCF_011100685.1 -d
+
+# Download genome file from a specific database
+$ gencube genome GCF_011100685.1 --download --database ensemble
 # Download multiple genomes from various databases
-$ gencube genome GCF_011100685.1 --download --database refseq,genark,ensembl
-# Change the chromosome labels to the GENCODE style and set the compression level of the file to 2.
-$ gencube genome GCF_011100685.1 --download --chr_style gencode --compresslevel 2
+$ gencube genome GCF_011100685.1 --download --database refseq,genark,ensemble
+
+# Change the chromosome labels
+$ gencube genome GCF_011100685.1 --download --chr_style ensembl # default
+$ gencube genome GCF_011100685.1 --download --chr_style gencode
+$ gencube genome GCF_011100685.1 --download --chr_style ucsc
+
+# Change the masking type
+$ gencube genome GCF_011100685.1 --download --masking soft # default
+$ gencube genome GCF_011100685.1 --download --masking hard
+$ gencube genome GCF_011100685.1 --download --masking none
+
+# Set the compression level of the file to 2.
+$ gencube genome GCF_011100685.1 --download --compresslevel 6 # default
+$ gencube genome GCF_011100685.1 --download --compresslevel 1
+```
+#### Example output displayed in the terminal
+🔥 **$ gencube genome GCF_011100685.1 -d -c gencode**
+```plaintext
+# Search assemblies in NCBI database
+  Keyword: ['GCF_011100685.1']
+
+  Total 1 genomes is searched
+
+# Filter genomes based on the following criteria
+  Level:   ['Complete', 'Chromosome']
+  RefSeq:  False
+  UCSC:    False
+  Latest:  False
+
+# Check accessibility to GenArk, Ensembl Rapid Release
+  UCSC GenArk  : 5122 genomes across 3389 species
+  Ensembl Rapid: 2582 genomes across 1788 species
+
++----+-----------------+---------+------------+-----------------+---------+----------+-----------+
+|    | Assembly name   |   Taxid | Release    | NCBI            | UCSC    | GenArk   | Ensembl   |
++====+=================+=========+============+=================+=========+==========+===========+
+|  0 | UU_Cfam_GSD_1.0 |    9615 | 2020/03/10 | GCF_011100685.1 | canFam4 | v        | v         |
++----+-----------------+---------+------------+-----------------+---------+----------+-----------+
+
+[GCA_011100685.1 / GCF_011100685.1 / UU_Cfam_GSD_1.0]
+- refseq
+  Canis_lupus_familiaris-UU_Cfam_GSD_1.0_assembly_report.txt: 263kB [00:00, 673kB/s]                                          
+  Canis_lupus_familiaris-UU_Cfam_GSD_1.0-refseq.sm.fa.gz: 100%|████████████████████████████| 742M/742M [02:39<00:00, 4.88MB/s]
+
+# Change chromosome names and masking method: gencode-style & soft-masked
+[GCA_011100685.1 / GCF_011100685.1 / UU_Cfam_GSD_1.0]
+  Downloaded genome: ['refseq.sm']
+  - refseq.sm
+    Modify chromosome names
+    Write compressed fasta file (compresslevel: 6)
+    Processing time: 455 seconds
+
+  !! If the file appears to have any problems, please delete it and retry the process
 ```
 <br>
 
 ---
-
 ### `geneset`: Search, download, and modify chromosome labels for genesets (gene annotations)
 ```plaintext
 options:
@@ -291,10 +348,144 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
+gencube geneset canis_lupus_familiaris
 gencube geneset GCF_011100685.1
+
+# Download specific geneset file from a database
+$ gencube geneset GCF_011100685.1 --download refseq_gtf
+$ gencube geneset GCF_011100685.1 --download agustus
+$ gencube geneset GCF_011100685.1 --download toga_gtf
 
 # Download multiple genesets from various databases
 $ gencube geneset GCF_011100685.1 --download refseq_gtf,agustus,toga_gtf
+```
+#### Example output displayed in the terminal
+🔥 **$ gencube geneset canis_lupus_familiaris**
+```plaintext
+# Search assemblies in NCBI database
+  Keyword: ['canis_lupus_familiaris']
+
+  Total 34 genomes are searched
+
+# Filter genomes based on the following criteria
+  Level:   ['Complete', 'Chromosome']
+  RefSeq:  False
+  UCSC:    False
+  Latest:  False
+
+# Check accessibility to GenArk, Ensembl Rapid Release and Zoonomia server
+  UCSC GenArk  : 5122 genomes across 3389 species
+  Ensembl Rapid: 2582 genomes across 1788 species
+  Zoonomia TOGA: 951 genomes across 973 species
+
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|    | Assembly name       |   Taxid | Release    | NCBI            | UCSC    | GenArk   | Ensembl   | Zoonomia   |
++====+=====================+=========+============+=================+=========+==========+===========+============+
+|  0 | LK_Cfam_Beagle_1.1  |    9615 | 2024/10/30 | GCA_044048985.1 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  1 | ASM4364393v1        |    9615 | 2024/10/24 | GCA_043643935.1 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  2 | UNSW_CanFamBas_1.2  |    9615 | 2021/02/23 | GCA_013276365.2 |         | v        |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  3 | UMICH_Zoey_3.1      |    9615 | 2019/05/30 | GCF_005444595.1 | canFam5 |          | v         | v          |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  4 | ROS_Cfam_1.0        |    9615 | 2020/09/03 | GCF_014441545.1 |         | v        | v         |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  5 | Yella_v2            |    9615 | 2023/09/07 | GCA_031165255.1 |         | v        |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  6 | CA611_1.0           |    9615 | 2023/08/31 | GCA_031010295.1 |         | v        |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  7 | OD_1.0              |    9615 | 2023/08/31 | GCA_031010635.1 |         | v        |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  8 | BD_1.0              |    9615 | 2023/08/31 | GCA_031010765.1 |         | v        |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+|  9 | Lak_Megaphage_Wal-2 |    9615 | 2024/06/07 | GCA_964164975.1 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 10 | Lak_Megaphage_Wal-1 |    9615 | 2024/06/07 | GCA_964162815.1 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 11 | UU_Cfam_GSD_1.0     |    9615 | 2020/03/10 | GCF_011100685.1 | canFam4 | v        | v         | v          |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 12 | ASM1204487v1        |    9615 | 2023/03/28 | GCA_012044875.1 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 13 | ASM1204501v1        |    9615 | 2022/07/15 | GCA_012045015.1 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 14 | Dog10K_Boxer_Tasha  |    9615 | 2020/10/06 | GCF_000002285.5 | canFam6 | v        | v         |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 15 | UNSW_CanFamBas_1.0  |    9615 | 2020/06/11 | GCF_013276365.1 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 16 | canfam4             |    9615 | 2020/06/16 | GCA_000002285.3 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 17 | Basenji_breed-1.1   |    9615 | 2019/04/26 | GCA_004886185.1 |         |          | v         |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 18 | ASM864105v2         |    9615 | 2020/02/14 | GCA_008641055.2 |         |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 19 | ASM864105v1         |    9615 | 2019/09/25 | GCA_008641055.1 |         |          | v         |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 20 | ASM864105v3         |    9615 | 2020/04/16 | GCA_008641055.3 |         | v        | v         |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 21 | Basenji_breed-1.1   |    9615 | 2019/08/16 | GCA_004886185.2 |         | v        | v         |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 22 | CanFam2.0           |    9615 | 2011/07/23 | GCF_000002285.2 | canFam2 |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 23 | CanFam2.0           |    9615 | 2011/07/23 | GCF_000002285.1 | canFam2 |          |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+| 24 | CanFam3.1           |    9615 | 2011/11/03 | GCF_000002285.3 | canFam3 | v        |           |            |
++----+---------------------+---------+------------+-----------------+---------+----------+-----------+------------+
+
+# Check accessible data in databases
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|    | Assembly name       | UCSC    | RefSeq                        | GenArk                | Ensembl   | Zoonomia     |
++====+=====================+=========+===============================+=======================+===========+==============+
+|  0 | LK_Cfam_Beagle_1.1  |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  1 | ASM4364393v1        |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  2 | UNSW_CanFamBas_1.2  |         |                               | agustus, xenoref      |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  3 | UMICH_Zoey_3.1      | canFam5 | gtf, gff, gnomon, cross, same |                       | ensembl   | mouse, human |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  4 | ROS_Cfam_1.0        |         | gtf, gff, gnomon, cross, same | agustus, xenoref, ref | ensembl   |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  5 | Yella_v2            |         |                               | agustus, xenoref      |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  6 | CA611_1.0           |         |                               | agustus, xenoref      |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  7 | OD_1.0              |         |                               | agustus, xenoref      |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  8 | BD_1.0              |         |                               | agustus, xenoref      |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+|  9 | Lak_Megaphage_Wal-2 |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 10 | Lak_Megaphage_Wal-1 |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 11 | UU_Cfam_GSD_1.0     | canFam4 | gtf, gff, gnomon, cross, same | agustus, xenoref, ref | ensembl   | mouse, human |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 12 | ASM1204487v1        |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 13 | ASM1204501v1        |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 14 | Dog10K_Boxer_Tasha  | canFam6 | gtf, gff, gnomon, cross, same | agustus, xenoref, ref | ensembl   |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 15 | UNSW_CanFamBas_1.0  |         | gtf, gff, gnomon, cross, same |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 16 | canfam4             |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 17 | Basenji_breed-1.1   |         |                               |                       | ensembl   |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 18 | ASM864105v2         |         |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 19 | ASM864105v1         |         |                               |                       | ensembl   |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 20 | ASM864105v3         |         |                               | agustus, xenoref      | ensembl   |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 21 | Basenji_breed-1.1   |         |                               | agustus, xenoref      | ensembl   |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 22 | CanFam2.0           | canFam2 |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 23 | CanFam2.0           | canFam2 |                               |                       |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
+| 24 | CanFam3.1           | canFam3 | gtf, gff, gnomon              | agustus, xenoref, ref |           |              |
++----+---------------------+---------+-------------------------------+-----------------------+-----------+--------------+
 ```
 <br>
 
@@ -329,9 +520,15 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
+gencube annotation canis_lupus_familiaris
 gencube annotation GCF_011100685.1
 
-# Download multiple annotations
+# Download specific geneset file from a database
+gencube annotation GCF_011100685.1 --download sr
+gencube annotation GCF_011100685.1 --download td
+gencube annotation GCF_011100685.1 --download rmsk
+
+# Download multiple annotations from various databases
 gencube annotation GCF_011100685.1 --download sr,td,rmsk,gc
 ```
 <br>
@@ -361,7 +558,13 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
+gencube sequence canis_lupus_familiaris
 gencube sequence GCF_011100685.1
+
+# Download specific geneset file from a database
+$ gencube sequence GCF_011100685.1 --download refseq_rna
+$ gencube sequence GCF_011100685.1 --download ensembl_cdna
+$ gencube sequence GCF_011100685.1 --download ensembl_pep
 
 # Download multiple genesets from various databases
 $ gencube sequence GCF_011100685.1 --download refseq_rna,ensembl_cdna,refseq_pep,ensembl_pep
@@ -390,7 +593,12 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
+gencube crossgenome canis_lupus_familiaris
 gencube crossgenome GCF_011100685.1
+
+# Download specific geneset file from a database
+$ gencube crossgenome GCF_011100685.1 --download toga_homology
+$ gencube crossgenome GCF_011100685.1 --download toga_align_codon
 
 # Download multiple crossgenome data
 $ gencube crossgenome GCF_011100685.1 --download toga_homology,toga_align_codon
