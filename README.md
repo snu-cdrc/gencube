@@ -114,7 +114,7 @@ options:
 <img src="https://github.com/snu-cdrc/gencube/blob/main/figures/data_type.jpg?raw=true" width="700">
 
 ---
-### The positional argument and options shared among the `genome`, `geneset`, `sequence`, `annotation`, and `crossgenome` subcommand
+### 0. The positional argument and options shared among the `genome`, `geneset`, `sequence`, `annotation`, and `crossgenome` subcommand
 When using the above five subcommands, it's important to find genome assemblies required for personal research.
 Below are the positional argument and options shared by the these subcommands to browse and search for specific genome assemblies.
 
@@ -205,7 +205,8 @@ $ gencube genome homo_sapiens --refseq --ucsc --latest
 <br>
 
 ---
-### `genome`: Search, download, and modify chromosome labels for genome assemblies
+### 1. `genome` subcommand
+**Search, download, and modify chromosome labels for genome assemblies**<br>
 You can download genome data in FASTA format from four different databases (GenBank, RefSeq, GenArk, Ensembl Rapid Release). Each database uses a different soft-masking method, and you can selectively download the data as needed. You can also download unmasked and hard-masked genomes from the Ensembl Rapid Release database.
 ```plaintext
 options:
@@ -271,7 +272,7 @@ $ gencube genome GCF_011100685.1 --download --compresslevel 6 # default
 $ gencube genome GCF_011100685.1 --download --compresslevel 1
 ```
 #### Example output displayed in the terminal
-🔥 **$ gencube genome GCF_011100685.1 -d -c gencode**
+🔥 **$ gencube genome GCF_011100685.1 --download --chr_style gencode**
 ```plaintext
 # Search assemblies in NCBI database
   Keyword: ['GCF_011100685.1']
@@ -312,7 +313,8 @@ $ gencube genome GCF_011100685.1 --download --compresslevel 1
 <br>
 
 ---
-### `geneset`: Search, download, and modify chromosome labels for genesets (gene annotations)
+### 2. `geneset` subcommand
+**Search, download, and modify chromosome labels for genesets (gene annotations)**
 ```plaintext
 options:
   -d types, --download types
@@ -490,7 +492,8 @@ $ gencube geneset GCF_011100685.1 --download refseq_gtf,agustus,toga_gtf
 <br>
 
 ---
-### `annotation`: Search, download, and modify chromosome labels for various genome annotations, such as gaps and repeats
+### 3. `annotation` subcommand
+**Search, download, and modify chromosome labels for various genome annotations, such as gaps and repeats**
 ```plaintext
 options:
   -d types, --download types
@@ -534,7 +537,8 @@ gencube annotation GCF_011100685.1 --download sr,td,rmsk,gc
 <br>
 
 ---
-### `sequence`: Search and download sequence data of genesets
+### 4. `sequence subcommand
+**Search and download sequence data of genesets**
 ```plaintext
 options:
   -d types, --download types
@@ -572,7 +576,8 @@ $ gencube sequence GCF_011100685.1 --download refseq_rna,ensembl_cdna,refseq_pep
 <br>
 
 ---
-### `crossgenome`: Search and download comparative genomics data, such as homology, and codon or protein alignment
+### 5. `crossgenome` subcommand
+**Search and download comparative genomics data, such as homology, and codon or protein alignment**
 ```plaintext
 options:
   -d types, --download types
@@ -606,7 +611,8 @@ $ gencube crossgenome GCF_011100685.1 --download toga_homology,toga_align_codon
 <br>
 
 ---
-### `seqmeta`: Search, fetch, and integrate metadata of experimental sequencing data
+### 6. `seqmeta` subcommand
+**Searches for high-throughput sequencing data corresponding to user-specified keywords, retrieves the related sample metadata, and integrates it into experiment-level and study-level tables.**
 ![seqmeta_scheme](https://github.com/snu-cdrc/gencube/blob/main/figures/seqmeta_scheme.jpg?raw=true)
 ```plaintext
 $ gencube seqmeta
@@ -749,40 +755,106 @@ options:
 #### Examples
 ```bash
 # Search for specific sequencing data for a specific species
-$ gencube seqmeta --organism human --strategy chip,chip_seq
-$ gencube seqmeta --organism homo_sapiens --strategy chip,chip_seq
 $ gencube seqmeta --organism homo_sapiens --strategy rna_seq
+$ gencube seqmeta --organism homo_sapiens --strategy chip_seq
+$ gencube seqmeta --organism human --strategy chip_seq
 
 # Search for cancer data for specific tissues
-$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer,tumor
+$ gencube seqmeta --organism human --strategy chip_seq liver,lung   # liver OR lung
+$ gencube seqmeta --organism human --strategy chip_seq cancer,tumor # cancer OR tumor
+$ gencube seqmeta --organism human --strategy chip_seq liver,lung cancer,tumor # (liver OR lung) AND (cancer OR tumor)
 
 # Exclude results containing specific keywords
-$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor
+$ gencube seqmeta --organism human --strategy chip_seq liver,lung cancer,tumor --exclude cell_line,crispr # cell_line OR crispr
 
 # Use wild card (*) to search for a broader range of results
-$ gencube seqmeta --organism human --strategy chip,chip_seq liver,lung cancer*,tumor*
+$ gencube seqmeta --organism human --strategy chip_seq liver,lung cancer*,tumor* # (liver OR lung) AND (cancer* OR tumor*)
 
 # Use ^ for phrase (not word) search
-$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line^,crispr liver,lung cancer,tumor
+$ gencube seqmeta --organism human --strategy chip_seq liver,lung cancer,tumor --exclude cell_line^,crispr # "cell line" OR crispr
 
 # Search using accession
 $ gencube seqmeta PRJNA838583
 $ gencube seqmeta SRP375422
-(or specifically)
+# or specifically
 $ gencube seqmeta --bioproject PRJNA838583
 $ gencube seqmeta --accession SRP375422
 
-# Search using custom query
-$ gencube seqmeta '(((human[Organism]) AND ("chip"[Strategy] OR "chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor)))'
+# Search using a custom query
+$ gencube seqmeta '(((human[Organism]) AND ("chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor)))'
 
 # Output the number of search results for each option and keyword
-$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --detail
+$ gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --detail
 
 # Save the integrated metadata
-$ gencube seqmeta --organism human --strategy chip,chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --metadata
+$ gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --metadata
+```
+#### Example output displayed in the terminal
+🔥 **gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --detail**
+```plaintext
+# Make query for searching
+  Organism: ['human']
+  Strategy: ['chip_seq']
+  Keywords: ['liver,lung', 'cancer,tumor']
+  Excluded: ['cell_line', 'crispr']
+
+# Search experimental sequencing data in NCBI SRA database
+  Search query: (((human[Organism]) AND ("chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor))) NOT cell line NOT crispr 
+
+# Check the number of searched result in each step
+- Options
+  Organism
+    human: 5459329
+  Strategy
+    "chip seq": 338652
+  Intersection (options): 131862
+
+- Keywords with options
+  liver: 2246
+  lung: 4103
+  liver|lung: 6344
+  cancer: 28561
+  tumor: 10370
+  cancer|tumor: 36089
+  Intersection (liver|lung & cancer|tumor): 2449
+
+- Keywords for exclusion with options
+  cell line: 78002
+  crispr: 1238
+  cell line|crispr: 78114
+
+# Searched result
+  Total 894 experiment-level IDs are searched.
+
+!! If you want to save the metadata of the searched datasets, please use the -m or --metadata option. 
+```
+🔥 **gencube seqmeta --organism dog --strategy chip_seq --metadata**
+```plaintext
+# Make query for searching
+  Organism: ['dog']
+  Strategy: ['chip_seq']
+
+# Search experimental sequencing data in NCBI SRA database
+  Search query: ((dog[Organism]) AND ("chip seq"[Strategy])) 
+
+# Searched result
+  Total 279 experiment-level IDs are searched.
+
+# Fetch metadata
+  Threads: 10 (NCBI API key applied - 10 requests/sec)
+  Fetching metadata: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 279/279 [00:34<00:00,  8.10id/s]
+  Total fetching time: 35 seconds
+
+# Confirmed total numbers
+  Study     : 14
+  Experiment: 279
+
+# Metadata are saved
+  Meta_seq_dog_241120_114700_project_n14.txt
+  Meta_seq_dog_241120_114700_experiment_n279.txt
 ```
 <br>
 
 ---
-#### Credits
+### Credits
 This package was created with [`Cookiecutter`](https://github.com/audreyr/cookiecutter) and the [`audreyr/cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage) project template.
