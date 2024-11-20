@@ -537,7 +537,7 @@ gencube annotation GCF_011100685.1 --download sr,td,rmsk,gc
 <br>
 
 ---
-### 4. `sequence subcommand
+### 4. `sequence` subcommand
 **Search and download sequence data of genesets**
 ```plaintext
 options:
