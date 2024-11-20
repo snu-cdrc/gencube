@@ -22,7 +22,7 @@
 <!-- 7. Documentation Badge:
 [![docs](https://readthedocs.org/projects/gencube/badge/?version=latest)](https://gencube.readthedocs.io/en/latest/?badge=latest) -->
 
-### Efficient retrieval and integration of multi-omics resources from leading databases
+### Centralized retrieval and integration of multi-omics resources from leading databases
 
 [**Keun Hong Son**](https://keun-hong.github.io/)<sup>1,2,3</sup>, and [**Je-Yoel Cho**](https://vetbio.snu.ac.kr/)<sup>1,2,3</sup>
 
@@ -40,7 +40,7 @@
 🚀 We'd love to hear from you! 😊
 
 ---
-`gencube` enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve metadata for sequencing-based experimental data suitable for specific requirements.
+`gencube` enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve integrated metadata for high-throughput sequencing-based multi-omics resources suitable for specific requirements.
 
 ![gencube_overview](https://github.com/snu-cdrc/gencube/blob/main/figures/gencube_overview.jpg?raw=true)
 
