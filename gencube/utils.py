@@ -5,6 +5,7 @@ import pandas as pd           # For data manipulation and analysis
 import numpy as np            # For numerical operations
 import xmltodict              # For converting XML data to Python dictionaries
 import json                   # For parsing JSON data
+import ast
 # For access to or manipulation of web data
 import requests               # For making HTTP requests
 import urllib3                # For advanced HTTP client functionalities
@@ -31,7 +32,7 @@ import platform
 # To make input or output of test code
 import pickle                 # For serializing and deserializing Python objects
 
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # To suppress the SSL warnings when using verify=False in the requests library
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning) 
@@ -41,7 +42,7 @@ from .constants import (
     NCBI_FTP_URL,
     ENSEMBL_FTP_HOST,
     ENSEMBL_RAPID_FTP_URL,
-    ENSEMBL_RM_FTP_URL,
+    #ENSEMBL_RM_FTP_URL,
     GENARK_URL,
     ZOONOMIA_URL,
     UCSC_KENT_URL,
@@ -304,12 +305,15 @@ def download_csv(url, verify=True):
     return StringIO(response.text)
 
 # Make download and output forder
-def mkdir_raw_output ():
+def mkdir_raw_output (folder_name):
     # Make download folder
     if not os.path.exists(DOWNLOAD_FOLDER_NAME):
         os.mkdir(DOWNLOAD_FOLDER_NAME)
     if not os.path.exists(OUT_FOLDER_NAME):
         os.mkdir(OUT_FOLDER_NAME)
+    subfolder = f'{OUT_FOLDER_NAME}/{folder_name}'
+    if not os.path.exists(subfolder):
+        os.mkdir(subfolder)
 
 # Save metadata
 def save_metadata (df, function, keywords, level, now):
@@ -2364,7 +2368,7 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
         
         check_refseq = df.loc[idx]['RefSeq']
         check_ensembl = df.loc[idx]['Ensembl']
-        check_ensembl_repeat = df.loc[idx]['ensembl_repeat']
+        #check_ensembl_repeat = df.loc[idx]['ensembl_repeat']
         
         # Print assembly
         if refseq_id:
@@ -2445,8 +2449,6 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
                     ensembl_cdna = f'{ensembl_file_dir}/{organism}-{ensembl_acc}-{geneset}-cdna.fa.gz'
                     ensembl_cds = f'{ensembl_file_dir}/{organism}-{ensembl_acc}-{geneset}-cds.fa.gz'
                     ensembl_pep = f'{ensembl_file_dir}/{organism}-{ensembl_acc}-{geneset}-pep.fa.gz'
-
-                    
                     
                     if 'ensembl_cdna' in ls_types:
                         if 'cdna' in ls_search:
@@ -2463,6 +2465,7 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
                             out_name = f'{organism}-{assembly_id}-ensembl_{source}.pep.faa.gz'
                             download_url(ensembl_pep, out_name, url_md5sum=url_md5sum, recursive=recursive)
 
+        """
         # Ensembl Repeatmodeler
         if check_ensembl_repeat:
             ensembl_repeat = f'{ENSEMBL_RM_FTP_URL}/{organism.lower()}/{genbank_id}.repeatmodeler.fa'
@@ -2470,6 +2473,7 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
             if 'ensembl_repeat' in ls_types:
                 out_name = f'{organism}-{assembly_id}-ensembl.repeatmodeler.fa'
                 download_url(ensembl_repeat, out_name, recursive=recursive)
+        """
   
         print('')
 
@@ -2959,7 +2963,7 @@ def fetch_meta(ls_id):
             thread_num = num_cores
         print(f'  Threads: {thread_num} (NCBI API key not applied - 3 requests/sec)')
     #rate_limit = 1/(thread_num)
-    rate_limit = 1
+    rate_limit = 0.3
     
     # Wrapper function to pass rate_limit to fetch_single_meta
     def fetch_single_meta_with_limit(id):
@@ -3082,12 +3086,21 @@ def convert_format(df, query):
         valid_columns = list(set(df_experiment_edit.columns.tolist()) & set(ls_out_experiment_label))
         df_out_experiment = pd.concat([df_out_experiment, df_experiment_edit[valid_columns]])
         
+        # Expand tree structure information to table format
+        # Process 'Sample attribute' column
+        df_out_experiment = expand_attributes(df_out_experiment, 'Sample attribute')
+        # Process 'Experiment attribute' column
+        df_out_experiment = expand_attributes(df_out_experiment, 'Experiment attribute')
+        # Process 'File information' column
+        df_out_experiment = expand_attributes(df_out_experiment, 'File information', tag_key=None, value_key=None)
+        # Remove columns
+        df_out_experiment = df_out_experiment.drop(columns=['Sample attribute', 'Experiment attribute', 'File information'])
+
         # Add query info.
         df_out_study['Query'] = ''
         df_out_experiment['Query'] = ''
         df_out_study.at[0, 'Query'] = query
         df_out_experiment.at[0, 'Query'] = query
-        
         
         ## Print the number of study and experiment
         print('# Confirmed total numbers')
@@ -3095,6 +3108,113 @@ def convert_format(df, query):
         print(f'  Experiment: {len(df_out_experiment.index)}\n')
         
         return df_out_study, df_out_experiment
+
+
+def expand_attributes(df, column_name, tag_key='TAG', value_key='VALUE'):
+    """
+    Expands a column with complex data structures (lists/dicts) into multiple columns.
+    """
+    # Check if the column exists and has any non-null values
+    if column_name not in df.columns or df[column_name].isnull().all():
+        print(f"Column '{column_name}' does not exist or is entirely empty. Skipping expansion.")
+        return df
+
+    # Create a set to hold all unique keys
+    all_tags = set()
+
+    # Function to parse each cell
+    def parse_cell(cell):
+        # Check if cell is scalar
+        if pd.api.types.is_scalar(cell):
+            if pd.isnull(cell) or (isinstance(cell, str) and cell == ''):
+                return []
+            if isinstance(cell, str):
+                try:
+                    # Safely evaluate the string to a Python object
+                    return ast.literal_eval(cell)
+                except Exception as e:
+                    print(f"Error parsing cell:\n{cell}\n{e}")
+                    return []
+            else:
+                return []
+        # If cell is array-like (list, tuple, np.ndarray, pd.Series)
+        elif isinstance(cell, (list, tuple, np.ndarray, pd.Series)):
+            return cell
+        else:
+            return []
+
+    # Updated flatten_dict function
+    def flatten_dict(d, parent_key='', sep='_'):
+        items = []
+        if isinstance(d, dict):
+            for k, v in d.items():
+                new_key = f"{parent_key}{sep}{k}" if parent_key else k
+                if isinstance(v, dict):
+                    items.extend(flatten_dict(v, new_key, sep=sep).items())
+                elif isinstance(v, list):
+                    for i, item in enumerate(v):
+                        if isinstance(item, dict):
+                            items.extend(flatten_dict(item, f"{new_key}{sep}{i}", sep=sep).items())
+                        else:
+                            items.append((f"{new_key}{sep}{i}", item))
+                else:
+                    items.append((new_key, v))
+        elif isinstance(d, list):
+            for i, item in enumerate(d):
+                new_key = f"{parent_key}{sep}{i}" if parent_key else str(i)
+                if isinstance(item, dict):
+                    items.extend(flatten_dict(item, new_key, sep=sep).items())
+                else:
+                    items.append((new_key, item))
+        else:
+            items.append((parent_key, d))
+        return dict(items)
+
+    # Parse the column and collect all unique tags
+    parsed_column = df[column_name].apply(parse_cell)
+    for items in parsed_column:
+        for item in items:
+            if isinstance(item, dict):
+                if tag_key and value_key and tag_key in item and value_key in item:
+                    tag = item[tag_key]
+                    all_tags.add(tag)
+                else:
+                    # Flatten the dictionary to get all keys
+                    flat_item = flatten_dict(item)
+                    all_tags.update(flat_item.keys())
+
+    # Create new columns for each unique tag
+    for tag in all_tags:
+        new_col_name = f"{column_name}_{tag}"
+        if new_col_name not in df.columns:
+            df[new_col_name] = pd.Series(dtype='object')  # Initialize column with object dtype
+
+    # Populate the new columns with the corresponding values
+    for idx, items in parsed_column.items():
+        if not items:
+            continue
+        flat_items = {}
+        for item in items:
+            if isinstance(item, dict):
+                if tag_key and value_key and tag_key in item and value_key in item:
+                    tag = item[tag_key]
+                    value = item[value_key]
+                    flat_items[tag] = value
+                else:
+                    # Flatten nested dictionaries
+                    flat_item = flatten_dict(item)
+                    flat_items.update(flat_item)
+        for key, value in flat_items.items():
+            new_col_name = f"{column_name}_{key}"
+            if new_col_name in df.columns:
+                df.at[idx, new_col_name] = value
+            else:
+                # In case a new key appears that wasn't in all_tags
+                df[new_col_name] = pd.Series(dtype='object')
+                df.at[idx, new_col_name] = value
+
+    return df
+
 
 # Save metadata
 def save_seq_metadata (df_study, df_experiment, organism, now):
@@ -3105,11 +3225,13 @@ def save_seq_metadata (df_study, df_experiment, organism, now):
     # Add scientific name in output name if len(organism.split(',')) == 1
     if len(organism.split(',')) == 1:
         sci_name = organism.replace(' ', '_').lower()
-        out_name_study = f'Meta_seq_{sci_name}_{now}_project_n{df_study.shape[0]}.txt'
+        out_name_study = f'Meta_seq_{sci_name}_{now}_study_n{df_study.shape[0]}.txt'
         out_name_experiment = f'Meta_seq_{sci_name}_{now}_experiment_n{df_experiment.shape[0]}.txt'
+        out_name_url = f'Meta_seq_{sci_name}_{now}_experiment_n{df_experiment.shape[0]}_urls.txt'
     else:
-        out_name_study = f'Meta_seq_{now}_project_n{df_study.shape[0]}.txt'
+        out_name_study = f'Meta_seq_{now}_study_n{df_study.shape[0]}.txt'
         out_name_experiment = f'Meta_seq_{now}_experiment_n{df_experiment.shape[0]}.txt'
+        out_name_url = f'Meta_seq_{now}_experiment_n{df_experiment.shape[0]}_urls.txt'
         
     # Export the outputs
     df_study.to_csv(f'{OUT_FOLDER_NAME}/{out_name_study}', sep='\t', header=True, index=False)
@@ -3119,6 +3241,86 @@ def save_seq_metadata (df_study, df_experiment, organism, now):
     print('# Metadata are saved')
     print(f'  {out_name_study}')
     print(f'  {out_name_experiment}')
+    print('')
+    
+    return out_name_url
+
+# Get fastq links from EBI ENA
+def get_fastq_dataframe(df_experiment, out_name_url):
+    
+    print('# Retrieve the URL address of the raw data')
+    """
+    Takes a list of experiment accession IDs (SRX, ERX, DRX) and returns a pandas DataFrame
+    with columns: 'Accession', 'Type' ('paired' or 'single'), 'URL'.
+    Duplicate URLs are removed. Progress is displayed during execution.
+
+    Parameters:
+        exp_ids (list): A list of experiment accession IDs (strings).
+
+    Returns:
+        pd.DataFrame: A DataFrame with the requested columns, without duplicate URLs.
+    """
+    exp_ids = df_experiment['Experiment'].tolist()
+    
+    results = []
+    total_tasks = len(exp_ids)
+    completed_tasks = 0
+
+    def fetch_fastq(exp_id):
+        ena_url = (
+            f'https://www.ebi.ac.uk/ena/portal/api/filereport'
+            f'?accession={exp_id}&result=read_run&fields=fastq_ftp&format=json'
+        )
+        
+        try:
+            response = requests.get(ena_url, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                for entry in data:
+                    if 'fastq_ftp' in entry and entry['fastq_ftp']:
+                        ftp_links = entry['fastq_ftp'].split(';')
+                        ftp_links = ['ftp://' + url for url in ftp_links]
+                        # Determine if paired or single based on number of files
+                        file_type = 'paired' if len(ftp_links) == 2 else 'single'
+                        for url in ftp_links:
+                            results.append({
+                                'Experiment': exp_id,
+                                'Type': file_type,
+                                'URL': url
+                            })
+                    else:
+                        print(f"No FastQ URLs found for {exp_id}")
+            else:
+                print(f"Failed to fetch data for {exp_id}: HTTP {response.status_code}")
+        except Exception as e:
+            print(f"Error fetching {exp_id}: {e}")
+
+    # Use ThreadPoolExecutor to fetch data in parallel
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_exp = {executor.submit(fetch_fastq, exp_id): exp_id for exp_id in exp_ids}
+        for future in as_completed(future_to_exp):
+            exp_id = future_to_exp[future]
+            try:
+                future.result()
+            except Exception as e:
+                print(f"Error processing {exp_id}: {e}")
+            # Update progress
+            completed_tasks += 1
+            progress = (completed_tasks / total_tasks) * 100
+            print(f"  Progress: {completed_tasks}/{total_tasks} ({progress:.2f}%) completed", end='\r')
+
+    print()  # Move to the next line after progress is complete
+
+    # Convert results to DataFrame
+    df = pd.DataFrame(results, columns=['Experiment', 'Type', 'URL'])
+
+    # Remove duplicate URLs
+    df = df.drop_duplicates(subset='URL', keep='first').reset_index(drop=True)
+
+    df.to_csv(f'{OUT_FOLDER_NAME}/{out_name_url}'
+              , sep='\t', header=True, index=False)
+    print(f'  {out_name_url}')
+    print('')
 
 # Join variables with newlines
 def join_variables_with_newlines(items, max_line_length=100):

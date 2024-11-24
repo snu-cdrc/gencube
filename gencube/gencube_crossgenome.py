@@ -59,5 +59,5 @@ def crossgenome (
     
         # Save comparative genomics files
         if download:
-            mkdir_raw_output()
+            mkdir_raw_output('crossgenome')
             download_crossgenome(df_full_crossgenome, df_genome, dic_ensembl_meta, df_zoonomia, download, recursive)

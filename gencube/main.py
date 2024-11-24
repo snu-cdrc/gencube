@@ -745,6 +745,12 @@ def main():
         action='store_true', 
         help='Save integrated metadata\n '
         )
+    parser_seqmeta.add_argument(
+        '-u', 
+        '--url', 
+        action='store_true', 
+        help='Save the file, including the URL address of the raw data (.fastq).\n '
+        )
     
     ## ---------------------------------------------
     ## gencube info
@@ -844,7 +850,7 @@ def main():
         not args.selection and not args.filter and not args.properties and not args.layout and not args.access and \
         not args.bioproject and not args.biosample and not args.accession and not args.title and not args.author and \
         not args.publication and not args.modification and not args.readlength and not args.mbases and \
-        not args.textword and not args.exclude and not args.detail and not args.metadata:
+        not args.textword and not args.exclude and not args.detail and not args.metadata and not args.url:
             parser_seqmeta.print_help()
         else:
             seqmeta(
@@ -871,6 +877,7 @@ def main():
                 exclude=args.exclude, 
                 detail=args.detail,
                 metadata=args.metadata,
+                url=args.url
         )
     # Gencube info
     elif args.command == 'info':

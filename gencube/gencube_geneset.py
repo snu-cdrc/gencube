@@ -62,7 +62,7 @@ def geneset (
     
         # Save geneset files
         if download:
-            mkdir_raw_output()
+            mkdir_raw_output('geneset')
             dic_download = download_geneset(df_full_geneset, df_genome_plus, dic_ensembl_meta, dic_genark_meta, df_zoonomia, download, recursive)
             # Change chromosome label style
             convert_chr_label_geneset (df_genome_plus, dic_download, chr_style, recursive)

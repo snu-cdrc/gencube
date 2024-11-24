@@ -8,6 +8,7 @@ from .utils import (
     convert_format,
     mkdir_raw_output,
     save_seq_metadata,
+    get_fastq_dataframe,
     )
 # Constant variables
 from .constants import (
@@ -44,6 +45,7 @@ def seqmeta(
     exclude, 
     detail,
     metadata,
+    url,
     ):
     # Check invalid arguments
     ls_invalid_strategy = check_argument (strategy, LS_STRATEGY, 'strategy')
@@ -121,10 +123,16 @@ def seqmeta(
     
     # Fetch metadata, re-format, and save study-level and experiment-level tables
     if metadata:
-        mkdir_raw_output()
+        # Integrated metadata
+        mkdir_raw_output('seqmeta')
         out_fetch = fetch_meta(search_ids)
         df_study, df_experiment = convert_format(out_fetch, query)
-        save_seq_metadata(df_study, df_experiment, organism, now)
+        out_name_url = save_seq_metadata(df_study, df_experiment, organism, now)
+        
+        if url:
+            # Ouput file for download link
+            get_fastq_dataframe(df_experiment, out_name_url)
+        
     else:
         print('!! If you want to save the metadata of the searched datasets, please use the -m or --metadata option. \n')
 

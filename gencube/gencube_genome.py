@@ -62,7 +62,7 @@ def genome (
         print('')
         
         if metadata or download:
-            mkdir_raw_output()
+            mkdir_raw_output('genome')
         
         # Save metadata
         if metadata:
