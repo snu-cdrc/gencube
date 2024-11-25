@@ -750,6 +750,9 @@ options:
   -d, --detail          Show the number of searched results for each option and keyword
                          
   -m, --metadata        Save integrated metadata
+                         
+  -u, --url             Save the file, including the URL address of the raw data (.fastq)
+
 ```
 
 #### Examples
@@ -789,6 +792,22 @@ $ gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crisp
 # Save the integrated metadata
 $ gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --metadata
 ```
+#### Using the --url option, you can obtain additional files that include the URLs of the raw files.
+🔥 **$ gencube seqmeta -o dog -st chip_seq --metadata --url**
+```plaintext
+Experiment	Type	URL
+SRX23379089	paired	ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR277/078/SRR27712678/SRR27712678_1.fastq.gz
+SRX23379089	paired	ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR277/078/SRR27712678/SRR27712678_2.fastq.gz
+SRX23379093	paired	ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR277/074/SRR27712674/SRR27712674_1.fastq.gz
+SRX23379093	paired	ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR277/074/SRR27712674/SRR27712674_2.fastq.gz
+SRX1726522	single	ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR344/009/SRR3440079/SRR3440079.fastq.gz
+SRX1559581	single	ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR314/007/SRR3143427/SRR3143427.fastq.gz
+SRX1559583	single	ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR314/009/SRR3143429/SRR3143429.fastq.gz
+...
+```
+<br>
+
+---
 ### Structure of output files and directories
 🗂️ **Displayed results**
 ```plaintext
