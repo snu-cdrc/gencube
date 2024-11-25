@@ -789,69 +789,67 @@ $ gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crisp
 # Save the integrated metadata
 $ gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --metadata
 ```
-#### Example output displayed in the terminal
-🔥 **gencube seqmeta --organism human --strategy chip_seq --exclude cell_line,crispr liver,lung cancer,tumor --detail**
+### Structure of output files and directories
+🗂️ **Displayed results**
 ```plaintext
-# Make query for searching
-  Organism: ['human']
-  Strategy: ['chip_seq']
-  Keywords: ['liver,lung', 'cancer,tumor']
-  Excluded: ['cell_line', 'crispr']
-
-# Search experimental sequencing data in NCBI SRA database
-  Search query: (((human[Organism]) AND ("chip seq"[Strategy])) AND ((liver OR lung) AND (cancer OR tumor))) NOT cell line NOT crispr 
-
-# Check the number of searched result in each step
-- Options
-  Organism
-    human: 5459329
-  Strategy
-    "chip seq": 338652
-  Intersection (options): 131862
-
-- Keywords with options
-  liver: 2246
-  lung: 4103
-  liver|lung: 6344
-  cancer: 28561
-  tumor: 10370
-  cancer|tumor: 36089
-  Intersection (liver|lung & cancer|tumor): 2449
-
-- Keywords for exclusion with options
-  cell line: 78002
-  crispr: 1238
-  cell line|crispr: 78114
-
-# Searched result
-  Total 894 experiment-level IDs are searched.
-
-!! If you want to save the metadata of the searched datasets, please use the -m or --metadata option. 
+$ tree
+├── gencube_output
+│   ├── Canis_lupus_familiaris-CanFam3.1_chr_name.txt
+│   ├── Canis_lupus_familiaris-Dog10K_Boxer_Tasha_chr_name.txt
+│   ├── genome
+│   │   ├── Canis_lupus_familiaris-CanFam3.1-refseq.sm.ens-id.fa.gz
+│   │   └── Meta_genome_canfam3_complete-chromosome_241125_103030.txt
+│   ├── geneset
+│   │   ├── Canis_lupus_familiaris-CanFam3.1-refseq.ens-id.gtf.gz
+│   │   └── Canis_lupus_familiaris-Dog10K_Boxer_Tasha-ensembl_ensembl.ens-id.gtf.gz
+│   ├── annotation
+│   │   ├── Canis_lupus_familiaris-CanFam3.1-genark.chrom.sizes.ens-id.txt
+│   │   ├── Canis_lupus_familiaris-CanFam3.1-genark.gc5Base.ens-id.bw
+│   │   └── Canis_lupus_familiaris-CanFam3.1-genark.simpleRepeat.ens-id.bb
+│   └── sequence
+│   │   ├── Canis_lupus_familiaris-CanFam3.1-refseq.protein.faa.gz
+│   │   └── Canis_lupus_familiaris-CanFam3.1-refseq.rna.fna.gz
+│   ├── crossgenome
+│   │   ├── Canis_lupus_familiaris-UU_Cfam_GSD_1.0-ensembl_ensembl_homology.tsv.gz
+│   │   ├── Canis_lupus_familiaris-UU_Cfam_GSD_1.0-toga_human_homology.tsv.gz
+│   │   └── Canis_lupus_familiaris-UU_Cfam_GSD_1.0-toga_mouse_homology.tsv.gz
+│   └── seqmeta
+│       ├── Meta_seq_dog_241125_112002_experiment_n279.txt
+│       ├── Meta_seq_dog_241125_112002_experiment_n279_urls.txt
+│       └── Meta_seq_dog_241125_112002_study_n14.txt
+└── gencube_raw_download
+    ├── bedGraphToBigWig
+    ├── bedToBigBed
+    ├── bigBedToBed
+    ├── bigWigToBedGraph
+    ├── Canis_lupus_familiaris-CanFam3.1_assembly_report.txt
+    ├── Canis_lupus_familiaris-CanFam3.1-genark.chrom.sizes.txt
+    ├── Canis_lupus_familiaris-CanFam3.1-genark.gc5Base.bw
+    ├── Canis_lupus_familiaris-CanFam3.1-genark.simpleRepeat.bb
+    ├── Canis_lupus_familiaris-CanFam3.1-refseq.gtf.gz
+    ├── Canis_lupus_familiaris-CanFam3.1-refseq.sm.fa.gz
+    ├── Canis_lupus_familiaris-Dog10K_Boxer_Tasha_assembly_report.txt
+    └── Canis_lupus_familiaris-Dog10K_Boxer_Tasha-ensembl_ensembl.gtf.gz
 ```
-🔥 **gencube seqmeta --organism dog --strategy chip_seq --metadata**
-```plaintext
-# Make query for searching
-  Organism: ['dog']
-  Strategy: ['chip_seq']
-
-# Search experimental sequencing data in NCBI SRA database
-  Search query: ((dog[Organism]) AND ("chip seq"[Strategy])) 
-
-# Searched result
-  Total 279 experiment-level IDs are searched.
-
-# Fetch metadata
-  Threads: 10 (NCBI API key applied - 10 requests/sec)
-  Fetching metadata: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 279/279 [00:34<00:00,  8.10id/s]
-  Total fetching time: 35 seconds
-
-# Confirmed total numbers
-  Study     : 14
-  Experiment: 279
-
-# Metadata are saved
-  Meta_seq_dog_241120_114700_project_n14.txt
-  Meta_seq_dog_241120_114700_experiment_n279.txt
+🔥 **Commands used to generate the above results**
+```bash
+# Genome
+$ gencube genome canfam3 --donwload
+$ gencube genome canfam3 --metadata
+# Gene set
+$ gencube geneset canfam3 -d refseq_gtf
+$ gencube geneset canfam3 -d ensembl_gtf
+# Annotation
+$ gencube annotation canfam3 -d sr
+$ gencube annotation canfam3 -d gc
+# Sequence
+$ gencube sequence canfam3 -d refseq_rna
+$ gencube sequence canfam3 -d refseq_pep
+# Cross-genome
+$ gencube crossgenome GCF_011100685.1 -d ensembl_homology
+$ gencube crossgenome GCF_011100685.1 -d toga_homology
+# Seqmeta
+$gencube seqmeta -o dog -st chip_seq --metadata --url
 ```
 <br>
 
