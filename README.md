@@ -818,7 +818,7 @@ $ gencube sequence canfam3 -d refseq_pep
 $ gencube crossgenome GCF_011100685.1 -d ensembl_homology
 $ gencube crossgenome GCF_011100685.1 -d toga_homology
 # Seqmeta
-$gencube seqmeta -o dog -st chip_seq --metadata --url
+$ gencube seqmeta -o dog -st chip_seq --metadata --url
 ```
 <br>
 
