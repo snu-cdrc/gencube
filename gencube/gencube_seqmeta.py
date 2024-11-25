@@ -124,7 +124,7 @@ def seqmeta(
     # Fetch metadata, re-format, and save study-level and experiment-level tables
     if metadata:
         # Integrated metadata
-        mkdir_raw_output('seqmeta')
+        mkdir_raw_output('seqmeta') # Make output folders
         out_fetch = fetch_meta(search_ids)
         df_study, df_experiment = convert_format(out_fetch, query)
         out_name_url = save_seq_metadata(df_study, df_experiment, organism, now)

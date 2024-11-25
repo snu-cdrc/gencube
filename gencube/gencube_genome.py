@@ -11,7 +11,6 @@ from .utils import (
     save_metadata,
     download_genome,
     convert_chr_label_genome,
-    #save_pickle,
     )
 from .constants import (
     LS_GENCUBE_GENOME_LABEL,
@@ -61,6 +60,7 @@ def genome (
         print(tabulate(df_genome_plus[LS_GENCUBE_GENOME_LABEL], headers='keys', tablefmt='grid'))
         print('')
         
+        # Make output folders        
         if metadata or download:
             mkdir_raw_output('genome')
         

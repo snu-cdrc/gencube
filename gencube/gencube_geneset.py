@@ -11,7 +11,7 @@ from .utils import (
     mkdir_raw_output,
     download_geneset,
     convert_chr_label_geneset,
-    save_pickle,
+    #save_pickle,
     )
 from .constants import (
     LS_GENCUBE_GENSET_LABEL,
@@ -62,7 +62,7 @@ def geneset (
     
         # Save geneset files
         if download:
-            mkdir_raw_output('geneset')
+            mkdir_raw_output('geneset') # Make output folders
             dic_download = download_geneset(df_full_geneset, df_genome_plus, dic_ensembl_meta, dic_genark_meta, df_zoonomia, download, recursive)
             # Change chromosome label style
             convert_chr_label_geneset (df_genome_plus, dic_download, chr_style, recursive)

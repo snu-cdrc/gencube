@@ -59,7 +59,7 @@ def sequence (
     
         # Save sequence files
         if download:
-            mkdir_raw_output('sequence')
+            mkdir_raw_output('sequence') # Make output folders
             download_sequence(df_full_sequence, df_genome_plus, dic_ensembl_meta, download, recursive)
             
 

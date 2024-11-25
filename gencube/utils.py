@@ -134,6 +134,7 @@ def get_entrez_info():
 ## -----------------------------------------------------------
 ## gencube genome, geneset, sequence, annotation, crossgenome
 ## -----------------------------------------------------------
+"""
 # Save variables as pickle format
 def save_pickle (in_variable, out_file_name):
     out_file = f'tests/data/{out_file_name}.pkl'
@@ -143,7 +144,8 @@ def save_pickle (in_variable, out_file_name):
     else:
         with open(out_file, 'wb') as file:
             pickle.dump(in_variable, file)
-
+"""
+"""
 # Load variables from pickle format file
 def load_pickle (in_file_name, type=False):
     # Save the file using two different methods depending on the data type
@@ -153,6 +155,7 @@ def load_pickle (in_file_name, type=False):
     else:
         with open(in_file, 'rb') as file:
             return pickle.load(file)
+"""
 
 # Check starting time
 def check_now ():
@@ -311,9 +314,10 @@ def mkdir_raw_output (folder_name):
         os.mkdir(DOWNLOAD_FOLDER_NAME)
     if not os.path.exists(OUT_FOLDER_NAME):
         os.mkdir(OUT_FOLDER_NAME)
-    subfolder = f'{OUT_FOLDER_NAME}/{folder_name}'
-    if not os.path.exists(subfolder):
-        os.mkdir(subfolder)
+    global out_subfolder
+    out_subfolder = f'{OUT_FOLDER_NAME}/{folder_name}'
+    if not os.path.exists(out_subfolder):
+        os.mkdir(out_subfolder)
 
 # Save metadata
 def save_metadata (df, function, keywords, level, now):
@@ -327,7 +331,7 @@ def save_metadata (df, function, keywords, level, now):
         keyword = keywords[0]
     
     out_name = f"Meta_{function}_{keyword.replace(' ', '-')}_{level.replace(',', '-')}_{now}.txt"
-    df_meta.to_csv(f'{OUT_FOLDER_NAME}/{out_name}', sep='\t', index=False)
+    df_meta.to_csv(f'{out_subfolder}/{out_name}', sep='\t', index=False)
     
     print('# Metadata are saved:')
     print(f'  {out_name}\n')
@@ -430,12 +434,15 @@ def download_genome_url(url, local_filename=None, url_md5sum=None, verify=True, 
         print("  !! MD5 check failed. If issues, delete and retry, or use --recursive")
 
 # Download file and check md5sum
-def download_url(url, local_filename=None, url_md5sum=None, verify=True, recursive=False, warning=True):
+def download_url(url, local_filename=None, url_md5sum=None, verify=True, recursive=False, warning=True, out_path=False):
     # File name
     raw_filename = url.split('/')[-1]
     if local_filename is None:
         local_filename = raw_filename
-    path_local_file = os.path.join(DOWNLOAD_FOLDER_NAME, local_filename)
+    if out_path:
+        path_local_file = os.path.join(out_path, local_filename)
+    else:
+        path_local_file = os.path.join(DOWNLOAD_FOLDER_NAME, local_filename)
 
     md5sum = False
     if url_md5sum:
@@ -602,8 +609,6 @@ def make_chr_dataframe (organism, assembly_id):
     #delete_file(in_report_name)
 
     return df_report_edit
-
-
 
 # Search genome using users keywords
 def search_assembly (keywords):
@@ -807,6 +812,7 @@ def check_access_database (df, mode):
         return df, dic_genark_meta
     elif mode == 'crossgenome':
         return df, dic_ensembl_meta, df_zoonomia
+
 
 ## ---------------------------------------------
 ## gencube genome
@@ -1033,13 +1039,13 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
             
             # Remove output file (--reculsive)
             if recursive:
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file}')
+                delete_file(f'{out_subfolder}/{out_file}')
             
             if 'ensembl' in db_name and style == 'ensembl' and masking == 'soft':
-                if not os.path.exists(f'{OUT_FOLDER_NAME}/{out_file}'):
+                if not os.path.exists(f'{out_subfolder}/{out_file}'):
                     print('    The downloaded file already contains Ensembl-style names and is soft-masked')
                     print('    Just copy to output folder')
-                    subprocess.run(['cp', f'{DOWNLOAD_FOLDER_NAME}/{in_file}', f'{OUT_FOLDER_NAME}/{out_file}'], check=True)
+                    subprocess.run(['cp', f'{DOWNLOAD_FOLDER_NAME}/{in_file}', f'{out_subfolder}/{out_file}'], check=True)
                     continue
                 else:
                     print('    The converted file already exists')
@@ -1048,7 +1054,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
 
             # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
-            ls_output_folder_files = os.listdir(OUT_FOLDER_NAME)
+            ls_output_folder_files = os.listdir(out_subfolder)
             ls_read = []
             ls_write = []
             if in_file in ls_download_files and out_file not in ls_output_folder_files:
@@ -1116,7 +1122,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
                 
                 # Write and compressed fasta file
                 print(f'    Write compressed fasta file (compresslevel: {compresslevel})')
-                with gzip.open(f'{OUT_FOLDER_NAME}/{out_file}', 'wt', compresslevel=int(compresslevel)) as f_out:
+                with gzip.open(f'{out_subfolder}/{out_file}', 'wt', compresslevel=int(compresslevel)) as f_out:
                     for line in ls_write:
                         f_out.write(line)
                         
@@ -1590,7 +1596,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 
             # Remove output file (--reculsive)
             if recursive:
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file}')
+                delete_file(f'{out_subfolder}/{out_file}')
                 
             if db in ['ensembl_gtf', 'ensembl_gff'] and style == 'ensembl':
                 # print('  !! The file downloaded from the Ensembl database already has ensembl-style chromosome names')
@@ -1598,7 +1604,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
             
             # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
-            ls_output_folder_files = os.listdir(OUT_FOLDER_NAME)
+            ls_output_folder_files = os.listdir(out_subfolder)
             
             print('    Modify chromosome names')
             if in_file in ls_download_files and out_file not in ls_output_folder_files:
@@ -1656,25 +1662,25 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 # bed format
                 if format == 'bed': 
                     # Write gtf, gff, and bed file
-                    with open(f'{OUT_FOLDER_NAME}/{out_file}_tmp', 'w') as f_out:
+                    with open(f'{out_subfolder}/{out_file}_tmp', 'w') as f_out:
                         for line in ls_write:
                             f_out.write(line)
 
                     # Sort file
                     print('    Sort file')
-                    with open(f'{OUT_FOLDER_NAME}/{out_file}', 'w') as f_out:
-                        subprocess.run(['sort', '-k1,1', '-k2,2n', f'{OUT_FOLDER_NAME}/{out_file}_tmp'], stdout=f_out, check=True)
+                    with open(f'{out_subfolder}/{out_file}', 'w') as f_out:
+                        subprocess.run(['sort', '-k1,1', '-k2,2n', f'{out_subfolder}/{out_file}_tmp'], stdout=f_out, check=True)
                             
                     # Remove temporary file
-                    delete_file(f'{OUT_FOLDER_NAME}/{out_file}_tmp')
+                    delete_file(f'{out_subfolder}/{out_file}_tmp')
                     
                     # Compress file
-                    subprocess.run(['gzip', '--best', '--force', f'{OUT_FOLDER_NAME}/{out_file}'], check=True)
+                    subprocess.run(['gzip', '--best', '--force', f'{out_subfolder}/{out_file}'], check=True)
                 
                 # gtf or gff format    
                 else:
                      # Write and compressed gtf, gff, and bed file
-                    with gzip.open(f'{OUT_FOLDER_NAME}/{out_file}.gz', 'wt', compresslevel=9) as f_out:
+                    with gzip.open(f'{out_subfolder}/{out_file}.gz', 'wt', compresslevel=9) as f_out:
                         for line in ls_write:
                             f_out.write(line)       
                 
@@ -2087,12 +2093,12 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                 
             # Remove output file (--reculsive)
             if recursive:
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file_final}')
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file}')
+                delete_file(f'{out_subfolder}/{out_file_final}')
+                delete_file(f'{out_subfolder}/{out_file}')
             
            # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
-            ls_output_folder_files = os.listdir(OUT_FOLDER_NAME)
+            ls_output_folder_files = os.listdir(out_subfolder)
 
             if in_raw_file in ls_download_files and out_file_final not in ls_output_folder_files: 
 
@@ -2107,7 +2113,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                     subprocess.run([f'{path_bb2bed}', f'{DOWNLOAD_FOLDER_NAME}/{in_raw_file}', f'{DOWNLOAD_FOLDER_NAME}/{in_file}'], check=True)                    
 
                 print('    Modify chromosome names')
-                with open(f'{DOWNLOAD_FOLDER_NAME}/{in_file}', 'r') as f_in, open(f'{OUT_FOLDER_NAME}/{out_file}', 'w') as f_out:
+                with open(f'{DOWNLOAD_FOLDER_NAME}/{in_file}', 'r') as f_in, open(f'{out_subfolder}/{out_file}', 'w') as f_out:
                     for line in f_in:
                                    
                         if not line.startswith('#'):
@@ -2140,7 +2146,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
             
             if in_genark_chrsizee in ls_download_files and out_genark_chrsize not in ls_output_folder_files:
 
-                with open(f'{DOWNLOAD_FOLDER_NAME}/{in_genark_chrsizee}', 'r') as f_in, open(f'{OUT_FOLDER_NAME}/{out_genark_chrsize}', 'w') as f_out:
+                with open(f'{DOWNLOAD_FOLDER_NAME}/{in_genark_chrsizee}', 'r') as f_in, open(f'{out_subfolder}/{out_genark_chrsize}', 'w') as f_out:
                     for line in f_in:
                                    
                         if not line.startswith('#'):
@@ -2162,10 +2168,10 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                             f_out.write(line)
                             
                 # Sort chrom size file
-                with open(f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', 'w') as f_out:
-                    subprocess.run(['sort', '-k1,1', '-k2,2n', f'{OUT_FOLDER_NAME}/{out_genark_chrsize}'], stdout=f_out, check=True)
+                with open(f'{out_subfolder}/{out_genark_chrsize_sorted}', 'w') as f_out:
+                    subprocess.run(['sort', '-k1,1', '-k2,2n', f'{out_subfolder}/{out_genark_chrsize}'], stdout=f_out, check=True)
                 # Remove temporary chrom size file
-                delete_file(f'{OUT_FOLDER_NAME}/{out_genark_chrsize}')
+                delete_file(f'{out_subfolder}/{out_genark_chrsize}')
 
 
             # Change file format (binary to readable format)
@@ -2173,44 +2179,44 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                 print(f'    Convert bedgraph to bigwig: {out_file_final}')
                 
                 # bigWig to bedGraph
-                subprocess.run([f'{path_bdg2bw}', f'{OUT_FOLDER_NAME}/{out_file}', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                subprocess.run([f'{path_bdg2bw}', f'{out_subfolder}/{out_file}', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 
                 # Remove temporary files
                 delete_file(f'{DOWNLOAD_FOLDER_NAME}/{in_file}')
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file}')
+                delete_file(f'{out_subfolder}/{out_file}')
                 
             else:
                 print(f'    Convert bed to bigbed: {out_file_final}')
                 
                 # Sort bed file
-                with open(f'{OUT_FOLDER_NAME}/{out_file}_sorted', 'w') as f_out:
-                    subprocess.run(['sort', '-k1,1', '-k2,2n', f'{OUT_FOLDER_NAME}/{out_file}'], stdout=f_out, check=True)
+                with open(f'{out_subfolder}/{out_file}_sorted', 'w') as f_out:
+                    subprocess.run(['sort', '-k1,1', '-k2,2n', f'{out_subfolder}/{out_file}'], stdout=f_out, check=True)
                 
                 # bigBed to bed
                 ls_download_factor = download.split('.')
                 autodql_dir = script_dir + '/autosql'
                 if download == 'genark.simpleRepeat':
-                    subprocess.run([path_bed2bb, '-tab', '-type=bed4+12', f'-as={autodql_dir}/simpleRepeat.as', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-tab', '-type=bed4+12', f'-as={autodql_dir}/simpleRepeat.as', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif download == 'genark.tandemDups':
-                    subprocess.run([path_bed2bb, '-type=bed12+1', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-type=bed12+1', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif download == 'genark.windowMasker':
-                    subprocess.run([path_bed2bb, '-type=bed3', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-type=bed3', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif download == 'genark.allGaps':
-                    subprocess.run([path_bed2bb, '-type=bed3', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-type=bed3', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif download == 'genark.gap':
-                    subprocess.run([path_bed2bb, '-extraIndex=name', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-extraIndex=name', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 
                 elif download == 'genark.rmsk':
-                    subprocess.run([path_bed2bb, '-tab', '-type=bed9+5', f'-as={autodql_dir}/bigRmskBed.as', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-tab', '-type=bed9+5', f'-as={autodql_dir}/bigRmskBed.as', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif len(ls_download_factor) == 3 and ls_download_factor[1] == 'rmsk':
-                    subprocess.run([path_bed2bb, '-tab', '-type=bed6+10', f'-as={autodql_dir}/rmskBed6+10.as', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-tab', '-type=bed6+10', f'-as={autodql_dir}/rmskBed6+10.as', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif 'cpgIslandExt' in download:
-                    subprocess.run([path_bed2bb, '-tab', '-type=bed4+6', f'-as={autodql_dir}/cpgIslandExt.as', '-verbose=0', f'{OUT_FOLDER_NAME}/{out_file}_sorted', f'{OUT_FOLDER_NAME}/{out_genark_chrsize_sorted}', f'{OUT_FOLDER_NAME}/{out_file_final}'], check=True)
+                    subprocess.run([path_bed2bb, '-tab', '-type=bed4+6', f'-as={autodql_dir}/cpgIslandExt.as', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 
                 # Remove temporary files
                 delete_file(f'{DOWNLOAD_FOLDER_NAME}/{in_file}')
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file}')
-                delete_file(f'{OUT_FOLDER_NAME}/{out_file}_sorted')
+                delete_file(f'{out_subfolder}/{out_file}')
+                delete_file(f'{out_subfolder}/{out_file}_sorted')
                 
             print('')
 
@@ -2394,32 +2400,32 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
                     if 'rna' in ls_search:
                         if check_url(refseq_rna):
                             out_name = f'{organism}-{assembly_id}-refseq.rna.fna.gz'
-                            download_url(refseq_rna, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                            download_url(refseq_rna, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
                         
                 if 'refseq_rna_genomic' in ls_types:
                     if 'rna_genomic' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.rna_from_genomic.fna.gz'
-                        download_url(refseq_rna_gen, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                        download_url(refseq_rna_gen, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
                         
                 if 'refseq_cds_genomic' in ls_types:
                     if 'cds_genomic' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.cds_from_genomic.fna.gz'
-                        download_url(refseq_cds_gen, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                        download_url(refseq_cds_gen, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
                         
                 if 'refseq_pseudo' in ls_types:
                     if 'pseudo' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.pseudo_without_product.fna.gz'
-                        download_url(refseq_pseudo, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                        download_url(refseq_pseudo, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
                         
                 if 'refseq_pep' in ls_types:
                     if 'pep' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.protein.faa.gz'
-                        download_url(refseq_protein, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                        download_url(refseq_protein, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
                 
                 if 'refseq_pep_cds' in ls_types:
                     if 'pep_cds' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.translated_cds.faa.gz'
-                        download_url(refseq_trans_cds, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                        download_url(refseq_trans_cds, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
                 
         # Ensembl
         if len(list(set(['ensembl_cdna', 'ensembl_cds', 'ensembl_pep']) & set(ls_types))) > 0:
@@ -2453,17 +2459,17 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
                     if 'ensembl_cdna' in ls_types:
                         if 'cdna' in ls_search:
                             out_name = f'{organism}-{assembly_id}-ensembl_{source}.cdna.fna.gz'
-                            download_url(ensembl_cdna, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                            download_url(ensembl_cdna, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
 
                     if 'ensembl_cds' in ls_types:
                         if 'cds' in ls_search:
                             out_name = f'{organism}-{assembly_id}-ensembl_{source}.cds.fna.gz'
-                            download_url(ensembl_cds, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                            download_url(ensembl_cds, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
 
                     if 'ensembl_pep' in ls_types:
                         if 'pep' in ls_search:
                             out_name = f'{organism}-{assembly_id}-ensembl_{source}.pep.faa.gz'
-                            download_url(ensembl_pep, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                            download_url(ensembl_pep, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
 
         """
         # Ensembl Repeatmodeler
@@ -2618,7 +2624,7 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
                         if 'ensembl_homology' in ls_types:
                             if check_url(ensembl_gtf):
                                 out_name = f'{organism}-{assembly_id}-ensembl_{source}_homology.tsv.gz'
-                                download_url(ensembl_gtf, out_name, recursive=recursive)
+                                download_url(ensembl_gtf, out_name, recursive=recursive, out_path=out_subfolder)
 
         # Zoonomia
         if len(list(set(['toga_homology', 'toga_align_codon', 'toga_align_protein', 'toga_inact_mut']) & set(ls_types))) > 0:
@@ -2664,25 +2670,25 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
                         if 'toga_homology' in ls_types:
                             if check_url(zoonomia_orth, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_homology.tsv.gz'
-                                download_url(zoonomia_orth, out_gtf_name, verify=False, recursive=recursive)
+                                download_url(zoonomia_orth, out_gtf_name, verify=False, recursive=recursive, out_path=out_subfolder)
                         if 'toga_align_codon' in ls_types:
                             if check_url(zoonomia_align_codon, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_align_codon.fa.gz'
-                                download_url(zoonomia_align_codon, out_gtf_name, verify=False, recursive=recursive)
+                                download_url(zoonomia_align_codon, out_gtf_name, verify=False, recursive=recursive, out_path=out_subfolder)
                             if check_url(zoonomia_align_codoncesar, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_align_codon_cesar.fa.gz'
-                                download_url(zoonomia_align_codoncesar, out_gtf_name, verify=False, recursive=recursive)
+                                download_url(zoonomia_align_codoncesar, out_gtf_name, verify=False, recursive=recursive, out_path=out_subfolder)
                         if 'toga_align_protein' in ls_types:
                             if check_url(zoonomia_align_protein, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_align_protein.fa.gz'
-                                download_url(zoonomia_align_protein, out_gtf_name, verify=False, recursive=recursive)
+                                download_url(zoonomia_align_protein, out_gtf_name, verify=False, recursive=recursive, out_path=out_subfolder)
                             if check_url(zoonomia_align_proteincesar, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_align_protein_cesar.fa.gz'
-                                download_url(zoonomia_align_proteincesar, out_gtf_name, verify=False, recursive=recursive)
+                                download_url(zoonomia_align_proteincesar, out_gtf_name, verify=False, recursive=recursive, out_path=out_subfolder)
                         if 'toga_inact_mut' in ls_types:
                             if check_url(zoonomia_inact_mut, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_loss_summ_data.tsv.gz'
-                                download_url(zoonomia_inact_mut, out_gtf_name, verify=False, recursive=recursive)
+                                download_url(zoonomia_inact_mut, out_gtf_name, verify=False, recursive=recursive, out_path=out_subfolder)
                                 
         print('')
 
@@ -3109,7 +3115,6 @@ def convert_format(df, query):
         
         return df_out_study, df_out_experiment
 
-
 def expand_attributes(df, column_name, tag_key='TAG', value_key='VALUE'):
     """
     Expands a column with complex data structures (lists/dicts) into multiple columns.
@@ -3215,12 +3220,11 @@ def expand_attributes(df, column_name, tag_key='TAG', value_key='VALUE'):
 
     return df
 
-
 # Save metadata
 def save_seq_metadata (df_study, df_experiment, organism, now):
     # Make output folder
-    if not os.path.exists(OUT_FOLDER_NAME):
-        os.mkdir(OUT_FOLDER_NAME)
+    if not os.path.exists(out_subfolder):
+        os.mkdir(out_subfolder)
         
     # Add scientific name in output name if len(organism.split(',')) == 1
     if len(organism.split(',')) == 1:
@@ -3234,8 +3238,8 @@ def save_seq_metadata (df_study, df_experiment, organism, now):
         out_name_url = f'Meta_seq_{now}_experiment_n{df_experiment.shape[0]}_urls.txt'
         
     # Export the outputs
-    df_study.to_csv(f'{OUT_FOLDER_NAME}/{out_name_study}', sep='\t', header=True, index=False)
-    df_experiment.to_csv(f'{OUT_FOLDER_NAME}/{out_name_experiment}'
+    df_study.to_csv(f'{out_subfolder}/{out_name_study}', sep='\t', header=True, index=False)
+    df_experiment.to_csv(f'{out_subfolder}/{out_name_experiment}'
                      , sep='\t', header=True, index=False)
 
     print('# Metadata are saved')
@@ -3317,7 +3321,7 @@ def get_fastq_dataframe(df_experiment, out_name_url):
     # Remove duplicate URLs
     df = df.drop_duplicates(subset='URL', keep='first').reset_index(drop=True)
 
-    df.to_csv(f'{OUT_FOLDER_NAME}/{out_name_url}'
+    df.to_csv(f'{out_subfolder}/{out_name_url}'
               , sep='\t', header=True, index=False)
     print(f'  {out_name_url}')
     print('')
