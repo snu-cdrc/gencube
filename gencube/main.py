@@ -224,6 +224,12 @@ def main():
         help='Show genomes corresponding to the latest version'
         )
     parser_geneset.add_argument(
+        '-m', '--metadata',
+        action='store_true', 
+        required=False,
+        help='Save metadata for the searched genesets'
+        )
+    parser_geneset.add_argument(
         '-d', '--download',
         metavar='types',
         required=False,
@@ -325,6 +331,12 @@ def main():
         help='Show genomes corresponding to the latest version'
         )
     parser_annotation.add_argument(
+        '-m', '--metadata',
+        action='store_true', 
+        required=False,
+        help='Save metadata for the searched annotations'
+        )
+    parser_annotation.add_argument(
         '-d', '--download',
         metavar='types',
         required=False,
@@ -420,6 +432,12 @@ def main():
         help='Show genomes corresponding to the latest version'
         )
     parser_sequence.add_argument(
+        '-m', '--metadata',
+        action='store_true', 
+        required=False,
+        help='Save metadata for the searched sequence data'
+        )
+    parser_sequence.add_argument(
         '-d', '--download',
         metavar='types',
         required=False,
@@ -502,6 +520,12 @@ def main():
         action='store_true', 
         required=False,
         help='Show genomes corresponding to the latest version'
+        )
+    parser_crossgenome.add_argument(
+        '-m', '--metadata',
+        action='store_true', 
+        required=False,
+        help='Save metadata for the searched comparative genomics data'
         )
     parser_crossgenome.add_argument(
         '-d', '--download',
@@ -797,6 +821,7 @@ def main():
                 refseq=args.refseq, 
                 ucsc=args.ucsc, 
                 latest=args.latest,
+                metadata=args.metadata,
                 download=args.download,
                 chr_style=args.chr_style,
                 recursive=args.recursive,
@@ -812,6 +837,7 @@ def main():
                 refseq=args.refseq, 
                 ucsc=args.ucsc, 
                 latest=args.latest,
+                metadata=args.metadata,
                 download=args.download,
                 chr_style=args.chr_style,
                 recursive=args.recursive,
@@ -827,6 +853,7 @@ def main():
                 refseq=args.refseq, 
                 ucsc=args.ucsc, 
                 latest=args.latest,
+                metadata=args.metadata,
                 download=args.download,
                 recursive=args.recursive,
                 )
@@ -841,6 +868,7 @@ def main():
                 refseq=args.refseq, 
                 ucsc=args.ucsc, 
                 latest=args.latest,
+                metadata=args.metadata,
                 download=args.download,
                 recursive=args.recursive,
                 )

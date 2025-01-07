@@ -8,7 +8,9 @@ from .utils import (
     json_to_dataframe,
     check_access_database,
     check_access_full_annotation,
+    print_warning,
     mkdir_raw_output,
+    save_metadata,
     download_annotation,
     convert_chr_label_annotation,
     )
@@ -23,6 +25,7 @@ def annotation (
     refseq,
     ucsc,
     latest,
+    metadata,
     download,
     chr_style,
     recursive,
@@ -55,13 +58,29 @@ def annotation (
         
         print(tabulate(df_genome_plus[LS_GENCUBE_ANNOTATION_LABEL], headers='keys', tablefmt='grid'))
         print('')
+        # Print warning message
+        print_warning(df_genome_plus, 100)
         
         # Check full accessibility
         df_full_annotation = check_access_full_annotation (df_genome_plus, dic_genark_meta)
+        # Print warning message
+        print_warning(df_genome_plus, 100)
     
+        # Make output folders        
+        if metadata or download:
+            mkdir_raw_output('annotation')
+            
+        # Save metadata
+        if metadata:
+            # Drop unnecessary columns
+            df_genome_plus = df_genome_plus.drop(['GenArk'], axis=1)
+            # Rename columns
+            df_genome_plus[['GenArk_db']] = df_full_annotation[['GenArk']]
+            # Save metadata
+            save_metadata(df_genome_plus, 'annotation', keywords, level, now)
+        
         # Save annotation files
         if download:
-            mkdir_raw_output('annotation') # Make output folders
             dic_download = download_annotation(df_full_annotation, df_genome_plus, dic_genark_meta, download, recursive)
             # Change chromosome label style
             convert_chr_label_annotation (df_genome_plus, dic_download, chr_style, recursive)

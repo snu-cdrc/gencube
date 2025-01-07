@@ -7,6 +7,7 @@ from .utils import (
     search_assembly, 
     json_to_dataframe,
     check_access_database,
+    print_warning,
     mkdir_raw_output,
     save_metadata,
     download_genome,
@@ -59,6 +60,9 @@ def genome (
         
         print(tabulate(df_genome_plus[LS_GENCUBE_GENOME_LABEL], headers='keys', tablefmt='grid'))
         print('')
+        
+        # Print warning message
+        print_warning(df_genome_plus, 100)
         
         # Make output folders        
         if metadata or download:

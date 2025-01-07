@@ -126,12 +126,15 @@ def seqmeta(
         # Integrated metadata
         mkdir_raw_output('seqmeta') # Make output folders
         out_fetch = fetch_meta(search_ids)
+        #out_fetch.to_csv('seqmeta_full.txt', sep='\t', header=True, index=False)
+        #print('done')
         df_study, df_experiment = convert_format(out_fetch, query)
         out_name_url = save_seq_metadata(df_study, df_experiment, organism, now)
         
         if url:
             # Ouput file for download link
             get_fastq_dataframe(df_experiment, out_name_url)
+        
         
     else:
         print('!! If you want to save the metadata of the searched datasets, please use the -m or --metadata option. \n')

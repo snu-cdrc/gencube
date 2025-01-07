@@ -8,7 +8,9 @@ from .utils import (
     json_to_dataframe,
     check_access_database,
     check_access_full_geneset,
+    print_warning,
     mkdir_raw_output,
+    save_metadata,
     download_geneset,
     convert_chr_label_geneset,
     #save_pickle,
@@ -24,6 +26,7 @@ def geneset (
     refseq,
     ucsc,
     latest,
+    metadata,
     download,
     chr_style,
     recursive,
@@ -56,13 +59,29 @@ def geneset (
         
         print(tabulate(df_genome_plus[LS_GENCUBE_GENSET_LABEL], headers='keys', tablefmt='grid'))
         print('')
+        # Print warning message
+        print_warning(df_genome_plus, 100)
         
         # Check full accessibility
         df_full_geneset = check_access_full_geneset (df_genome_plus, dic_genark_meta, dic_ensembl_meta, df_zoonomia)
+        # Print warning message
+        print_warning(df_genome_plus, 100)
+    
+        # Make output folders        
+        if metadata or download:
+            mkdir_raw_output('geneset')
+            
+        # Save metadata
+        if metadata:
+            # Drop unnecessary columns
+            df_genome_plus = df_genome_plus.drop(['GenArk', 'Ensembl', 'Zoonomia'], axis=1)
+            # Rename columns
+            df_genome_plus[['RefSeq_db', 'GenArk_db', 'Ensembl_db', 'Zoonomia_db']] = df_full_geneset[['RefSeq', 'GenArk', 'Ensembl', 'Zoonomia']]
+            # Save metadata
+            save_metadata(df_genome_plus, 'geneset', keywords, level, now)
     
         # Save geneset files
         if download:
-            mkdir_raw_output('geneset') # Make output folders
             dic_download = download_geneset(df_full_geneset, df_genome_plus, dic_ensembl_meta, dic_genark_meta, df_zoonomia, download, recursive)
             # Change chromosome label style
             convert_chr_label_geneset (df_genome_plus, dic_download, chr_style, recursive)

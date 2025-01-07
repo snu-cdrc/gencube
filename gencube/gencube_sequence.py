@@ -8,7 +8,9 @@ from .utils import (
     json_to_dataframe,
     check_access_database,
     check_access_full_sequence,
+    print_warning,
     mkdir_raw_output,
+    save_metadata,
     download_sequence,
     )
 from .constants import (
@@ -22,6 +24,7 @@ def sequence (
     refseq,
     ucsc,
     latest,
+    metadata,
     download,
     recursive,
     ):
@@ -37,7 +40,7 @@ def sequence (
     if len(ls_invalid_d) > 0 or len(ls_invalid_level) > 0:
         print('')
         return
-
+    
     # Check the current time
     now = check_now ()
     
@@ -53,13 +56,29 @@ def sequence (
         
         print(tabulate(df_genome_plus[LS_GENCUBE_SEQUENCE_LABEL], headers='keys', tablefmt='grid'))
         print('')
+        # Print warning message
+        print_warning(df_genome_plus, 100)
         
         # Check full accessibility
         df_full_sequence = check_access_full_sequence (df_genome_plus, dic_ensembl_meta)
+        # Print warning message
+        print_warning(df_genome_plus, 100)
     
+        # Make output folders        
+        if metadata or download:
+            mkdir_raw_output('sequence')
+            
+        # Save metadata
+        if metadata:
+            # Drop unnecessary columns
+            df_genome_plus = df_genome_plus.drop(['Ensembl'], axis=1)
+            # Rename columns
+            df_genome_plus[['RefSeq_db', 'Ensembl_db']] = df_full_sequence[['RefSeq', 'Ensembl']]
+            # Save metadata
+            save_metadata(df_genome_plus, 'sequence', keywords, level, now)
+            
         # Save sequence files
         if download:
-            mkdir_raw_output('sequence') # Make output folders
             download_sequence(df_full_sequence, df_genome_plus, dic_ensembl_meta, download, recursive)
             
 

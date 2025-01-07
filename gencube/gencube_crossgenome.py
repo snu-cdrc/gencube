@@ -8,7 +8,9 @@ from .utils import (
     json_to_dataframe,
     check_access_database,
     check_access_full_crossgenome,
+    print_warning,
     mkdir_raw_output,
+    save_metadata,
     download_crossgenome,
     )
 from .constants import (
@@ -22,6 +24,7 @@ def crossgenome (
     refseq,
     ucsc,
     latest,
+    metadata,
     download,
     recursive,
     ):
@@ -49,15 +52,31 @@ def crossgenome (
         df_genome = json_to_dataframe (ls_search, level, refseq, ucsc, latest)
         
         # Check access to Ensembl Rapid Release & Zoonomia TOGA
-        df_genome, dic_ensembl_meta, df_zoonomia = check_access_database (df_genome, mode = 'crossgenome')
+        df_genome_plus, dic_ensembl_meta, df_zoonomia = check_access_database (df_genome, mode = 'crossgenome')
         
-        print(tabulate(df_genome[LS_GENCUBE_CROSSGENOME_LABEL], headers='keys', tablefmt='grid'))
+        print(tabulate(df_genome_plus[LS_GENCUBE_CROSSGENOME_LABEL], headers='keys', tablefmt='grid'))
         print('')
+        # Print warning message
+        print_warning(df_genome_plus, 100)
         
         # Check full accessibility
-        df_full_crossgenome = check_access_full_crossgenome (df_genome, dic_ensembl_meta, df_zoonomia)
-    
+        df_full_crossgenome = check_access_full_crossgenome (df_genome_plus, dic_ensembl_meta, df_zoonomia)
+        # Print warning message
+        print_warning(df_genome_plus, 100)
+        
+        # Make output folders        
+        if metadata or download:
+            mkdir_raw_output('crossgenome')
+            
+        # Save metadata
+        if metadata:
+            # Drop unnecessary columns
+            df_genome_plus = df_genome_plus.drop(['Ensembl', 'Zoonomia'], axis=1)
+            # Rename columns
+            df_genome_plus[['Ensembl_db', 'Zoonomia_db']] = df_full_crossgenome[['Ensembl', 'Zoonomia']]
+            # Save metadata
+            save_metadata(df_genome_plus, 'crossgenome', keywords, level, now)
+        
         # Save comparative genomics files
         if download:
-            mkdir_raw_output('crossgenome') # Make output folders
-            download_crossgenome(df_full_crossgenome, df_genome, dic_ensembl_meta, df_zoonomia, download, recursive)
+            download_crossgenome(df_full_crossgenome, df_genome_plus, dic_ensembl_meta, df_zoonomia, download, recursive)

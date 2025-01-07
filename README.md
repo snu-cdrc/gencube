@@ -317,6 +317,7 @@ $ gencube genome GCF_011100685.1 --download --compresslevel 1
 **Search, download, and modify chromosome labels for genesets (gene annotations)**
 ```plaintext
 options:
+  -m, --metadata        Save metadata for the searched genesets
   -d types, --download types
                         Type of gene set
                         refseq_gtf    : RefSeq gene set (GTF format)
@@ -352,6 +353,10 @@ options:
 # search usable and accessible data
 gencube geneset canis_lupus_familiaris
 gencube geneset GCF_011100685.1
+
+# Download the full information metadata of searched genesets
+gencube geneset canis_lupus_familiaris --metadata
+gencube geneset GCF_011100685.1 --metadata
 
 # Download specific geneset file from a database
 $ gencube geneset GCF_011100685.1 --download refseq_gtf
@@ -446,6 +451,7 @@ $ gencube geneset GCF_011100685.1 --download refseq_gtf,agustus,toga_gtf
 **Search, download, and modify chromosome labels for various genome annotations, such as gaps and repeats**
 ```plaintext
 options:
+  -m, --metadata        Save metadata for the searched annotations
   -d types, --download types
                         Download annotation file.
                         gap : Genomic gaps - AGP defined (bigBed format)
@@ -476,7 +482,11 @@ options:
 gencube annotation canis_lupus_familiaris
 gencube annotation GCF_011100685.1
 
-# Download specific geneset file from a database
+# Download the full information metadata of searched annotations
+gencube annotation canis_lupus_familiaris --metadata
+gencube annotation GCF_011100685.1 --metadata
+
+# Download specific annotation file from a database
 gencube annotation GCF_011100685.1 --download sr
 gencube annotation GCF_011100685.1 --download td
 gencube annotation GCF_011100685.1 --download rmsk
@@ -491,6 +501,7 @@ gencube annotation GCF_011100685.1 --download sr,td,rmsk,gc
 **Search and download sequence data of genesets**
 ```plaintext
 options:
+  -m, --metadata        Save metadata for the searched sequence data
   -d types, --download types
                         Download "fasta" formatted sequence file
                         1. Nucleotide sequences:
@@ -515,12 +526,16 @@ options:
 gencube sequence canis_lupus_familiaris
 gencube sequence GCF_011100685.1
 
-# Download specific geneset file from a database
+# Download the full information metadata of searched sequence data
+gencube sequence canis_lupus_familiaris --metadata
+gencube sequence GCF_011100685.1 --metadata
+
+# Download specific sequence file from a database
 $ gencube sequence GCF_011100685.1 --download refseq_rna
 $ gencube sequence GCF_011100685.1 --download ensembl_cdna
 $ gencube sequence GCF_011100685.1 --download ensembl_pep
 
-# Download multiple genesets from various databases
+# Download multiple sequence data from various databases
 $ gencube sequence GCF_011100685.1 --download refseq_rna,ensembl_cdna,refseq_pep,ensembl_pep
 ```
 <br>
@@ -530,6 +545,7 @@ $ gencube sequence GCF_011100685.1 --download refseq_rna,ensembl_cdna,refseq_pep
 **Search and download comparative genomics data, such as homology, and codon or protein alignment**
 ```plaintext
 options:
+  -m, --metadata        Save metadata for the searched comparative genomics data
   -d types, --download types
                         ensembl_homology   : Homology data from Ensembl Rapid Release,
                                              detailing gene orthology relationships across species
@@ -551,7 +567,11 @@ options:
 gencube crossgenome canis_lupus_familiaris
 gencube crossgenome GCF_011100685.1
 
-# Download specific geneset file from a database
+# Download the full information metadata of searched comparative genomics data
+gencube crossgenome canis_lupus_familiaris --metadata
+gencube crossgenome GCF_011100685.1 --metadata
+
+# Download specific crossgenome file from a database
 $ gencube crossgenome GCF_011100685.1 --download toga_homology
 $ gencube crossgenome GCF_011100685.1 --download toga_align_codon
 

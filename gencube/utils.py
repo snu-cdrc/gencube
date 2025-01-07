@@ -37,6 +37,12 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # To suppress the SSL warnings when using verify=False in the requests library
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning) 
 
+# To suppress the pandas warnings
+import warnings
+from pandas.errors import PerformanceWarning
+warnings.simplefilter("ignore", PerformanceWarning)
+
+
 # Constant variables
 from .constants import (
     NCBI_FTP_URL,
@@ -307,6 +313,12 @@ def download_csv(url, verify=True):
     response.raise_for_status()  # Check for request errors
     return StringIO(response.text)
 
+# Print warning message
+def print_warning (df, n):
+    if df.shape[0] > n:
+        print(f'Warning: The number of genomes searched is very large (> {n}), resulting in extensive output on the terminal.')
+        print('If reviewing all results in the terminal is difficult, consider using the "--metadata" option for a more manageable display.\n')
+
 # Make download and output forder
 def mkdir_raw_output (folder_name):
     # Make download folder
@@ -320,9 +332,10 @@ def mkdir_raw_output (folder_name):
         os.mkdir(out_subfolder)
 
 # Save metadata
-def save_metadata (df, function, keywords, level, now):
+def save_metadata (df_meta, function, keywords, level, now):
     # Remove some columns not required in metadata
-    df_meta = df.drop(columns=['NCBI'])
+    if function == 'genome':
+        df_meta = df_meta.drop(columns=['NCBI'])
     
     # Save the metadata
     if len(keywords) != 1:
@@ -786,7 +799,7 @@ def check_access_database (df, mode):
             df_zoonomia = pd.concat([df_zoonomia, df_tmp])
         
         df[['Zoonomia']] = ''
-        print(f'  Zoonomia TOGA: {df_zoonomia["NCBI accession / source"].nunique()} genomes across {df_zoonomia["Species"].nunique()} species')
+        print(f'  Zoonomia TOGA: {df_zoonomia["Assembly name"].nunique()} genomes across {df_zoonomia["Species"].nunique()} species')
     
     print('')
     
