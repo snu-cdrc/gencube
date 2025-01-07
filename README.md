@@ -351,12 +351,12 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
-gencube geneset canis_lupus_familiaris
-gencube geneset GCF_011100685.1
+$ gencube geneset canis_lupus_familiaris
+$ gencube geneset GCF_011100685.1
 
 # Download the full information metadata of searched genesets
-gencube geneset canis_lupus_familiaris --metadata
-gencube geneset GCF_011100685.1 --metadata
+$ gencube geneset canis_lupus_familiaris --metadata
+$ gencube geneset GCF_011100685.1 --metadata
 
 # Download specific geneset file from a database
 $ gencube geneset GCF_011100685.1 --download refseq_gtf
@@ -479,20 +479,20 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
-gencube annotation canis_lupus_familiaris
-gencube annotation GCF_011100685.1
+$ gencube annotation canis_lupus_familiaris
+$ gencube annotation GCF_011100685.1
 
 # Download the full information metadata of searched annotations
-gencube annotation canis_lupus_familiaris --metadata
-gencube annotation GCF_011100685.1 --metadata
+$ gencube annotation canis_lupus_familiaris --metadata
+$ gencube annotation GCF_011100685.1 --metadata
 
 # Download specific annotation file from a database
-gencube annotation GCF_011100685.1 --download sr
-gencube annotation GCF_011100685.1 --download td
-gencube annotation GCF_011100685.1 --download rmsk
+$ gencube annotation GCF_011100685.1 --download sr
+$ gencube annotation GCF_011100685.1 --download td
+$ gencube annotation GCF_011100685.1 --download rmsk
 
 # Download multiple annotations from various databases
-gencube annotation GCF_011100685.1 --download sr,td,rmsk,gc
+$ gencube annotation GCF_011100685.1 --download sr,td,rmsk,gc
 ```
 <br>
 
@@ -523,12 +523,12 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
-gencube sequence canis_lupus_familiaris
-gencube sequence GCF_011100685.1
+$ gencube sequence canis_lupus_familiaris
+$ gencube sequence GCF_011100685.1
 
 # Download the full information metadata of searched sequence data
-gencube sequence canis_lupus_familiaris --metadata
-gencube sequence GCF_011100685.1 --metadata
+$ gencube sequence canis_lupus_familiaris --metadata
+$ gencube sequence GCF_011100685.1 --metadata
 
 # Download specific sequence file from a database
 $ gencube sequence GCF_011100685.1 --download refseq_rna
@@ -564,12 +564,12 @@ options:
 #### Examples
 ```bash
 # search usable and accessible data
-gencube crossgenome canis_lupus_familiaris
-gencube crossgenome GCF_011100685.1
+$ gencube crossgenome canis_lupus_familiaris
+$ gencube crossgenome GCF_011100685.1
 
 # Download the full information metadata of searched comparative genomics data
-gencube crossgenome canis_lupus_familiaris --metadata
-gencube crossgenome GCF_011100685.1 --metadata
+$ gencube crossgenome canis_lupus_familiaris --metadata
+$ gencube crossgenome GCF_011100685.1 --metadata
 
 # Download specific crossgenome file from a database
 $ gencube crossgenome GCF_011100685.1 --download toga_homology

@@ -317,7 +317,7 @@ def download_csv(url, verify=True):
 def print_warning (df, n):
     if df.shape[0] > n:
         print(f'Warning: The number of genomes searched is very large (> {n}), resulting in extensive output on the terminal.')
-        print('If reviewing all results in the terminal is difficult, consider using the "--metadata" option for a more manageable display.\n')
+        print('If reviewing all results in the terminal is difficult, consider using the "--metadata" option to save metadata.\n')
 
 # Make download and output forder
 def mkdir_raw_output (folder_name):
