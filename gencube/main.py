@@ -17,7 +17,7 @@ from .utils import (
     )
 # Constant variables
 from .constants import (
-    LS_STRATEGY, 
+    LS_STRATEGY,
     LS_SOURCE,
     LS_PLATFORM,
     LS_SELECTION,
@@ -28,7 +28,7 @@ from .constants import (
 def main():
     # Get email and api key information for E-utility
     info_save = get_entrez_info()
-    
+
     # Define parent parser
     parser = argparse.ArgumentParser(
         prog='gencube', description=f"gencube v{__version__}"
@@ -44,7 +44,7 @@ def main():
     # gencube genome subparser
     genome_desc = 'Search, download, and modify chromosome labels for genome assemblies'
     parser_genome = subparsers.add_parser(
-        'genome', description=genome_desc, help=genome_desc, add_help=True, 
+        'genome', description=genome_desc, help=genome_desc, add_help=True,
         formatter_class=argparse.RawTextHelpFormatter
         )
     # gencube genome arguments
@@ -75,32 +75,32 @@ def main():
             )
         )
     parser_genome.add_argument(
-        '-r', '--refseq', 
-        action='store_true', 
+        '-r', '--refseq',
+        action='store_true',
         required=False,
         help='Show genomes that have RefSeq accession (GCF_* format)'
         )
     parser_genome.add_argument(
-        '-u', '--ucsc', 
-        action='store_true', 
+        '-u', '--ucsc',
+        action='store_true',
         required=False,
         help='Show genomes that have UCSC name'
         )
     parser_genome.add_argument(
-        '-l', '--latest', 
-        action='store_true', 
+        '-l', '--latest',
+        action='store_true',
         required=False,
         help='Show genomes corresponding to the latest version'
         )
     parser_genome.add_argument(
         '-m', '--metadata',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Save metadata for the searched genomes'
         )
     parser_genome.add_argument(
         '-d', '--download',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Download "fasta" formatted genome file'
         )
@@ -116,13 +116,13 @@ def main():
             'genbank : by NCBI GenBank\n'
             'refseq  : by NCBI RefSeq\n'
             'genark  : by UCSC GenArk\n'
-            'ensembl : by Ensembl Rapid Release\n'
+            'ensembl : by Ensembl Beta\n'
             )
         )
     parser_genome.add_argument(
         '-c','--chr_style',
-        metavar='type', 
-        default='ensembl', 
+        metavar='type',
+        default='ensembl',
         choices=['ensembl', 'gencode', 'ucsc', 'raw'],
         required=False,
         help=(
@@ -140,8 +140,8 @@ def main():
         )
     parser_genome.add_argument(
         '-mk','--masking',
-        metavar='type', 
-        default='soft', 
+        metavar='type',
+        default='soft',
         choices=['soft', 'hard', 'none'],
         required=False,
         help=(
@@ -153,8 +153,8 @@ def main():
         )
     parser_genome.add_argument(
         '-cl','--compresslevel',
-        metavar='1-9', 
-        default='6', 
+        metavar='1-9',
+        default='6',
         choices=['1', '2', '3', '4', '5', '6', '7', '8', '9'],
         required=False,
         help=(
@@ -164,7 +164,7 @@ def main():
         )
     parser_genome.add_argument(
         '--recursive',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Download files regardless of their presence only if integrity check is not possible\n '
         )
@@ -175,7 +175,7 @@ def main():
     # gencube geneset subparser
     geneset_desc = 'Search, download, and modify chromosome labels for genesets (gene annotations)'
     parser_geneset = subparsers.add_parser(
-        'geneset', description=geneset_desc, help=geneset_desc, add_help=True, 
+        'geneset', description=geneset_desc, help=geneset_desc, add_help=True,
         formatter_class=argparse.RawTextHelpFormatter
         )
     # gencube geneset arguments
@@ -206,26 +206,26 @@ def main():
             )
         )
     parser_geneset.add_argument(
-        '-r', '--refseq', 
-        action='store_true', 
+        '-r', '--refseq',
+        action='store_true',
         required=False,
         help='Show genomes that have RefSeq accession (GCF_* format)'
         )
     parser_geneset.add_argument(
-        '-u', '--ucsc', 
-        action='store_true', 
+        '-u', '--ucsc',
+        action='store_true',
         required=False,
         help='Show genomes that have UCSC name'
         )
     parser_geneset.add_argument(
-        '-l', '--latest', 
-        action='store_true', 
+        '-l', '--latest',
+        action='store_true',
         required=False,
         help='Show genomes corresponding to the latest version'
         )
     parser_geneset.add_argument(
         '-m', '--metadata',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Save metadata for the searched genesets'
         )
@@ -243,8 +243,8 @@ def main():
             'agustus       : GenArk Augustus gene prediction (GFF)\n'
             'xenoref       : GenArk XenoRefGene (GFF)\n'
             'genark_ref    : GenArk RefSeq gene models (GFF)\n'
-            'ensembl_gtf   : Ensembl Rapid Release gene set (GTF)\n'
-            'ensembl_gff   : Ensembl Rapid Release gene set (GFF)\n'
+            'ensembl_gtf   : Ensembl Beta gene set (GTF)\n'
+            'ensembl_gff   : Ensembl Beta gene set (GFF)\n'
             'toga_gtf      : Zoonomia TOGA gene set (GTF)\n'
             'toga_bed      : Zoonomia TOGA gene set (BED)\n'
             'toga_pseudo   : Zoonomia TOGA processed pseudogenes (BED)\n'
@@ -252,8 +252,8 @@ def main():
         )
     parser_geneset.add_argument(
         '-c','--chr_style',
-        metavar='type', 
-        default='ensembl', 
+        metavar='type',
+        default='ensembl',
         choices=['ensembl', 'gencode', 'ucsc', 'raw'],
         required=False,
         help=(
@@ -271,18 +271,18 @@ def main():
         )
     parser_geneset.add_argument(
         '--recursive',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Download files regardless of their presence only if integrity check is not possible\n '
         )
-    
+
     ## ---------------------------------------------
     ## gencube annotation
     ## ---------------------------------------------
     # gencube annotation subparser
     annotation_desc = 'Search, download, and modify chromosome labels for various genome annotations, such as gaps and repeats'
     parser_annotation = subparsers.add_parser(
-        'annotation', description=annotation_desc, help=annotation_desc, add_help=True, 
+        'annotation', description=annotation_desc, help=annotation_desc, add_help=True,
         formatter_class=argparse.RawTextHelpFormatter
         )
     # gencube annotation arguments
@@ -313,26 +313,26 @@ def main():
             )
         )
     parser_annotation.add_argument(
-        '-r', '--refseq', 
-        action='store_true', 
+        '-r', '--refseq',
+        action='store_true',
         required=False,
         help='Show genomes that have RefSeq accession (GCF_* format)'
         )
     parser_annotation.add_argument(
-        '-u', '--ucsc', 
-        action='store_true', 
+        '-u', '--ucsc',
+        action='store_true',
         required=False,
         help='Show genomes that have UCSC name'
         )
     parser_annotation.add_argument(
-        '-l', '--latest', 
-        action='store_true', 
+        '-l', '--latest',
+        action='store_true',
         required=False,
         help='Show genomes corresponding to the latest version'
         )
     parser_annotation.add_argument(
         '-m', '--metadata',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Save metadata for the searched annotations'
         )
@@ -341,7 +341,7 @@ def main():
         metavar='types',
         required=False,
         help=(
-            'Download annotation file.\n'            
+            'Download annotation file.\n'
             'gap : Genomic gaps - AGP defined (bigBed format)\n'
             'sr   : Simple tandem repeats by TRF (bigBed)\n'
             'td   : Tandem duplications (bigBed)\n'
@@ -353,8 +353,8 @@ def main():
         )
     parser_annotation.add_argument(
         '-c','--chr_style',
-        metavar='type', 
-        default='ensembl', 
+        metavar='type',
+        default='ensembl',
         choices=['ensembl', 'gencode', 'ucsc', 'raw'],
         required=False,
         help=(
@@ -372,7 +372,7 @@ def main():
         )
     parser_annotation.add_argument(
         '--recursive',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Download files regardless of their presence only if integrity check is not possible\n '
         )
@@ -383,7 +383,7 @@ def main():
     # gencube sequence subparser
     sequence_desc = 'Search and download sequence data of genesets'
     parser_sequence = subparsers.add_parser(
-        'sequence', description=sequence_desc, help=sequence_desc, add_help=True, 
+        'sequence', description=sequence_desc, help=sequence_desc, add_help=True,
         formatter_class=argparse.RawTextHelpFormatter
         )
     # gencube sequence arguments
@@ -414,26 +414,26 @@ def main():
             )
         )
     parser_sequence.add_argument(
-        '-r', '--refseq', 
-        action='store_true', 
+        '-r', '--refseq',
+        action='store_true',
         required=False,
         help='Show genomes that have RefSeq accession (GCF_* format)'
         )
     parser_sequence.add_argument(
-        '-u', '--ucsc', 
-        action='store_true', 
+        '-u', '--ucsc',
+        action='store_true',
         required=False,
         help='Show genomes that have UCSC name'
         )
     parser_sequence.add_argument(
-        '-l', '--latest', 
-        action='store_true', 
+        '-l', '--latest',
+        action='store_true',
         required=False,
         help='Show genomes corresponding to the latest version'
         )
     parser_sequence.add_argument(
         '-m', '--metadata',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Save metadata for the searched sequence data'
         )
@@ -448,32 +448,32 @@ def main():
             '   refseq_rna_genomic : RNA features based on the genome sequence\n'
             '   refseq_cds_genomic : CDS features based on the genome sequence\n'
             '   refseq_pseudo      : Pseudogene and other gene regions without transcribed RNA or translated protein products\n'
-            '   ensembl_cdna       : Ensembl Rapid Release cDNA sequences of transcripts\n'
-            '   ensembl_cds        : Ensembl Rapid Release coding sequences (CDS)\n'
-            '   ensembl_repeat     : Ensembl repeat modeler sequences\n'
+            '   ensembl_cdna       : Ensembl Beta cDNA sequences of transcripts\n'
+            # '   ensembl_cds        : Ensembl Beta coding sequences (CDS)\n'
+            # '   ensembl_repeat     : Ensembl repeat modeler sequences\n'
             '2. Protein sequences:\n'
             '   refseq_pep         : Accessioned protein sequences annotated on the genome assembly\n'
             '   refseq_pep_cds     : CDS features translated into protein sequences\n'
-            '   ensembl_pep        : Ensembl Rapid Release protein sequences\n '
+            '   ensembl_pep        : Ensembl Beta protein sequences\n '
             )
         )
     parser_sequence.add_argument(
         '--recursive',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Download files regardless of their presence only if integrity check is not possible\n '
         )
-    
+
     ## ---------------------------------------------
     ## gencube crossgenome
     ## ---------------------------------------------
     # gencube crossgenome subparser
     crossgenome_desc = (
         'Search and download comparative genomics data, such as homology, and codon or protein alignments'
-        
+
     )
     parser_crossgenome = subparsers.add_parser(
-        'crossgenome', description=crossgenome_desc, help=crossgenome_desc, add_help=True, 
+        'crossgenome', description=crossgenome_desc, help=crossgenome_desc, add_help=True,
         formatter_class=argparse.RawTextHelpFormatter
         )
     # gencube geneset arguments
@@ -504,26 +504,26 @@ def main():
             )
         )
     parser_crossgenome.add_argument(
-        '-r', '--refseq', 
-        action='store_true', 
+        '-r', '--refseq',
+        action='store_true',
         required=False,
         help='Show genomes that have RefSeq accession (GCF_* format)'
         )
     parser_crossgenome.add_argument(
-        '-u', '--ucsc', 
-        action='store_true', 
+        '-u', '--ucsc',
+        action='store_true',
         required=False,
         help='Show genomes that have UCSC name'
         )
     parser_crossgenome.add_argument(
-        '-l', '--latest', 
-        action='store_true', 
+        '-l', '--latest',
+        action='store_true',
         required=False,
         help='Show genomes corresponding to the latest version'
         )
     parser_crossgenome.add_argument(
         '-m', '--metadata',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Save metadata for the searched comparative genomics data'
         )
@@ -532,7 +532,7 @@ def main():
         metavar='types',
         required=False,
         help=(
-            'ensembl_homology   : Homology data from Ensembl Rapid Release,\n'
+            'ensembl_homology   : Homology data from Ensembl Beta,\n'
             '                     detailing gene orthology relationships across species\n'
             'toga_homology      : Homology data from TOGA, providing predictions of\n'
             '                     orthologous genes based on genome alignments\n'
@@ -546,11 +546,11 @@ def main():
         )
     parser_crossgenome.add_argument(
         '--recursive',
-        action='store_true', 
+        action='store_true',
         required=False,
         help='Download files regardless of their presence only if integrity check is not possible\n '
         )
-    
+
     ## ---------------------------------------------
     ## gencube seqmeta
     ## ---------------------------------------------
@@ -567,7 +567,7 @@ def main():
         nargs='*',
         help=(
             'Keywords to search for sequencing-based experimental data. You can provide various forms\n'
-            'Examples: liver, k562, cancer, breast_cancer, etc\n'         
+            'Examples: liver, k562, cancer, breast_cancer, etc\n'
             '\n'
             'Multiple keywords can be combined\n'
             'Keywords separated by commas will combine their results\n'
@@ -578,7 +578,7 @@ def main():
     # gencube seqmeta arguments
     parser_seqmeta.add_argument(
         '-o', '--organism',
-        metavar='string', 
+        metavar='string',
         default='',
         help=(
             'Scientific name or common name (as found in the NCBI Taxonomy Browser)\n' +
@@ -587,7 +587,7 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-st', '--strategy',
-        metavar='string', 
+        metavar='string',
         default='',
         help=(
             'Sequencing strategy:\n' +
@@ -596,7 +596,7 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-sr', '--source',
-        metavar='string', 
+        metavar='string',
         default='',
         help=(
             'Source of the biological data:\n' +
@@ -605,7 +605,7 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-pl', '--platform',
-        metavar='string', 
+        metavar='string',
         default='',
         help=(
             'Name of the sequencing platform:\n' +
@@ -614,8 +614,8 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-sl', '--selection',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'Library selection methodology:\n' +
             join_variables_with_newlines(LS_SELECTION)
@@ -623,18 +623,18 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-fi', '--filter',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
-            'Option to find SRA records that are cross-referenced with other NCBI databases\n' + 
+            'Option to find SRA records that are cross-referenced with other NCBI databases\n' +
             '(PubMed, PubMed Central (PMC), Nucleotide, Assembly, and others):\n' +
             join_variables_with_newlines(LS_FILTER)
             )
         )
     parser_seqmeta.add_argument(
         '-pr', '--properties',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             "Option to narrow search results by controlled-vocabulary library's annotations:\n" +
             join_variables_with_newlines(LS_PROPERTIES)
@@ -642,8 +642,8 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-ly', '--layout',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'Library layout of the sequencing data:\n' +
             'paired, single'
@@ -651,7 +651,7 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-ac', '--access',
-        metavar='string', 
+        metavar='string',
         default='',
         help=(
             'Data accessibility:\n' +
@@ -660,24 +660,24 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-bp', '--bioproject',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'BioProject accession in the form of PRJNA#, PRJEB#, or PRJDB#'
             )
         )
     parser_seqmeta.add_argument(
         '-bs', '--biosample',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'BioSample accession in the form of SAMN#, SAMEA#, or SAMD#'
             )
         )
     parser_seqmeta.add_argument(
         '-as', '--accession',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'SRA/ENA/DDBJ accession\n'
             'Study with accessions in the form of SRP#, ERP#, or DRP#\n'
@@ -688,16 +688,16 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-ti', '--title',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'Descriptive name of the dataset'
             )
         )
     parser_seqmeta.add_argument(
         '-at', '--author',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'Researcher or group that submitted the data\n '
             'Example: SON_KH'
@@ -705,8 +705,8 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-pd', '--publication',
-        metavar='range', 
-        default='', 
+        metavar='range',
+        default='',
         help=(
             'Publication Date\n'
             'YYYY.MM.DD : YYYY.MM.DD format\n'
@@ -715,8 +715,8 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-md', '--modification',
-        metavar='range', 
-        default='', 
+        metavar='range',
+        default='',
         help=(
             'Modification Date\n'
             'YYYY.MM.DD : YYYY.MM.DD format\n'
@@ -725,8 +725,8 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-rl', '--readlength',
-        metavar='range', 
-        default='', 
+        metavar='range',
+        default='',
         help=(
             'Length of the sequencing reads'
             'Example: 100 or 100:500'
@@ -734,48 +734,48 @@ def main():
         )
     parser_seqmeta.add_argument(
         '-mb', '--mbases',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'Number of mega bases in the SRA Runs'
             )
         )
     parser_seqmeta.add_argument(
         '-tw', '--textword',
-        metavar='string', 
-        default='', 
+        metavar='string',
+        default='',
         help=(
             'General search term for finding datasets by specific words in metadata'
             )
         )
     parser_seqmeta.add_argument(
         '-ex', '--exclude',
-        metavar='keywords', 
-        default='', 
+        metavar='keywords',
+        default='',
         help=(
             'Exclude the results for the keywords used in this option\n'
             'Example: cell_line,normal,crispr\n '
             )
         )
     parser_seqmeta.add_argument(
-        '-d', 
-        '--detail', 
-        action='store_true', 
+        '-d',
+        '--detail',
+        action='store_true',
         help='Show the number of searched results for each option and keyword\n '
         )
     parser_seqmeta.add_argument(
-        '-m', 
-        '--metadata', 
-        action='store_true', 
+        '-m',
+        '--metadata',
+        action='store_true',
         help='Save integrated metadata\n '
         )
     parser_seqmeta.add_argument(
-        '-u', 
-        '--url', 
-        action='store_true', 
+        '-u',
+        '--url',
+        action='store_true',
         help='Save the file, including the URL address of the raw data (.fastq).\n '
         )
-    
+
     ## ---------------------------------------------
     ## gencube info
     ## ---------------------------------------------
@@ -784,10 +784,10 @@ def main():
         "Resubmit email and NCBI API key for use with NCBI's Entrez Utilities (E-Utilities)"
     )
     parser_info = subparsers.add_parser(
-        'info', description=info_desc, help=info_desc, add_help=True, 
+        'info', description=info_desc, help=info_desc, add_help=True,
         formatter_class=argparse.RawTextHelpFormatter
         )
-    
+
     ## Define return values
     args = parser.parse_args()
 
@@ -797,11 +797,11 @@ def main():
             parser_genome.print_help()
         else:
             genome(
-                keywords=args.keywords, 
-                level=args.level, 
-                refseq=args.refseq, 
-                ucsc=args.ucsc, 
-                latest=args.latest, 
+                keywords=args.keywords,
+                level=args.level,
+                refseq=args.refseq,
+                ucsc=args.ucsc,
+                latest=args.latest,
                 metadata=args.metadata,
                 download=args.download,
                 database=args.database,
@@ -816,10 +816,10 @@ def main():
             parser_geneset.print_help()
         else:
             geneset(
-                keywords=args.keywords, 
-                level=args.level, 
-                refseq=args.refseq, 
-                ucsc=args.ucsc, 
+                keywords=args.keywords,
+                level=args.level,
+                refseq=args.refseq,
+                ucsc=args.ucsc,
                 latest=args.latest,
                 metadata=args.metadata,
                 download=args.download,
@@ -832,10 +832,10 @@ def main():
             parser_annotation.print_help()
         else:
             annotation(
-                keywords=args.keywords, 
-                level=args.level, 
-                refseq=args.refseq, 
-                ucsc=args.ucsc, 
+                keywords=args.keywords,
+                level=args.level,
+                refseq=args.refseq,
+                ucsc=args.ucsc,
                 latest=args.latest,
                 metadata=args.metadata,
                 download=args.download,
@@ -848,10 +848,10 @@ def main():
             parser_sequence.print_help()
         else:
             sequence(
-                keywords=args.keywords, 
-                level=args.level, 
-                refseq=args.refseq, 
-                ucsc=args.ucsc, 
+                keywords=args.keywords,
+                level=args.level,
+                refseq=args.refseq,
+                ucsc=args.ucsc,
                 latest=args.latest,
                 metadata=args.metadata,
                 download=args.download,
@@ -863,10 +863,10 @@ def main():
             parser_crossgenome.print_help()
         else:
             crossgenome(
-                keywords=args.keywords, 
-                level=args.level, 
-                refseq=args.refseq, 
-                ucsc=args.ucsc, 
+                keywords=args.keywords,
+                level=args.level,
+                refseq=args.refseq,
+                ucsc=args.ucsc,
                 latest=args.latest,
                 metadata=args.metadata,
                 download=args.download,
@@ -883,14 +883,14 @@ def main():
         else:
             seqmeta(
                 keywords=args.keywords,
-                organism=args.organism, 
+                organism=args.organism,
                 strategy=args.strategy,
-                source=args.source, 
-                platform=args.platform, 
+                source=args.source,
+                platform=args.platform,
                 selection=args.selection,
                 filter=args.filter,
                 properties=args.properties,
-                layout=args.layout, 
+                layout=args.layout,
                 access=args.access,
                 bioproject=args.bioproject,
                 biosample=args.biosample,
@@ -902,7 +902,7 @@ def main():
                 readlength=args.readlength,
                 mbases=args.mbases,
                 textword=args.textword,
-                exclude=args.exclude, 
+                exclude=args.exclude,
                 detail=args.detail,
                 metadata=args.metadata,
                 url=args.url
@@ -910,6 +910,6 @@ def main():
     # Gencube info
     elif args.command == 'info':
         info(info_save)
-        
+
     else:
         parser.print_help()

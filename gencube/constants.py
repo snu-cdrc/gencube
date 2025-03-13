@@ -2,16 +2,20 @@
 # NCBI server (README.txt - https://ftp.ncbi.nlm.nih.gov/genomes/all/README.txt)
 NCBI_FTP_URL = 'https://ftp.ncbi.nlm.nih.gov/genomes/all'
 
-# ENSEMBL
-ENSEMBL_FTP_HOST = 'ftp.ensembl.org'
-ENSEMBL_FTP_URL = 'http://ftp.ensembl.org/pub/'
-ENSEMBL_RAPID_FTP_URL = ENSEMBL_FTP_URL + 'rapid-release/'
-ENSEMBL_RM_FTP_URL = 'https://ftp.ebi.ac.uk/pub/databases/ensembl/repeats/unfiltered_repeatmodeler/species/'
+# ENSEMBL Rapid Release server
+# ENSEMBL_FTP_HOST = 'ftp.ensembl.org'
+# ENSEMBL_FTP_URL = 'http://ftp.ensembl.org/pub/'
+# ENSEMBL_RAPID_FTP_URL = ENSEMBL_FTP_URL + 'rapid-release/'
+# ENSEMBL_RM_FTP_URL = 'https://ftp.ebi.ac.uk/pub/databases/ensembl/repeats/unfiltered_repeatmodeler/species/'
+
+# ENSEMBL Beta server
+ENSEMBL_BETA_FTP_URL = 'http://ftp.ebi.ac.uk/pub/ensemblorganisms/'
+ENSEMBL_TREE_JSON = 'https://raw.githubusercontent.com/keun-hong/ensembl-beta-ftp-structure/refs/heads/main/ensembl-beta_ftp_structure.json'
 
 # UCSC GenArk server (the Earth BioGenome Project, the Vertebrate Genomes Project, the Telomere-to-Telomere Consortium, and other related projects.)
 GENARK_URL = 'https://hgdownload.soe.ucsc.edu/hubs/'
 
-# Zoonomia (200 mammals project)
+# Zoonomia TOGA (200 mammals project)
 ZOONOMIA_URL = 'https://genome.senckenberg.de/download/TOGA/'
 
 # UCSC-Kent applications
@@ -109,7 +113,7 @@ LS_NCBI_ASSEMBLY_META_LABEL = [
     'Meta',
     ]
 LS_GENCUBE_GENOME_LABEL = [
-    'Assembly name', 
+    'Assembly name',
     'Taxid',
     'Release',
     'Level',
@@ -119,120 +123,120 @@ LS_GENCUBE_GENOME_LABEL = [
     'Ensembl',
     ]
 LS_GENCUBE_GENSET_LABEL = [
-    'Assembly name', 
+    'Assembly name',
     'Taxid',
     'Release',
     'Level',
-    'NCBI', 
+    'NCBI',
     'UCSC',
     'GenArk',
     'Ensembl',
     'Zoonomia',
     ]
 LS_GENCUBE_SEQUENCE_LABEL = [
-    'Assembly name', 
+    'Assembly name',
     'Taxid',
     'Release',
     'Level',
-    'NCBI', 
+    'NCBI',
     'UCSC',
     'Ensembl',
     ]
 LS_GENCUBE_ANNOTATION_LABEL = [
-    'Assembly name', 
+    'Assembly name',
     'Taxid',
     'Release',
     'Level',
-    'NCBI', 
+    'NCBI',
     'UCSC',
     'GenArk',
     ]
 LS_GENCUBE_CROSSGENOME_LABEL = [
-    'Assembly name', 
+    'Assembly name',
     'Taxid',
     'Release',
     'Level',
-    'NCBI', 
+    'NCBI',
     'UCSC',
     'Ensembl',
     'Zoonomia',
     ]
 
 LS_ASSEMBLY_REPORT_LABEL = [
-    'Sequence-Name', 
-    'Sequence-Role', 
-    'Assigned-Molecule', 
-    'Assigned-Molecule-Location/Type', 
-    'GenBank-Accn', 
-    'Relationship', 
-    'RefSeq-Accn', 
-    'Assembly-Unit', 
-    'Sequence-Length', 
+    'Sequence-Name',
+    'Sequence-Role',
+    'Assigned-Molecule',
+    'Assigned-Molecule-Location/Type',
+    'GenBank-Accn',
+    'Relationship',
+    'RefSeq-Accn',
+    'Assembly-Unit',
+    'Sequence-Length',
     'UCSC-style-name'
     ]
 
 LS_SRA_META_STUDY_KEY = [
-    'EXPERIMENT.STUDY_REF.@accession', 
-    'STUDY.@alias', 
-    'SAMPLE.SAMPLE_LINKS.SAMPLE_LINK.XREF_LINK.LABEL', 
-    'EXPERIMENT.STUDY_REF.IDENTIFIERS.EXTERNAL_ID.#text', 
+    'EXPERIMENT.STUDY_REF.@accession',
+    'STUDY.@alias',
+    'SAMPLE.SAMPLE_LINKS.SAMPLE_LINK.XREF_LINK.LABEL',
+    'EXPERIMENT.STUDY_REF.IDENTIFIERS.EXTERNAL_ID.#text',
     'STUDY.IDENTIFIERS.EXTERNAL_ID.#text',
-    'STUDY.DESCRIPTOR.STUDY_TITLE', 
-    'STUDY.DESCRIPTOR.STUDY_ABSTRACT', 
-    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_CONSTRUCTION_PROTOCOL', 
-    'SUBMISSION.@center_name', 
-    'Organization.Contact.Address.Country', 
+    'STUDY.DESCRIPTOR.STUDY_TITLE',
+    'STUDY.DESCRIPTOR.STUDY_ABSTRACT',
+    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_CONSTRUCTION_PROTOCOL',
+    'SUBMISSION.@center_name',
+    'Organization.Contact.Address.Country',
     'Organization.Address.Country',
     'RUN_SET.RUN.@published',
     ]
 LS_SRA_META_STUDY_LABEL = [
-    'Study', 
-    'GSE', 
-    'BioProject_alt1', 
-    'BioProject_alt2', 
-    'BioProject_alt3', 
-    'Title', 
-    'Abstract', 
-    'Protocol', 
-    'Submission', 
-    'Country_alt1', 
+    'Study',
+    'GSE',
+    'BioProject_alt1',
+    'BioProject_alt2',
+    'BioProject_alt3',
+    'Title',
+    'Abstract',
+    'Protocol',
+    'Submission',
+    'Country_alt1',
     'Country_alt2',
     'Published',
     ]
 LS_SRA_META_EXPERIMENT_KEY = [
-    'EXPERIMENT.@accession', 
-    'SAMPLE.@accession', 
-    'SAMPLE.@alias', 
+    'EXPERIMENT.@accession',
+    'SAMPLE.@accession',
+    'SAMPLE.@alias',
     'SAMPLE.SAMPLE_NAME.SCIENTIFIC_NAME',
-    'SAMPLE.SAMPLE_NAME.TAXON_ID', 
+    'SAMPLE.SAMPLE_NAME.TAXON_ID',
     'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_NAME',
-    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_STRATEGY', 
-    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_SOURCE', 
+    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_STRATEGY',
+    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_SOURCE',
     'EXPERIMENT.PLATFORM.ILLUMINA.INSTRUMENT_MODEL',
-    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_SELECTION',  
-    'EXPERIMENT.TITLE', 
-    'Pool.Member.@sample_title', # Alternative: 'SAMPLE.TITLE', 
-    'EXPERIMENT.DESIGN.DESIGN_DESCRIPTION', 
-    'SAMPLE.SAMPLE_ATTRIBUTES.SAMPLE_ATTRIBUTE', 
+    'EXPERIMENT.DESIGN.LIBRARY_DESCRIPTOR.LIBRARY_SELECTION',
+    'EXPERIMENT.TITLE',
+    'Pool.Member.@sample_title', # Alternative: 'SAMPLE.TITLE',
+    'EXPERIMENT.DESIGN.DESIGN_DESCRIPTION',
+    'SAMPLE.SAMPLE_ATTRIBUTES.SAMPLE_ATTRIBUTE',
     'EXPERIMENT.EXPERIMENT_ATTRIBUTES.EXPERIMENT_ATTRIBUTE',
     'RUN_SET.RUN.SRAFiles.SRAFile',
     ]
 LS_SRA_META_EXPERIMENT_LABEL = [
-    'Experiment', 
-    'Sample', 
-    'GSM', 
+    'Experiment',
+    'Sample',
+    'GSM',
     'Scientific name',
-    'Taxon id', 
+    'Taxon id',
     'Library name',
-    'Strategy', 
-    'Source', 
-    'Platform', 
-    'Selection', 
-    'Experiment title', 
-    'Sample title', 
+    'Strategy',
+    'Source',
+    'Platform',
+    'Selection',
+    'Experiment title',
+    'Sample title',
     'Design description',
-    'Sample attribute', 
-    'Experiment attribute', 
+    'Sample attribute',
+    'Experiment attribute',
     'File information',
     ]
 
@@ -510,14 +514,14 @@ LS_PROPERTIES = [
 
 # Dictionaries
 DIC_ZOONOMIA = {
-    'human': 'human_hg38_reference', 
-    'mouse': 'mouse_mm10_reference', 
-    'chicken': 'chicken_galGal6_reference', 
-    'greenSeaturtle': 'greenSeaturtle_HLcheMyd2_reference', 
-    'pikePerch': 'pikePerch_HLsanLuc1_reference', 
-    'purpleSeaUrchin': 'purpleSeaUrchin_HLstrPur5_reference', 
-    'redEaredSlideTurtle': 'redEaredSlideTurtle_HLtraScrEle1_reference', 
-    'thaleCress': 'thaleCress_HLParaTha1_reference', 
+    'human': 'human_hg38_reference',
+    'mouse': 'mouse_mm10_reference',
+    'chicken': 'chicken_galGal6_reference',
+    'greenSeaturtle': 'greenSeaturtle_HLcheMyd2_reference',
+    'pikePerch': 'pikePerch_HLsanLuc1_reference',
+    'purpleSeaUrchin': 'purpleSeaUrchin_HLstrPur5_reference',
+    'redEaredSlideTurtle': 'redEaredSlideTurtle_HLtraScrEle1_reference',
+    'thaleCress': 'thaleCress_HLParaTha1_reference',
     'tobaccoHawkmoth': 'tobaccoHawkmoth_HLmanSex2_reference'
     }
 

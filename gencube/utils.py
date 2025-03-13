@@ -1,5 +1,5 @@
 # For accessing NCBI Entrez databases
-from Bio import Entrez        
+from Bio import Entrez
 # For convertion of data format or data manipulation
 import pandas as pd           # For data manipulation and analysis
 import numpy as np            # For numerical operations
@@ -29,13 +29,11 @@ from datetime import datetime # For manipulating date and time objects
 import time                   # For handling time-related tasks
 # For operating system and architecture check
 import platform
-# To make input or output of test code
-import pickle                 # For serializing and deserializing Python objects
-
+# For multi-threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # To suppress the SSL warnings when using verify=False in the requests library
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning) 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # To suppress the pandas warnings
 import warnings
@@ -46,17 +44,19 @@ warnings.simplefilter("ignore", PerformanceWarning)
 # Constant variables
 from .constants import (
     NCBI_FTP_URL,
-    ENSEMBL_FTP_HOST,
-    ENSEMBL_RAPID_FTP_URL,
+    #ENSEMBL_FTP_HOST,
+    #ENSEMBL_RAPID_FTP_URL,
     #ENSEMBL_RM_FTP_URL,
+    ENSEMBL_BETA_FTP_URL,
+    ENSEMBL_TREE_JSON,
     GENARK_URL,
     ZOONOMIA_URL,
     UCSC_KENT_URL,
-    LS_NCBI_ASSEMBLY_META_KEY, 
-    LS_NCBI_ASSEMBLY_META_LABEL, 
-    LS_SRA_META_STUDY_KEY, 
-    LS_SRA_META_EXPERIMENT_KEY, 
-    LS_SRA_META_STUDY_LABEL, 
+    LS_NCBI_ASSEMBLY_META_KEY,
+    LS_NCBI_ASSEMBLY_META_LABEL,
+    LS_SRA_META_STUDY_KEY,
+    LS_SRA_META_EXPERIMENT_KEY,
+    LS_SRA_META_STUDY_LABEL,
     LS_SRA_META_EXPERIMENT_LABEL,
     LS_ASSEMBLY_REPORT_LABEL,
     DIC_ZOONOMIA,
@@ -72,7 +72,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 # Get email and api key information for E-utilities
 def get_entrez_info():
     global api_key
-    
+
     home_dir = Path.home()
     config_file = home_dir / '.gencube_entrez_info'
 
@@ -121,16 +121,16 @@ def get_entrez_info():
                     'The key should be a 36-character mix of letters and numbers.\n'
                     'Invalid API key format. Please try again\n'
                     )
-    
+
         # Save the information to the file
         with open(config_file, 'w') as out_f:
             out_f.write("# This information is used in E-utilities\n")
             out_f.write(f"email = {email}\n")
             out_f.write(f"api_key = {api_key}\n")
-            
+
         # Inform the user where the information is saved
         print(f'\n!! The information is saved to "{config_file}"\n')
-        
+
         return True
 
     Entrez.email = email
@@ -140,29 +140,6 @@ def get_entrez_info():
 ## -----------------------------------------------------------
 ## gencube genome, geneset, sequence, annotation, crossgenome
 ## -----------------------------------------------------------
-"""
-# Save variables as pickle format
-def save_pickle (in_variable, out_file_name):
-    out_file = f'tests/data/{out_file_name}.pkl'
-    # Save the file using two different methods depending on the data type
-    if isinstance(in_variable, pd.DataFrame):
-        in_variable.to_pickle(out_file)
-    else:
-        with open(out_file, 'wb') as file:
-            pickle.dump(in_variable, file)
-"""
-"""
-# Load variables from pickle format file
-def load_pickle (in_file_name, type=False):
-    # Save the file using two different methods depending on the data type
-    in_file = f'tests/data/{in_file_name}.pkl'
-    if type == 'dataframe':
-        return pd.read_pickle(in_file)
-    else:
-        with open(in_file, 'rb') as file:
-            return pickle.load(file)
-"""
-
 # Check starting time
 def check_now ():
     now = datetime.now()
@@ -175,35 +152,35 @@ def add_string (pre, string):
         pre += f', {string}'
     else:
         pre = string
-        
+
     return pre
 
 # Check right and wrong inputs
 def check_argument (input, ls, str):
-    
+
     if input:
         ls_input_raw = input.split(',')
         ls_input = []
         ls_wrong = []
-        
+
         # Check right inputs
         for input_tmp in ls:
-            
+
             if input_tmp in ls_input_raw:
                 ls_input.append(input_tmp)
-        
-        # Check wrong inputs    
+
+        # Check wrong inputs
         for type_raw in ls_input_raw:
             if type_raw not in ls_input:
-                ls_wrong.append(type_raw)   
-        
+                ls_wrong.append(type_raw)
+
         if len(ls_wrong) > 0:
             print_arg = ''
             for wrong in ls_wrong:
                 print_arg = add_string(print_arg, wrong)
-            
+
             print(f'Invalid argument {str}: {print_arg}')
-            
+
         return ls_wrong
     else:
         tmp = []
@@ -215,7 +192,7 @@ def check_url(url, verify=True, show_output=True, file_name=''):
         if not file_name:
             file_name = url.split('/')[-1]
         # Use the HEAD request to fetch only the headers of the resource and allow redirects.
-        response = requests.head(url, allow_redirects=True, verify=verify)  
+        response = requests.head(url, allow_redirects=True, verify=verify)
         # Check for successful response and file accessibility.
         if response.status_code == 200:
             return True
@@ -278,11 +255,11 @@ def list_http_folders(url):
                 folders.append(href.replace('/', ''))
 
         return folders
-    
+
     except requests.exceptions.RequestException as e:
         print(f"Error accessing URL: {e}")
         return []
-    
+
 # Fetch information of files located in an HTTP server directory
 def list_http_files(url):
     try:
@@ -301,12 +278,12 @@ def list_http_files(url):
                 files.append(href)
 
         return files
-    
+
     except requests.exceptions.RequestException as e:
         print(f"Error accessing URL: {e}")
         return []
 
-# Fetch infomration using url
+# Fetch information using url
 def download_csv(url, verify=True):
     # Download the file with SSL verification disabled
     response = requests.get(url, verify=verify)
@@ -319,7 +296,7 @@ def print_warning (df, n):
         print(f'Warning: The number of genomes searched is very large (> {n}), resulting in extensive output on the terminal.')
         print('If reviewing all results in the terminal is difficult, consider using the "--metadata" option to save metadata.\n')
 
-# Make download and output forder
+# Make download and output folder
 def mkdir_raw_output (folder_name):
     # Make download folder
     if not os.path.exists(DOWNLOAD_FOLDER_NAME):
@@ -336,20 +313,20 @@ def save_metadata (df_meta, function, keywords, level, now):
     # Remove some columns not required in metadata
     if function == 'genome':
         df_meta = df_meta.drop(columns=['NCBI'])
-    
+
     # Save the metadata
     if len(keywords) != 1:
         keyword = f'{len(keywords)}keywords'
     else:
         keyword = keywords[0]
-    
+
     out_name = f"Meta_{function}_{keyword.replace(' ', '-')}_{level.replace(',', '-')}_{now}.txt"
     df_meta.to_csv(f'{out_subfolder}/{out_name}', sep='\t', index=False)
-    
+
     print('# Metadata are saved:')
     print(f'  {out_name}\n')
 
-# Calculate and return the MD5 hash of a file. 
+# Calculate and return the MD5 hash of a file
 def calculate_md5(filename):
     return hashlib.md5(open(filename,'rb').read()).hexdigest()
 
@@ -417,7 +394,7 @@ def download_genome_url(url, local_filename=None, url_md5sum=None, verify=True, 
                     if recursive_download:
                         break
                     else:
-                        os.remove(path_local_file)   
+                        os.remove(path_local_file)
 
         # Check the size of the local file if it already exists.
         existing_size = os.path.getsize(path_local_file) if os.path.exists(path_local_file) else 0
@@ -439,10 +416,10 @@ def download_genome_url(url, local_filename=None, url_md5sum=None, verify=True, 
             for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
                 bar.update(len(chunk))
-                
+
         count += 1
-        recursive_download = True 
-        
+        recursive_download = True
+
     if not url_md5sum:
         print("  !! MD5 check failed. If issues, delete and retry, or use --recursive")
 
@@ -504,7 +481,7 @@ def download_url(url, local_filename=None, url_md5sum=None, verify=True, recursi
         else:
             # If there is no url_md5sum (can't be checked)
             if os.path.exists(path_local_file):
-                if not recursive:                
+                if not recursive:
                     if count == 0:
                         print(f'  {local_filename} was already downloaded')
                     break
@@ -536,8 +513,8 @@ def download_url(url, local_filename=None, url_md5sum=None, verify=True, recursi
                 bar.update(len(chunk))
 
         count += 1
-        recursive_download = True 
-    
+        recursive_download = True
+
     if not url_md5sum or not md5sum:
         if warning:
             print("  !! MD5 check failed. If issues, delete and retry, or use --recursive")
@@ -546,13 +523,13 @@ def download_url(url, local_filename=None, url_md5sum=None, verify=True, recursi
 def get_md5 (url_md5sum, verify=True):
     response = requests.get(url_md5sum, verify=verify)
     # This will raise an error for bad responses
-    response.raise_for_status() 
+    response.raise_for_status()
     # Split the content by new lines and parse it
     data = response.text.split('\n')
     data = [line.split() for line in data if line]  # Split each line into parts and remove empty lines
     # Create a DataFrame
     df = pd.DataFrame(data, columns=['MD5', 'Filename'])
-    
+
     return df
 
 # Remove file
@@ -569,7 +546,7 @@ def make_chr_dataframe (organism, assembly_id):
     ls_report = []
     in_report_name = f'{DOWNLOAD_FOLDER_NAME}/{organism}-{assembly_id}_assembly_report.txt'
     out_report_name = f'{OUT_FOLDER_NAME}/{organism}-{assembly_id}_chr_name.txt'
-    
+
     if os.path.exists(in_report_name):
         with open (in_report_name, 'r') as file:
             for line in file:
@@ -578,11 +555,11 @@ def make_chr_dataframe (organism, assembly_id):
                     if line[0] == '<':
                         break
                     ls_report.append(line.strip().split('\t'))
-                    
+
     else:
         print(f'  {organism}-{assembly_id}_assembly_report.txt file is not found \n')
         return ''
-    
+
     df_report_raw = pd.DataFrame(ls_report, columns=LS_ASSEMBLY_REPORT_LABEL)
     df_report = df_report_raw[['GenBank-Accn', 'RefSeq-Accn', 'Assigned-Molecule',  'UCSC-style-name']]
     df_report_edit = df_report.copy()
@@ -590,18 +567,18 @@ def make_chr_dataframe (organism, assembly_id):
     # Create ensembl-style and gencode-style label
     # - Ensembl
     df_report_edit.loc[:, 'Ensembl'] = df_report.apply(
-        lambda row: row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'], 
+        lambda row: row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'],
         axis=1)
     # - Gencode
     df_report_edit.loc[:, 'Gencode'] = df_report.apply(
-        lambda row: 'chr' + row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'], 
+        lambda row: 'chr' + row['Assigned-Molecule'] if row['GenBank-Accn'].startswith('CM') or row['RefSeq-Accn'].startswith('NC') else row['GenBank-Accn'],
         axis=1)
     df_report_edit['Gencode'] = df_report_edit['Gencode'].replace('chrMT', 'chrM')
-    
+
     df_report_edit.drop(['Assigned-Molecule'], axis=1, inplace=True)
     # Change column names
     df_report_edit.columns = ['GenBank', 'RefSeq', 'UCSC', 'Ensembl', 'Gencode']
-    
+
     # Merge rows including chrM information
     if len(df_report_edit[df_report_edit['Ensembl'] == 'MT'].index) == 2:
         # Find the first valid 'GenBank' value that is not 'na' among rows where 'Ensembl' is 'MT'
@@ -612,12 +589,12 @@ def make_chr_dataframe (organism, assembly_id):
         df_report_edit = df_report_edit.drop(df_report_edit[(df_report_edit['Ensembl'] == 'MT') & (df_report_edit['RefSeq'] == 'na')].index)
     # UCSC chrM name
     df_report_edit.loc[df_report_edit['Ensembl'] == 'MT', 'UCSC'] = 'chrM'
-        
+
     # Save dataframe
     #df_report_edit_out = df_report_edit.copy()
     #df_report_edit_out.columns = ['GenBank', 'RefSeq', 'UCSC', 'Ensembl', 'Gencode']
     df_report_edit.to_csv(out_report_name, sep='\t', index=False)
-    
+
     # Remove report file
     #delete_file(in_report_name)
 
@@ -627,10 +604,10 @@ def make_chr_dataframe (organism, assembly_id):
 def search_assembly (keywords):
     print('# Search assemblies in NCBI database')
     print(f'  Keyword: {keywords}\n')
-    
+
     ls_search = []
     for keyword in keywords:
-     
+
         # Search keyword in NCBI Assembly database
         try:
             handle = Entrez.esearch(db="assembly", term=keyword, retmax="10000")
@@ -644,14 +621,14 @@ def search_assembly (keywords):
                 handle = Entrez.efetch(db="assembly", id=assembly_id, rettype="docsum")
                 record = Entrez.read(handle)
                 handle.close()
-            
+
                 ls_search += record['DocumentSummarySet']['DocumentSummary']
             else:
                 print(f"  No results found for keyword '{keyword}'\n")
         except Exception as e:
             print(f"  !! An error occurred while searching for keyword '{keyword}': {e} \n")
             continue
-        
+
     if ls_search:
         return ls_search
     else:
@@ -668,13 +645,13 @@ def json_to_dataframe (search, level, refseq, ucsc, latest):
             elif key == 'Synonym_GCF':
                 ls_value.append(dic['Synonym']['RefSeq'])
             elif key == 'GB_BioProjects':
-                if len(dic['GB_BioProjects']) > 0:    
+                if len(dic['GB_BioProjects']) > 0:
                     ls_value.append(dic['GB_BioProjects'][0]['BioprojectAccn'])
                 else:
                     ls_value.append('')
             elif key in dic:
                     ls_value.append(dic[key])
-                
+
         return pd.DataFrame([ls_value], columns=LS_NCBI_ASSEMBLY_META_LABEL)
 
     n = len(search)
@@ -692,29 +669,29 @@ def json_to_dataframe (search, level, refseq, ucsc, latest):
             df_assembly = pd.concat([df_assembly, df_tmp])
 
     df_assembly = df_assembly.reset_index(drop=True)
-    # Remove 
+    # Remove
     df_assembly['Release'] = df_assembly['Release'].apply(lambda x: x.split(' ')[0])
     df_assembly['Update'] = df_assembly['Update'].apply(lambda x: x.split(' ')[0])
     df_assembly['Release (RefSeq)'] = df_assembly['Release (RefSeq)'].apply(lambda x: x.split(' ')[0])
     df_assembly['SeqReleaseDate'] = df_assembly['SeqReleaseDate'].apply(lambda x: x.split(' ')[0])
     df_assembly['SubmissionDate'] = df_assembly['SubmissionDate'].apply(lambda x: x.split(' ')[0])
     df_assembly['LastUpdateDate'] = df_assembly['LastUpdateDate'].apply(lambda x: x.split(' ')[0])
-    
+
     df_assembly['Level'] = df_assembly['Level'].replace('Complete Genome', 'Complete')
     # Merge RefSeq and Genbank accession in a column. (Priority: RefSeq > Genbank)
     df_assembly['NCBI'] = df_assembly.apply(
-        lambda x: x['RefSeq'] if x['RefSeq'] != '' else x['GenBank'], 
+        lambda x: x['RefSeq'] if x['RefSeq'] != '' else x['GenBank'],
         axis=1)
-    
+
     # Check Level (Assembly status)
     ls_level = level.split(',')
     ls_level = [x.capitalize() for x in ls_level] # capitalize the first letter
     df_assembly_out = df_assembly[df_assembly['Level'].isin(ls_level)]
-    
+
     # Extract latest genomes
     if latest:
         ls_index = []
-        
+
         for idx in df_assembly_out.index:
             latest_acc = df_assembly_out.loc[idx, 'Latest accession']
             if latest_acc == '':
@@ -728,88 +705,102 @@ def json_to_dataframe (search, level, refseq, ucsc, latest):
 
         ls_index = list(set(ls_index))
         df_assembly_out = df_assembly_out.loc[ls_index]
-    
+
     # Extract only genoms that RefSeq accession is issued.
     if refseq:
         df_assembly_out = df_assembly_out[df_assembly_out['RefSeq'] != '']
     # Extract only genoms that UCSC name is issued.
     if ucsc:
-        df_assembly_out = df_assembly_out[df_assembly_out['UCSC'] != ''] 
+        df_assembly_out = df_assembly_out[df_assembly_out['UCSC'] != '']
     # Sort by Update
     df_assembly_out = df_assembly_out.sort_values(by='Update', ascending=False).reset_index(drop=True)
-    # Print searched result    
+    # Print searched result
     print(f'  Level:   {ls_level}')
     print(f'  RefSeq:  {refseq}')
     print(f'  UCSC:    {ucsc}')
     print(f'  Latest:  {latest}\n')
-    
+
     return df_assembly_out
 
 # Check the available genomes in GenArk and Ensembl (Rapid Release) server
 def check_access_database (df, mode):
     if mode == 'genome':
-        print('# Check accessibility to GenArk, Ensembl Rapid Release')
+        print('# Check accessibility to GenArk, Ensembl Beta')
     elif mode == 'geneset':
-        print('# Check accessibility to GenArk, Ensembl Rapid Release and Zoonomia server')
+        print('# Check accessibility to GenArk, Ensembl Beta and Zoonomia server')
     elif mode == 'sequence':
-        print('# Check accessibility to Ensembl Rapid Release')
+        print('# Check accessibility to Ensembl Beta')
     elif mode == 'annotation':
         print('# Check accessibility to GenArk')
     elif mode == 'crossgenome':
-        print('# Check accessibility to Ensembl Rapid Release and Zoonomia server')
-        
+        print('# Check accessibility to Ensembl Beta and Zoonomia server')
+
     ls_genark_mode = ['genome', 'geneset', 'annotation']
     ls_ensembl_mode = ['genome', 'geneset', 'sequence', 'crossgenome']
     ls_zoonomia_mode = ['geneset', 'crossgenome']
-        
+
     # Check GenArk
     if mode in ls_genark_mode:
         genark_meta_url = GENARK_URL + 'UCSC_GI.assemblyHubList.txt'
         genark_meta = requests.get(genark_meta_url, verify=False).text.split('\n')
-        
+
         dic_genark_meta = {}
         for line in genark_meta:
             tmp = line.split()
             if len(tmp):
                 if tmp[0] != '#':
                     dic_genark_meta[line.split('\t')[0]] = line.split('\t')[2]
-        
+
         df[['GenArk']] = ''
         print(f'  UCSC GenArk  : {len(dic_genark_meta)} genomes across {len(list(set(dic_genark_meta.values())))} species')
-                
-    # Check Ensembl
+
+    """
+    # Check Ensembl Rapid Release
     if mode in ls_ensembl_mode:
         ensembl_meta_url = ENSEMBL_RAPID_FTP_URL + 'species_metadata.json'
         ensembl_meta = requests.get(ensembl_meta_url).json()
-        
+
         dic_ensembl_meta = {}
         for acc in ensembl_meta:
             dic_ensembl_meta[acc['assembly_accession']] = acc['species']
-        
+
         df[['Ensembl']] = ''
         print(f'  Ensembl Rapid: {len(dic_ensembl_meta)} genomes across {len(list(set(dic_ensembl_meta.values())))} species')
-        
+    """
+    # Check Ensembl Beta
+    if mode in ls_ensembl_mode:
+        global ensembl_meta
+        ensembl_meta = requests.get(ENSEMBL_TREE_JSON).json()
+
+        dic_ensembl_meta = {}
+        for species in ensembl_meta:
+            for acc in ensembl_meta[species].keys():
+                dic_ensembl_meta[acc] = species
+
+        df[['Ensembl']] = ''
+        print(f'  Ensembl Beta : {len(dic_ensembl_meta)} genomes across {len(list(set(dic_ensembl_meta.values())))} species')
+
     # Check Zoonomia
     if mode in ls_zoonomia_mode:
         df_zoonomia = pd.DataFrame()
         for reference in DIC_ZOONOMIA:
             url = f'{ZOONOMIA_URL}/{DIC_ZOONOMIA[reference]}/overview.table.tsv'
-            df_tmp = pd.read_csv(download_csv(url, verify=False), sep='\t') 
+            df_tmp = pd.read_csv(download_csv(url, verify=False), sep='\t')
             df_tmp['reference'] = reference
             df_zoonomia = pd.concat([df_zoonomia, df_tmp])
-        
+
         df[['Zoonomia']] = ''
         print(f'  Zoonomia TOGA: {df_zoonomia["Assembly name"].nunique()} genomes across {df_zoonomia["Species"].nunique()} species')
-    
+
     print('')
-    
+
     # Check availability of the searched genomes in GenArk and Ensembl
     for idx in df.index:
         refseq_id = df.loc[idx]['RefSeq']
         genbank_id = df.loc[idx]['GenBank']
-        
+
         if mode in ls_genark_mode and (refseq_id in dic_genark_meta or genbank_id in dic_genark_meta):
-            df.loc[idx, 'GenArk'] = 'v'        
+            df.loc[idx, 'GenArk'] = 'v'
         if mode in ls_ensembl_mode and (genbank_id in dic_ensembl_meta or refseq_id in dic_ensembl_meta):
             df.loc[idx, 'Ensembl'] = 'v'
         if mode in ls_zoonomia_mode and (genbank_id in df_zoonomia["NCBI accession / source"].tolist() or refseq_id in df_zoonomia["NCBI accession / source"].tolist()):
@@ -832,15 +823,15 @@ def check_access_database (df, mode):
 ## ---------------------------------------------
 # Download genome data and assembly report
 def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
-    
+
     ls_type_raw = types.split(',')
-    
+
     ls_types = []
     # Change the order priority (refseq -> genbank -> others)
     for type_tmp in ['refseq', 'genbank', 'genark', 'ensembl']:
         if type_tmp in ls_type_raw:
             ls_types.append(type_tmp)
-            
+
     dic_download = {}
     for idx in df.index:
         assembly_id = df.loc[idx]['Assembly name']
@@ -857,12 +848,12 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
         else:
             print(f'[{genbank_id} / {assembly_id}]')
-        
+
         report = False
         for type in ls_types:
             print(f'- {type}')
             # RefSeq
-            if refseq_id: 
+            if refseq_id:
                 refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
                 refseq_fa = f'{refseq_dir}/{refseq_id}_{assembly_id}_genomic.fna.gz'
                 refseq_md5sum = f'{refseq_dir}/md5checksums.txt'
@@ -871,7 +862,7 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                 out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
                 # Check and download assembly report.
                 if check_url(refseq_md5sum, show_output=False):
-                    
+
                     if not report:
 
                         if check_url(refseq_rp):
@@ -879,16 +870,16 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                             report = True
                     # Check and download RefSeq genome.
                     if type == 'refseq':
-                        
+
                         if check_url(refseq_fa):
                             download_genome_url(refseq_fa, out_fa_name, refseq_md5sum, recursive=recursive)
                             ls_download.append('refseq.sm')
-                            continue 
+                            continue
                         else:
                             print('  !! RefSeq genome is not available. Try to download in GenBank database')
                 else:
                     print('  !! RefSeq data is not available. Try to download in GenBank database')
-                        
+
             elif type == 'refseq':
                 print('  !! There is no RefSeq accession. Try to download using GenBank accession')
 
@@ -907,7 +898,7 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                         if not report:
                             download_genome_url(genbank_rp, out_rp_name, genbank_md5sum, recursive=recursive)
                             report = True
-                        # Check and download GenBank genome. 
+                        # Check and download GenBank genome.
                         if type in ['genbank', 'refseq']:
                             if check_url(genbank_fa):
                                 download_genome_url(genbank_fa, out_fa_name, genbank_md5sum, recursive=recursive)
@@ -926,7 +917,7 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                         print('  !! GenBank genome is also not available')
                     elif type == 'genbank':
                         print('  !! GenBank genome is not available')
-            
+
             # GenArk
             if type == 'genark':
                 if check_genark:
@@ -935,7 +926,7 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                     else:
                         genark_id = genbank_id
 
-                    genark_dif = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}' 
+                    genark_dif = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
                     genark_fa = f'{genark_dif}/{genark_id}.fa.gz'
                     out_fa_name = f'{organism}-{assembly_id}-genark.sm.fa.gz'
 
@@ -945,11 +936,10 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                         continue
                     else:
                         continue
-                    
+
                 else:
                     print('  GenArk genome is not available')
                     continue
-
 
             # Ensembl.
             if type == 'ensembl':
@@ -960,11 +950,10 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                     elif refseq_id in dic_ensembl_meta:
                         ensembl_acc = refseq_id
                         organism_ens = dic_ensembl_meta[refseq_id].replace(' ', '_')
-                    
+
+                    """ Rapid Release
                     ensembl_dir = f'/pub/rapid-release/species/{organism_ens}/{ensembl_acc}'
-                    
                     ls_source = list_ftp_directory(ENSEMBL_FTP_HOST, ensembl_dir)
-                    
                     source = ''
                     ls_excluded = ['rnaseq', 'brake', 'statistics']
                     if ls_source:
@@ -974,20 +963,27 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
 
                     for source in ls_source:
                         ensembl_dir = f'{ENSEMBL_RAPID_FTP_URL}/species/{organism_ens}/{ensembl_acc}/{source}/genome'
-                        
+
                         ensembl_fa = f'{ensembl_dir}/{organism}-{ensembl_acc}-softmasked.fa.gz'
                         ensembl_md5sum = f'{ensembl_dir}/md5sum.txt'
                         out_fa_name = f'{organism}-{assembly_id}-ensembl_{source}.sm.fa.gz'
-                        
-                        if check_url(ensembl_fa):
-                            download_genome_url(ensembl_fa, out_fa_name, ensembl_md5sum, recursive=recursive)
-                            ls_download.append(f'ensembl_{source}.sm')
-                        else:
-                            continue
-                        
+                    """
+                    ensembl_dir = f'{ENSEMBL_BETA_FTP_URL}/{organism_ens}/{ensembl_acc}/genome'
+
+                    ensembl_fa = f'{ensembl_dir}/softmasked.fa.gz'
+                    ensembl_md5sum = f'{ensembl_dir}/md5sum.txt'
+                    out_fa_name = f'{organism}-{assembly_id}-ensembl.sm.fa.gz'
+
+                    if check_url(ensembl_fa):
+                        download_genome_url(ensembl_fa, out_fa_name, ensembl_md5sum, recursive=recursive)
+                        ls_download.append('ensembl.sm')
+                    else:
+                        continue
+
+
                 else:
                     print('  Ensembl genome is not available')
-                    continue 
+                    continue
         print('')
         dic_download[genbank_id] = ls_download
     return dic_download
@@ -995,26 +991,26 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
 # Change chromosome names of genome file
 def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, recursive):
 
-    dic_out_mask = {'soft' : 'soft-masked', 'hard' : 'hard-masked', 'none' : 'unmasked'} 
+    dic_out_mask = {'soft' : 'soft-masked', 'hard' : 'hard-masked', 'none' : 'unmasked'}
     print(f'# Change chromosome names and masking method: {style}-style & {dic_out_mask[masking]}')
-    
+
     for idx in df.index:
         assembly_id = df.loc[idx]['Assembly name']
         organism = re.sub(r'\s*\([^)]*\)', '', df.loc[idx]['Organism']).replace(' ', '_')
         genbank_id = df.loc[idx]['GenBank']
         refseq_id = df.loc[idx]['RefSeq']
-        
+
         # Print assembly
         if refseq_id:
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
         else:
             print(f'[{genbank_id} / {assembly_id}]')
-        
+
         if not os.path.exists(f'{DOWNLOAD_FOLDER_NAME}/{organism}-{assembly_id}_assembly_report.txt'):
             print('  !! Assembly report is not found in RefSeq and GenBank')
             print("     Chromosome names can't be changed\n")
             break
-        
+
         # Make integrative dataframe of chromosome label of databases
         df_report_edit = make_chr_dataframe (organism, assembly_id)
 
@@ -1024,7 +1020,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
         if style == 'ucsc' and ucsc_na_count > 1:
             print(f'  {ucsc_na_count} chromosome(s) have not ucsc name')
             break
-        
+
         # Convert the DataFrame to dictionaries for faster lookup
         genbank_to_ensembl = df_report_edit.set_index('GenBank')['Ensembl'].to_dict()
         refseq_to_ensembl = df_report_edit.set_index('RefSeq')['Ensembl'].to_dict()
@@ -1040,20 +1036,20 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
         print(f'  Downloaded genome: {ls_download}')
         for db in ls_download:
             print(f'  - {db}')
-            
-            dic_out_mask = {'soft' : 'sm', 'hard' : 'hm', 'none' : 'um'} 
+
+            dic_out_mask = {'soft' : 'sm', 'hard' : 'hm', 'none' : 'um'}
             dic_out_suffix = {'ensembl' : 'ens-id', 'gencode' : 'gc-id', 'ucsc' : 'ucsc-id'}
-            
+
             # Input and output name
             db_name = db.split('.')[0]
-            
+
             in_file = f'{organism}-{assembly_id}-{db}.fa.gz'
             out_file = f'{organism}-{assembly_id}-{db_name}.{dic_out_mask[masking]}.{dic_out_suffix[style]}.fa.gz'
-            
+
             # Remove output file (--reculsive)
             if recursive:
                 delete_file(f'{out_subfolder}/{out_file}')
-            
+
             if 'ensembl' in db_name and style == 'ensembl' and masking == 'soft':
                 if not os.path.exists(f'{out_subfolder}/{out_file}'):
                     print('    The downloaded file already contains Ensembl-style names and is soft-masked')
@@ -1063,7 +1059,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
                 else:
                     print('    The converted file already exists')
                     continue
-            
+
 
             # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
@@ -1071,9 +1067,9 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
             ls_read = []
             ls_write = []
             if in_file in ls_download_files and out_file not in ls_output_folder_files:
-                
+
                 start_time = time.time() # record start times
-                
+
                 print('    Modify chromosome names')
                 try:
                     with gzip.open(f'{DOWNLOAD_FOLDER_NAME}/{in_file}', 'rt') as f_in:
@@ -1093,7 +1089,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
                                 extra = extra.replace('softmasked', 'hardmasked')
                             elif masking == 'none':
                                 extra = extra.replace('softmasked', 'unmasked')
-                                
+
                         # Perform the lookup based on the db and style
                         if db_name in ['genbank', 'refseq', 'genark']:
                             if style == 'ensembl':
@@ -1122,23 +1118,23 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
                                     line_edit += 'N'
                                 else:
                                     line_edit += char
-                                    
+
                             ls_write.append(line_edit)
-                        # - Unmasking            
+                        # - Unmasking
                         elif masking == 'none':
                             ls_write.append(line.upper())
-                            
+
                         # - Soft-masking
                         elif masking == 'soft':
                             ls_write.append(line)
 
-                
+
                 # Write and compressed fasta file
                 print(f'    Write compressed fasta file (compresslevel: {compresslevel})')
                 with gzip.open(f'{out_subfolder}/{out_file}', 'wt', compresslevel=int(compresslevel)) as f_out:
                     for line in ls_write:
                         f_out.write(line)
-                        
+
                 end_time = time.time() # record end time
                 elapsed_time = end_time - start_time
                 print(f'    Processing time: {int(elapsed_time)} seconds')
@@ -1152,7 +1148,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
 ## gencube geneset
 ## ---------------------------------------------
 # Check full accessibility
-def process_row(idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia):
+def process_row_geneset(idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia):
     result = {
         'index': idx,
         'RefSeq': '',
@@ -1217,6 +1213,7 @@ def process_row(idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia):
             ensembl_acc = refseq_id
             organism_ens = dic_ensembl_meta[refseq_id].replace(' ', '_')
 
+        """ Rapid Release
         ensembl_dir = f'/pub/rapid-release/species/{organism_ens}/{ensembl_acc}'
         ls_source = list_ftp_directory(ENSEMBL_FTP_HOST, ensembl_dir)
 
@@ -1229,8 +1226,64 @@ def process_row(idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia):
                         source = tmp
                     else:
                         source += f', {tmp}'
+        """
+        # Check source directories
+        ls_source = list(ensembl_meta[organism_ens][ensembl_acc].keys())
+
+        source = ''
+        ls_excluded = ['genome']
+        if ls_source:
+            for tmp in ls_excluded:
+                if tmp in ls_source:
+                    ls_source.remove(tmp)
+
+        ls_input = []
+        for source in ls_source:
+            ls_tmp = [source]
+            # Check the geneset folder name
+            genomebuild = list(ensembl_meta[organism_ens][ensembl_acc][source]['geneset'].keys())[0]
+
+            ls_filename = list(ensembl_meta[organism_ens][ensembl_acc][source]['geneset'][genomebuild].keys())
+            ensembl_gtf = 'genes.gtf.gz'
+            ensembl_gff = 'genes.gff3'
+
+            if ensembl_gtf in ls_filename:
+                ls_tmp.append('gtf')
+            if ensembl_gff in ls_filename:
+                ls_tmp.append('gff')
+
+            ls_input.append(ls_tmp)
+
+        if ls_input:
+            str_input = ''
+            for i in range(len(ls_input)):
+                if i != 0:
+                    str_input += ' / '
+                for j in range(len(ls_input[i])):
+                    if j == 0:
+                        str_input += f'{ls_input[i][j]}:'
+                    else:
+                        str_input += f' {ls_input[i][j]}'
+                    if j != 0 and j != len(ls_input[i]) - 1:
+                        str_input += ','
+
+            result['Ensembl'] = add_string(result['Ensembl'], str_input)
+
+        """
+        # Check source directories
+        ls_source = list(ensembl_meta[organism_ens][ensembl_acc].keys())
+
+        source = ''
+        if ls_source:
+            for tmp in ls_source:
+                if tmp != 'genome':
+                    if not source:
+                        source = tmp
+                    else:
+                        source += f', {tmp}'
 
         result['Ensembl'] = add_string(result['Ensembl'], source)
+        """
 
     # Zoonomia
     if check_zoonomia:
@@ -1258,7 +1311,7 @@ def check_access_full_geneset(df, dic_genark_meta, dic_ensembl_meta, df_zoonomia
         futures = []
         for idx in df.index:
             row = df.loc[idx]
-            futures.append(executor.submit(process_row, idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia))
+            futures.append(executor.submit(process_row_geneset, idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia))
 
         for future in futures:
             results.append(future.result())
@@ -1276,9 +1329,9 @@ def check_access_full_geneset(df, dic_genark_meta, dic_ensembl_meta, df_zoonomia
 
 # Download geneset data
 def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonomia, types, recursive):
-        
+
     ls_types = types.split(',')
-    
+
     print('# Download geneset data')
     dic_download = {}
     for idx in df.index:
@@ -1287,24 +1340,24 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
         genbank_id = df_genome.loc[idx]['GenBank']
         refseq_id = df_genome.loc[idx]['RefSeq']
         organism = re.sub(r'\s*\([^)]*\)', '', df_genome.loc[idx]['Organism']).replace(' ', '_')
-        
+
         check_refseq = df.loc[idx]['RefSeq']
         check_genark = df.loc[idx]['GenArk']
         check_ensembl = df.loc[idx]['Ensembl']
         check_zoonomia = df.loc[idx]['Zoonomia']
-        
+
         # Print assembly
         if refseq_id:
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
         else:
             print(f'[{genbank_id} / {assembly_id}]')
-        
+
         ls_download = []
         # RefSeq
         if len(list(set(['refseq_gtf', 'refseq_gff', 'gnomon', 'cross_species', 'same_species']) & set(ls_types))) > 0:
-            
+
             refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
-            
+
             ls_search = check_refseq.replace(' ', '').split(',')
             url_md5sum = f'{refseq_dir}/md5checksums.txt'
             refseq_gtf = f'{refseq_dir}/{refseq_id}_{assembly_id}_genomic.gtf.gz'
@@ -1312,32 +1365,32 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
             refseq_genomon = f'{refseq_dir}/Gnomon_models/{refseq_id}_{assembly_id}_gnomon_model.gff.gz'
             refseq_cross = f'{refseq_dir}/Evidence_alignments/{refseq_id}_{assembly_id}_cross_species_tx_alns.gff.gz'
             refseq_same = f'{refseq_dir}/Evidence_alignments/{refseq_id}_{assembly_id}_same_species_tx_alns.gff.gz'
-            
+
             if check_refseq:
                 if 'refseq_gtf' in ls_types:
                     if 'gtf' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.gtf.gz'
                         download_url(refseq_gtf, out_name, url_md5sum=url_md5sum, recursive=recursive)
                         ls_download.append('refseq_gtf')
-                        
+
                 if 'refseq_gff' in ls_types:
                     if 'gff' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.gff.gz'
                         download_url(refseq_gff, out_name, url_md5sum=url_md5sum, recursive=recursive)
                         ls_download.append('refseq_gff')
-                        
+
                 if 'gnomon' in ls_types:
                     if 'gnomon' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq_genomon.gff.gz'
                         download_url(refseq_genomon, out_name, url_md5sum=url_md5sum, recursive=recursive)
                         ls_download.append('gnomon')
-                        
+
                 if 'cross' in ls_types:
                     if 'cross' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq_cross.gff.gz'
                         download_url(refseq_cross, out_name, url_md5sum=url_md5sum, recursive=recursive)
                         ls_download.append('cross_species')
-                        
+
                 if 'same' in ls_types:
                     if 'same' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq_same.gff.gz'
@@ -1346,62 +1399,71 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
 
         # Genark
         if len(list(set(['agustus', 'xenoref', 'genark_ref']) & set(ls_types))) > 0:
-            
+
             if refseq_id in dic_genark_meta:
                 genark_id = refseq_id
             else:
                 genark_id = genbank_id
-            genark_dif = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}' 
-            
+            genark_dif = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
+
             ls_search = check_genark.replace(' ', '').split(',')
             genark_augustus = f'{genark_dif}/genes/{genark_id}_{assembly_id}.augustus.gtf.gz'
             genark_xeno = f'{genark_dif}/genes/{genark_id}_{assembly_id}.xenoRefGene.gtf.gz'
             genark_ref = f'{genark_dif}/genes/{genark_id}_{assembly_id}.ncbiRefSeq.gtf.gz'
-            
+
             if check_genark:
-                
+
                 if 'agustus' in ls_types:
                     if 'agustus' in ls_search:
                         out_name = f'{organism}-{assembly_id}-genark_agustus.gtf.gz'
                         download_url(genark_augustus, out_name, verify=False, recursive=recursive)
                         ls_download.append('agustus')
-                        
+
                 if 'xenoref' in ls_types:
                     if 'xenoref' in ls_search:
                         out_name = f'{organism}-{assembly_id}-genark_xenoref.gtf.gz'
                         download_url(genark_xeno, out_name, verify=False, recursive=recursive)
                         ls_download.append('xenoref')
-                        
+
                 if 'genark_ref' in ls_types:
                     if 'ref' in ls_search:
                         out_name = f'{organism}-{assembly_id}-genark_refseq.gtf.gz'
                         download_url(genark_ref, out_name, verify=False, recursive=recursive)
                         ls_download.append('genark_ref')
-                
+
         # Ensembl
         if len(list(set(['ensembl_gtf', 'ensembl_gff']) & set(ls_types))) > 0:
-            
+
             if genbank_id in dic_ensembl_meta:
                 ensembl_acc = genbank_id
                 organism_ens = dic_ensembl_meta[genbank_id].replace(' ', '_')
             elif refseq_id in dic_ensembl_meta:
                 ensembl_acc = refseq_id
                 organism_ens = dic_ensembl_meta[refseq_id].replace(' ', '_')
-            
+
+            #if check_ensembl:
+            #    ls_source = check_ensembl.replace(' ', '').split(',')
+            # 지울 예정
+
             if check_ensembl:
-                ls_source = check_ensembl.replace(' ', '').split(',')
-                
+                ls_source = []
+                for search_in_source in check_ensembl.replace(' ', '').split('/'):
+                    source = search_in_source.strip().split(':')[0]
+                    ls_source.append(source)
+                    ls_search = search_in_source.split(':')[1].split(',')
+
+                """ Rapid Release
                 for source in ls_source:
                     ensembl_dir = f'/pub/rapid-release/species/{organism_ens}/{ensembl_acc}/{source}/geneset'
                     # Check the geneset folder name
                     geneset = list_ftp_directory(ENSEMBL_FTP_HOST, ensembl_dir)[0]
-                    
+
                     ensembl_file_dir = f'{ENSEMBL_RAPID_FTP_URL}/species/{organism_ens}/{ensembl_acc}/{source}/geneset/{geneset}'
 
                     url_md5sum = f'{ensembl_file_dir}/md5sum.txt'
                     ensembl_gtf = f'{ensembl_file_dir}/{organism_ens}-{ensembl_acc}-{geneset}-genes.gtf.gz'
                     ensembl_gff = f'{ensembl_file_dir}/{organism_ens}-{ensembl_acc}-{geneset}-genes.gff3.gz'
-                    
+
                     if 'ensembl_gtf' in ls_types:
                         out_name = f'{organism}-{assembly_id}-ensembl_{source}.gtf.gz'
                         if check_url(ensembl_gtf, file_name=out_name):
@@ -1413,23 +1475,43 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
                         if check_url(ensembl_gff, file_name=out_name):
                             download_url(ensembl_gff, out_name, url_md5sum=url_md5sum)
                             ls_download.append(f'ensembl-{source}-gff')
-            
+                """
+                for source in ls_source:
+                    # Check the geneset folder name
+                    genomebuild = list(ensembl_meta[organism_ens][ensembl_acc][source]['geneset'].keys())[0]
+                    ensembl_file_dir = f'{ENSEMBL_BETA_FTP_URL}/{organism_ens}/{ensembl_acc}/{source}/geneset/{genomebuild}'
+                    # url_md5sum = f'{ensembl_file_dir}/md5sum.txt'
+                    ensembl_gtf = f'{ensembl_file_dir}/genes.gtf.gz'
+                    ensembl_gff = f'{ensembl_file_dir}/genes.gff3'
+
+                    if 'ensembl_gtf' in ls_types:
+                        out_name = f'{organism}-{assembly_id}-ensembl_{source}.gtf.gz'
+                        if check_url(ensembl_gtf, file_name=out_name):
+                            download_url(ensembl_gtf, out_name, recursive=recursive)
+                            ls_download.append(f'ensembl-{source}-gtf')
+
+                    if 'ensembl_gff' in ls_types:
+                        out_name = f'{organism}-{assembly_id}-ensembl_{source}.gff'
+                        if check_url(ensembl_gff, file_name=out_name):
+                            download_url(ensembl_gff, out_name, recursive=recursive)
+                            ls_download.append(f'ensembl-{source}-gff')
+
         # Zoonomia
         if len(list(set(['toga_gtf', 'toga_bed', 'toga_pseudo']) & set(ls_types))) > 0:
-            
+
             if check_zoonomia:
                 ls_reference = check_zoonomia.replace(' ', '').split(',')
-                
+
                 for reference in ls_reference:
-                    
+
                     zoonomia_dir = f'{ZOONOMIA_URL}/{DIC_ZOONOMIA[reference]}'
-                    
+
                     df_tmp = df_zoonomia[
-                        ((df_zoonomia['NCBI accession / source'] == genbank_id) | 
+                        ((df_zoonomia['NCBI accession / source'] == genbank_id) |
                         (df_zoonomia['NCBI accession / source'] == refseq_id)) &
                         (df_zoonomia['reference'] == reference)
                     ]
-                    
+
                     for i in range(len(df_tmp.index)):
                         taxo = df_tmp['Taxonomic Lineage'].values[i]
                         species = df_tmp['Species'].values[i].replace(' ', '_')
@@ -1438,64 +1520,64 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
 
                         if reference in ['human', 'mouse', 'chicken']:
                             ls_folders = list_http_folders(zoonomia_dir)
-                        
+
                             for folder in ls_folders:
                                 if folder in taxo:
                                     category = folder
                                     break
-                            
+
                             zoonomia_file_dir = f'{zoonomia_dir}/{category}/{species}__{name}__{assembly}'
                         else:
                             zoonomia_file_dir = f'{zoonomia_dir}/{species}__{name}__{assembly}'
-                        
+
                         zoonomia_gtf = f'{zoonomia_file_dir}/geneAnnotation.gtf.gz'
                         zoonomia_bed = f'{zoonomia_file_dir}/geneAnnotation.bed.gz'
                         zoonomia_pseudo = f'{zoonomia_file_dir}/processedPseudogeneAnnotation.bed.gz'
-                        
+
                         if 'toga_gtf' in ls_types:
                             out_name = f'{organism}-{assembly_id}-toga_{reference}.gtf.gz'
                             if check_url(zoonomia_gtf, verify=False, file_name=out_name):
                                 download_url(zoonomia_gtf, out_name, verify=False, recursive=recursive)
                                 ls_download.append(f'zoonomia-{reference}-gtf')
-                        
+
                         if 'toga_bed' in ls_types:
                             out_name = f'{organism}-{assembly_id}-toga_{reference}.bed.gz'
                             if check_url(zoonomia_bed, verify=False, file_name=out_name):
                                 download_url(zoonomia_bed, out_name, verify=False, recursive=recursive)
                                 ls_download.append(f'zoonomia-{reference}-bed')
-                                
+
                         if 'toga_pseudo' in ls_types:
                             out_name = f'{organism}-{assembly_id}-toga_{reference}_pseudo.bed.gz'
                             if check_url(zoonomia_pseudo, verify=False, file_name=out_name):
                                 download_url(zoonomia_pseudo, out_name, verify=False, recursive=recursive)
                                 ls_download.append(f'zoonomia-{reference}-pseudobed')
-                
+
         dic_download[genbank_id] = ls_download
         print('')
     return dic_download
 
 # Change chromosome names of geneset file
 def convert_chr_label_geneset (df, dic_download, style, recursive):
-        
+
     print(f'# Change chromosome names: {style}-style')
-    
+
     for idx in df.index:
         assembly_id = df.loc[idx]['Assembly name']
         organism = re.sub(r'\s*\([^)]*\)', '', df.loc[idx]['Organism']).replace(' ', '_')
         genbank_id = df.loc[idx]['GenBank']
         refseq_id = df.loc[idx]['RefSeq']
-        
+
         # Print assembly
         if refseq_id:
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
         else:
             print(f'[{genbank_id} / {assembly_id}]')
-            
+
         # Download assembly report
         print('  Download assembly report')
         report = False
         # RefSeq
-        if refseq_id: 
+        if refseq_id:
             refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
             refseq_md5sum = f'{refseq_dir}/md5checksums.txt'
             refseq_rp = f'{refseq_dir}/{refseq_id}_{assembly_id}_assembly_report.txt'
@@ -1511,7 +1593,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
             genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_id}_{assembly_id}'
             genbank_md5sum = f'{genbank_dir}/md5checksums.txt'
             genbank_rp = f'{genbank_dir}/{genbank_id}_{assembly_id}_assembly_report.txt'
-            out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'            
+            out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
 
             if check_url(genbank_rp):
                 # Check and download assembly report.
@@ -1521,7 +1603,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 print('  !! Assembly report is not found in RefSeq and GenBank')
                 print("     Chromosome names can't be changed\n")
                 break
-                
+
         # Make integrative dataframe of chromosome label of databases
         df_report_edit = make_chr_dataframe (organism, assembly_id)
 
@@ -1534,7 +1616,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
 
         df_report_edit['genbank_noversion'] = df_report_edit['GenBank'].apply(lambda x: x.split('.')[0])
         df_report_edit['refseq_noversion'] = df_report_edit['RefSeq'].apply(lambda x: x.split('.')[0])
-        
+
         # Convert the DataFrame to dictionaries for faster lookup
         genbank_to_ensembl = df_report_edit.set_index('GenBank')['Ensembl'].to_dict()
         refseq_to_ensembl = df_report_edit.set_index('RefSeq')['Ensembl'].to_dict()
@@ -1564,8 +1646,8 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
         # Check downloaded files
         ls_download = dic_download[genbank_id]
         print(f'  Downloaded genome: {ls_download}')
-        
-        
+
+
         dic_db_suffix = {
             'refseq_gtf' : 'refseq.gtf.gz',
             'refseq_gff' : 'refseq.gff.gz',
@@ -1577,10 +1659,10 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
             'genark_ref' : 'genark_refseq.gtf.gz',
         }
         dic_out_suffix = {'ensembl' : 'ens-id', 'gencode' : 'gc-id', 'ucsc' : 'ucsc-id'}
-        
+
         for db in ls_download:
             print(f'  - {db}')
-            
+
             # Input and output name
             if 'ensembl' in db:
                 ls_tmp = db.split('-')
@@ -1588,7 +1670,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                     in_file = f'{organism}-{assembly_id}-ensembl_{ls_tmp[1]}.gtf.gz'
                     out_file = f'{organism}-{assembly_id}-ensembl_{ls_tmp[1]}.{dic_out_suffix[style]}.gtf'
                 elif ls_tmp[2] == 'gff':
-                    in_file = f'{organism}-{assembly_id}-ensembl_{ls_tmp[1]}.gff.gz'
+                    in_file = f'{organism}-{assembly_id}-ensembl_{ls_tmp[1]}.gff'
                     out_file = f'{organism}-{assembly_id}-ensembl_{ls_tmp[1]}.{dic_out_suffix[style]}.gff'
             elif 'zoonomia' in db:
                 ls_tmp = db.split('-')
@@ -1603,46 +1685,51 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                     out_file = f'{organism}-{assembly_id}-toga_{ls_tmp[1]}_pseudo.{dic_out_suffix[style]}.bed'
             else:
                 db_suffix = dic_db_suffix[db].split('.')
-                
+
                 in_file = f'{organism}-{assembly_id}-{dic_db_suffix[db]}'
                 out_file = f'{organism}-{assembly_id}-{db_suffix[0]}.{dic_out_suffix[style]}.{db_suffix[1]}'
-                
+
             # Remove output file (--reculsive)
             if recursive:
                 delete_file(f'{out_subfolder}/{out_file}')
-                
+
             if db in ['ensembl_gtf', 'ensembl_gff'] and style == 'ensembl':
                 # print('  !! The file downloaded from the Ensembl database already has ensembl-style chromosome names')
                 continue
-            
+
             # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
             ls_output_folder_files = os.listdir(out_subfolder)
-            
+
             print('    Modify chromosome names')
             if in_file in ls_download_files and out_file not in ls_output_folder_files:
-                
+
                 ls_read = []
-                ls_write = []         
+                ls_write = []
                 try:
-                    with gzip.open(f'{DOWNLOAD_FOLDER_NAME}/{in_file}', 'rt') as f_in:
-                        for line in f_in:
-                            ls_read.append(line)
-                            
+                    if in_file.split('.')[-1] == 'gz':
+                        with gzip.open(f'{DOWNLOAD_FOLDER_NAME}/{in_file}', 'rt') as f_in:
+                            for line in f_in:
+                                ls_read.append(line)
+                    else:
+                        with open(f'{DOWNLOAD_FOLDER_NAME}/{in_file}', 'r') as f_in:
+                            for line in f_in:
+                                ls_read.append(line)
+
                 except gzip.BadGzipFile:
-                    print('  !! The file is not a valid gzip file\n')              
-                
+                    print('  !! The file is not a valid gzip file\n')
+
                 count = 0
                 for line in ls_read:
                     if not line.startswith('#'):
                         ls_tmp = line.strip().split('\t')
                         chr_name = ls_tmp[0]
-                        
+
                         # Remove 'gene' block in refeq geneset data
                         category = ls_tmp[2]
                         if category == 'gene' or category == 'region':
                                 continue
-                        
+
                         # Change the chromosome name
                         if db in ['refseq_gtf', 'refseq_gff', 'gnomon', 'cross_species', 'same_species', 'agustus', 'xenoref', 'genark_ref']:
                             if style == 'ensembl':
@@ -1651,7 +1738,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                                 ls_tmp[0] = genbank_to_gencode.get(chr_name, refseq_to_gencode.get(chr_name, chr_name))
                             elif style == 'ucsc':
                                 ls_tmp[0] = genbank_to_ucsc.get(chr_name, refseq_to_ucsc.get(chr_name, chr_name))
-                        elif 'ensembl' in db:                         
+                        elif 'ensembl' in db:
                             if style == 'gencode':
                                 ls_tmp[0] = ensembl_to_gencode.get(chr_name, chr_name)
                             elif style == 'ucsc':
@@ -1666,14 +1753,14 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
 
                         line_edit = '\t'.join(ls_tmp) + '\n'
                         ls_write.append(line_edit)
-                        
+
                         count += 1
                     else:
                         ls_write.append(line)
 
                 format = out_file.split('.')[-1]
                 # bed format
-                if format == 'bed': 
+                if format == 'bed':
                     # Write gtf, gff, and bed file
                     with open(f'{out_subfolder}/{out_file}_tmp', 'w') as f_out:
                         for line in ls_write:
@@ -1683,26 +1770,26 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                     print('    Sort file')
                     with open(f'{out_subfolder}/{out_file}', 'w') as f_out:
                         subprocess.run(['sort', '-k1,1', '-k2,2n', f'{out_subfolder}/{out_file}_tmp'], stdout=f_out, check=True)
-                            
+
                     # Remove temporary file
                     delete_file(f'{out_subfolder}/{out_file}_tmp')
-                    
+
                     # Compress file
                     subprocess.run(['gzip', '--best', '--force', f'{out_subfolder}/{out_file}'], check=True)
-                
-                # gtf or gff format    
+
+                # gtf or gff format
                 else:
-                     # Write and compressed gtf, gff, and bed file
+                    # Write and compressed gtf, gff, and bed file
                     with gzip.open(f'{out_subfolder}/{out_file}.gz', 'wt', compresslevel=9) as f_out:
                         for line in ls_write:
-                            f_out.write(line)       
-                
+                            f_out.write(line)
+
                 """
                 # gtf or gff format
                 else:
                     with open(f'{OUT_FOLDER_NAME}/{out_file}', 'w') as f_out:
-                        subprocess.run(['sort', '-k1,1', '-k4,4n', f'{OUT_FOLDER_NAME}/{out_file}_tmp'], stdout=f_out, check=True)       
-                        
+                        subprocess.run(['sort', '-k1,1', '-k4,4n', f'{OUT_FOLDER_NAME}/{out_file}_tmp'], stdout=f_out, check=True)
+
                 # Make index file
                 print(f'  Make index file: {OUT_FOLDER_NAME}/{out_file}.gz')
                 if format == 'bed': # bed format
@@ -1719,7 +1806,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                 """
 
                 print('')
-        
+
             else:
                 print('  The output file already exists')
                 print('  !! If the file appears to have any problems, please delete it and retry the process\n')
@@ -1806,9 +1893,9 @@ def check_access_full_annotation(df, dic_genark_meta):
 
 # Download annotation data
 def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
-        
+
     ls_types = types.split(',')
-    
+
     print('# Download annotation data')
     dic_download = {}
     for idx in df.index:
@@ -1816,11 +1903,11 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
         assembly_id = df_genome.loc[idx]['Assembly name']
         genbank_id = df_genome.loc[idx]['GenBank']
         refseq_id = df_genome.loc[idx]['RefSeq']
-        
+
         #check_genbank = df.loc[idx]['genbank']
         check_genark = df.loc[idx]['GenArk']
         organism = re.sub(r'\s*\([^)]*\)', '', df_genome.loc[idx]['Organism']).replace(' ', '_')
-        
+
         # Print assembly
         if refseq_id:
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
@@ -1832,14 +1919,14 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
         """
         # RefSeq
         if len(list(set(['ontology', 'repeatmasker']) & set(ls_types))) > 0:
-            
+
             ls_search = check_refseq.replace(' ', '').split(',')
             refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
             url_md5sum = f'{refseq_dir}/md5checksums.txt'
-            refseq_rm = f'{refseq_dir}/{refseq_id}_{assembly_id}_rm.out.gz'                    
-            
+            refseq_rm = f'{refseq_dir}/{refseq_id}_{assembly_id}_rm.out.gz'
+
             print(refseq_dir)
-                    
+
             if check_refseq:
                 if 'repeatmasker' in ls_types:
                     if 'repeatmasker' in ls_search:
@@ -1847,13 +1934,13 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
                             out_name = f'{organism}-{assembly_id}-refseq.repeatMasker.out.gz'
                             download_url(refseq_rm, out_name, url_md5sum=url_md5sum)
                             ls_download.append('refseq_rm')
-                        
+
                 if 'ontology' in ls_types:
                     if 'ontology' in ls_search:
                         if check_url(url_md5sum):
                             df_md5 = get_md5 (url_md5sum) # Read md5sum information
                             ls_filename = df_md5['Filename'].str.split('/').str[-1].tolist()
-                            
+
                             for file in ls_filename:
                                 if '_gene_ontology.gaf.gz' in file:
                                     out_name = f'{organism}-{assembly_id}-refseq.gene_ontology.gaf.gz'
@@ -1868,13 +1955,13 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
                 genark_id = refseq_id
             else:
                 genark_id = genbank_id
-                
+
             ls_search = check_genark.replace(' ', '').split(',')
-                        
-            genark_dir = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}' 
-            
+
+            genark_dir = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
+
             print(genark_dir)
-            
+
             #genark_rmask = f'{genark_dir}/{genark_id}.repeatMasker.out.gz'
             #genark_rmodel = f'{genark_dir}/{genark_id}.repeatModeler.out.gz'
             genark_gc = f'{genark_dir}/bbi/{genark_id}_{assembly_id}.gc5Base.bw'
@@ -1882,13 +1969,13 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
             genark_td = f'{genark_dir}/bbi/{genark_id}_{assembly_id}.tandemDups.bb'
             genark_wm = f'{genark_dir}/bbi/{genark_id}_{assembly_id}.windowMasker.bb'
             genark_chrsize = f'{genark_dir}/{genark_id}.chrom.sizes.txt'
-                    
+
             if 'gc' in ls_types:
                 if 'gc' in ls_search:
                     out_name = f'{organism}-{assembly_id}-genark.gc5Base.bw'
                     download_url(genark_gc, out_name, recursive=recursive)
                     ls_download.append('genark.gc5Base')
-                    
+
             if 'sr' in ls_types:
                 if 'sr' in ls_search:
                     out_name = f'{organism}-{assembly_id}-genark.simpleRepeat.bb'
@@ -1903,7 +1990,7 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
                 if 'wm' in ls_search:
                     out_name = f'{organism}-{assembly_id}-genark.windowMasker.bb'
                     download_url(genark_wm, out_name, recursive=recursive)
-                    ls_download.append('genark.windowMasker')                    
+                    ls_download.append('genark.windowMasker')
 
             ls_bb_files = list_http_files(genark_dir + '/bbi')
             ls_gaps = []
@@ -1916,7 +2003,7 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
                     ls_rmsk.append(file)
                 elif '.cpgIslandExt' in file:
                     ls_cpg_island.append(file)
-            
+
             # gap
             if 'gap' in ls_types:
                 if 'gap' in ls_search:
@@ -1943,7 +2030,7 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
                             out_name = f'{organism}-{assembly_id}-genark.rmsk.{suffix}.bb'
                             download_url(f'{genark_dir}/bbi/{in_name}', out_name, recursive=recursive)
                             ls_download.append(f'genark.rmsk.{suffix}')
-            # CpG island        
+            # CpG island
             if 'cpgisland' in ls_types:
                 if 'cpgisland' in ls_search:
                     for in_name in ls_cpg_island:
@@ -1951,35 +2038,34 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
                         out_name = f'{organism}-{assembly_id}-genark.{suffix}.bb'
                         download_url(f'{genark_dir}/bbi/{in_name}', out_name, recursive=recursive)
                         ls_download.append(f'genark.{suffix}')
-                        
+
             # Chrom size
             out_chrsize_name = f'{organism}-{assembly_id}-genark.chrom.sizes.txt'
             download_url(genark_chrsize, out_chrsize_name, recursive=recursive)
-                        
+
         dic_download[genbank_id] = ls_download
         print('')
-        
+
     return dic_download
-                        
+
 # Change chromosome names of annotation file
 def convert_chr_label_annotation (df, dic_download, style, recursive):
-        
+
     print(f'# Change chromosome names: {style}-style')
-    
-    
+
     # Download UCSC genome browser applications
     # & Change the file system permissions of files
     path_bw2bdg = f'{DOWNLOAD_FOLDER_NAME}/bigWigToBedGraph'
     path_bdg2bw = f'{DOWNLOAD_FOLDER_NAME}/bedGraphToBigWig'
     path_bb2bed = f'{DOWNLOAD_FOLDER_NAME}/bigBedToBed'
     path_bed2bb = f'{DOWNLOAD_FOLDER_NAME}/bedToBigBed'
-    
+
     if not os.path.exists(path_bw2bdg) or not os.path.exists(path_bdg2bw) or \
         not os.path.exists(path_bb2bed) or not os.path.exists(path_bed2bb) or \
         recursive:
-    
+
         print('  Download UCSC genome browser applications')
-        
+
         # Determine the system's OS and architecture
         system = platform.system()
         arch = platform.machine()
@@ -1991,9 +2077,9 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
             base_url = UCSC_KENT_URL + '/macOSX.arm64'
         else:
             raise ValueError(f'Unsupported system: {system} {arch}')
-        
+
         print(f'  Confirmed system: {system} {arch}')
-        
+
         # UCSC-Kent applications
         bw2bdg_url = f'{base_url}/bigWigToBedGraph'
         bdg2bw_url = f'{base_url}/bedGraphToBigWig'
@@ -2003,7 +2089,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
         if not os.path.exists(path_bw2bdg) or recursive:
             download_url(bw2bdg_url, recursive=recursive, warning=False)
             subprocess.run(['chmod', '+x', path_bw2bdg], check=True)
-        if not os.path.exists(path_bdg2bw) or recursive:    
+        if not os.path.exists(path_bdg2bw) or recursive:
             download_url(bdg2bw_url, recursive=recursive, warning=False)
             subprocess.run(['chmod', '+x', path_bdg2bw], check=True)
         if not os.path.exists(path_bb2bed) or recursive:
@@ -2014,24 +2100,23 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
             subprocess.run(['chmod', '+x', path_bed2bb], check=True)
         print('')
 
-
     for idx in df.index:
         assembly_id = df.loc[idx]['Assembly name']
         organism = re.sub(r'\s*\([^)]*\)', '', df.loc[idx]['Organism']).replace(' ', '_')
         genbank_id = df.loc[idx]['GenBank']
         refseq_id = df.loc[idx]['RefSeq']
-        
+
         # Print assembly
         if refseq_id:
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
         else:
             print(f'[{genbank_id} / {assembly_id}]')
-            
+
         # Download assembly report
         print('  Download assembly report')
         report = False
         # RefSeq
-        if refseq_id: 
+        if refseq_id:
             refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
             refseq_md5sum = f'{refseq_dir}/md5checksums.txt'
             refseq_rp = f'{refseq_dir}/{refseq_id}_{assembly_id}_assembly_report.txt'
@@ -2047,7 +2132,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
             genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_id}_{assembly_id}'
             genbank_md5sum = f'{genbank_dir}/md5checksums.txt'
             genbank_rp = f'{genbank_dir}/{genbank_id}_{assembly_id}_assembly_report.txt'
-            out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'            
+            out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
 
             if check_url(genbank_rp):
                 # Check and download assembly report.
@@ -2057,7 +2142,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                 print('  !! Assembly report is not found in RefSeq and GenBank')
                 print("     Chromosome names can't be changed\n")
                 break
-                
+
         # Make integrative dataframe of chromosome label of databases
         df_report_edit = make_chr_dataframe (organism, assembly_id)
 
@@ -2067,7 +2152,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
         if style == 'ucsc' and ucsc_na_count > 1:
             print(f'  {ucsc_na_count} chromosome(s) have not ucsc name')
             break
-        
+
         # Convert the DataFrame to dictionaries for faster lookup
         genbank_to_ensembl = df_report_edit.set_index('GenBank')['Ensembl'].to_dict()
         refseq_to_ensembl = df_report_edit.set_index('RefSeq')['Ensembl'].to_dict()
@@ -2086,12 +2171,12 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
         # Check downloaded files
         ls_download = dic_download[genbank_id]
         print(f'  Downloaded genome: {ls_download}')
-        
+
         dic_out_suffix = {'ensembl' : 'ens-id', 'gencode' : 'gc-id', 'ucsc' : 'ucsc-id'}
-    
+
         for download in ls_download:
             print(f'  - {download}')
-            
+
             # Input and output name
             if download == 'genark.gc5Base':
                 in_raw_file = f'{organism}-{assembly_id}-genark.gc5Base.bw'
@@ -2103,17 +2188,17 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                 in_file = f'{organism}-{assembly_id}-{download}.bed'
                 out_file = f'{organism}-{assembly_id}-{download}.{dic_out_suffix[style]}.bed'
                 out_file_final = f'{organism}-{assembly_id}-{download}.{dic_out_suffix[style]}.bb'
-                
+
             # Remove output file (--reculsive)
             if recursive:
                 delete_file(f'{out_subfolder}/{out_file_final}')
                 delete_file(f'{out_subfolder}/{out_file}')
-            
-           # File check in working directory
+
+            # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
             ls_output_folder_files = os.listdir(out_subfolder)
 
-            if in_raw_file in ls_download_files and out_file_final not in ls_output_folder_files: 
+            if in_raw_file in ls_download_files and out_file_final not in ls_output_folder_files:
 
                 # Change file format (binary to readable format)
                 if download == 'genark.gc5Base':
@@ -2123,16 +2208,16 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                 else:
                     # bigBed to bed
                     print('    Convert bigBed to bed')
-                    subprocess.run([f'{path_bb2bed}', f'{DOWNLOAD_FOLDER_NAME}/{in_raw_file}', f'{DOWNLOAD_FOLDER_NAME}/{in_file}'], check=True)                    
+                    subprocess.run([f'{path_bb2bed}', f'{DOWNLOAD_FOLDER_NAME}/{in_raw_file}', f'{DOWNLOAD_FOLDER_NAME}/{in_file}'], check=True)
 
                 print('    Modify chromosome names')
                 with open(f'{DOWNLOAD_FOLDER_NAME}/{in_file}', 'r') as f_in, open(f'{out_subfolder}/{out_file}', 'w') as f_out:
                     for line in f_in:
-                                   
+
                         if not line.startswith('#'):
                             ls_tmp = line.strip().split('\t')
                             chr_name = ls_tmp[0]
-                            
+
                             # Change the chromosome name
                             if style == 'ensembl':
                                 ls_tmp[0] = genbank_to_ensembl.get(chr_name, refseq_to_ensembl.get(chr_name, chr_name))
@@ -2146,7 +2231,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
 
                         else:
                             f_out.write(line)
-                            
+
             else:
                 print('    The output file already exists')
                 print('    !! If the file appears to have any problems, please delete it and retry the process\n')
@@ -2156,16 +2241,16 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
             in_genark_chrsizee = f'{organism}-{assembly_id}-genark.chrom.sizes.txt'
             out_genark_chrsize = f'{organism}-{assembly_id}-genark.chrom.sizes.{dic_out_suffix[style]}.tmp.txt'
             out_genark_chrsize_sorted = f'{organism}-{assembly_id}-genark.chrom.sizes.{dic_out_suffix[style]}.txt'
-            
+
             if in_genark_chrsizee in ls_download_files and out_genark_chrsize not in ls_output_folder_files:
 
                 with open(f'{DOWNLOAD_FOLDER_NAME}/{in_genark_chrsizee}', 'r') as f_in, open(f'{out_subfolder}/{out_genark_chrsize}', 'w') as f_out:
                     for line in f_in:
-                                   
+
                         if not line.startswith('#'):
                             ls_tmp = line.strip().split('\t')
                             chr_name = ls_tmp[0]
-                            
+
                             # Change the chromosome name
                             if style == 'ensembl':
                                 ls_tmp[0] = genbank_to_ensembl.get(chr_name, refseq_to_ensembl.get(chr_name, chr_name))
@@ -2179,32 +2264,31 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
 
                         else:
                             f_out.write(line)
-                            
+
                 # Sort chrom size file
                 with open(f'{out_subfolder}/{out_genark_chrsize_sorted}', 'w') as f_out:
                     subprocess.run(['sort', '-k1,1', '-k2,2n', f'{out_subfolder}/{out_genark_chrsize}'], stdout=f_out, check=True)
                 # Remove temporary chrom size file
                 delete_file(f'{out_subfolder}/{out_genark_chrsize}')
 
-
             # Change file format (binary to readable format)
             if download == 'genark.gc5Base':
                 print(f'    Convert bedgraph to bigwig: {out_file_final}')
-                
+
                 # bigWig to bedGraph
                 subprocess.run([f'{path_bdg2bw}', f'{out_subfolder}/{out_file}', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
-                
+
                 # Remove temporary files
                 delete_file(f'{DOWNLOAD_FOLDER_NAME}/{in_file}')
                 delete_file(f'{out_subfolder}/{out_file}')
-                
+
             else:
                 print(f'    Convert bed to bigbed: {out_file_final}')
-                
+
                 # Sort bed file
                 with open(f'{out_subfolder}/{out_file}_sorted', 'w') as f_out:
                     subprocess.run(['sort', '-k1,1', '-k2,2n', f'{out_subfolder}/{out_file}'], stdout=f_out, check=True)
-                
+
                 # bigBed to bed
                 ls_download_factor = download.split('.')
                 autodql_dir = script_dir + '/autosql'
@@ -2218,19 +2302,19 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
                     subprocess.run([path_bed2bb, '-type=bed3', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif download == 'genark.gap':
                     subprocess.run([path_bed2bb, '-extraIndex=name', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
-                
+
                 elif download == 'genark.rmsk':
                     subprocess.run([path_bed2bb, '-tab', '-type=bed9+5', f'-as={autodql_dir}/bigRmskBed.as', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif len(ls_download_factor) == 3 and ls_download_factor[1] == 'rmsk':
                     subprocess.run([path_bed2bb, '-tab', '-type=bed6+10', f'-as={autodql_dir}/rmskBed6+10.as', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
                 elif 'cpgIslandExt' in download:
                     subprocess.run([path_bed2bb, '-tab', '-type=bed4+6', f'-as={autodql_dir}/cpgIslandExt.as', '-verbose=0', f'{out_subfolder}/{out_file}_sorted', f'{out_subfolder}/{out_genark_chrsize_sorted}', f'{out_subfolder}/{out_file_final}'], check=True)
-                
+
                 # Remove temporary files
                 delete_file(f'{DOWNLOAD_FOLDER_NAME}/{in_file}')
                 delete_file(f'{out_subfolder}/{out_file}')
                 delete_file(f'{out_subfolder}/{out_file}_sorted')
-                
+
             print('')
 
 
@@ -2249,7 +2333,6 @@ def process_row_sequence(idx, row, dic_ensembl_meta):
     genbank_id = row['GenBank']
     refseq_id = row['RefSeq']
     check_ensembl = row['Ensembl']
-    organism = re.sub(r'\s*\([^)]*\)', '', row['Organism']).replace(' ', '_')
 
     # RefSeq
     if refseq_id:
@@ -2288,6 +2371,7 @@ def process_row_sequence(idx, row, dic_ensembl_meta):
             ensembl_acc = refseq_id
             organism_ens = dic_ensembl_meta[refseq_id].replace(' ', '_')
 
+        """ Rapid Release
         ensembl_dir = f'/pub/rapid-release/species/{organism_ens}/{ensembl_acc}'
         ls_source = list_ftp_directory(ENSEMBL_FTP_HOST, ensembl_dir)
 
@@ -2324,6 +2408,33 @@ def process_row_sequence(idx, row, dic_ensembl_meta):
                 ls_input.append(ls_tmp)
             else:
                 print('There is not md5sum file')
+        """
+        # Check source directories
+        ls_source = list(ensembl_meta[organism_ens][ensembl_acc].keys())
+
+        source = ''
+        ls_excluded = ['genome']
+        if ls_source:
+            for tmp in ls_excluded:
+                if tmp in ls_source:
+                    ls_source.remove(tmp)
+
+        ls_input = []
+        for source in ls_source:
+            ls_tmp = [source]
+            # Check the geneset folder name
+            genomebuild = list(ensembl_meta[organism_ens][ensembl_acc][source]['geneset'].keys())[0]
+
+            ls_filename = list(ensembl_meta[organism_ens][ensembl_acc][source]['geneset'][genomebuild].keys())
+            ensembl_cdna = 'cdna.fa.gz'
+            ensembl_pep = 'pep.fa.gz'
+
+            if ensembl_cdna in ls_filename:
+                ls_tmp.append('cdna')
+            if ensembl_pep in ls_filename:
+                ls_tmp.append('pep')
+
+            ls_input.append(ls_tmp)
 
         if ls_input:
             str_input = ''
@@ -2374,9 +2485,9 @@ def check_access_full_sequence(df, dic_ensembl_meta):
 
 # Download sequence data
 def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
-        
+
     ls_types = types.split(',')
-    
+
     print('# Download sequence data')
     for idx in df.index:
         # Accession or name
@@ -2384,11 +2495,11 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
         genbank_id = df_genome.loc[idx]['GenBank']
         refseq_id = df_genome.loc[idx]['RefSeq']
         organism = re.sub(r'\s*\([^)]*\)', '', df_genome.loc[idx]['Organism']).replace(' ', '_')
-        
+
         check_refseq = df.loc[idx]['RefSeq']
         check_ensembl = df.loc[idx]['Ensembl']
         #check_ensembl_repeat = df.loc[idx]['ensembl_repeat']
-        
+
         # Print assembly
         if refseq_id:
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
@@ -2397,7 +2508,7 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
 
         # RefSeq
         if len(list(set(['refseq_rna', 'refseq_rna_genomic', 'refseq_cds_genomic', 'refseq_pseudo', 'refseq_pep', 'refseq_pep_cds']) & set(ls_types))) > 0:
-            
+
             ls_search = check_refseq.replace(' ', '').split(',')
             refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
             url_md5sum = f'{refseq_dir}/md5checksums.txt'
@@ -2407,49 +2518,50 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
             refseq_pseudo = f'{refseq_dir}/{refseq_id}_{assembly_id}_pseudo_without_product.fna.gz'
             refseq_protein = f'{refseq_dir}/{refseq_id}_{assembly_id}_protein.faa.gz'
             refseq_trans_cds = f'{refseq_dir}/{refseq_id}_{assembly_id}_translated_cds.faa.gz'
-            
+
             if check_refseq:
                 if 'refseq_rna' in ls_types:
                     if 'rna' in ls_search:
                         if check_url(refseq_rna):
                             out_name = f'{organism}-{assembly_id}-refseq.rna.fna.gz'
                             download_url(refseq_rna, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
-                        
+
                 if 'refseq_rna_genomic' in ls_types:
                     if 'rna_genomic' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.rna_from_genomic.fna.gz'
                         download_url(refseq_rna_gen, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
-                        
+
                 if 'refseq_cds_genomic' in ls_types:
                     if 'cds_genomic' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.cds_from_genomic.fna.gz'
                         download_url(refseq_cds_gen, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
-                        
+
                 if 'refseq_pseudo' in ls_types:
                     if 'pseudo' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.pseudo_without_product.fna.gz'
                         download_url(refseq_pseudo, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
-                        
+
                 if 'refseq_pep' in ls_types:
                     if 'pep' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.protein.faa.gz'
                         download_url(refseq_protein, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
-                
+
                 if 'refseq_pep_cds' in ls_types:
                     if 'pep_cds' in ls_search:
                         out_name = f'{organism}-{assembly_id}-refseq.translated_cds.faa.gz'
                         download_url(refseq_trans_cds, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
-                
+
         # Ensembl
-        if len(list(set(['ensembl_cdna', 'ensembl_cds', 'ensembl_pep']) & set(ls_types))) > 0:
-            
+        #if len(list(set(['ensembl_cdna', 'ensembl_cds', 'ensembl_pep']) & set(ls_types))) > 0:
+        if len(list(set(['ensembl_cdna', 'ensembl_pep']) & set(ls_types))) > 0:
+
             if genbank_id in dic_ensembl_meta:
                 ensembl_acc = genbank_id
                 organism_ens = dic_ensembl_meta[genbank_id].replace(' ', '_')
             elif refseq_id in dic_ensembl_meta:
                 ensembl_acc = refseq_id
                 organism_ens = dic_ensembl_meta[refseq_id].replace(' ', '_')
-            
+
             if check_ensembl:
                 ls_source = []
                 for search_in_source in check_ensembl.replace(' ', '').split('/'):
@@ -2457,46 +2569,66 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
                     ls_source.append(source)
                     ls_search = search_in_source.split(':')[1].split(',')
 
+                """ Rapid Release
                 for source in ls_source:
                     ensembl_dir = f'/pub/rapid-release/species/{organism_ens}/{ensembl_acc}/{source}/geneset'
-                    # Check the geneset folder name
+                    # Check the geneset folder nameW
                     geneset = list_ftp_directory(ENSEMBL_FTP_HOST, ensembl_dir)[0]
-                    
+
                     ensembl_file_dir = f'{ENSEMBL_RAPID_FTP_URL}/species/{organism_ens}/{ensembl_acc}/{source}/geneset/{geneset}'
 
                     url_md5sum = f'{ensembl_file_dir}/md5sum.txt'
                     ensembl_cdna = f'{ensembl_file_dir}/{organism}-{ensembl_acc}-{geneset}-cdna.fa.gz'
                     ensembl_cds = f'{ensembl_file_dir}/{organism}-{ensembl_acc}-{geneset}-cds.fa.gz'
                     ensembl_pep = f'{ensembl_file_dir}/{organism}-{ensembl_acc}-{geneset}-pep.fa.gz'
-                    
+
                     if 'ensembl_cdna' in ls_types:
                         if 'cdna' in ls_search:
                             out_name = f'{organism}-{assembly_id}-ensembl_{source}.cdna.fna.gz'
-                            download_url(ensembl_cdna, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
+                            download_url(ensembl_cdna, out_name, url_md5sum=url_md5sum, recursive=recursive)
 
                     if 'ensembl_cds' in ls_types:
                         if 'cds' in ls_search:
                             out_name = f'{organism}-{assembly_id}-ensembl_{source}.cds.fna.gz'
-                            download_url(ensembl_cds, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
+                            download_url(ensembl_cds, out_name, url_md5sum=url_md5sum, recursive=recursive)
+
 
                     if 'ensembl_pep' in ls_types:
                         if 'pep' in ls_search:
                             out_name = f'{organism}-{assembly_id}-ensembl_{source}.pep.faa.gz'
-                            download_url(ensembl_pep, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
+                            download_url(ensembl_pep, out_name, url_md5sum=url_md5sum, recursive=recursive)
+                """
+                for source in ls_source:
+                    # Check the geneset folder name
+                    genomebuild = list(ensembl_meta[organism_ens][ensembl_acc][source]['geneset'].keys())[0]
+                    ensembl_file_dir = f'{ENSEMBL_BETA_FTP_URL}/{organism_ens}/{ensembl_acc}/{source}/geneset/{genomebuild}'
+                    # url_md5sum = f'{ensembl_file_dir}/md5sum.txt'
+                    ensembl_cdna = f'{ensembl_file_dir}/cdna.fa.gz'
+                    ensembl_pep = f'{ensembl_file_dir}/pep.fa.gz'
+
+                    if 'ensembl_cdna' in ls_types:
+                        if 'cdna' in ls_search:
+                            out_name = f'{organism}-{assembly_id}-ensembl_{source}.cdna.fna.gz'
+                            download_url(ensembl_cdna, out_name, recursive=recursive, out_path=out_subfolder)
+
+                    if 'ensembl_pep' in ls_types:
+                        if 'pep' in ls_search:
+                            out_name = f'{organism}-{assembly_id}-ensembl_{source}.pep.faa.gz'
+                            download_url(ensembl_pep, out_name, recursive=recursive, out_path=out_subfolder)
 
         """
         # Ensembl Repeatmodeler
         if check_ensembl_repeat:
             ensembl_repeat = f'{ENSEMBL_RM_FTP_URL}/{organism.lower()}/{genbank_id}.repeatmodeler.fa'
-            
+
             if 'ensembl_repeat' in ls_types:
                 out_name = f'{organism}-{assembly_id}-ensembl.repeatmodeler.fa'
                 download_url(ensembl_repeat, out_name, recursive=recursive)
         """
-  
+
         print('')
 
-                  
+
 ## ---------------------------------------------
 ## gencube crossgenome
 ## ---------------------------------------------
@@ -2508,7 +2640,6 @@ def process_row_crossgenome(idx, row, dic_ensembl_meta, df_zoonomia):
         'Zoonomia': ''
     }
 
-    assembly_id = row['Assembly name']
     genbank_id = row['GenBank']
     refseq_id = row['RefSeq']
     check_ensembl = row['Ensembl']
@@ -2523,6 +2654,7 @@ def process_row_crossgenome(idx, row, dic_ensembl_meta, df_zoonomia):
             ensembl_acc = refseq_id
             organism_ens = dic_ensembl_meta[refseq_id].replace(' ', '_')
 
+        """ Rapid Release
         ensembl_dir = f'/pub/rapid-release/species/{organism_ens}/{ensembl_acc}'
         ls_source = list_ftp_directory(ENSEMBL_FTP_HOST, ensembl_dir)
 
@@ -2546,8 +2678,26 @@ def process_row_crossgenome(idx, row, dic_ensembl_meta, df_zoonomia):
                             continue
                     else:
                         continue
+        """
+        # Check source directories
+        ls_source = list(ensembl_meta[organism_ens][ensembl_acc].keys())
 
-        result['Ensembl'] = add_string(result['Ensembl'], source)
+        ls_excluded = ['genome']
+        if ls_source:
+            for tmp in ls_excluded:
+                if tmp in ls_source:
+                    ls_source.remove(tmp)
+
+        for source in ls_source:
+            # Check the geneset folder name
+            if 'homology' in list(ensembl_meta[organism_ens][ensembl_acc][source]):
+                genomebuild = list(ensembl_meta[organism_ens][ensembl_acc][source]['homology'].keys())[0]
+
+                ls_filename = list(ensembl_meta[organism_ens][ensembl_acc][source]['homology'][genomebuild].keys())
+                ensembl_homology = f'{organism_ens}-{ensembl_acc}-{genomebuild}-homology.tsv.gz'
+
+                if ensembl_homology in ls_filename:
+                    result['Ensembl'] = add_string(result['Ensembl'], source)
 
     # Zoonomia
     if check_zoonomia:
@@ -2594,7 +2744,7 @@ def check_access_full_crossgenome(df, dic_ensembl_meta, df_zoonomia):
 # Download crossgenome data
 def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, recursive):
     ls_types = types.split(',')
-    
+
     print('# Download geneset data')
     for idx in df.index:
         # Accession or name
@@ -2602,59 +2752,71 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
         genbank_id = df_genome.loc[idx]['GenBank']
         refseq_id = df_genome.loc[idx]['RefSeq']
         organism = re.sub(r'\s*\([^)]*\)', '', df_genome.loc[idx]['Organism']).replace(' ', '_')
-        
+
         check_ensembl = df.loc[idx]['Ensembl']
         check_zoonomia = df.loc[idx]['Zoonomia']
-        
+
         # Print assembly
         if refseq_id:
             print(f'[{genbank_id} / {refseq_id} / {assembly_id}]')
         else:
             print(f'[{genbank_id} / {assembly_id}]')
-                
+
         # Ensembl
         if 'ensembl_homology' in ls_types:
-            
+
             if genbank_id in dic_ensembl_meta:
                 ensembl_acc = genbank_id
                 organism_ens = dic_ensembl_meta[genbank_id].replace(' ', '_')
             elif refseq_id in dic_ensembl_meta:
                 ensembl_acc = refseq_id
                 organism_ens = dic_ensembl_meta[refseq_id].replace(' ', '_')
-            
+
+
             if check_ensembl:
                 ls_source = check_ensembl.replace(' ', '').split(',')
-                
+
+                """ Rapid Release
                 for source in ls_source:
                     ensembl_dir = f'/pub/rapid-release/species/{organism_ens}/{ensembl_acc}/{source}/homology'
                     if ensembl_dir:
                         # Check the geneset folder name
                         geneset = list_ftp_directory(ENSEMBL_FTP_HOST, ensembl_dir)[0]
-                        
-                        ensembl_file_dir = f'{ENSEMBL_RAPID_FTP_URL}/species/{organism_ens}/{ensembl_acc}/{source}/homology/{geneset}'                    
-                        ensembl_gtf = f'{ensembl_file_dir}/{organism_ens}-{ensembl_acc}-{geneset}-homology.tsv.gz'
-                        
+
+                        ensembl_file_dir = f'{ENSEMBL_RAPID_FTP_URL}/species/{organism_ens}/{ensembl_acc}/{source}/homology/{geneset}'
+                        ensembl_homology = f'{ensembl_file_dir}/{organism_ens}-{ensembl_acc}-{geneset}-homology.tsv.gz'
+
                         if 'ensembl_homology' in ls_types:
-                            if check_url(ensembl_gtf):
+                            if check_url(ensembl_homology):
                                 out_name = f'{organism}-{assembly_id}-ensembl_{source}_homology.tsv.gz'
-                                download_url(ensembl_gtf, out_name, recursive=recursive, out_path=out_subfolder)
+                                download_url(ensembl_homology, out_name, recursive=recursive)
+                """
+                for source in ls_source:
+                    # Check the geneset folder name
+                    genomebuild = list(ensembl_meta[organism_ens][ensembl_acc][source]['homology'].keys())[0]
+                    ensembl_file_dir = f'{ENSEMBL_BETA_FTP_URL}/{organism_ens}/{ensembl_acc}/{source}/homology/{genomebuild}'
+                    url_md5sum = f'{ensembl_file_dir}/md5sum.txt'
+                    ensembl_homology = f'{ensembl_file_dir}/{organism_ens}-{ensembl_acc}-{genomebuild}-homology.tsv.gz'
+
+                    out_name = f'{organism}-{assembly_id}-ensembl_{source}_homology.tsv.gz'
+                    download_url(ensembl_homology, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
 
         # Zoonomia
         if len(list(set(['toga_homology', 'toga_align_codon', 'toga_align_protein', 'toga_inact_mut']) & set(ls_types))) > 0:
-            
+
             if check_zoonomia:
                 ls_reference = check_zoonomia.replace(' ', '').split(',')
-                
+
                 for reference in ls_reference:
-                    
+
                     zoonomia_dir = f'{ZOONOMIA_URL}/{DIC_ZOONOMIA[reference]}'
-                    
+
                     df_tmp = df_zoonomia[
-                        ((df_zoonomia['NCBI accession / source'] == genbank_id) | 
+                        ((df_zoonomia['NCBI accession / source'] == genbank_id) |
                         (df_zoonomia['NCBI accession / source'] == refseq_id)) &
                         (df_zoonomia['reference'] == reference)
                     ]
-                    
+
                     for i in range(len(df_tmp.index)):
                         taxo = df_tmp['Taxonomic Lineage'].values[i]
                         species = df_tmp['Species'].values[i].replace(' ', '_')
@@ -2663,23 +2825,23 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
 
                         if reference in ['human', 'mouse', 'chicken']:
                             ls_folders = list_http_folders(zoonomia_dir)
-                        
+
                             for folder in ls_folders:
                                 if folder in taxo:
                                     category = folder
                                     break
-                            
+
                             zoonomia_file_dir = f'{zoonomia_dir}/{category}/{species}__{name}__{assembly}'
                         else:
                             zoonomia_file_dir = f'{zoonomia_dir}/{species}__{name}__{assembly}'
-                        
+
                         zoonomia_orth = f'{zoonomia_file_dir}/orthologsClassification.tsv.gz'
                         zoonomia_align_codon = f'{zoonomia_file_dir}/codonAlignments.fa.gz'
                         zoonomia_align_codoncesar = f'{zoonomia_file_dir}/codonAlignments.allCESARexons.fa.gz'
                         zoonomia_align_protein = f'{zoonomia_file_dir}/proteinAlignments.fa.gz'
                         zoonomia_align_proteincesar = f'{zoonomia_file_dir}/proteinAlignments.allCESARexons.fa.gz'
                         zoonomia_inact_mut = f'{zoonomia_file_dir}/loss_summ_data.tsv.gz'
-                        
+
                         if 'toga_homology' in ls_types:
                             if check_url(zoonomia_orth, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_homology.tsv.gz'
@@ -2702,7 +2864,7 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
                             if check_url(zoonomia_inact_mut, verify=False):
                                 out_gtf_name = f'{organism}-{assembly_id}-toga_{reference}_loss_summ_data.tsv.gz'
                                 download_url(zoonomia_inact_mut, out_gtf_name, verify=False, recursive=recursive, out_path=out_subfolder)
-                                
+
         print('')
 
 
@@ -2711,11 +2873,11 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
 ## ---------------------------------------------
 # Make query for searching
 def make_query(
-    organism, strategy, source, platform, selection, 
-    filter, layout, access, bioproject, biosample, accession, 
-    title, author, publication, modification, 
+    organism, strategy, source, platform, selection,
+    filter, layout, access, bioproject, biosample, accession,
+    title, author, publication, modification,
     properties, readlength, mbases, textword, keywords, exclude):
-  
+
     print('# Make query for searching')
     query = ''
     dic_query_pars = {}
@@ -2766,7 +2928,7 @@ def make_query(
     # Author
     if author:
         query = add_query (author, 'Author', query, dic_query_pars)
-        
+
     # Publication Date
     if publication:
         query = add_query_with_date (publication, 'Publication Date', query, dic_query_pars)
@@ -2783,11 +2945,10 @@ def make_query(
     # Text Word
     if textword:
         query = add_query (textword, 'Text Word', query, dic_query_pars)
-    
+
     # For search in steps
     if len(dic_query_pars.keys()) > 1:
         dic_query_pars['Intersection'] = query
-    
 
     # Keywords
     tmp_show = ''
@@ -2796,30 +2957,30 @@ def make_query(
         count = 0
         print(f'  Keywords: {keywords}')
         for i in range(len(keywords)):
-            
+
             # OR operator
             ls_keywords = keywords[i].split(',')
-            
+
             count += len(ls_keywords)
             for j in range(len(ls_keywords)):
-                
+
                 kwd_replace = ls_keywords[j].replace('_', ' ')
                 # For phrase search
                 if kwd_replace[-1] == '^':
                     kwd_replace = f'"{kwd_replace[:-1]}"'
-                
+
                 if j == 0:
                     query_tmp = f'{kwd_replace}'
                 else:
                     query_tmp += f' OR {kwd_replace}'
-                
+
                 # For search in steps
                 if dic_query_pars:
                     query_step_tmp = f'{dic_query_pars["Intersection"]} AND {kwd_replace}'
                 else:
                     query_step_tmp = kwd_replace
                 dic_query_kwds[ls_keywords[j]] = query_step_tmp
-            
+
             # For search in steps
             if ls_keywords:
                 if dic_query_pars:
@@ -2834,43 +2995,41 @@ def make_query(
                     tmp_show += f' & {tmp_key}'
             if len(keywords) > 1:
                 dic_query_kwds[f'space{i}'] = ' '
-            
-            
-            # AND operator        
+
+            # AND operator
             if not query_tmp_merge:
                 query_tmp_merge = f'({query_tmp})'
             else:
                 query_tmp_merge += f' AND ({query_tmp})'
-        
+
         if query:
             query = f'({query} AND ({query_tmp_merge}))'
         else:
             query = query_tmp_merge
-        
+
         # For search in steps
         if len(keywords) > 1:
             dic_query_kwds[f'Intersection ({tmp_show})'] = query
-
 
     # Excluded keywords (NOT operator)
     if exclude:
         ls_exclude = exclude.split(',')
         print(f'  Excluded: {ls_exclude}')
-        
+
         for i in range(len(ls_exclude)):
             exclude_replace = ls_exclude[i].replace('_', ' ')
             # For phrase search
             if exclude_replace[-1] == '^':
                 exclude_replace = f'"{exclude_replace[:-1]}"'
-                
+
             query_tmp = f'{exclude_replace}'
             query = f'{query} NOT {query_tmp}'
-            
+
             if i == 0:
                 query_tmp_or = f'{exclude_replace}'
             else:
                 query_tmp_or += f' OR {exclude_replace}'
-            
+
             # For search in steps
             if dic_query_pars:
                 query_step_tmp = f'{dic_query_pars["Intersection"]} AND {query_tmp}'
@@ -2883,9 +3042,9 @@ def make_query(
         else:
             query_step_tmp = f'{query_tmp_or}'
         dic_query_excs[exclude.replace('_', ' ').replace(',', '|')] = query_step_tmp
-            
+
     print('')
-    
+
     return query, dic_query_pars, dic_query_kwds, dic_query_excs
 
 # Make query for searching - Add query
@@ -2893,7 +3052,7 @@ def add_query (input, option, query, dic, phrase=False):
     dic[option] = ' '
     list = input.split(',')
     print(f'  {option}: {list}')
-    
+
     for i in range(len(list)):
         tmp = list[i].replace('_', ' ')
         # For phrase search
@@ -2901,12 +3060,12 @@ def add_query (input, option, query, dic, phrase=False):
             tmp = f'"{tmp}"'
         elif tmp[-1] == '^':
             tmp = f'"{tmp[:-1]}"'
-            
+
         if i == 0:
             query_tmp = f'{tmp}[{option}]'
         else:
             query_tmp += f' OR {tmp}[{option}]'
-    
+
         dic[tmp] = f'{tmp}[{option}]'
     if not query:
         return f'({query_tmp})'
@@ -2918,10 +3077,10 @@ def add_query_with_date (input, option, query, dic):
     dic[option] = ' '
     list = input.split(':')
     print(f'  {option}: {list}')
-    
+
     for i in range(len(list)):
         tmp = list[i].replace('.', '/')
-        
+
         if i == 0:
             if len(list) == 2:
                 query_tmp = f'"{tmp}"[{option}]'
@@ -2929,7 +3088,7 @@ def add_query_with_date (input, option, query, dic):
                 query_tmp = f'"{tmp}"[{option}] : "3000"[{option}]'
         else:
             query_tmp += f' : "{tmp}"[{option}]'
-        
+
     dic[option] = query_tmp
     return f'({query} AND ({query_tmp}))'
 
@@ -2940,14 +3099,14 @@ def search_sra(query):
                             retmax=10000  # Number of results to return
                             )
     record = Entrez.read(handle)
-    
+
     return record
 
 def fetch_single_meta(id, api_key=None, rate_limit=1):
     time.sleep(rate_limit)  # Rate limiting
-    handle = Entrez.efetch(db="sra", 
-                           id=id, rettype="gb", 
-                           retmode="text", 
+    handle = Entrez.efetch(db="sra",
+                           id=id, rettype="gb",
+                           retmode="text",
                            api_key=api_key)
     xml_data = handle.read()
     dict_data = xmltodict.parse(xml_data)
@@ -2961,10 +3120,10 @@ def fetch_meta(ls_id):
     if len(ls_id) == 0:
         print("No searched id")
         return pd.DataFrame()
-    
+
     print('# Fetch metadata')
     start_time = time.time()  # record start time
-    
+
     df = pd.DataFrame()
 
     # Determine thread number and rate limit based on the presence of an API key
@@ -2983,28 +3142,28 @@ def fetch_meta(ls_id):
         print(f'  Threads: {thread_num} (NCBI API key not applied - 3 requests/sec)')
     #rate_limit = 1/(thread_num)
     rate_limit = 0.3
-    
+
     # Wrapper function to pass rate_limit to fetch_single_meta
     def fetch_single_meta_with_limit(id):
         if api_key:
             return fetch_single_meta(id, api_key=api_key, rate_limit=rate_limit)
         else:
             return fetch_single_meta(id, rate_limit=rate_limit)
-    
+
     with ThreadPoolExecutor(max_workers=thread_num) as executor:
-        results = list(tqdm(executor.map(fetch_single_meta_with_limit, ls_id), 
-                            desc="  Fetching metadata", 
-                            unit="id", 
+        results = list(tqdm(executor.map(fetch_single_meta_with_limit, ls_id),
+                            desc="  Fetching metadata",
+                            unit="id",
                             total=len(ls_id)
                             )
                        )
 
     df = pd.concat(results, axis=0)
-    
+
     end_time = time.time()  # record end time
     elapsed_time = end_time - start_time
     print(f'  Total fetching time: {int(elapsed_time)} seconds\n')
-    
+
     return df
 
 # Make output dataframe format
@@ -3014,11 +3173,11 @@ def convert_format(df, query):
         # Columns of output dataframe
         ls_out_study_label = LS_SRA_META_STUDY_LABEL
         ls_out_experiment_label = LS_SRA_META_EXPERIMENT_LABEL
-        
+
         # Check intersected values
         ls_study_ovlp = list(set(df.columns.tolist()) & set(LS_SRA_META_STUDY_KEY))
         ls_experiment_ovlp = list(set(df.columns.tolist()) & set(LS_SRA_META_EXPERIMENT_KEY))
-    
+
         ls_label_study = []
         ls_label_experiment = []
         for id in ls_study_ovlp:
@@ -3027,11 +3186,11 @@ def convert_format(df, query):
         for id in ls_experiment_ovlp:
             label = LS_SRA_META_EXPERIMENT_LABEL[LS_SRA_META_EXPERIMENT_KEY.index(id)]
             ls_label_experiment.append(label)
-        
-        # Extract experiment info for re-formatted experiment table    
+
+        # Extract experiment info for re-formatted experiment table
         df_experiment = df[ls_study_ovlp + ls_experiment_ovlp]
         df_experiment.columns = ls_label_study + ls_label_experiment
-        
+
         df_experiment.reset_index(drop=True, inplace=True)
         df_experiment_edit = df_experiment.copy() # copy
 
@@ -3042,9 +3201,9 @@ def convert_format(df, query):
             df_experiment_edit['GSE'] = df_experiment['GSE'].apply(lambda x: x if isinstance(x, str) and x.startswith('GSE') else '') # remove except of GSE ids
         if 'GSM' in df_experiment.columns:
             df_experiment_edit['GSM'] = df_experiment['GSM'].apply(lambda x: x if isinstance(x, str) and x.startswith('GSM') else '') # remove except of GSM ids
-        if 'Published' in df_experiment.columns: 
+        if 'Published' in df_experiment.columns:
             df_experiment_edit['Published'] = df_experiment['Published'].apply(lambda x: x if pd.isna(x) else x.split(' ')[0]) # Leave only YYYY-MM-DD & remove time
-        
+
         # Merge columns
         # 1. BioProject
         if 'BioProject_alt1' not in df_experiment_edit.columns:
@@ -3063,7 +3222,7 @@ def convert_format(df, query):
             ls_label_study.remove('BioProject_alt3')
             ls_out_study_label.remove('BioProject_alt3')
         ls_label_study.append('BioProject')
-        
+
         ls_out_study_label.insert(2, 'BioProject')
         ls_out_experiment_label.insert(2, 'Study')
         # 2. Country
@@ -3076,7 +3235,7 @@ def convert_format(df, query):
             df_experiment_edit['Country_alt2'] = None
         else:
             ls_label_study.remove('Country_alt2')
-            ls_out_study_label.remove('Country_alt2') 
+            ls_out_study_label.remove('Country_alt2')
         ls_out_study_label.insert(-2, 'Country')
 
         # Combine the three columns into a single list, dropping NaNs and ensuring uniqueness
@@ -3095,7 +3254,7 @@ def convert_format(df, query):
         # Count the number of experiments
         df_study_edit = df_study_dropdup.copy()
         df_study_edit['# Experiment'] = [df_experiment_edit['Study'].tolist().count(val) for val in df_study_dropdup['Study']]
-    
+
         # Make final output dataframe
         df_out_study = pd.DataFrame(columns=ls_out_study_label) # Make empty dataframe for final output
         df_out_experiment = pd.DataFrame(columns=ls_out_experiment_label) # Make empty dataframe for final output
@@ -3104,7 +3263,7 @@ def convert_format(df, query):
         # Convert the boolean Series to a list of column labels that are in df_experiment_edit
         valid_columns = list(set(df_experiment_edit.columns.tolist()) & set(ls_out_experiment_label))
         df_out_experiment = pd.concat([df_out_experiment, df_experiment_edit[valid_columns]])
-        
+
         # Expand tree structure information to table format
         # Process 'Sample attribute' column
         df_out_experiment = expand_attributes(df_out_experiment, 'Sample attribute')
@@ -3120,12 +3279,12 @@ def convert_format(df, query):
         df_out_experiment['Query'] = ''
         df_out_study.at[0, 'Query'] = query
         df_out_experiment.at[0, 'Query'] = query
-        
+
         ## Print the number of study and experiment
         print('# Confirmed total numbers')
         print(f'  Study     : {len(df_out_study.index)}')
         print(f'  Experiment: {len(df_out_experiment.index)}\n')
-        
+
         return df_out_study, df_out_experiment
 
 def expand_attributes(df, column_name, tag_key='TAG', value_key='VALUE'):
@@ -3238,7 +3397,7 @@ def save_seq_metadata (df_study, df_experiment, organism, now):
     # Make output folder
     if not os.path.exists(out_subfolder):
         os.mkdir(out_subfolder)
-        
+
     # Add scientific name in output name if len(organism.split(',')) == 1
     if len(organism.split(',')) == 1:
         sci_name = organism.replace(' ', '_').lower()
@@ -3249,7 +3408,7 @@ def save_seq_metadata (df_study, df_experiment, organism, now):
         out_name_study = f'Meta_seq_{now}_study_n{df_study.shape[0]}.txt'
         out_name_experiment = f'Meta_seq_{now}_experiment_n{df_experiment.shape[0]}.txt'
         out_name_url = f'Meta_seq_{now}_experiment_n{df_experiment.shape[0]}_urls.txt'
-        
+
     # Export the outputs
     df_study.to_csv(f'{out_subfolder}/{out_name_study}', sep='\t', header=True, index=False)
     df_experiment.to_csv(f'{out_subfolder}/{out_name_experiment}'
@@ -3259,12 +3418,12 @@ def save_seq_metadata (df_study, df_experiment, organism, now):
     print(f'  {out_name_study}')
     print(f'  {out_name_experiment}')
     print('')
-    
+
     return out_name_url
 
 # Get fastq links from EBI ENA
 def get_fastq_dataframe(df_experiment, out_name_url):
-    
+
     print('# Retrieve the URL address of the raw data')
     """
     Takes a list of experiment accession IDs (SRX, ERX, DRX) and returns a pandas DataFrame
@@ -3278,7 +3437,7 @@ def get_fastq_dataframe(df_experiment, out_name_url):
         pd.DataFrame: A DataFrame with the requested columns, without duplicate URLs.
     """
     exp_ids = df_experiment['Experiment'].tolist()
-    
+
     results = []
     total_tasks = len(exp_ids)
     completed_tasks = 0
@@ -3288,7 +3447,7 @@ def get_fastq_dataframe(df_experiment, out_name_url):
             f'https://www.ebi.ac.uk/ena/portal/api/filereport'
             f'?accession={exp_id}&result=read_run&fields=fastq_ftp&format=json'
         )
-        
+
         try:
             response = requests.get(ena_url, timeout=10)
             if response.status_code == 200:
@@ -3353,7 +3512,7 @@ def join_variables_with_newlines(items, max_line_length=100):
                 current_line = item
         else:
             current_line = item
-    
+
     if current_line:  # Append any remaining items in current_line to lines
         lines.append(current_line)
 
