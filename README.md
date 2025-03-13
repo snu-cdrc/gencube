@@ -543,7 +543,6 @@ options:
                            refseq_cds_genomic : CDS features based on the genome sequence
                            refseq_pseudo      : Pseudogene and other gene regions without transcribed RNA or translated protein products
                            ensembl_cdna       : Ensembl Beta cDNA sequences of transcripts
-                           ensembl_cds        : Ensembl Beta coding sequences (CDS)
                            ensembl_repeat     : Ensembl repeat modeler sequences
                         2. Protein sequences:
                            refseq_pep         : Accessioned protein sequences annotated on the genome assembly
