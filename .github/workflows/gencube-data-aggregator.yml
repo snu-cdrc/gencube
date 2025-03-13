@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update_structure:
+  data_aggregator:
     runs-on: ubuntu-latest
 
     steps:
@@ -137,10 +137,10 @@ jobs:
         print("Information files saved to data-aggregator/ensembl-beta_count_species.txt and data-aggregator/ensembl-beta_count_total.txt.")
         EOF
 
-    - name: Fetch SRA advanced index list using Selenium
+    - name: Fetch SRA advanced index list using Selenium and save as JSON
       run: |
         python3 << 'EOF'
-        import time, re, pickle
+        import time, re, json
         from selenium import webdriver
         from selenium.webdriver.common.by import By
         from selenium.webdriver.support.ui import WebDriverWait, Select
@@ -202,19 +202,19 @@ jobs:
 
         driver.quit()
 
-        # Save the results dictionary using pickle for efficient storage
-        with open("data-aggregator/sra_advanced_index.pkl", "wb") as f:
-            pickle.dump(results, f)
+        # Save the results dictionary to a JSON file
+        with open("data-aggregator/sra_advanced_index.json", "w") as f:
+            json.dump(results, f, indent=4)
 
-        print("SRA advanced index list saved to data-aggregator/sra_advanced_index.pkl.")
+        print("SRA advanced index list saved to data-aggregator/sra_advanced_index.json.")
         EOF
 
     - name: Commit and push changes
       run: |
         git config --global user.name "keun-hong"
         git config --global user.email "thsrms9216@gmail.com"
-        if [ -n "$(git status --porcelain data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.pkl)" ]; then
-          git add data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.pkl
+        if [ -n "$(git status --porcelain data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.json)" ]; then
+          git add data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.json
           git commit -m "Update FTP folder structure, information, and SRA advanced index list"
           git push https://snu-cdrc:${{ secrets.MY_PAT }}@github.com/snu-cdrc/gencube.git
         else
