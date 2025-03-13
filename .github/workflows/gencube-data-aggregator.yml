@@ -216,7 +216,7 @@ jobs:
         if [ -n "$(git status --porcelain data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.pkl)" ]; then
           git add data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.pkl
           git commit -m "Update FTP folder structure, information, and SRA advanced index list"
-          git push https://keun-hong:${{ secrets.MY_PAT }}@github.com/keun-hong/ensembl-beta-ftp-structure.git
+          git push https://snu-cdrc:${{ secrets.MY_PAT }}@github.com/snu-cdrc/gencube.git
         else
           echo "No changes to commit."
         fi
