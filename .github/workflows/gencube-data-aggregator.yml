@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  data_aggregator:
+  data-aggregator:
     runs-on: ubuntu-latest
 
     steps:
