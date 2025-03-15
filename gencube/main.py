@@ -1,4 +1,6 @@
 import argparse
+import sys
+import requests
 
 # Sub-modules
 from .__init__ import __version__
@@ -17,12 +19,7 @@ from .utils import (
     )
 # Constant variables
 from .constants import (
-    LS_STRATEGY,
-    LS_SOURCE,
-    LS_PLATFORM,
-    LS_SELECTION,
-    LS_FILTER,
-    LS_PROPERTIES,
+    SRA_SEARCH_INDEX_JSON,
     )
 
 def main():
@@ -37,6 +34,24 @@ def main():
     subparsers = parser.add_subparsers(
         dest='command'
         )
+
+    # If the user inputs the "seqmeta" subcommand, fetch the search index information
+    LS_STRATEGY = ''
+    LS_SOURCE = ''
+    LS_PLATFORM = ''
+    LS_SELECTION = ''
+    LS_FILTER = ''
+    LS_PROPERTIES = ''
+    if len(sys.argv) > 1 and sys.argv[1] == "seqmeta":
+        response = requests.get(SRA_SEARCH_INDEX_JSON)
+        if response.status_code == 200:
+            data = response.json()  # Convert to JSON format
+            LS_STRATEGY = data.get("LS_STRATEGY", [])
+            LS_SOURCE = data.get("LS_SOURCE", [])
+            LS_PLATFORM = data.get("LS_PLATFORM", [])
+            LS_SELECTION = data.get("LS_SELECTION", [])
+            LS_FILTER = data.get("LS_FILTER", [])
+            LS_PROPERTIES = data.get("LS_PROPERTIES", [])
 
     ## ---------------------------------------------
     ## gencube genome
@@ -905,7 +920,13 @@ def main():
                 exclude=args.exclude,
                 detail=args.detail,
                 metadata=args.metadata,
-                url=args.url
+                url=args.url,
+                LS_STRATEGY=LS_STRATEGY,
+                LS_SOURCE=LS_SOURCE,
+                LS_PLATFORM=LS_PLATFORM,
+                LS_SELECTION=LS_SELECTION,
+                LS_FILTER=LS_FILTER,
+                LS_PROPERTIES=LS_PROPERTIES,
         )
     # Gencube info
     elif args.command == 'info':

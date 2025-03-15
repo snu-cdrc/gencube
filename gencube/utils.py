@@ -40,7 +40,6 @@ import warnings
 from pandas.errors import PerformanceWarning
 warnings.simplefilter("ignore", PerformanceWarning)
 
-
 # Constant variables
 from .constants import (
     NCBI_FTP_URL,
@@ -1959,8 +1958,6 @@ def download_annotation(df, df_genome, dic_genark_meta, types, recursive):
             ls_search = check_genark.replace(' ', '').split(',')
 
             genark_dir = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
-
-            print(genark_dir)
 
             #genark_rmask = f'{genark_dir}/{genark_id}.repeatMasker.out.gz'
             #genark_rmodel = f'{genark_dir}/{genark_id}.repeatModeler.out.gz'

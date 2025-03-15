@@ -1,4 +1,4 @@
-
+## Constants --------------------------------------------------------------
 # NCBI server (README.txt - https://ftp.ncbi.nlm.nih.gov/genomes/all/README.txt)
 NCBI_FTP_URL = 'https://ftp.ncbi.nlm.nih.gov/genomes/all'
 
@@ -10,7 +10,7 @@ NCBI_FTP_URL = 'https://ftp.ncbi.nlm.nih.gov/genomes/all'
 
 # ENSEMBL Beta server
 ENSEMBL_BETA_FTP_URL = 'http://ftp.ebi.ac.uk/pub/ensemblorganisms/'
-ENSEMBL_TREE_JSON = 'https://raw.githubusercontent.com/keun-hong/ensembl-beta-ftp-structure/refs/heads/main/ensembl-beta_ftp_structure.json'
+ENSEMBL_TREE_JSON = 'https://raw.githubusercontent.com/snu-cdrc/gencube/refs/heads/main/data-aggregator/ensembl-beta_ftp_structure.json'
 
 # UCSC GenArk server (the Earth BioGenome Project, the Vertebrate Genomes Project, the Telomere-to-Telomere Consortium, and other related projects.)
 GENARK_URL = 'https://hgdownload.soe.ucsc.edu/hubs/'
@@ -21,7 +21,11 @@ ZOONOMIA_URL = 'https://genome.senckenberg.de/download/TOGA/'
 # UCSC-Kent applications
 UCSC_KENT_URL = 'https://hgdownload.soe.ucsc.edu/admin/exe'
 
-## Lists
+## Lists --------------------------------------------------------------
+# SRA advanced search index lists
+SRA_SEARCH_INDEX_JSON = 'https://raw.githubusercontent.com/snu-cdrc/gencube/refs/heads/main/data-aggregator/sra_advanced_index.json'
+
+# NCBI Assembly Report
 LS_NCBI_ASSEMBLY_META_KEY = [
     'Synonym_GCA',
     'Synonym_GCF',
@@ -240,6 +244,20 @@ LS_SRA_META_EXPERIMENT_LABEL = [
     'File information',
     ]
 
+## Dictionaries --------------------------------------------------------------
+DIC_ZOONOMIA = {
+    'human': 'human_hg38_reference',
+    'mouse': 'mouse_mm10_reference',
+    'chicken': 'chicken_galGal6_reference',
+    'greenSeaturtle': 'greenSeaturtle_HLcheMyd2_reference',
+    'pikePerch': 'pikePerch_HLsanLuc1_reference',
+    'purpleSeaUrchin': 'purpleSeaUrchin_HLstrPur5_reference',
+    'redEaredSlideTurtle': 'redEaredSlideTurtle_HLtraScrEle1_reference',
+    'thaleCress': 'thaleCress_HLParaTha1_reference',
+    'tobaccoHawkmoth': 'tobaccoHawkmoth_HLmanSex2_reference'
+    }
+
+"""
 LS_STRATEGY = [
     # Genomic
     'wgs',
@@ -511,20 +529,7 @@ LS_PROPERTIES = [
     'study_type_transcriptome_sequencing',
     'study_type_whole_genome_sequencing',
 ]
-
-# Dictionaries
-DIC_ZOONOMIA = {
-    'human': 'human_hg38_reference',
-    'mouse': 'mouse_mm10_reference',
-    'chicken': 'chicken_galGal6_reference',
-    'greenSeaturtle': 'greenSeaturtle_HLcheMyd2_reference',
-    'pikePerch': 'pikePerch_HLsanLuc1_reference',
-    'purpleSeaUrchin': 'purpleSeaUrchin_HLstrPur5_reference',
-    'redEaredSlideTurtle': 'redEaredSlideTurtle_HLtraScrEle1_reference',
-    'thaleCress': 'thaleCress_HLParaTha1_reference',
-    'tobaccoHawkmoth': 'tobaccoHawkmoth_HLmanSex2_reference'
-    }
-
+"""
 
 """
 STRATEGY
