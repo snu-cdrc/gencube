@@ -30,16 +30,15 @@
 <sup>2</sup> Comparative Medicine and Disease Research Center (CDRC), Science Research Center (SRC), Seoul National University, Seoul, Korea<br>
 <sup>3</sup> BK21 PLUS Program for Creative Veterinary Science Research and Research Institute for Veterinary Science, Seoul National University, Seoul, Korea<be>
 ### Publication and Resources
-**Manuscript**: [**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) (Posted July 22, 2024)
-*(Accepted in **Bioinformatics**, March 13, 2025)*
-**Blog Post**: [Step-by-step guide to developing a Python-based tool](https://keun-hong.github.io/computerscience/python-tool-dev/)
-**Video**: Introduction of Gencube *(coming soon)*
+📑 **Manuscript**: [**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) *(Accepted in **Bioinformatics**, March 13, 2025)*<br>
+📌 **Blog Post**:&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-step guide to developing a Python-based tool**](https://keun-hong.github.io/computerscience/python-tool-dev/)<br>
+🎬 **Video**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Introduction of Gencube** *(coming soon)*
 
 ---
 
-🔥 **Your interest and contributions help Gencube evolve to meet your needs!** 👨‍🔬<br>
-⭐️ If you have any questions, ideas, or suggestions, please share them on our [**Issues page**](https://github.com/snu-cdrc/gencube/issues). 👈<br>
-🚀 We'd love to hear from you! 😊
+🔥 **Your interest and contributions help Gencube evolve to meet your needs!**<br>
+⭐️ If you have any questions, ideas, or suggestions, please share them on our [**Issues page**](https://github.com/snu-cdrc/gencube/issues).<br>
+🚀 We'd love to hear from you!
 
 ---
 `gencube` enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve integrated metadata for high-throughput sequencing-based multi-omics resources suitable for specific requirements.
