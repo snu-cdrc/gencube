@@ -29,9 +29,11 @@
 <sup>1</sup> Department of Biochemistry, College of Veterinary Medicine, Seoul National University, Seoul, Korea<br>
 <sup>2</sup> Comparative Medicine and Disease Research Center (CDRC), Science Research Center (SRC), Seoul National University, Seoul, Korea<br>
 <sup>3</sup> BK21 PLUS Program for Creative Veterinary Science Research and Research Institute for Veterinary Science, Seoul National University, Seoul, Korea<be>
-### Manuscript
-[**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) (Posted July 22, 2024)
-<!-- Bioinformatics (accepted. 2024.09) -->
+### Publication and Resources
+**Manuscript**: [**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) (Posted July 22, 2024)
+*(Accepted in **Bioinformatics**, March 13, 2025)*
+**Blog Post**: [Step-by-step guide to developing a Python-based tool](https://keun-hong.github.io/computerscience/python-tool-dev/)
+**Video**: Introduction of Gencube *(coming soon)*
 
 ---
 
