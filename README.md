@@ -73,7 +73,7 @@ $ pip install gencube
 Alternative
 ```bash
 # Still setting up!!
-$ conda install -c bioconda gencube
+$ conda install bioconda::gencube
 ```
 <br>
 
