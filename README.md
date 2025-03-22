@@ -32,6 +32,7 @@
 ### Publication and Resources
 📑 **Manuscript**: [**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) *(Accepted in **Bioinformatics**, March 13, 2025)*<br>
 📌 **Blog Post**:&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-step guide to developing a Python-based tool**](https://keun-hong.github.io/computerscience/python-tool-dev/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-Step guide to registering a package on Bioconda**](https://keun-hong.github.io/computerscience/bioconda-upload/)<br>
 🎬 **Video**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Introduction of Gencube** *(coming soon)*
 
 ---
