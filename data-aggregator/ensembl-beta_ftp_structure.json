@@ -48395,8 +48395,7 @@
                     "2024_11": {
                         "cdna.fa.gz": null,
                         "genes.embl.gz": null,
-                        "genes.gff3": null,
-                        "genes.gtf": null,
+                        "genes.gff3.gz": null,
                         "genes.gtf.gz": null,
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
