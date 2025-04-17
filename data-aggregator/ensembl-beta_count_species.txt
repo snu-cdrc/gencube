@@ -1017,7 +1017,7 @@ Hofstenia_miamia	1
 Homalodisca_vitripennis	1
 Homarus_americanus	1
 Homarus_gammarus	1
-Homo_sapiens	181
+Homo_sapiens	175
 Hoplodrina_ambigua	1
 Hoplodrina_blanda	1
 Hordeum_vulgare_subsp_vulgare	2
