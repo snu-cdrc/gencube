@@ -11,13 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           persist-credentials: false
 
-      # Install required packages
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -25,107 +23,113 @@ jobs:
           pip install --upgrade pip
           pip install selenium
 
-      # Create output folder
       - name: Create data-aggregator folder
         run: mkdir -p data-aggregator
 
-      # Fetch FTP folder structure using NLST (filenames only, recursive)
-      - name: Fetch FTP folder structure (NLST mode)
+      - name: Fetch FTP folder structure using ls -R (timeout after 10 minutes)
         env:
           FTP_SERVER: "ftp.ebi.ac.uk"
           FTP_PATH: "/pub/ensemblorganisms"
         run: |
-          lftp -c "
-            set ftp:list-options -a;
-            set dns:order 'inet inet6';
-            open $FTP_SERVER;
-            cd $FTP_PATH;
-            cls --list-only -R
-          " > data-aggregator/ensembl-beta_ftp_structure.txt
+          timeout 10m lftp -c "open $FTP_SERVER; cd $FTP_PATH; ls -R" \
+            > data-aggregator/ensembl-beta_ftp_structure.txt || \
+          { echo 'lftp command timed out after 10 minutes'; exit 1; }
 
-      # Convert the flat listing into a nested JSON tree (excluding 'vep' and 'test')
-      - name: Convert structure to JSON
+      - name: Convert structure to JSON (excluding 'vep' folders and the 'test' folder)
         run: |
           python3 << 'EOF'
           import json
 
-          def parse_listing(file_path):
+          def parse_ls_output(file_path):
               tree = {}
-              current_path = []
+              current_path = []  # Current directory path (list)
+
               with open(file_path, "r") as f:
                   for line in f:
                       line = line.rstrip("\n")
                       if not line:
                           continue
-                      # Directory header lines end with ":"
                       if line.endswith(":"):
                           header = line[:-1]
-                          if header.startswith("./"):
-                              header = header[2:]
-                          current_path = [] if header == "." else header.split("/")
+                          if header == ".":
+                              current_path = []
+                          else:
+                              if header.startswith("./"):
+                                  header = header[2:]
+                              current_path = header.split("/")
                           continue
-                      # Remove trailing slash for dirs
-                      name = line.rstrip("/")
-                      is_dir = line.endswith("/")
+
+                      parts = line.split()
+                      if len(parts) < 9:
+                          continue
+                      filename = " ".join(parts[8:])
+                      is_dir = parts[0].startswith("d")
+
                       node = tree
                       for part in current_path:
                           node = node.setdefault(part, {})
-                      node[name] = {} if is_dir else None
+                      if is_dir:
+                          node[filename] = {}
+                      else:
+                          node[filename] = None
               return tree
 
-          def filter_tree(tree):
-              tree.pop("test", None)
+          def remove_unwanted(tree):
+              if "test" in tree:
+                  del tree["test"]
               for species, genomes in tree.items():
                   if isinstance(genomes, dict):
-                      for g in list(genomes):
-                          if g.startswith(("GCA_", "GCF_")):
-                              genomes[g].pop("vep", None)
+                      for genome in list(genomes.keys()):
+                          if genome.startswith("GCA_") or genome.startswith("GCF_"):
+                              if "vep" in genomes[genome]:
+                                  del genomes[genome]["vep"]
               return tree
 
           if __name__ == "__main__":
-              input_fp = "data-aggregator/ensembl-beta_ftp_structure.txt"
-              output_fp = "data-aggregator/ensembl-beta_ftp_structure.json"
-              tree = parse_listing(input_fp)
-              tree = filter_tree(tree)
-              with open(output_fp, "w") as out:
-                  json.dump(tree, out, indent=4)
-              print(f"Directory structure saved to {output_fp}")
+              input_file = "data-aggregator/ensembl-beta_ftp_structure.txt"
+              output_file = "data-aggregator/ensembl-beta_ftp_structure.json"
+
+              directory_tree = parse_ls_output(input_file)
+              directory_tree = remove_unwanted(directory_tree)
+
+              with open(output_file, "w") as out_f:
+                  json.dump(directory_tree, out_f, indent=4)
+
+              print(f"Directory structure saved to {output_file}.")
           EOF
 
-      # Generate summary counts per species and overall totals
-      - name: Generate information files
+      - name: Generate information file
         run: |
           python3 << 'EOF'
           import json
 
-          with open("data-aggregator/ensembl-beta_ftp_structure.json") as f:
+          with open("data-aggregator/ensembl-beta_ftp_structure.json", "r") as f:
               data = json.load(f)
 
-          species_lines = ["Species\tGenome"]
-          total_lines = ["Species\tGenome"]
-          species_count = 0
-          genome_count = 0
+          ls_species = ["Species\tGenome"]
+          ls_total = ["Species\tGenome"]
+          species_num = 0
+          genome_num = 0
 
-          for sp, genomes in data.items():
-              if sp == "test":
+          for species, genomes in data.items():
+              if species == "test":
                   continue
-              count = sum(1 for gid in genomes if gid.startswith(("GCA_", "GCF_")))
-              species_lines.append(f"{sp}\t{count}")
-              species_count += 1
-              genome_count += count
+              count = sum(1 for genome_id in genomes.keys() if genome_id.startswith("GCA_") or genome_id.startswith("GCF_"))
+              ls_species.append(f"{species}\t{count}")
+              species_num += 1
+              genome_num += count
 
-          total_lines.append(f"{species_count}\t{genome_count}")
+          ls_total.append(f"{species_num}\t{genome_num}")
 
-          with open("data-aggregator/ensembl-beta_count_species.txt", "w") as f:
-              f.write("\n".join(species_lines))
-          with open("data-aggregator/ensembl-beta_count_total.txt", "w") as f:
-              f.write("\n".join(total_lines))
+          with open("data-aggregator/ensembl-beta_count_species.txt", "w") as out_file:
+              out_file.write("\n".join(ls_species))
+          with open("data-aggregator/ensembl-beta_count_total.txt", "w") as out_file:
+              out_file.write("\n".join(ls_total))
 
-          print("Information files saved to data-aggregator folder")
+          print("Information files saved to data-aggregator/ensembl-beta_count_species.txt and data-aggregator/ensembl-beta_count_total.txt.")
           EOF
 
-      # Fetch SRA advanced index list with Selenium and save as JSON
-      - name: Fetch SRA advanced index list
+      - name: Fetch SRA advanced index list using Selenium and save as JSON
         run: |
           python3 << 'EOF'
           import time, re, json
@@ -136,12 +140,12 @@ jobs:
 
           options = webdriver.ChromeOptions()
           options.add_argument("--headless")
-          driver = webdriver.Chrome(options=options)
 
+          driver = webdriver.Chrome(options=options)
           driver.get("https://www.ncbi.nlm.nih.gov/sra/advanced")
           time.sleep(3)
 
-          fields = [
+          fields_to_extract = [
               ("Strategy", "LS_STRATEGY"),
               ("Source", "LS_SOURCE"),
               ("Platform", "LS_PLATFORM"),
@@ -149,42 +153,47 @@ jobs:
               ("Filter", "LS_FILTER"),
               ("Properties", "LS_PROPERTIES")
           ]
+
           results = {}
 
-          for label, var in fields:
-              Select(driver.find_element(By.ID, "ff_0")).select_by_visible_text(label)
+          for field, varname in fields_to_extract:
+              dropdown = Select(driver.find_element(By.ID, "ff_0"))
+              dropdown.select_by_visible_text(field)
               time.sleep(1)
-              btn = WebDriverWait(driver, 10).until(
+              show_index_button = WebDriverWait(driver, 10).until(
                   EC.element_to_be_clickable((By.XPATH, "//select[@id='ff_0']/following::a[@class='show_index'][1]"))
               )
-              driver.execute_script("arguments[0].scrollIntoView(true);", btn)
+              driver.execute_script("arguments[0].scrollIntoView(true);", show_index_button)
               time.sleep(1)
-              driver.execute_script("arguments[0].click();", btn)
-              time.sleep(2)
+              driver.execute_script("arguments[0].click();", show_index_button)
+              time.sleep(3)
 
-              options_list = driver.find_element(By.ID, "terms_list").find_elements(By.TAG_NAME, "option")
-              processed = []
-              for opt in options_list:
-                  txt = re.sub(r'\s*\(.*?\)', "", opt.text).replace(" ", "_")
-                  processed.append(txt)
-              results[var] = processed
+              terms_select = driver.find_element(By.ID, "terms_list")
+              option_elements = terms_select.find_elements(By.TAG_NAME, "option")
+              processed_list = []
+              for option in option_elements:
+                  text = option.text.strip()
+                  text_no_paren = re.sub(r'\s*\(.*?\)', '', text)
+                  processed = text_no_paren.replace(' ', '_')
+                  processed_list.append(processed)
+              results[varname] = processed_list
 
           driver.quit()
 
           with open("data-aggregator/sra_advanced_index.json", "w") as f:
               json.dump(results, f, indent=4)
-          print("SRA advanced index saved to data-aggregator/sra_advanced_index.json")
+
+          print("SRA advanced index list saved to data-aggregator/sra_advanced_index.json.")
           EOF
 
-      # Commit and push any changes back to the repository
       - name: Commit and push changes
         run: |
           git config --global user.name "keun-hong"
           git config --global user.email "thsrms9216@gmail.com"
-          if [ -n "$(git status --porcelain data-aggregator/*.json data-aggregator/*.txt)" ]; then
-            git add data-aggregator/*.json data-aggregator/*.txt
-            git commit -m "Daily update: FTP structure, counts, and SRA index"
+          if [ -n "$(git status --porcelain data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.json)" ]; then
+            git add data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.json
+            git commit -m "Update FTP folder structure, information, and SRA advanced index list"
             git push https://snu-cdrc:${{ secrets.MY_PAT }}@github.com/snu-cdrc/gencube.git
           else
-            echo "No updates to commit."
+            echo "No changes to commit."
           fi
