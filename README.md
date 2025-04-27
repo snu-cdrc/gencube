@@ -30,7 +30,7 @@
 <sup>2</sup> Comparative Medicine and Disease Research Center (CDRC), Science Research Center (SRC), Seoul National University, Seoul, Korea<br>
 <sup>3</sup> BK21 PLUS Program for Creative Veterinary Science Research and Research Institute for Veterinary Science, Seoul National University, Seoul, Korea<be>
 ### Publication and Resources
-📑 **Manuscript**: [**bioRxiv**](https://www.biorxiv.org/content/10.1101/2024.07.18.604168v1) *(Accepted in **Bioinformatics**, March 13, 2025)*<br><br>
+📑 **Manuscript**: *[**Bioinformatics**](https://doi.org/10.1093/bioinformatics/btaf128) (published: April 25, 2025)*<br><br>
 🎬 **Video**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Save Hundreds of Hours in Your Multi-omics Research!**](https://youtu.be/ftQP0_Dv9yI?si=6_j0FCQxTgPXatqY)<br>
 📌 **Blog Post**:&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-step guide to developing a Python-based tool**](https://keun-hong.github.io/computerscience/python-tool-dev/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-Step guide to registering a package on Bioconda**](https://keun-hong.github.io/computerscience/bioconda-upload/)
