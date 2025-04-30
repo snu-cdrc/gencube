@@ -24,7 +24,7 @@
 
 ### Centralized retrieval and integration of multi-omics resources from leading databases
 
-[**Keun Hong Son**](https://keun-hong.github.io/)<sup>1,2,3</sup>, and [**Je-Yoel Cho**](https://vetbio.snu.ac.kr/)<sup>1,2,3</sup>
+[**Keun Hong Son**](https://keun-hong.github.io/)<sup>1,2,3</sup> and [**Je-Yoel Cho**](https://vetbio.snu.ac.kr/)<sup>1,2,3</sup>
 
 <sup>1</sup> Department of Biochemistry, College of Veterinary Medicine, Seoul National University, Seoul, Korea<br>
 <sup>2</sup> Comparative Medicine and Disease Research Center (CDRC), Science Research Center (SRC), Seoul National University, Seoul, Korea<br>
