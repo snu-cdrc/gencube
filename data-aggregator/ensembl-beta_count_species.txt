@@ -4,6 +4,7 @@ Abraxas_sylvata	1
 Abrostola_tripartita	2
 Abrostola_triplasia	2
 Acanthaster_planci	1
+Acanthochromis_polyacanthus	1
 Acanthopagrus_latus	1
 Acanthopleura_granulata	1
 Acanthosoma_haemorrhoidale	1
@@ -185,6 +186,7 @@ Anser_brachyrhynchus	1
 Anser_cygnoides_domesticus	1
 Anser_indicus	1
 Antedon_bifida	1
+Antedon_mediterranea	1
 Anthocharis_cardamines	2
 Anthonomus_grandis_grandis	3
 Anthophora_plumipes	1
@@ -249,6 +251,7 @@ Artibeus_jamaicensis	2
 Arvicanthis_niloticus	1
 Arvicola_amphibius	2
 Ascaris_suum	1
+Asellus_aquaticus	1
 Asparagus_officinalis	1
 Aspergillus_nidulans_FGSC_A4	1
 Astatotilapia_calliptera	2
@@ -307,6 +310,7 @@ Blastobasis_adustella	2
 Blastobasis_lacticolella	2
 Blastomussa_wellsi	1
 Blera_fallax	1
+Bolma_rugosa	1
 Boloria_euphrosyne	1
 Boloria_selene	2
 Bombus_affinis	1
@@ -390,6 +394,7 @@ Callimorpha_dominula	1
 Calliopum_simillimum	1
 Calliphora_vicina	1
 Calliphora_vomitoria	4
+Callista_chione	1
 Callithrix_jacchus	1
 Callorhinus_ursinus	1
 Calypte_anna	1
@@ -461,11 +466,12 @@ Ceutorhynchus_assimilis	1
 Chaenocephalus_aceratus	1
 Chalcosyrphus_nemorum	2
 Chamaenerion_angustifolium	1
-Channa_argus	1
+Channa_argus	2
 Channa_maculata	1
 Channa_striata	2
 Channallabes_apus	1
 Chanodichthys_erythropterus	1
+Chanos_chanos	1
 Charanyca_ferruginea	1
 Cheilinus_undulatus	1
 Cheilosia_grossa	1
@@ -492,6 +498,7 @@ Chinchilla_lanigera	1
 Chironomus_riparius	1
 Chironomus_tentans	1
 Chiroxiphia_lanceolata	1
+Chiton_olivaceus	1
 Chlamydomonas_reinhardtii	1
 Chloroclysta_siterata	2
 Chlorophyllum_brunneum	1
@@ -598,6 +605,7 @@ Cryptus_armator	1
 Cryptus_viduatorius	1
 Ctenicera_cuprea	1
 Ctenocephalides_felis	1
+Ctenopharyngodon_idella	1
 Cuculus_canorus	1
 Cucumis_sativus	1
 Culex_laticinctus	1
@@ -625,6 +633,7 @@ Cyprinus_carpio	1
 Cyprinus_carpio_carpio	1
 Cyrtodaria_siliqua	1
 Daktulosphaira_vitifoliae	1
+Dallia_pectoralis	1
 Danaus_plexippus	1
 Danaus_plexippus_plexippus	1
 Danio_aesculapii	1
@@ -692,6 +701,7 @@ Dolichopus_griseipennis	1
 Dolichovespula_media	2
 Dolichovespula_saxonica	1
 Dolichovespula_sylvestris	2
+Donax_trunculus	1
 Dorcus_parallelipipedus	1
 Doryrhamphus_excisus	1
 Doryteuthis_pealeii	1
@@ -795,6 +805,7 @@ Entomortierella_parvispora	1
 Eospalax_fontanierii	1
 Ephestia_elutella	1
 Epicampocera_succincta	2
+Epinephelus_cyanopodus	1
 Epinephelus_fuscoguttatus	1
 Epinephelus_lanceolatus	1
 Epinephelus_moara	1
@@ -853,6 +864,7 @@ Eulithis_prunata	2
 Eulithis_testata	1
 Eumetopias_jubatus	2
 Eunapius_fragilis	1
+Eunicella_verrucosa	1
 Euonymus_europaeus	1
 Eupeodes_corollae	2
 Eupeodes_latifasciatus	2
@@ -1017,7 +1029,7 @@ Hofstenia_miamia	1
 Homalodisca_vitripennis	1
 Homarus_americanus	1
 Homarus_gammarus	1
-Homo_sapiens	175
+Homo_sapiens	212
 Hoplodrina_ambigua	1
 Hoplodrina_blanda	1
 Hordeum_vulgare_subsp_vulgare	2
@@ -1134,6 +1146,7 @@ Leptinotarsa_decemlineata	1
 Leptobrachium_leishanense	1
 Leptoclinus_maculatus	1
 Leptogaster_cylindrica	1
+Leptogorgia_sarmentosa	1
 Leptosomus_discolor	2
 Leptura_quadrifasciata	1
 Lethocerus_indicus	1
@@ -1204,7 +1217,7 @@ Lysandra_coridon	2
 Lytechinus_pictus	1
 Lytechinus_variegatus	1
 Macaca_fascicularis	3
-Macaca_mulatta	1
+Macaca_mulatta	2
 Macaca_thibetana_thibetana	1
 Macaria_brunneata	1
 Macaria_liturata	1
@@ -1456,6 +1469,7 @@ Ocypus_olens	3
 Odiellus_spinosus	1
 Odocoileus_hemionus_hemionus	1
 Odocoileus_virginianus_texanus	1
+Odontamblyopus_lacepedii	1
 Odontesthes_bonariensis	1
 Oegoconia_quadripuncta	1
 Olea_europaea_subsp_europaea	1
@@ -1556,7 +1570,7 @@ Parietaria_judaica	1
 Pasiphila_rectangulata	1
 Passer_domesticus	1
 Passerculus_sandwichensis	1
-Patella_caerulea	1
+Patella_caerulea	2
 Patella_depressa	1
 Patella_pellucida	1
 Patella_ulyssiponensis	1
@@ -1707,7 +1721,7 @@ Polytrichum_commune	1
 Pomacea_canaliculata	4
 Pomacea_maculata	1
 Pomphorhynchus_laevis	1
-Pongo_abelii	1
+Pongo_abelii	2
 Populus_nigra	1
 Populus_trichocarpa	1
 Porites_australiensis	1
@@ -1741,6 +1755,7 @@ Pseudorasbora_parva	1
 Psittacula_echo	1
 Psococerastis_gibbosa	1
 Psylliodes_chrysocephala	1
+Pteroeides_griseum	1
 Pteropus_giganteus	1
 Pterostichus_madidus	3
 Pterostichus_niger	1
@@ -1797,7 +1812,7 @@ Ripartites_tricholoma	1
 Rissa_tridactyla	2
 Rosa_rugosa	1
 Rousettus_aegyptiacus	2
-Ruditapes_philippinarum	1
+Ruditapes_philippinarum	2
 Rupicapra_rupicapra	1
 Rutilus_rutilus	1
 Rutpela_maculata	3
@@ -1847,6 +1862,7 @@ Schizosaccharomyces_pombe_972h_	1
 Schizotus_pectinicornis	1
 Schmidtea_mediterranea	2
 Schrankia_costaestrigalis	2
+Sciaenops_ocellatus	1
 Sciurus_carolinensis	1
 Sciurus_vulgaris	2
 Scleropages_formosus	2
@@ -2058,6 +2074,7 @@ Tribolium_madens	1
 Trichechus_manatus_latirostris	1
 Trichogramma_pretiosum	1
 Tricholauxania_praeusta	1
+Trichomycterus_rosablanca	1
 Trichoplax_adhaerens	1
 Trichoplusia_ni	1
 Trichuris_muris	1
@@ -2072,6 +2089,7 @@ Triplophysa_dalaica	1
 Triplophysa_rosa	1
 Triplophysa_siluroides	1
 Triplophysa_tibetana	1
+Triplophysa_yarkandensis	1
 Trisateles_emortualis	2
 Triticum_aestivum	19
 Triticum_dicoccoides	1
@@ -2081,6 +2099,7 @@ Trogon_surrucura	1
 Tropheus_moorii	1
 Trypoxylon_attenuatum	1
 Tuberolachnus_salignus	1
+Tubulanus_polymorphus	1
 Tupaia_chinensis	1
 Turritopsis_rubra	1
 Tursiops_aduncus	1
@@ -2105,6 +2124,7 @@ Vanessa_tameamea	1
 Varroa_destructor	1
 Varroa_jacobsoni	1
 Venturia_canescens	1
+Venus_verrucosa	1
 Venusia_cambrica	1
 Verasper_variegatus	3
 Verbascum_thapsus	1
@@ -2120,6 +2140,7 @@ Vicugna_vicugna_mensalis	1
 Vigna_angularis	1
 Vigna_unguiculata	1
 Villa_cingulata	1
+Vimba_vimba	1
 Viola_odorata	1
 Vipera_ursinii	1
 Vitis_vinifera	2
