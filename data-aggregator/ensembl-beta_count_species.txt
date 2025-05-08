@@ -212,6 +212,7 @@ Apis_mellifera	1
 Aplocera_efformata	2
 Aplysia_californica	1
 Aplysina_aerophoba	1
+Aplysina_cavernicola	1
 Apocheima_hispidaria	2
 Apoda_limacodes	1
 Apodemus_agrarius	1
@@ -270,6 +271,7 @@ Aurelia_sp_4_Dawson_et_al_2005	1
 Autographa_gamma	2
 Autographa_pulchrina	2
 Avena_sativa	1
+Axinella_polypoides	1
 Aythya_baeri	1
 Aythya_fuligula	1
 Aythya_marila	1
@@ -890,6 +892,7 @@ Eurytemora_affinis	1
 Euschistus_heros	1
 Euspilapteryx_auroguttella	1
 Eustalomyia_histrio	2
+Euthalenessa_oculata	1
 Eutolmus_rufibarbis	1
 Euzophera_pinguis	1
 Exaiptasia_diaphana	2
@@ -1029,7 +1032,7 @@ Hofstenia_miamia	1
 Homalodisca_vitripennis	1
 Homarus_americanus	1
 Homarus_gammarus	1
-Homo_sapiens	212
+Homo_sapiens	255
 Hoplodrina_ambigua	1
 Hoplodrina_blanda	1
 Hordeum_vulgare_subsp_vulgare	2
@@ -1385,7 +1388,7 @@ Mythimna_separata	1
 Mythimna_vitellina	1
 Mytilus_californianus	2
 Mytilus_coruscus	1
-Mytilus_edulis	4
+Mytilus_edulis	5
 Mytilus_galloprovincialis	1
 Myxocyprinus_asiaticus	1
 Myzus_persicae	1
@@ -1393,6 +1396,7 @@ Naja_naja	1
 Nannospalax_galili	1
 Nasonia_vitripennis	1
 Nasturtium_officinale	1
+Naticarius_hebraeus	1
 Nautilus_pompilius	1
 Nebria_brevicollis	2
 Nebria_salina	2
@@ -1419,6 +1423,7 @@ Netelia_melanura	1
 Netelia_thomsonii	1
 Netelia_virgata	1
 Nettapus_auritus	1
+Neverita_josephinia	1
 Nezara_viridula	1
 Nibea_albiflora	1
 Nibea_coibor	1
@@ -1583,6 +1588,7 @@ Pedicia_rivosa	1
 Pediculus_humanus_corporis	1
 Pegoplata_infirma	1
 Pelagia_noctiluca	1
+Peltodoris_atromaculata	1
 Pemphredon_lugubris	1
 Penaeus_chinensis	1
 Penaeus_japonicus	1
