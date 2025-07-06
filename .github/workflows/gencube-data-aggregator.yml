@@ -23,11 +23,11 @@ jobs:
           pip install --upgrade pip
           pip install selenium
 
-      - name: Create data-aggregator folders
+      - name: Create data-aggregator directories
         run: |
           mkdir -p data-aggregator/ensembl-beta_ftp_metadata
 
-      - name: Fetch FTP metadata using lftp mirror --only-metadata
+      - name: Fetch FTP metadata using lftp mirror (dry-run + parallel)
         env:
           FTP_SERVER: "ftp.ebi.ac.uk"
           FTP_PATH: "/pub/ensemblorganisms"
@@ -36,41 +36,51 @@ jobs:
             open $FTP_SERVER
             set ftp:prefer-epsv true
             set net:socket-buffer 33554432
-            mirror --only-metadata --parallel=10 \
-              --no-perms --verbose $FTP_PATH data-aggregator/ensembl-beta_ftp_metadata
-          "
+            mirror --verbose --parallel=10 --dry-run --no-perms \
+              $FTP_PATH data-aggregator/ensembl-beta_ftp_metadata
+          " > data-aggregator/ensembl-beta_ftp_listing.txt
 
-      - name: Convert metadata tree to JSON (excluding 'vep' and 'test')
+      - name: Convert mirror listing to JSON (excluding 'vep' and 'test')
         run: |
           python3 << 'EOF'
           import os, json
 
-          def build_tree(root):
+          def build_from_listing(listing_file, root_dir):
               tree = {}
-              for dirpath, dirnames, filenames in os.walk(root):
-                  rel = os.path.relpath(dirpath, root)
-                  parts = [] if rel == '.' else rel.split(os.sep)
-                  node = tree
-                  for p in parts:
-                      node = node.setdefault(p, {})
-                  for d in dirnames:
-                      node.setdefault(d, {})
-                  for f in filenames:
-                      node[f] = None
+              with open(listing_file) as f:
+                  for line in f:
+                      line = line.strip()
+                      if line.startswith('mkdir '):
+                          local = line.split(' ',1)[1]
+                          rel = os.path.relpath(local, root_dir)
+                          if rel in ('.', ''): continue
+                          parts = rel.split(os.sep)
+                          node = tree
+                          for p in parts:
+                              node = node.setdefault(p, {})
+                      elif line.startswith('get ') and '->' in line:
+                          local = line.split('->',1)[1].strip()
+                          rel = os.path.relpath(local, root_dir)
+                          parts = rel.split(os.sep)
+                          node = tree
+                          for p in parts[:-1]:
+                              node = node.setdefault(p, {})
+                          node[parts[-1]] = None
               return tree
 
           def remove_unwanted(tree):
               tree.pop("test", None)
               for species, genomes in list(tree.items()):
                   if isinstance(genomes, dict):
-                      for genome_id, contents in list(genomes.items()):
-                          if genome_id.startswith(("GCA_","GCF_")) and isinstance(contents, dict):
+                      for gid, contents in list(genomes.items()):
+                          if gid.startswith(("GCA_","GCF_")) and isinstance(contents, dict):
                               contents.pop("vep", None)
               return tree
 
           if __name__ == "__main__":
+              listing = "data-aggregator/ensembl-beta_ftp_listing.txt"
               root = "data-aggregator/ensembl-beta_ftp_metadata"
-              tree = build_tree(root)
+              tree = build_from_listing(listing, root)
               tree = remove_unwanted(tree)
               out_path = "data-aggregator/ensembl-beta_ftp_structure.json"
               with open(out_path, "w") as f:
