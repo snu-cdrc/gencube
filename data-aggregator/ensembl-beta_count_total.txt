@@ -1,2 +1,2 @@
 Species	Genome
-0	0
+2490	3743
