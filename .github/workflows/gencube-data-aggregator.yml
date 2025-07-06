@@ -44,79 +44,41 @@ jobs:
               tree = {}
               current_path = []
 
-              with open(file_path, "r") as f:
+              with open(file_path) as f:
                   for line in f:
                       line = line.rstrip("\n")
                       if not line:
                           continue
                       if line.endswith(":"):
-                          header = line[:-1]
-                          if header == ".":
-                              current_path = []
-                          else:
-                              if header.startswith("./"):
-                                  header = header[2:]
-                              current_path = header.split("/")
+                          hdr = line[:-1]
+                          current_path = [] if hdr == "." else hdr.lstrip("./").split("/")
                           continue
-
                       parts = line.split()
                       if len(parts) < 9:
                           continue
-                      filename = " ".join(parts[8:])
+                      name = " ".join(parts[8:])
                       is_dir = parts[0].startswith("d")
-
                       node = tree
-                      for part in current_path:
-                          node = node.setdefault(part, {})
-                      if is_dir:
-                          node[filename] = {}
-                      else:
-                          node[filename] = None
+                      for p in current_path:
+                          node = node.setdefault(p, {})
+                      node[name] = {} if is_dir else None
               return tree
 
           def remove_unwanted(tree):
-              if "test" in tree:
-                  del tree["test"]
-              for species, genomes in tree.items():
-                  if isinstance(genomes, dict):
-                      for genome in list(genomes.keys()):
-                          if genome.startswith("GCA_") or genome.startswith("GCF_"):
-                              if "vep" in genomes[genome]:
-                                  del genomes[genome]["vep"]
-              return tree
-
-          def remove_null_files(tree):
-              if isinstance(tree, dict):
-                  return {
-                      k: remove_null_files(v)
-                      for k, v in tree.items()
-                      if v is not None
-                  }
-              return tree
-
-          def remove_empty_dirs(tree):
-              if isinstance(tree, dict):
-                  new_tree = {}
-                  for k, v in tree.items():
-                      cleaned = remove_empty_dirs(v)
-                      if cleaned:
-                          new_tree[k] = cleaned
-                  return new_tree
+              tree.pop("test", None)
+              for sp, gm in list(tree.items()):
+                  if isinstance(gm, dict):
+                      for gid, ct in list(gm.items()):
+                          if gid.startswith(("GCA_","GCF_")) and isinstance(ct, dict):
+                              ct.pop("vep", None)
               return tree
 
           if __name__ == "__main__":
-              input_file = "data-aggregator/ensembl-beta_ftp_structure.txt"
-              output_file = "data-aggregator/ensembl-beta_ftp_structure.json"
-
-              directory_tree = parse_ls_output(input_file)
-              directory_tree = remove_unwanted(directory_tree)
-              directory_tree = remove_null_files(directory_tree)
-              directory_tree = remove_empty_dirs(directory_tree)
-
-              with open(output_file, "w") as out_f:
-                  json.dump(directory_tree, out_f, indent=4)
-
-              print(f"Directory structure saved to {output_file}.")
+              t = parse_ls_output("data-aggregator/ensembl-beta_ftp_structure.txt")
+              t = remove_unwanted(t)
+              with open("data-aggregator/ensembl-beta_ftp_structure.json", "w") as out:
+                  json.dump(t, out, indent=4)
+              print("Directory structure saved.")
           EOF
 
       - name: Generate information file
@@ -124,34 +86,31 @@ jobs:
           python3 << 'EOF'
           import json
 
-          with open("data-aggregator/ensembl-beta_ftp_structure.json", "r") as f:
+          with open("data-aggregator/ensembl-beta_ftp_structure.json") as f:
               data = json.load(f)
 
           ls_species = ["Species\tGenome"]
           ls_total   = ["Species\tGenome"]
-          species_num = 0
-          genome_num  = 0
+          sp_count = gen_count = 0
 
           for species, genomes in data.items():
+              # 'test' 과 NoneType 건너뛰기
               if species == "test" or not isinstance(genomes, dict):
                   continue
-              count = sum(
-                  1
-                  for genome_id in genomes.keys()
-                  if genome_id.startswith("GCA_") or genome_id.startswith("GCF_")
-              )
-              ls_species.append(f"{species}\t{count}")
-              species_num += 1
-              genome_num  += count
+              # dict 타입일 때만 keys() 호출
+              n = sum(1 for gid in genomes.keys() if gid.startswith(("GCA_","GCF_")))
+              ls_species.append(f"{species}\t{n}")
+              sp_count  += 1
+              gen_count += n
 
-          ls_total.append(f"{species_num}\t{genome_num}")
+          ls_total.append(f"{sp_count}\t{gen_count}")
 
-          with open("data-aggregator/ensembl-beta_count_species.txt", "w") as out_file:
-              out_file.write("\n".join(ls_species))
-          with open("data-aggregator/ensembl-beta_count_total.txt", "w") as out_file:
-              out_file.write("\n".join(ls_total))
+          with open("data-aggregator/ensembl-beta_count_species.txt", "w") as sf:
+              sf.write("\n".join(ls_species))
+          with open("data-aggregator/ensembl-beta_count_total.txt", "w") as tf:
+              tf.write("\n".join(ls_total))
 
-          print("Information files saved to data-aggregator/ensembl-beta_count_species.txt and data-aggregator/ensembl-beta_count_total.txt.")
+          print("Count files saved.")
           EOF
 
       - name: Fetch SRA advanced index list using Selenium and save as JSON
@@ -165,59 +124,46 @@ jobs:
 
           options = webdriver.ChromeOptions()
           options.add_argument("--headless")
-
           driver = webdriver.Chrome(options=options)
           driver.get("https://www.ncbi.nlm.nih.gov/sra/advanced")
           time.sleep(3)
 
-          fields_to_extract = [
-              ("Strategy", "LS_STRATEGY"),
-              ("Source", "LS_SOURCE"),
-              ("Platform", "LS_PLATFORM"),
-              ("Selection", "LS_SELECTION"),
-              ("Filter", "LS_FILTER"),
-              ("Properties", "LS_PROPERTIES")
+          fields = [
+              ("Strategy","LS_STRATEGY"),
+              ("Source","LS_SOURCE"),
+              ("Platform","LS_PLATFORM"),
+              ("Selection","LS_SELECTION"),
+              ("Filter","LS_FILTER"),
+              ("Properties","LS_PROPERTIES"),
           ]
 
           results = {}
-
-          for field, varname in fields_to_extract:
-              dropdown = Select(driver.find_element(By.ID, "ff_0"))
-              dropdown.select_by_visible_text(field)
+          for label,var in fields:
+              Select(driver.find_element(By.ID,"ff_0")).select_by_visible_text(label)
               time.sleep(1)
-              show_index_button = WebDriverWait(driver, 10).until(
-                  EC.element_to_be_clickable((By.XPATH, "//select[@id='ff_0']/following::a[@class='show_index'][1]"))
+              btn = WebDriverWait(driver,10).until(
+                  EC.element_to_be_clickable((By.XPATH,"//select[@id='ff_0']/following::a[@class='show_index'][1]"))
               )
-              driver.execute_script("arguments[0].scrollIntoView(true);", show_index_button)
-              time.sleep(1)
-              driver.execute_script("arguments[0].click();", show_index_button)
-              time.sleep(3)
-
-              terms_select = driver.find_element(By.ID, "terms_list")
-              option_elements = terms_select.find_elements(By.TAG_NAME, "option")
-              processed_list = []
-              for option in option_elements:
-                  text = option.text.strip()
-                  text_no_paren = re.sub(r'\s*\(.*?\)', '', text)
-                  processed = text_no_paren.replace(' ', '_')
-                  processed_list.append(processed)
-              results[varname] = processed_list
+              btn.click(); time.sleep(3)
+              opts = driver.find_element(By.ID,"terms_list").find_elements(By.TAG_NAME,"option")
+              results[var] = [
+                  re.sub(r'\s*\(.*?\)','', o.text).strip().replace(' ','_')
+                  for o in opts
+              ]
 
           driver.quit()
-
-          with open("data-aggregator/sra_advanced_index.json", "w") as f:
-              json.dump(results, f, indent=4)
-
-          print("SRA advanced index list saved to data-aggregator/sra_advanced_index.json.")
+          with open("data-aggregator/sra_advanced_index.json","w") as out:
+              json.dump(results, out, indent=4)
+          print("SRA index saved.")
           EOF
 
       - name: Commit and push changes
         run: |
           git config --global user.name "keun-hong"
           git config --global user.email "thsrms9216@gmail.com"
-          if [ -n "$(git status --porcelain data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.json)" ]; then
-            git add data-aggregator/ensembl-beta_ftp_structure.json data-aggregator/ensembl-beta_count_species.txt data-aggregator/ensembl-beta_count_total.txt data-aggregator/sra_advanced_index.json
-            git commit -m "Update FTP folder structure, information, and SRA advanced index list"
+          if [ -n "$(git status --porcelain data-aggregator/)" ]; then
+            git add data-aggregator/
+            git commit -m "Update FTP structure, counts, and SRA index"
             git push https://snu-cdrc:${{ secrets.MY_PAT }}@github.com/snu-cdrc/gencube.git
           else
             echo "No changes to commit."
