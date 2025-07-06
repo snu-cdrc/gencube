@@ -42,7 +42,7 @@ license = {file = "LICENSE"}
 dependencies = [
   "biopython>=1.79",
   "pandas>=1.0.0",
-  "numpy>=1.21.0,<2",
+  "numpy>=1.21.0",
   "requests>=2.25.1",
   "urllib3>=1.26.5",
   "xmltodict>=0.12.0",

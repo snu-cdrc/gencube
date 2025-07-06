@@ -74,8 +74,10 @@ def genome (
 
         # Download genome files
         if download:
-            dic_download = download_genome(df_genome_plus, database, dic_genark_meta, dic_ensembl_meta, recursive)
+            download_genome(df_genome_plus, database, dic_genark_meta, dic_ensembl_meta, recursive)
+
+            #dic_download = download_genome(df_genome_plus, database, dic_genark_meta, dic_ensembl_meta, recursive)
             # Change chromosome label style
-            convert_chr_label_genome(df_genome_plus, dic_download, chr_style, masking, compresslevel, recursive)
+            #convert_chr_label_genome(df_genome_plus, dic_download, chr_style, masking, compresslevel, recursive)
 
 

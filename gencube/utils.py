@@ -12,6 +12,7 @@ import urllib3                # For advanced HTTP client functionalities
 import ftplib                 # For handling FTP connectionssave_metadata
 from bs4 import BeautifulSoup # For parsing HTML and XML documents
 from io import StringIO       # For in-memory file-like objects
+from io import BytesIO        # For handling binary data in memory
 
 from pathlib import Path      # For handling filesystem paths in a platform-independent way
 import os                     # For interacting with the operating system
@@ -42,6 +43,7 @@ warnings.simplefilter("ignore", PerformanceWarning)
 
 # Constant variables
 from .constants import (
+    NCBI_FTP_HOST,
     NCBI_FTP_URL,
     #ENSEMBL_FTP_HOST,
     #ENSEMBL_RAPID_FTP_URL,
@@ -50,6 +52,7 @@ from .constants import (
     ENSEMBL_TREE_JSON,
     GENARK_URL,
     ZOONOMIA_URL,
+    ZOONOMIA_META,
     UCSC_KENT_URL,
     LS_NCBI_ASSEMBLY_META_KEY,
     LS_NCBI_ASSEMBLY_META_LABEL,
@@ -744,14 +747,17 @@ def check_access_database (df, mode):
         genark_meta = requests.get(genark_meta_url, verify=False).text.split('\n')
 
         dic_genark_meta = {}
+        dic_genark_meta_species = {}
         for line in genark_meta:
             tmp = line.split()
             if len(tmp):
                 if tmp[0] != '#':
-                    dic_genark_meta[line.split('\t')[0]] = line.split('\t')[2]
+                    # accession : "assembly"\t"scientific name"
+                    dic_genark_meta[line.split('\t')[0]] = line.split('\t')[1]
+                    dic_genark_meta_species[line.split('\t')[0]] = line.split('\t')[2]
 
         df[['GenArk']] = ''
-        print(f'  UCSC GenArk  : {len(dic_genark_meta)} genomes across {len(list(set(dic_genark_meta.values())))} species')
+        print(f'  UCSC GenArk  : {len(dic_genark_meta)} genomes across {len(list(set(dic_genark_meta_species.values())))} species')
 
     """
     # Check Ensembl Rapid Release
@@ -781,14 +787,16 @@ def check_access_database (df, mode):
 
     # Check Zoonomia
     if mode in ls_zoonomia_mode:
-        df_zoonomia = pd.DataFrame()
-        for reference in DIC_ZOONOMIA:
-            url = f'{ZOONOMIA_URL}/{DIC_ZOONOMIA[reference]}/overview.table.tsv'
-            df_tmp = pd.read_csv(download_csv(url, verify=False), sep='\t')
-            df_tmp['reference'] = reference
-            df_zoonomia = pd.concat([df_zoonomia, df_tmp])
+        # Download the pickle bytes
+        resp = requests.get(ZOONOMIA_META, verify=False)
+        resp.raise_for_status()
 
+        # Read into pandas from a BytesIO buffer
+        df_zoonomia = pd.read_pickle(BytesIO(resp.content))
+
+        # add an empty 'Zoonomia' column
         df[['Zoonomia']] = ''
+        # now print the TOGA summary
         print(f'  Zoonomia TOGA: {df_zoonomia["Assembly name"].nunique()} genomes across {df_zoonomia["Species"].nunique()} species')
 
     print('')
@@ -804,6 +812,9 @@ def check_access_database (df, mode):
             df.loc[idx, 'Ensembl'] = 'v'
         if mode in ls_zoonomia_mode and (genbank_id in df_zoonomia["NCBI accession / source"].tolist() or refseq_id in df_zoonomia["NCBI accession / source"].tolist()):
             df.loc[idx, 'Zoonomia'] = 'v'
+
+    # Remove space in assembly name
+    df['Assembly name'] = df['Assembly name'].str.replace(' ', '_', regex=False)
 
     if mode == 'genome':
         return df, dic_genark_meta, dic_ensembl_meta
@@ -853,12 +864,16 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
             print(f'- {type}')
             # RefSeq
             if refseq_id:
-                refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
-                refseq_fa = f'{refseq_dir}/{refseq_id}_{assembly_id}_genomic.fna.gz'
+                ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}")
+                refseq_assembly_id = ls_source[0]
+
+                refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_assembly_id}'
+                refseq_fa = f'{refseq_dir}/{refseq_assembly_id}_genomic.fna.gz'
                 refseq_md5sum = f'{refseq_dir}/md5checksums.txt'
-                refseq_rp = f'{refseq_dir}/{refseq_id}_{assembly_id}_assembly_report.txt'
+                refseq_rp = f'{refseq_dir}/{refseq_assembly_id}_assembly_report.txt'
                 out_fa_name = f'{organism}-{assembly_id}-refseq.sm.fa.gz'
                 out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
+
                 # Check and download assembly report.
                 if check_url(refseq_md5sum, show_output=False):
 
@@ -884,10 +899,13 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
 
             # GenBank
             if not report or type == 'genbank':
-                genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_id}_{assembly_id}'
-                genbank_fa = f'{genbank_dir}/{genbank_id}_{assembly_id}_genomic.fna.gz'
+                ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}")
+                genbank_assembly_id = ls_source[0]
+
+                genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_assembly_id}'
+                genbank_fa = f'{genbank_dir}/{genbank_assembly_id}_genomic.fna.gz'
                 genbank_md5sum = f'{genbank_dir}/md5checksums.txt'
-                genbank_rp = f'{genbank_dir}/{genbank_id}_{assembly_id}_assembly_report.txt'
+                genbank_rp = f'{genbank_dir}/{genbank_assembly_id}_assembly_report.txt'
                 out_fa_name = f'{organism}-{assembly_id}-genbank.sm.fa.gz'
                 out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
 
@@ -940,7 +958,7 @@ def download_genome (df, types, dic_genark_meta, dic_ensembl_meta, recursive):
                     print('  GenArk genome is not available')
                     continue
 
-            # Ensembl.
+            # Ensembl Beta
             if type == 'ensembl':
                 if check_ensembl:
                     if genbank_id in dic_ensembl_meta:
@@ -1032,7 +1050,7 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
 
         # Check downloaded files
         ls_download = dic_download[genbank_id]
-        print(f'  Downloaded genome: {ls_download}')
+        print(f'  Downloaded file(s): {ls_download}')
         for db in ls_download:
             print(f'  - {db}')
 
@@ -1058,7 +1076,6 @@ def convert_chr_label_genome (df, dic_download, style, masking, compresslevel, r
                 else:
                     print('    The converted file already exists')
                     continue
-
 
             # File check in working directory
             ls_download_files = os.listdir(DOWNLOAD_FOLDER_NAME)
@@ -1155,7 +1172,6 @@ def process_row_geneset(idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia
         'Ensembl': '',
         'Zoonomia': ''
     }
-    assembly_id = row['Assembly name']
     genbank_id = row['GenBank']
     refseq_id = row['RefSeq']
     check_ensembl = row['Ensembl']
@@ -1164,13 +1180,16 @@ def process_row_geneset(idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia
 
     # RefSeq
     if refseq_id:
-        refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
+        ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}")
+        refseq_assembly_id = ls_source[0]
+
+        refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_assembly_id}'
         url_md5sum = f'{refseq_dir}/md5checksums.txt'
-        refseq_gtf = f'{refseq_id}_{assembly_id}_genomic.gtf.gz'
-        refseq_gff = f'{refseq_id}_{assembly_id}_genomic.gff.gz'
-        refseq_genomon = f'{refseq_id}_{assembly_id}_gnomon_model.gff.gz'
-        refseq_cross = f'{refseq_id}_{assembly_id}_cross_species_tx_alns.gff.gz'
-        refseq_same = f'{refseq_id}_{assembly_id}_same_species_tx_alns.gff.gz'
+        refseq_gtf = f'{refseq_assembly_id}_genomic.gtf.gz'
+        refseq_gff = f'{refseq_assembly_id}_genomic.gff.gz'
+        refseq_genomon = f'{refseq_assembly_id}_gnomon_model.gff.gz'
+        refseq_cross = f'{refseq_assembly_id}_cross_species_tx_alns.gff.gz'
+        refseq_same = f'{refseq_assembly_id}_same_species_tx_alns.gff.gz'
 
         if check_url(url_md5sum, show_output=False):
             df_md5 = get_md5(url_md5sum)  # Read md5sum information
@@ -1190,20 +1209,20 @@ def process_row_geneset(idx, row, dic_genark_meta, dic_ensembl_meta, df_zoonomia
     # Genark
     if check_genark:
         genark_id = refseq_id if refseq_id in dic_genark_meta else genbank_id
-        genark_dif = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
+        genark_dir = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
 
-        genark_augustus = f'{genark_dif}/genes/{genark_id}_{assembly_id}.augustus.gtf.gz'
-        genark_xeno = f'{genark_dif}/genes/{genark_id}_{assembly_id}.xenoRefGene.gtf.gz'
-        genark_ref = f'{genark_dif}/genes/{genark_id}_{assembly_id}.ncbiRefSeq.gtf.gz'
+        ls_gene_files = list_http_files(genark_dir + '/genes')
+        for file in ls_gene_files:
+            if genark_id in file:
+                type = file.split('.')[-3]
+                if type == 'augustus':
+                    result['GenArk'] = add_string(result['GenArk'], 'augustus')
+                if type == 'xenoRefGene':
+                    result['GenArk'] = add_string(result['GenArk'], 'xenoref')
+                if type == 'ncbiRefSeq':
+                    result['GenArk'] = add_string(result['GenArk'], 'ref')
 
-        if check_url(genark_augustus, verify=False, show_output=False):
-            result['GenArk'] = add_string(result['GenArk'], 'agustus')
-        if check_url(genark_xeno, verify=False, show_output=False):
-            result['GenArk'] = add_string(result['GenArk'], 'xenoref')
-        if check_url(genark_ref, verify=False, show_output=False):
-            result['GenArk'] = add_string(result['GenArk'], 'ref')
-
-    # Ensembl
+    # Ensembl Beta
     if check_ensembl:
         if genbank_id in dic_ensembl_meta:
             ensembl_acc = genbank_id
@@ -1355,15 +1374,17 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
         # RefSeq
         if len(list(set(['refseq_gtf', 'refseq_gff', 'gnomon', 'cross_species', 'same_species']) & set(ls_types))) > 0:
 
-            refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
+            ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}")
+            refseq_assembly_id = ls_source[0]
+            refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_assembly_id}'
 
             ls_search = check_refseq.replace(' ', '').split(',')
             url_md5sum = f'{refseq_dir}/md5checksums.txt'
-            refseq_gtf = f'{refseq_dir}/{refseq_id}_{assembly_id}_genomic.gtf.gz'
-            refseq_gff = f'{refseq_dir}/{refseq_id}_{assembly_id}_genomic.gff.gz'
-            refseq_genomon = f'{refseq_dir}/Gnomon_models/{refseq_id}_{assembly_id}_gnomon_model.gff.gz'
-            refseq_cross = f'{refseq_dir}/Evidence_alignments/{refseq_id}_{assembly_id}_cross_species_tx_alns.gff.gz'
-            refseq_same = f'{refseq_dir}/Evidence_alignments/{refseq_id}_{assembly_id}_same_species_tx_alns.gff.gz'
+            refseq_gtf = f'{refseq_dir}/{refseq_assembly_id}_genomic.gtf.gz'
+            refseq_gff = f'{refseq_dir}/{refseq_assembly_id}_genomic.gff.gz'
+            refseq_genomon = f'{refseq_dir}/Gnomon_models/{refseq_assembly_id}_gnomon_model.gff.gz'
+            refseq_cross = f'{refseq_dir}/Evidence_alignments/{refseq_assembly_id}_cross_species_tx_alns.gff.gz'
+            refseq_same = f'{refseq_dir}/Evidence_alignments/{refseq_assembly_id}_same_species_tx_alns.gff.gz'
 
             if check_refseq:
                 if 'refseq_gtf' in ls_types:
@@ -1406,9 +1427,9 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
             genark_dif = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
 
             ls_search = check_genark.replace(' ', '').split(',')
-            genark_augustus = f'{genark_dif}/genes/{genark_id}_{assembly_id}.augustus.gtf.gz'
-            genark_xeno = f'{genark_dif}/genes/{genark_id}_{assembly_id}.xenoRefGene.gtf.gz'
-            genark_ref = f'{genark_dif}/genes/{genark_id}_{assembly_id}.ncbiRefSeq.gtf.gz'
+            genark_augustus = f'{genark_dif}/genes/{genark_id}_{dic_genark_meta[genark_id]}.augustus.gtf.gz'
+            genark_xeno = f'{genark_dif}/genes/{genark_id}_{dic_genark_meta[genark_id]}.xenoRefGene.gtf.gz'
+            genark_ref = f'{genark_dif}/genes/{genark_id}_{dic_genark_meta[genark_id]}.ncbiRefSeq.gtf.gz'
 
             if check_genark:
 
@@ -1430,7 +1451,7 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
                         download_url(genark_ref, out_name, verify=False, recursive=recursive)
                         ls_download.append('genark_ref')
 
-        # Ensembl
+        # Ensembl Beta
         if len(list(set(['ensembl_gtf', 'ensembl_gff']) & set(ls_types))) > 0:
 
             if genbank_id in dic_ensembl_meta:
@@ -1577,9 +1598,11 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
         report = False
         # RefSeq
         if refseq_id:
-            refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
+            ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}")
+            refseq_assembly_id = ls_source[0]
+            refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_assembly_id}'
             refseq_md5sum = f'{refseq_dir}/md5checksums.txt'
-            refseq_rp = f'{refseq_dir}/{refseq_id}_{assembly_id}_assembly_report.txt'
+            refseq_rp = f'{refseq_dir}/{refseq_assembly_id}_assembly_report.txt'
             out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
             # Check and download assembly report.
 
@@ -1589,9 +1612,11 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
 
         # GenBank
         if not report:
-            genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_id}_{assembly_id}'
+            ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}")
+            genbank_assembly_id = ls_source[0]
+            genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_assembly_id}'
             genbank_md5sum = f'{genbank_dir}/md5checksums.txt'
-            genbank_rp = f'{genbank_dir}/{genbank_id}_{assembly_id}_assembly_report.txt'
+            genbank_rp = f'{genbank_dir}/{genbank_assembly_id}_assembly_report.txt'
             out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
 
             if check_url(genbank_rp):
@@ -1644,7 +1669,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
 
         # Check downloaded files
         ls_download = dic_download[genbank_id]
-        print(f'  Downloaded genome: {ls_download}')
+        print(f'  Downloaded file(s): {ls_download}')
 
 
         dic_db_suffix = {
@@ -1827,12 +1852,9 @@ def process_row_annotation(idx, row, dic_genark_meta):
 
     # GenArk
     if check_genark:
-        if refseq_id in dic_genark_meta:
-            genark_id = refseq_id
-        else:
-            genark_id = genbank_id
-
+        genark_id = refseq_id if refseq_id in dic_genark_meta else genbank_id
         genark_dir = f'{GENARK_URL}/{genark_id[0:3]}/{genark_id[4:7]}/{genark_id[7:10]}/{genark_id[10:13]}/{genark_id}'
+
         ls_bb_files = list_http_files(genark_dir + '/bbi')
         gap = False
         rmsk = False
@@ -2114,9 +2136,11 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
         report = False
         # RefSeq
         if refseq_id:
-            refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
+            ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}")
+            refseq_assembly_id = ls_source[0]
+            refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_assembly_id}'
             refseq_md5sum = f'{refseq_dir}/md5checksums.txt'
-            refseq_rp = f'{refseq_dir}/{refseq_id}_{assembly_id}_assembly_report.txt'
+            refseq_rp = f'{refseq_dir}/{refseq_assembly_id}_assembly_report.txt'
             out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
             # Check and download assembly report.
 
@@ -2126,9 +2150,11 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
 
         # GenBank
         if not report:
-            genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_id}_{assembly_id}'
+            ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}")
+            genbank_assembly_id = ls_source[0]
+            genbank_dir = f'{NCBI_FTP_URL}/{genbank_id[0:3]}/{genbank_id[4:7]}/{genbank_id[7:10]}/{genbank_id[10:13]}/{genbank_assembly_id}'
             genbank_md5sum = f'{genbank_dir}/md5checksums.txt'
-            genbank_rp = f'{genbank_dir}/{genbank_id}_{assembly_id}_assembly_report.txt'
+            genbank_rp = f'{genbank_dir}/{genbank_assembly_id}_assembly_report.txt'
             out_rp_name = f'{organism}-{assembly_id}_assembly_report.txt'
 
             if check_url(genbank_rp):
@@ -2167,7 +2193,7 @@ def convert_chr_label_annotation (df, dic_download, style, recursive):
 
         # Check downloaded files
         ls_download = dic_download[genbank_id]
-        print(f'  Downloaded genome: {ls_download}')
+        print(f'  Downloaded file(s): {ls_download}')
 
         dic_out_suffix = {'ensembl' : 'ens-id', 'gencode' : 'gc-id', 'ucsc' : 'ucsc-id'}
 
@@ -2333,14 +2359,16 @@ def process_row_sequence(idx, row, dic_ensembl_meta):
 
     # RefSeq
     if refseq_id:
-        refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_id}_{assembly_id}'
+        ls_source = list_ftp_directory(NCBI_FTP_HOST, f"genomes/all/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}")
+        refseq_assembly_id = ls_source[0]
+        refseq_dir = f'{NCBI_FTP_URL}/{refseq_id[0:3]}/{refseq_id[4:7]}/{refseq_id[7:10]}/{refseq_id[10:13]}/{refseq_assembly_id}'
         url_md5sum = f'{refseq_dir}/md5checksums.txt'
-        refseq_rna = f'{refseq_id}_{assembly_id}_rna.fna.gz'
-        refseq_rna_geno = f'{refseq_id}_{assembly_id}_rna_from_genomic.fna.gz'
-        refseq_cds_geno = f'{refseq_id}_{assembly_id}_cds_from_genomic.fna.gz'
-        refseq_pseudo = f'{refseq_id}_{assembly_id}_pseudo_without_product.fna.gz'
-        refseq_protein = f'{refseq_id}_{assembly_id}_protein.faa.gz'
-        refseq_trans_cds = f'{refseq_id}_{assembly_id}_translated_cds.faa.gz'
+        refseq_rna = f'{refseq_assembly_id}_rna.fna.gz'
+        refseq_rna_geno = f'{refseq_assembly_id}_rna_from_genomic.fna.gz'
+        refseq_cds_geno = f'{refseq_assembly_id}_cds_from_genomic.fna.gz'
+        refseq_pseudo = f'{refseq_assembly_id}_pseudo_without_product.fna.gz'
+        refseq_protein = f'{refseq_assembly_id}_protein.faa.gz'
+        refseq_trans_cds = f'{refseq_assembly_id}_translated_cds.faa.gz'
 
         if check_url(url_md5sum, show_output=False):
             df_md5 = get_md5(url_md5sum)  # Read md5sum information
@@ -2359,7 +2387,7 @@ def process_row_sequence(idx, row, dic_ensembl_meta):
             if refseq_trans_cds in ls_filename:
                 result['RefSeq'] = add_string(result['RefSeq'], 'pep_cds')
 
-    # Ensembl
+    # Ensembl Beta
     if check_ensembl:
         if genbank_id in dic_ensembl_meta:
             ensembl_acc = genbank_id
@@ -2548,7 +2576,7 @@ def download_sequence(df, df_genome, dic_ensembl_meta, types, recursive):
                         out_name = f'{organism}-{assembly_id}-refseq.translated_cds.faa.gz'
                         download_url(refseq_trans_cds, out_name, url_md5sum=url_md5sum, recursive=recursive, out_path=out_subfolder)
 
-        # Ensembl
+        # Ensembl Beta
         #if len(list(set(['ensembl_cdna', 'ensembl_cds', 'ensembl_pep']) & set(ls_types))) > 0:
         if len(list(set(['ensembl_cdna', 'ensembl_pep']) & set(ls_types))) > 0:
 
@@ -2642,7 +2670,7 @@ def process_row_crossgenome(idx, row, dic_ensembl_meta, df_zoonomia):
     check_ensembl = row['Ensembl']
     check_zoonomia = row['Zoonomia']
 
-    # Ensembl
+    # Ensembl Beta
     if check_ensembl:
         if genbank_id in dic_ensembl_meta:
             ensembl_acc = genbank_id
@@ -2759,7 +2787,7 @@ def download_crossgenome (df, df_genome, dic_ensembl_meta, df_zoonomia, types, r
         else:
             print(f'[{genbank_id} / {assembly_id}]')
 
-        # Ensembl
+        # Ensembl Beta
         if 'ensembl_homology' in ls_types:
 
             if genbank_id in dic_ensembl_meta:
