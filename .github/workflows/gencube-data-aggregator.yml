@@ -20,7 +20,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y lftp
           pip install --upgrade pip
-          pip install selenium pandas
+          pip install selenium pandas requests
 
       - name: Create data-aggregator folder
         run: mkdir -p data-aggregator
@@ -53,7 +53,6 @@ jobs:
                           continue
                       if line.endswith(":"):
                           header = line[:-1]
-                          # Set current path; skip leading './'
                           if header in (".", "./"):
                               path_stack = []
                           else:
@@ -91,13 +90,12 @@ jobs:
                           contents.pop("vep", None)
               return tree
 
-          if __name__ == "__main__":
-              tree = parse_ls_output("data-aggregator/ensembl-beta_ftp_structure.txt")
-              prune_root_files(tree)
-              tree = remove_unwanted(tree)
-              with open("data-aggregator/ensembl-beta_ftp_structure.json", "w") as out:
-                  json.dump(tree, out, indent=4)
-              print("Saved JSON with root-level files pruned.")
+          tree = parse_ls_output("data-aggregator/ensembl-beta_ftp_structure.txt")
+          prune_root_files(tree)
+          tree = remove_unwanted(tree)
+          with open("data-aggregator/ensembl-beta_ftp_structure.json", "w") as out:
+              json.dump(tree, out, indent=4)
+          print("Saved JSON with root-level files pruned.")
           EOF
 
       - name: Generate information files
@@ -139,7 +137,8 @@ jobs:
         run: |
           python3 << 'EOF'
           import pandas as pd
-          from your_utils_module import download_csv  # adjust import path as needed
+          import requests
+          from io import StringIO
 
           ZOONOMIA_URL = 'https://genome.senckenberg.de/download/TOGA'
           DIC_ZOONOMIA = {
@@ -154,11 +153,14 @@ jobs:
               'tobaccoHawkmoth':      'tobaccoHawkmoth_HLmanSex2_reference'
           }
 
-          # Collect Zoonomia metadata tables
           frames = []
           for ref_name, subdir in DIC_ZOONOMIA.items():
               url = f"{ZOONOMIA_URL}/{subdir}/overview.table.tsv"
-              df = pd.read_csv(download_csv(url, verify=False), sep='\t')
+              # Download the file with SSL verification disabled
+              response = requests.get(url, verify=False)
+              response.raise_for_status()
+              csv_io = StringIO(response.text)
+              df = pd.read_csv(csv_io, sep='\t')
               df['reference'] = ref_name
               frames.append(df)
 
