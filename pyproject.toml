@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gencube"
-version = "1.3.0"
+version = "1.4.0"
 description = "GenCube enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve metadata for sequencing-based experimental data suitable for specific requirements."
 readme = "README.md"
 license = "MIT"
