@@ -255,7 +255,7 @@ def main():
             'gnomon        : RefSeq Gnomon gene prediction (GFF)\n'
             'cross         : RefSeq Cross-species alignments (GFF)\n'
             'same          : RefSeq Same-species alignments (GFF)\n'
-            'augustus       : GenArk Augustus gene prediction (GFF)\n'
+            'augustus      : GenArk Augustus gene prediction (GFF)\n'
             'xenoref       : GenArk XenoRefGene (GFF)\n'
             'genark_ref    : GenArk RefSeq gene models (GFF)\n'
             'ensembl_gtf   : Ensembl Beta gene set (GTF)\n'
