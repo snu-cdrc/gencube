@@ -6,7 +6,7 @@
 <!-- 3. Supported Python Versions Badge: -->
 <!-- 6. PyPI Downloads Badge: -->
 <!-- 8. License Badge: -->
-![github version](https://img.shields.io/badge/Version-1.2.0-informational)
+![github version](https://img.shields.io/badge/Version-1.4.0-informational)
 [![pypi version](https://img.shields.io/pypi/v/gencube)](https://pypi.org/project/gencube/)
 ![python versions](https://img.shields.io/pypi/pyversions/gencube)
 [![pypi downloads](https://img.shields.io/pypi/dm/gencube)](https://pypi.org/project/gencube/)
