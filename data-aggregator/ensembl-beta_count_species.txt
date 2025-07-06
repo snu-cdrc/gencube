@@ -1,4 +1,4 @@
-Species	Genome
+Species	GenomeCount
 Abax_parallelepipedus	1
 Abramis_brama	2
 Abraxas_sylvata	2
