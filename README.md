@@ -327,7 +327,7 @@ options:
                         gnomon        : RefSeq Gnomon gene prediction (GFF)
                         cross         : RefSeq Cross-species alignments (GFF)
                         same          : RefSeq Same-species alignments (GFF)
-                        agustus       : GenArk Augustus gene prediction (GFF)
+                        augustus      : GenArk Augustus gene prediction (GFF)
                         xenoref       : GenArk XenoRefGene (GFF)
                         genark_ref    : GenArk RefSeq gene models (GFF)
                         ensembl_gtf   : Ensembl Beta gene set (GTF)
@@ -362,11 +362,11 @@ $ gencube geneset GCF_011100685.1 --metadata
 
 # Download specific geneset file from a database
 $ gencube geneset GCF_011100685.1 --download refseq_gtf
-$ gencube geneset GCF_011100685.1 --download agustus
+$ gencube geneset GCF_011100685.1 --download augustus
 $ gencube geneset GCF_011100685.1 --download toga_gtf
 
 # Download multiple genesets from various databases
-$ gencube geneset GCF_011100685.1 --download refseq_gtf,agustus,toga_gtf
+$ gencube geneset GCF_011100685.1 --download refseq_gtf,augustus,toga_gtf
 ```
 #### Example output displayed in the terminal
 🔥 **$ gencube geneset canis_lupus_familiaris**
@@ -424,25 +424,25 @@ $ gencube geneset GCF_011100685.1 --download refseq_gtf,agustus,toga_gtf
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
 |  1 | ASM4364393v1        |         |                               |                       |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
-|  2 | UNSW_CanFamBas_1.2  |         |                               | agustus, xenoref      |                   |              |
+|  2 | UNSW_CanFamBas_1.2  |         |                               | augustus, xenoref      |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
 |  3 | UMICH_Zoey_3.1      | canFam5 | gtf, gff, gnomon, cross, same |                       | ensembl: gtf, gff | human, mouse |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
-|  4 | ROS_Cfam_1.0        |         | gtf, gff, gnomon, cross, same | agustus, xenoref, ref | ensembl: gtf, gff | human        |
+|  4 | ROS_Cfam_1.0        |         | gtf, gff, gnomon, cross, same | augustus, xenoref, ref | ensembl: gtf, gff | human        |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
-|  5 | Yella_v2            |         |                               | agustus, xenoref      |                   |              |
+|  5 | Yella_v2            |         |                               | augustus, xenoref      |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
-|  6 | CA611_1.0           |         |                               | agustus, xenoref      |                   |              |
+|  6 | CA611_1.0           |         |                               | augustus, xenoref      |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
-|  7 | OD_1.0              |         |                               | agustus, xenoref      |                   |              |
+|  7 | OD_1.0              |         |                               | augustus, xenoref      |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
-|  8 | BD_1.0              |         |                               | agustus, xenoref      |                   |              |
+|  8 | BD_1.0              |         |                               | augustus, xenoref      |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
 |  9 | Lak_Megaphage_Wal-2 |         |                               |                       |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
 | 10 | Lak_Megaphage_Wal-1 |         |                               |                       |                   |              |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
-| 11 | UU_Cfam_GSD_1.0     | canFam4 | gtf, gff, gnomon, cross, same | agustus, xenoref, ref | ensembl: gtf, gff | human, mouse |
+| 11 | UU_Cfam_GSD_1.0     | canFam4 | gtf, gff, gnomon, cross, same | augustus, xenoref, ref | ensembl: gtf, gff | human, mouse |
 +----+---------------------+---------+-------------------------------+-----------------------+-------------------+--------------+
 ...
 ```
