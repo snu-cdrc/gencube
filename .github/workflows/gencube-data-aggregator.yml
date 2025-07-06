@@ -35,50 +35,55 @@ jobs:
             > data-aggregator/ensembl-beta_ftp_structure.txt || \
           { echo 'lftp command timed out after 10 minutes'; exit 1; }
 
-      - name: Convert structure to JSON (excluding 'vep' folders and the 'test' folder)
+      - name: Convert structure to JSON (excluding file nodes, 'vep' folders and 'test')
         run: |
           python3 << 'EOF'
           import json
 
-          def parse_ls_output(file_path):
+          def parse_ls_output(fp):
               tree = {}
-              current_path = []
-
-              with open(file_path) as f:
-                  for line in f:
-                      line = line.rstrip("\n")
-                      if not line:
+              cur = []
+              with open(fp) as f:
+                  for L in f:
+                      L = L.rstrip("\n")
+                      if not L: continue
+                      if L.endswith(":"):
+                          hdr = L[:-1]
+                          cur = [] if hdr=="." else hdr.lstrip("./").split("/")
                           continue
-                      if line.endswith(":"):
-                          hdr = line[:-1]
-                          current_path = [] if hdr == "." else hdr.lstrip("./").split("/")
-                          continue
-                      parts = line.split()
-                      if len(parts) < 9:
-                          continue
+                      parts = L.split()
+                      if len(parts)<9: continue
                       name = " ".join(parts[8:])
                       is_dir = parts[0].startswith("d")
                       node = tree
-                      for p in current_path:
-                          node = node.setdefault(p, {})
+                      for d in cur:
+                          node = node.setdefault(d,{})
                       node[name] = {} if is_dir else None
               return tree
 
+          def prune_files(tree):
+              for k,v in list(tree.items()):
+                  if v is None:
+                      del tree[k]
+                  else:
+                      prune_files(v)
+
           def remove_unwanted(tree):
-              tree.pop("test", None)
-              for sp, gm in list(tree.items()):
-                  if isinstance(gm, dict):
-                      for gid, ct in list(gm.items()):
-                          if gid.startswith(("GCA_","GCF_")) and isinstance(ct, dict):
-                              ct.pop("vep", None)
+              tree.pop("test",None)
+              for sp,gm in list(tree.items()):
+                  if isinstance(gm,dict):
+                      for gid,ct in list(gm.items()):
+                          if gid.startswith(("GCA_","GCF_")) and isinstance(ct,dict):
+                              ct.pop("vep",None)
               return tree
 
           if __name__ == "__main__":
               t = parse_ls_output("data-aggregator/ensembl-beta_ftp_structure.txt")
+              prune_files(t)
               t = remove_unwanted(t)
-              with open("data-aggregator/ensembl-beta_ftp_structure.json", "w") as out:
+              with open("data-aggregator/ensembl-beta_ftp_structure.json","w") as out:
                   json.dump(t, out, indent=4)
-              print("Directory structure saved.")
+              print("Pruned file nodes and saved JSON.")
           EOF
 
       - name: Generate information file
@@ -94,10 +99,8 @@ jobs:
           sp_count = gen_count = 0
 
           for species, genomes in data.items():
-              # 'test' 과 NoneType 건너뛰기
-              if species == "test" or not isinstance(genomes, dict):
+              if species=="test" or not isinstance(genomes,dict):
                   continue
-              # dict 타입일 때만 keys() 호출
               n = sum(1 for gid in genomes.keys() if gid.startswith(("GCA_","GCF_")))
               ls_species.append(f"{species}\t{n}")
               sp_count  += 1
@@ -105,9 +108,9 @@ jobs:
 
           ls_total.append(f"{sp_count}\t{gen_count}")
 
-          with open("data-aggregator/ensembl-beta_count_species.txt", "w") as sf:
+          with open("data-aggregator/ensembl-beta_count_species.txt","w") as sf:
               sf.write("\n".join(ls_species))
-          with open("data-aggregator/ensembl-beta_count_total.txt", "w") as tf:
+          with open("data-aggregator/ensembl-beta_count_total.txt","w") as tf:
               tf.write("\n".join(ls_total))
 
           print("Count files saved.")
