@@ -42,7 +42,7 @@ jobs:
 
           def parse_ls_output(file_path):
               tree = {}
-              current_path = []  # Current directory path (list)
+              current_path = []
 
               with open(file_path, "r") as f:
                   for line in f:
@@ -85,12 +85,33 @@ jobs:
                                   del genomes[genome]["vep"]
               return tree
 
+          def remove_null_files(tree):
+              if isinstance(tree, dict):
+                  return {
+                      k: remove_null_files(v)
+                      for k, v in tree.items()
+                      if v is not None
+                  }
+              return tree
+
+          def remove_empty_dirs(tree):
+              if isinstance(tree, dict):
+                  new_tree = {}
+                  for k, v in tree.items():
+                      cleaned = remove_empty_dirs(v)
+                      if cleaned:
+                          new_tree[k] = cleaned
+                  return new_tree
+              return tree
+
           if __name__ == "__main__":
               input_file = "data-aggregator/ensembl-beta_ftp_structure.txt"
               output_file = "data-aggregator/ensembl-beta_ftp_structure.json"
 
               directory_tree = parse_ls_output(input_file)
               directory_tree = remove_unwanted(directory_tree)
+              directory_tree = remove_null_files(directory_tree)
+              directory_tree = remove_empty_dirs(directory_tree)
 
               with open(output_file, "w") as out_f:
                   json.dump(directory_tree, out_f, indent=4)
@@ -112,8 +133,6 @@ jobs:
           genome_num  = 0
 
           for species, genomes in data.items():
-              # 'test' 디렉토리는 건너뛰고,
-              # genomes 가 dict 가 아닐 경우 (None 등)에도 건너뜁니다.
               if species == "test" or not isinstance(genomes, dict):
                   continue
               count = sum(
