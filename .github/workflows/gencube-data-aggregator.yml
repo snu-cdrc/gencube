@@ -35,7 +35,7 @@ jobs:
             > data-aggregator/ensembl-beta_ftp_structure.txt || \
           { echo 'lftp command timed out after 10 minutes'; exit 1; }
 
-      - name: Convert structure to JSON (excluding file nodes, 'vep' folders and 'test')
+      - name: Convert structure to JSON (drop only root-file nodes, remove 'test' & 'vep')
         run: |
           python3 << 'EOF'
           import json
@@ -44,46 +44,50 @@ jobs:
               tree = {}
               cur = []
               with open(fp) as f:
-                  for L in f:
-                      L = L.rstrip("\n")
-                      if not L: continue
-                      if L.endswith(":"):
-                          hdr = L[:-1]
-                          cur = [] if hdr=="." else hdr.lstrip("./").split("/")
+                  for line in f:
+                      line = line.rstrip("\n")
+                      if not line:
                           continue
-                      parts = L.split()
-                      if len(parts)<9: continue
+                      if line.endswith(":"):
+                          hdr = line[:-1]
+                          cur = [] if hdr == "." else hdr.lstrip("./").split("/")
+                          continue
+                      parts = line.split()
+                      if len(parts) < 9:
+                          continue
                       name = " ".join(parts[8:])
                       is_dir = parts[0].startswith("d")
                       node = tree
                       for d in cur:
-                          node = node.setdefault(d,{})
+                          node = node.setdefault(d, {})
                       node[name] = {} if is_dir else None
               return tree
 
-          def prune_files(tree):
-              for k,v in list(tree.items()):
+          def prune_root_files(tree):
+              # remove only top-level file entries (value=None)
+              for k, v in list(tree.items()):
                   if v is None:
                       del tree[k]
-                  else:
-                      prune_files(v)
 
           def remove_unwanted(tree):
-              tree.pop("test",None)
-              for sp,gm in list(tree.items()):
-                  if isinstance(gm,dict):
-                      for gid,ct in list(gm.items()):
-                          if gid.startswith(("GCA_","GCF_")) and isinstance(ct,dict):
-                              ct.pop("vep",None)
+              # remove top-level 'test'
+              tree.pop("test", None)
+              # remove any 'vep' folder immediately under each genome
+              for sp, gm in list(tree.items()):
+                  if not isinstance(gm, dict):
+                      continue
+                  for gid, contents in list(gm.items()):
+                      if isinstance(contents, dict):
+                          contents.pop("vep", None)
               return tree
 
           if __name__ == "__main__":
-              t = parse_ls_output("data-aggregator/ensembl-beta_ftp_structure.txt")
-              prune_files(t)
-              t = remove_unwanted(t)
-              with open("data-aggregator/ensembl-beta_ftp_structure.json","w") as out:
-                  json.dump(t, out, indent=4)
-              print("Pruned file nodes and saved JSON.")
+              tree = parse_ls_output("data-aggregator/ensembl-beta_ftp_structure.txt")
+              prune_root_files(tree)
+              tree = remove_unwanted(tree)
+              with open("data-aggregator/ensembl-beta_ftp_structure.json", "w") as out:
+                  json.dump(tree, out, indent=4)
+              print("Saved JSON with root-file nodes pruned.")
           EOF
 
       - name: Generate information file
@@ -94,24 +98,24 @@ jobs:
           with open("data-aggregator/ensembl-beta_ftp_structure.json") as f:
               data = json.load(f)
 
-          ls_species = ["Species\tGenome"]
-          ls_total   = ["Species\tGenome"]
+          species_lines = ["Species\tGenome"]
+          total_lines   = ["Species\tGenome"]
           sp_count = gen_count = 0
 
           for species, genomes in data.items():
-              if species=="test" or not isinstance(genomes,dict):
+              if species == "test" or not isinstance(genomes, dict):
                   continue
-              n = sum(1 for gid in genomes.keys() if gid.startswith(("GCA_","GCF_")))
-              ls_species.append(f"{species}\t{n}")
+              count = sum(1 for gid in genomes if gid.startswith(("GCA_","GCF_")))
+              species_lines.append(f"{species}\t{count}")
               sp_count  += 1
-              gen_count += n
+              gen_count += count
 
-          ls_total.append(f"{sp_count}\t{gen_count}")
+          total_lines.append(f"{sp_count}\t{gen_count}")
 
-          with open("data-aggregator/ensembl-beta_count_species.txt","w") as sf:
-              sf.write("\n".join(ls_species))
-          with open("data-aggregator/ensembl-beta_count_total.txt","w") as tf:
-              tf.write("\n".join(ls_total))
+          with open("data-aggregator/ensembl-beta_count_species.txt", "w") as sf:
+              sf.write("\n".join(species_lines))
+          with open("data-aggregator/ensembl-beta_count_total.txt", "w") as tf:
+              tf.write("\n".join(total_lines))
 
           print("Count files saved.")
           EOF
@@ -132,26 +136,27 @@ jobs:
           time.sleep(3)
 
           fields = [
-              ("Strategy","LS_STRATEGY"),
-              ("Source","LS_SOURCE"),
-              ("Platform","LS_PLATFORM"),
+              ("Strategy", "LS_STRATEGY"),
+              ("Source",   "LS_SOURCE"),
+              ("Platform", "LS_PLATFORM"),
               ("Selection","LS_SELECTION"),
-              ("Filter","LS_FILTER"),
-              ("Properties","LS_PROPERTIES"),
+              ("Filter",   "LS_FILTER"),
+              ("Properties","LS_PROPERTIES")
           ]
 
           results = {}
-          for label,var in fields:
-              Select(driver.find_element(By.ID,"ff_0")).select_by_visible_text(label)
+          for label, var in fields:
+              Select(driver.find_element(By.ID, "ff_0")).select_by_visible_text(label)
               time.sleep(1)
               btn = WebDriverWait(driver,10).until(
                   EC.element_to_be_clickable((By.XPATH,"//select[@id='ff_0']/following::a[@class='show_index'][1]"))
               )
-              btn.click(); time.sleep(3)
+              btn.click()
+              time.sleep(3)
               opts = driver.find_element(By.ID,"terms_list").find_elements(By.TAG_NAME,"option")
               results[var] = [
-                  re.sub(r'\s*\(.*?\)','', o.text).strip().replace(' ','_')
-                  for o in opts
+                  re.sub(r'\s*\(.*?\)','', opt.text).strip().replace(' ','_')
+                  for opt in opts
               ]
 
           driver.quit()
@@ -166,7 +171,7 @@ jobs:
           git config --global user.email "thsrms9216@gmail.com"
           if [ -n "$(git status --porcelain data-aggregator/)" ]; then
             git add data-aggregator/
-            git commit -m "Update FTP structure, counts, and SRA index"
+            git commit -m "Update FTP structure, counts & SRA index"
             git push https://snu-cdrc:${{ secrets.MY_PAT }}@github.com/snu-cdrc/gencube.git
           else
             echo "No changes to commit."
