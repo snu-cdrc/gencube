@@ -1,0 +1,46 @@
+# Assembly name:  ASM3414082v1
+# Organism name:  Oryza sativa Japonica Group (Japanese rice)
+# Taxid:          39947
+# BioSample:      SAMN36344332
+# BioProject:     PRJNA953663
+# Submitter:      Agricultural Genomics Institute at Shenzhen, Chinese Academy of Agricultural Sciences
+# Date:           2023-12-06
+# Assembly type:  haploid
+# Release type:   major
+# Assembly level: Complete Genome
+# Genome representation: full
+# Assembly method: Hifiasm v. 0.19.3-r572
+# Expected final version: no
+# Genome coverage: 220.0x
+# Sequencing technology: PacBio Sequel II; NANOPORE GridION
+# RefSeq category: Reference Genome
+# GenBank assembly accession: GCA_034140825.1
+# RefSeq assembly accession: GCF_034140825.1
+# RefSeq assembly and GenBank assemblies identical: no
+#
+## Assembly-Units:
+## GenBank Unit Accession	RefSeq Unit Accession	Assembly-Unit name
+## GCA_034140935.1	GCF_034140935.1	Primary Assembly
+## 	GCF_000123075.2	non-nuclear
+#
+# Ordered by chromosome/plasmid; the chromosomes/plasmids are followed by
+# unlocalized scaffolds.
+# Unplaced scaffolds are listed at the end.
+# RefSeq is equal or derived from GenBank object.
+#
+# Sequence-Name	Sequence-Role	Assigned-Molecule	Assigned-Molecule-Location/Type	GenBank-Accn	Relationship	RefSeq-Accn	Assembly-Unit	Sequence-Length	UCSC-style-name
+1	assembled-molecule	1	Chromosome	CP132235.1	=	NC_089035.1	Primary Assembly	43929697	na
+2	assembled-molecule	2	Chromosome	CP132236.1	=	NC_089036.1	Primary Assembly	36447916	na
+3	assembled-molecule	3	Chromosome	CP132237.1	=	NC_089037.1	Primary Assembly	37399924	na
+4	assembled-molecule	4	Chromosome	CP132238.1	=	NC_089038.1	Primary Assembly	36078568	na
+5	assembled-molecule	5	Chromosome	CP132239.1	=	NC_089039.1	Primary Assembly	30400764	na
+6	assembled-molecule	6	Chromosome	CP132240.1	=	NC_089040.1	Primary Assembly	32122276	na
+7	assembled-molecule	7	Chromosome	CP132241.1	=	NC_089041.1	Primary Assembly	29936421	na
+8	assembled-molecule	8	Chromosome	CP132242.1	=	NC_089042.1	Primary Assembly	28605474	na
+9	assembled-molecule	9	Chromosome	CP132243.1	=	NC_089043.1	Primary Assembly	27474823	na
+10	assembled-molecule	10	Chromosome	CP132244.1	=	NC_089044.1	Primary Assembly	23931887	na
+11	assembled-molecule	11	Chromosome	CP132245.1	=	NC_089045.1	Primary Assembly	31111469	na
+12	assembled-molecule	12	Chromosome	CP132246.1	=	NC_089046.1	Primary Assembly	28271460	na
+MT	assembled-molecule	MT	Mitochondrion	na	<>	NC_011033.1	non-nuclear	490520	na
+Pltd	assembled-molecule	Pltd	Chloroplast	na	<>	NC_001320.1	non-nuclear	134525	na
+B1	assembled-molecule	B1	Mitochondrial Plasmid	na	<>	NC_001751.1	non-nuclear	2135	na

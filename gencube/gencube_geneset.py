@@ -37,7 +37,7 @@ def geneset (
 
     ls_invalid_d = []
     if download:
-        ls_download = ['refseq_gtf', 'refseq_gff', 'gnomon', 'cross', 'same', 'agustus', 'xenoref', 'genark_ref', 'ensembl_gtf', 'ensembl_gff', 'toga_gtf', 'toga_bed', 'toga_pseudo']
+        ls_download = ['refseq_gtf', 'refseq_gff', 'gnomon', 'cross', 'same', 'augustus', 'xenoref', 'genark_ref', 'ensembl_gtf', 'ensembl_gff', 'toga_gtf', 'toga_bed', 'toga_pseudo']
         ls_invalid_d = check_argument (download, ls_download, '-d/--download')
 
     if len(ls_invalid_d) > 0 or len(ls_invalid_level) > 0:

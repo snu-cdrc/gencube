@@ -1418,7 +1418,7 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
                         ls_download.append('same_species')
 
         # Genark
-        if len(list(set(['agustus', 'xenoref', 'genark_ref']) & set(ls_types))) > 0:
+        if len(list(set(['augustus', 'xenoref', 'genark_ref']) & set(ls_types))) > 0:
 
             if refseq_id in dic_genark_meta:
                 genark_id = refseq_id
@@ -1433,11 +1433,11 @@ def download_geneset(df, df_genome, dic_ensembl_meta, dic_genark_meta, df_zoonom
 
             if check_genark:
 
-                if 'agustus' in ls_types:
-                    if 'agustus' in ls_search:
-                        out_name = f'{organism}-{assembly_id}-genark_agustus.gtf.gz'
+                if 'augustus' in ls_types:
+                    if 'augustus' in ls_search:
+                        out_name = f'{organism}-{assembly_id}-genark_augustus.gtf.gz'
                         download_url(genark_augustus, out_name, verify=False, recursive=recursive)
-                        ls_download.append('agustus')
+                        ls_download.append('augustus')
 
                 if 'xenoref' in ls_types:
                     if 'xenoref' in ls_search:
@@ -1678,7 +1678,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
             'gnomon' : 'refseq_genomon.gff.gz',
             'cross_species' : 'refseq_cross.gff.gz',
             'same_species' : 'refseq_same.gff.gz',
-            'agustus' : 'genark_agustus.gtf.gz',
+            'augustus' : 'genark_augustus.gtf.gz',
             'xenoref' : 'genark_xenoref.gtf.gz',
             'genark_ref' : 'genark_refseq.gtf.gz',
         }
@@ -1755,7 +1755,7 @@ def convert_chr_label_geneset (df, dic_download, style, recursive):
                                 continue
 
                         # Change the chromosome name
-                        if db in ['refseq_gtf', 'refseq_gff', 'gnomon', 'cross_species', 'same_species', 'agustus', 'xenoref', 'genark_ref']:
+                        if db in ['refseq_gtf', 'refseq_gff', 'gnomon', 'cross_species', 'same_species', 'augustus', 'xenoref', 'genark_ref']:
                             if style == 'ensembl':
                                 ls_tmp[0] = genbank_to_ensembl.get(chr_name, refseq_to_ensembl.get(chr_name, chr_name))
                             elif style == 'gencode':

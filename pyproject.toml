@@ -1,34 +1,29 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm"]  # setuptools_scm는 선택 사항입니다.
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "gencube"
-version = "1.2.0"
+version = "1.3.0"
 description = "GenCube enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve metadata for sequencing-based experimental data suitable for specific requirements."
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+
 authors = [
   {name = "Keun Hong Son", email = "newhong@snu.ac.kr"}
 ]
 maintainers = [
   {name = "Keun Hong Son", email = "newhong@snu.ac.kr"}
 ]
+keywords = [
+  "Genome", "Genomic", "Geneset", "Annotation", "Comparative", "Sequencing", "Metadata"
+]
 classifiers = [
-  # How mature is this project? Common values are
-  #   3 - Alpha
-  #   4 - Beta
-  #   5 - Production/Stable
   "Development Status :: 4 - Beta",
-
-  # Indicate who your project is intended for
   "Intended Audience :: Science/Research",
-
-  # Pick your license as you wish (see also "license" above)
-  "License :: OSI Approved :: MIT License",
   "Topic :: Scientific/Engineering :: Bio-Informatics",
   "Topic :: Utilities",
-
-  # Specify the Python versions you support here.
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.6",
   "Programming Language :: Python :: 3.7",
@@ -38,7 +33,6 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
 ]
-license = {file = "LICENSE"}
 dependencies = [
   "biopython>=1.79",
   "pandas>=1.0.0",
@@ -50,16 +44,13 @@ dependencies = [
   "tqdm>=4.61.2",
   "tabulate>=0.8.9",
 ]
-keywords = [
-  "Genome", "Genomic", "Geneset", "Annotation", "Comparative", "Sequencing", "Metadata"
-]
 
 [project.optional-dependencies]
 dev = [
-  "coverage",  # testing
-  "mypy",  # linting
-  "pytest",  # testing
-  "ruff"  # linting
+  "coverage",
+  "mypy",
+  "pytest",
+  "ruff",
 ]
 
 [project.urls]
@@ -72,16 +63,14 @@ Changelog = "https://github.com/snu-cdrc/gencube/blob/master/changelog.md"
 gencube = "gencube.__main__:main"
 
 [tool.setuptools]
-package-dir = {"gencube" = "gencube"}
+package-dir = {"" = "."}
+packages = ["gencube"]
 
 [tool.setuptools.package-data]
-"*" = ["*.*"]
+"gencube" = ["*.*"]
 
-# Mypy
 [tool.mypy]
 files = "."
-
-# Use strict defaults
 strict = true
 warn_unreachable = true
 warn_no_return = true
