@@ -107,17 +107,23 @@ jobs:
               data = json.load(f)
 
           ls_species = ["Species\tGenome"]
-          ls_total = ["Species\tGenome"]
+          ls_total   = ["Species\tGenome"]
           species_num = 0
-          genome_num = 0
+          genome_num  = 0
 
           for species, genomes in data.items():
-              if species == "test":
+              # 'test' 디렉토리는 건너뛰고,
+              # genomes 가 dict 가 아닐 경우 (None 등)에도 건너뜁니다.
+              if species == "test" or not isinstance(genomes, dict):
                   continue
-              count = sum(1 for genome_id in genomes.keys() if genome_id.startswith("GCA_") or genome_id.startswith("GCF_"))
+              count = sum(
+                  1
+                  for genome_id in genomes.keys()
+                  if genome_id.startswith("GCA_") or genome_id.startswith("GCF_")
+              )
               ls_species.append(f"{species}\t{count}")
               species_num += 1
-              genome_num += count
+              genome_num  += count
 
           ls_total.append(f"{species_num}\t{genome_num}")
 
