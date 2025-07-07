@@ -28,10 +28,10 @@
 <sup>1</sup> Department of Biochemistry, College of Veterinary Medicine, Seoul National University, Seoul, Korea<br>
 <sup>2</sup> Comparative Medicine and Disease Research Center (CDRC), Science Research Center (SRC), Seoul National University, Seoul, Korea<be>
 ### Publication and Resources
-📑 **Paper**:&nbsp;&nbsp;&nbsp;*[**Son et al., Bioinformatics, 2025**](https://doi.org/10.1093/bioinformatics/btaf128)*<br><br>
-🎬 **Video**:&nbsp;&nbsp;&nbsp;[**Save Hundreds of Hours in Your Multi-omics Research!**](https://youtu.be/ftQP0_Dv9yI?si=6_j0FCQxTgPXatqY)<br>
-📌 **Blog**:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-step guide to developing a Python-based tool**](https://keun-hong.github.io/computerscience/python-tool-dev/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-Step guide to registering a package on Bioconda**](https://keun-hong.github.io/computerscience/bioconda-upload/)<br><br>
+📑 **Paper**:&nbsp;&nbsp;*[**Bioinformatics, 2025**](https://doi.org/10.1093/bioinformatics/btaf128)*<br><br>
+🎬 **Video**:&nbsp;&nbsp;[**Save Hundreds of Hours in Your Multi-omics Research!**](https://youtu.be/ftQP0_Dv9yI?si=6_j0FCQxTgPXatqY)<br>
+📌 **Blog**:&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-step guide to developing a Python-based tool**](https://keun-hong.github.io/computerscience/python-tool-dev/)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**Step-by-Step guide to registering a package on Bioconda**](https://keun-hong.github.io/computerscience/bioconda-upload/)<br><br>
 🛠️**Update**: [**Version History**](https://github.com/snu-cdrc/gencube/blob/main/HISTORY.md)
 
 
