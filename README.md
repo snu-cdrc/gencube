@@ -6,14 +6,12 @@
 <!-- 3. Supported Python Versions Badge: -->
 <!-- 6. PyPI Downloads Badge: -->
 <!-- 8. License Badge: -->
-![github version](https://img.shields.io/badge/Version-1.5.0-informational)
 [![pypi version](https://img.shields.io/pypi/v/gencube)](https://pypi.org/project/gencube/)
 ![python versions](https://img.shields.io/pypi/pyversions/gencube)
-[![pypi downloads](https://img.shields.io/pypi/dm/gencube)](https://pypi.org/project/gencube/)
-[![license](https://img.shields.io/pypi/l/gencube)](LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 <br>
-![linux](https://img.shields.io/badge/platform-linux--x86__64-green)
-![macos x86_64](https://img.shields.io/badge/platform-macOSX--x86__64-blue)
+![linux](https://img.shields.io/badge/platform-linux--x86__64-orange)
+![macos x86_64](https://img.shields.io/badge/platform-macOSX--x86__64-orange)
 ![macos arm64](https://img.shields.io/badge/platform-macOSX--arm64-orange)
 
 <!-- 4. GitHub Actions CI Status Badge:
