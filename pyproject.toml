@@ -4,11 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gencube"
-version = "1.5.0"
+version = "1.6.0"
 description = "GenCube enables researchers to search for, download, and unify genome assemblies and diverse types of annotations, and retrieve metadata for sequencing-based experimental data suitable for specific requirements."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
+requires-python = ">=3.7,<4"
 
 authors = [
   {name = "Keun Hong Son", email = "newhong@snu.ac.kr"}
@@ -25,7 +26,6 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Bio-Informatics",
   "Topic :: Utilities",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.6",
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
@@ -36,7 +36,7 @@ classifiers = [
 dependencies = [
   "biopython>=1.79",
   "pandas>=1.0.0",
-  "numpy>=1.21.0",
+  "numpy>=1.21.0,<2",
   "requests>=2.25.1",
   "urllib3>=1.26.5",
   "xmltodict>=0.12.0",
