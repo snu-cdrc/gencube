@@ -1,6 +1,6 @@
 # History
 
-#### 1.5.0 (2025-07-07)
+#### 1.6.0 (2025-07-09)
 - Fixed an issue where files failed to download due to filename mismatches.
 - Improved search performance by preloading Zoonomia metadata.
 - Minor optimizations and code improvements.
