@@ -139,6 +139,7 @@ jobs:
           import pandas as pd
           import requests
           from io import StringIO
+          import pickle
 
           ZOONOMIA_URL = 'https://genome.senckenberg.de/download/TOGA'
           DIC_ZOONOMIA = {
@@ -156,7 +157,6 @@ jobs:
           frames = []
           for ref_name, subdir in DIC_ZOONOMIA.items():
               url = f"{ZOONOMIA_URL}/{subdir}/overview.table.tsv"
-              # Download the file with SSL verification disabled
               response = requests.get(url, verify=False)
               response.raise_for_status()
               csv_io = StringIO(response.text)
@@ -165,9 +165,12 @@ jobs:
               frames.append(df)
 
           df_zoonomia = pd.concat(frames, ignore_index=True)
-          # Save as pickle
-          df_zoonomia.to_pickle("data-aggregator/zoonomia_meta.pkl")
-          print("Saved Zoonomia metadata as pickle.")
+
+          # Save as pickle with protocol 4 for numpy<2 compatibility
+          with open("data-aggregator/zoonomia_meta.pkl", "wb") as f:
+              pickle.Pickler(f, protocol=4, fix_imports=True).dump(df_zoonomia)
+
+          print("Saved Zoonomia metadata as pickle (protocol=4).")
           EOF
 
       - name: Fetch SRA advanced index list using Selenium and save as JSON
@@ -200,23 +203,19 @@ jobs:
 
           results = {}
           for label, var in fields:
-              # Select field label
               Select(driver.find_element(By.ID, "ff_0")).select_by_visible_text(label)
               time.sleep(1)
-              # Click "show index" link next to the dropdown
               btn = WebDriverWait(driver, 10).until(
                   EC.element_to_be_clickable((By.XPATH, "//select[@id='ff_0']/following::a[@class='show_index'][1]"))
               )
               btn.click()
               time.sleep(2)
-              # Collect options text
               opts = driver.find_element(By.ID, "terms_list").find_elements(By.TAG_NAME, "option")
               values = [re.sub(r'\s*\(.*?\)', "", opt.text).strip().replace(" ", "_") for opt in opts]
               results[var] = values
 
           driver.quit()
 
-          # Save SRA index JSON
           with open("data-aggregator/sra_advanced_index.json", "w") as out:
               json.dump(results, out, indent=4)
           print("Saved SRA advanced index JSON.")
