@@ -12,7 +12,6 @@ import urllib3                # For advanced HTTP client functionalities
 import ftplib                 # For handling FTP connectionssave_metadata
 from bs4 import BeautifulSoup # For parsing HTML and XML documents
 from io import StringIO       # For in-memory file-like objects
-from io import BytesIO        # For handling binary data in memory
 
 from pathlib import Path      # For handling filesystem paths in a platform-independent way
 import os                     # For interacting with the operating system
@@ -787,12 +786,13 @@ def check_access_database (df, mode):
 
     # Check Zoonomia
     if mode in ls_zoonomia_mode:
-        # Download the pickle bytes
+        # Download the csv bytes
         resp = requests.get(ZOONOMIA_META, verify=False)
         resp.raise_for_status()
 
         # Read into pandas from a BytesIO buffer
-        df_zoonomia = pd.read_pickle(BytesIO(resp.content))
+        csv_text = resp.content.decode("utf-8")
+        df_zoonomia = pd.read_csv(StringIO(csv_text))
 
         # add an empty 'Zoonomia' column
         df[['Zoonomia']] = ''

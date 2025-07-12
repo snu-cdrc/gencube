@@ -18,7 +18,7 @@ GENARK_URL = 'https://hgdownload.soe.ucsc.edu/hubs/'
 
 # Zoonomia TOGA (200 mammals project)
 ZOONOMIA_URL = 'https://genome.senckenberg.de/download/TOGA/'
-ZOONOMIA_META = "https://github.com/snu-cdrc/gencube/raw/refs/heads/main/data-aggregator/zoonomia_meta.pkl"
+ZOONOMIA_META = "https://github.com/snu-cdrc/gencube/raw/refs/heads/main/data-aggregator/zoonomia_meta.csv"
 
 # UCSC-Kent applications
 UCSC_KENT_URL = 'https://hgdownload.soe.ucsc.edu/admin/exe'
