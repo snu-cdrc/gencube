@@ -40,10 +40,6 @@ jobs:
           import json
 
           def parse_ls_output(fp):
-              """
-              Parse recursive directory listing into nested dict.
-              Keys are file or directory names; directories have dict values, files have None.
-              """
               tree = {}
               path_stack = []
               with open(fp) as f:
@@ -70,17 +66,11 @@ jobs:
               return tree
 
           def prune_root_files(tree):
-              """
-              Remove only top-level file entries (value=None).
-              """
               for key in list(tree.keys()):
                   if tree[key] is None:
                       del tree[key]
 
           def remove_unwanted(tree):
-              """
-              Remove 'test' at top level and 'vep' under each genome directory.
-              """
               tree.pop("test", None)
               for species, genomes in list(tree.items()):
                   if not isinstance(genomes, dict):
@@ -103,11 +93,9 @@ jobs:
           python3 << 'EOF'
           import json
 
-          # Load JSON structure
           with open("data-aggregator/ensembl-beta_ftp_structure.json") as f:
               data = json.load(f)
 
-          # Prepare count lines: species vs number of assemblies
           species_lines = ["Species\tGenomeCount"]
           total_lines = ["TotalSpecies\tTotalGenomes"]
           species_count = 0
@@ -116,7 +104,6 @@ jobs:
           for species, genomes in data.items():
               if not isinstance(genomes, dict):
                   continue
-              # Count assemblies starting with GCA_ or GCF_
               count = sum(1 for gid in genomes if gid.startswith(("GCA_","GCF_")))
               species_lines.append(f"{species}\t{count}")
               species_count += 1
@@ -124,7 +111,6 @@ jobs:
 
           total_lines.append(f"{species_count}\t{genome_count}")
 
-          # Save counts
           with open("data-aggregator/ensembl-beta_count_species.txt", "w") as sf:
               sf.write("\n".join(species_lines))
           with open("data-aggregator/ensembl-beta_count_total.txt", "w") as tf:
@@ -133,13 +119,12 @@ jobs:
           print("Saved species and genome count files.")
           EOF
 
-      - name: Fetch Zoonomia metadata and save as pickle
+      - name: Fetch Zoonomia metadata and save as CSV
         run: |
           python3 << 'EOF'
           import pandas as pd
           import requests
           from io import StringIO
-          import pickle
 
           ZOONOMIA_URL = 'https://genome.senckenberg.de/download/TOGA'
           DIC_ZOONOMIA = {
@@ -159,18 +144,16 @@ jobs:
               url = f"{ZOONOMIA_URL}/{subdir}/overview.table.tsv"
               response = requests.get(url, verify=False)
               response.raise_for_status()
-              csv_io = StringIO(response.text)
-              df = pd.read_csv(csv_io, sep='\t')
+              df = pd.read_csv(StringIO(response.text), sep='\t')
               df['reference'] = ref_name
               frames.append(df)
 
           df_zoonomia = pd.concat(frames, ignore_index=True)
 
-          # Save as pickle with protocol 4 for numpy<2 compatibility
-          with open("data-aggregator/zoonomia_meta.pkl", "wb") as f:
-              pickle.Pickler(f, protocol=4, fix_imports=True).dump(df_zoonomia)
+          # Save as CSV for maximum compatibility
+          df_zoonomia.to_csv("data-aggregator/zoonomia_meta.csv", index=False)
 
-          print("Saved Zoonomia metadata as pickle (protocol=4).")
+          print("Saved Zoonomia metadata as CSV.")
           EOF
 
       - name: Fetch SRA advanced index list using Selenium and save as JSON
@@ -184,7 +167,6 @@ jobs:
           from selenium.webdriver.support.ui import WebDriverWait, Select
           from selenium.webdriver.support import expected_conditions as EC
 
-          # Initialize headless browser
           options = webdriver.ChromeOptions()
           options.add_argument("--headless")
           driver = webdriver.Chrome(options=options)
@@ -227,7 +209,7 @@ jobs:
           git config --global user.email "thsrms9216@gmail.com"
           if [ -n "$(git status --porcelain data-aggregator/)" ]; then
             git add data-aggregator/
-            git commit -m "Update FTP structure, counts, Zoonomia metadata & SRA index"
+            git commit -m "Update FTP structure, counts, Zoonomia CSV & SRA index"
             git push https://snu-cdrc:${{ secrets.MY_PAT }}@github.com/snu-cdrc/gencube.git
           else
             echo "No changes to commit."
