@@ -10955,25 +10955,7 @@
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
-            },
-            "university of georgia": {
-                "geneset": {
-                    "2019_11": {
-                        "cdna.fa.gz": null,
-                        "genes.embl.gz": null,
-                        "genes.gff3": null,
-                        "genes.gtf": null,
-                        "pep.fa.gz": null,
-                        "xref.tsv.gz": null
-                    }
-                },
-                "homology": {
-                    "2019_11": {
-                        "md5sum.txt": null
-                    }
-                }
-            },
-            "university.gz": null
+            }
         }
     },
     "Aspergillus_nidulans_FGSC_A4": {
@@ -23313,25 +23295,7 @@
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
-            },
-            "genoscope cea": {
-                "geneset": {
-                    "2015_09": {
-                        "cdna.fa.gz": null,
-                        "genes.embl.gz": null,
-                        "genes.gff3": null,
-                        "genes.gtf": null,
-                        "pep.fa.gz": null,
-                        "xref.tsv.gz": null
-                    }
-                },
-                "homology": {
-                    "2015_09": {
-                        "md5sum.txt": null
-                    }
-                }
-            },
-            "genoscope.gz": null
+            }
         }
     },
     "Coilia_nasus": {
@@ -66964,24 +66928,6 @@
     },
     "Musa_acuminata_subsp_malaccensis": {
         "GCA_904845865.1": {
-            "banana genome hub v2": {
-                "geneset": {
-                    "2020_11": {
-                        "cdna.fa.gz": null,
-                        "genes.embl.gz": null,
-                        "genes.gff3": null,
-                        "genes.gtf": null,
-                        "pep.fa.gz": null,
-                        "xref.tsv.gz": null
-                    }
-                },
-                "homology": {
-                    "2020_11": {
-                        "md5sum.txt": null
-                    }
-                }
-            },
-            "banana.gz": null,
             "community": {
                 "geneset": {
                     "2020_11": {
@@ -99770,24 +99716,6 @@
             }
         },
         "GCA_903994165.1": {
-            "10+": null,
-            "10+ consortium": {
-                "geneset": {
-                    "2017_04": {
-                        "cdna.fa.gz": null,
-                        "genes.embl.gz": null,
-                        "genes.gff3": null,
-                        "genes.gtf": null,
-                        "pep.fa.gz": null,
-                        "xref.tsv.gz": null
-                    }
-                },
-                "homology": {
-                    "2017_04": {
-                        "md5sum.txt": null
-                    }
-                }
-            },
             "community": {
                 "geneset": {
                     "2017_04": {
@@ -100102,15 +100030,7 @@
     },
     "Triticum_urartu": {
         "GCA_003073215.1": {
-            "genome": {
-                "chromosomes.tsv.gz": null,
-                "hardmasked.fa.gz": null,
-                "md5sum.txt": null,
-                "softmasked.fa.gz": null,
-                "unmasked.fa.gz": null
-            },
-            "institute": null,
-            "institute of genetics and developmental biology": {
+            "community": {
                 "geneset": {
                     "2025_05": {
                         "cdna.fa.gz": null,
@@ -100127,6 +100047,13 @@
                         "md5sum.txt": null
                     }
                 }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
             }
         }
     },
