@@ -262,6 +262,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Acaena_ovalifolia-GCA_964197805.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -8731,6 +8737,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Aotus_nancymaae-GCA_000952055.2-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -13097,6 +13109,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Bactrocera_oleae-GCF_042242935.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             }
         }
@@ -14318,6 +14336,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Bison_bison_bison-GCA_000754665.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -14652,6 +14676,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Blitum_bonus_henricus-GCA_964605755.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -18556,6 +18586,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2019_07": {
+                        "Camelus_dromedarius-GCA_000803125.2-2019_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -21161,6 +21197,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2018_01": {
+                        "Cercocebus_atys-GCA_000955945.1-2018_01-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -24770,6 +24812,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2017_12": {
+                        "Colobus_angolensis_palliatus-GCA_000951035.1-2017_12-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -28192,6 +28240,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Cynoglossus_semilaevis-GCA_000523025.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -28612,6 +28666,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Daphnia_carinata-GCF_022539665.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             }
@@ -29541,6 +29601,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Dermacentor_andersoni-GCF_023375885.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             }
@@ -32838,6 +32904,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Drosophila_suzukii-GCF_043229965.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             }
         }
@@ -35499,6 +35571,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Epilobium_hirsutum-GCA_965153245.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -40475,6 +40553,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2018_07": {
+                        "Fundulus_heteroclitus-GCA_000826765.1-2018_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -43535,6 +43619,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Halyomorpha_halys-GCF_000696795.3-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             }
         }
@@ -44639,6 +44729,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Herbertus_hutchinsiae-GCA_965112325.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -55385,6 +55481,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Hordeum_vulgare-GCA_949783405.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -55490,6 +55592,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Hordeum_vulgare-GCA_949783445.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -56762,6 +56870,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Hyalella_azteca-GCF_000764305.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             }
         }
@@ -57233,6 +57347,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Hydrocotyle_vulgaris-GCA_964106935.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -60206,6 +60326,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2019_05": {
+                        "Larimichthys_crocea-GCA_000972845.2-2019_05-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -61008,6 +61134,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Leersia_oryzoides-GCA_965153345.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -61263,6 +61395,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Lepeophtheirus_salmonis-GCF_016086655.4-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             }
@@ -61660,6 +61798,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Leptotrombidium_deliense-GCA_003675905.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -62894,6 +63038,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Loa_loa-GCF_000183805.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             }
         }
@@ -63887,6 +64037,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Luzula_pallescens-GCA_964274315.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -64656,6 +64812,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2018_01": {
+                        "Macaca_nemestrina-GCA_000956065.1-2018_01-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -65801,6 +65963,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Mandrillus_leucophaeus-GCA_000951045.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -66829,6 +66997,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2018_07": {
+                        "Maylandia_zebra-GCA_000238955.5-2018_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -67430,6 +67604,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Melampyrum_sylvaticum-GCA_965112295.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -74574,6 +74754,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Neodiprion_pinetum-GCF_021155775.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             }
         }
@@ -78042,6 +78228,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Onthophagus_taurus-GCF_036711975.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             }
@@ -81775,6 +81967,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Owenia_fusiformis-GCA_903813345.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -83224,6 +83422,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2018_12": {
+                        "Parus_major-GCA_001522545.2-2018_12-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -84168,6 +84372,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2018_07": {
+                        "Periophthalmus_magnuspinnatus-GCA_000787105.1-2018_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -84601,6 +84811,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Petasites_hybridus-GCA_965123105.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -87383,6 +87599,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Plagiothecium_denticulatum-GCA_964237465.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -88914,6 +89136,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Poecilia_reticulata-GCA_000633615.2-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -89821,6 +90049,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Polytrichastrum_sexangulare-GCA_965127125.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -90835,6 +91069,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Propithecus_coquereli-GCA_000956105.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -93922,6 +94162,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Ribes_sanguineum-GCA_048173275.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -97848,6 +98094,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Sinocyclocheilus_anshuiensis-GCA_001515605.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -97871,6 +98123,12 @@
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
                     }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Sinocyclocheilus_grahami-GCA_001515645.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             },
             "genome": {
@@ -97893,6 +98151,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Sinocyclocheilus_rhinocerous-GCA_001515625.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
@@ -103369,6 +103633,12 @@
                         "md5sum.txt": null,
                         "pep.fa.gz": null,
                         "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Thalictrum_minus-GCA_965195315.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
                     }
                 }
             },
