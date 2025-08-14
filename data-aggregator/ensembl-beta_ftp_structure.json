@@ -2528,6 +2528,36 @@
             }
         }
     },
+    "Actinidia_chinensis_var_chinensis": {
+        "GCA_003024255.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Actinidia_chinensis_var_chinensis-GCA_003024255.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Acyrthosiphon_pisum": {
         "GCA_005508785.1": {
             "genome": {
@@ -4439,6 +4469,36 @@
             }
         }
     },
+    "Ailoscolex_lacteospumosus": {
+        "GCA_965183755.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Ailoscolex_lacteospumosus-GCA_965183755.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Ailuropoda_melanoleuca": {
         "GCA_002007445.2": {
             "ensembl": {
@@ -5286,6 +5346,35 @@
             }
         }
     },
+    "Amborella_trichopoda": {
+        "GCA_000471905.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Amborella_trichopoda-GCA_000471905.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Ameiurus_melas": {
         "GCA_012411365.1": {
             "ensembl": {
@@ -5967,6 +6056,34 @@
         }
     },
     "Amyelois_transitella": {
+        "GCA_032362555.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Amyelois_transitella-GCA_032362555.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
         "GCF_001186105.1": {
             "genome": {
                 "hardmasked.fa.gz": null,
@@ -7618,6 +7735,38 @@
         }
     },
     "Anopheles_albimanus": {
+        "GCA_000349125.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "AalbS1_to_AalbS2.chain.gz": null,
+                    "AalbS2_to_AalbS1.chain.gz": null
+                },
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_albimanus-GCA_000349125.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
         "GCF_013758885.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -7674,6 +7823,35 @@
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Anopheles_arabiensis": {
+        "GCA_000349185.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_arabiensis-GCA_000349185.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
             }
         }
     },
@@ -7734,7 +7912,71 @@
             }
         }
     },
+    "Anopheles_christyi": {
+        "GCA_000349165.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Anopheles_christyi-GCA_000349165.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Anopheles_coluzzii": {
+        "GCA_004136515.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "AcolM1_to_AcolN1.chain.gz": null,
+                    "AcolN1_to_AcolM1.chain.gz": null
+                },
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes-including_alt.embl.gz": null,
+                        "genes-including_alt.gff3.gz": null,
+                        "genes-including_alt.gtf.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_coluzzii-GCA_004136515.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
         "GCF_943734685.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -7823,7 +8065,64 @@
             }
         }
     },
+    "Anopheles_culicifacies": {
+        "GCA_000473375.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_culicifacies-GCA_000473375.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
     "Anopheles_darlingi": {
+        "GCA_000211455.3": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_darlingi-GCA_000211455.3-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
         "GCA_943734745.1": {
             "ensembl": {
                 "geneset": {
@@ -7850,9 +8149,163 @@
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
+        },
+        "GCF_943734745.1": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "refseq": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_darlingi-GCF_943734745.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_dirus": {
+        "GCA_000349145.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_dirus-GCA_000349145.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_epiroticus": {
+        "GCA_000349105.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_epiroticus-GCA_000349105.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_farauti": {
+        "GCA_000473445.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "AfarF1_to_AfarF2.chain.gz": null,
+                    "AfarF2_to_AfarF1.chain.gz": null
+                },
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_farauti-GCA_000473445.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
         }
     },
     "Anopheles_funestus": {
+        "GCA_003951495.1": {
+            "genome": {
+                "assembly_mapping": {
+                    "AfunF1_to_AfunF3.chain.gz": null,
+                    "AfunF3_to_AfunF1.chain.gz": null
+                },
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes-including_alt.embl.gz": null,
+                        "genes-including_alt.gff3.gz": null,
+                        "genes-including_alt.gtf.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_funestus-GCA_003951495.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
         "GCF_943734845.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -7945,6 +8398,63 @@
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
+        },
+        "GCA_943734735.2": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_gambiae-GCA_943734735.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_maculatus": {
+        "GCA_000473185.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_maculatus-GCA_000473185.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
         }
     },
     "Anopheles_maculipalpis": {
@@ -8006,6 +8516,101 @@
             }
         }
     },
+    "Anopheles_melas": {
+        "GCA_000473525.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "AmelC1_to_AmelC2.chain.gz": null,
+                    "AmelC2_to_AmelC1.chain.gz": null
+                },
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_melas-GCA_000473525.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_merus": {
+        "GCA_000473845.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "AmerM1_to_AmerM2.chain.gz": null,
+                    "AmerM2_to_AmerM1.chain.gz": null
+                },
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_merus-GCA_000473845.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_minimus": {
+        "GCA_000349025.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_minimus-GCA_000349025.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
     "Anopheles_nili": {
         "GCA_943737925.1": {
             "ensembl": {
@@ -8033,6 +8638,159 @@
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Anopheles_quadriannulatus": {
+        "GCA_000349065.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_quadriannulatus-GCA_000349065.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_sinensis": {
+        "GCA_000441895.2": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2014_10": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2014_10": {
+                        "Anopheles_sinensis-GCA_000441895.2-2014_10-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
+        "GCA_000472065.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "AsinS1_to_AsinS2.chain.gz": null,
+                    "AsinS2_to_AsinS1.chain.gz": null
+                },
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_sinensis-GCA_000472065.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Anopheles_stephensi": {
+        "GCA_000300775.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "AsteI2_to_AsteS1.chain.gz": null,
+                    "AsteS1_to_AsteI2.chain.gz": null
+                },
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2013_10": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2013_10": {
+                        "Anopheles_stephensi-GCA_000300775.2-2013_10-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
+        "GCA_000349045.1": {
+            "genome": {
+                "assembly_mapping": {
+                    "AsteI2_to_AsteS1.chain.gz": null,
+                    "AsteS1_to_AsteI2.chain.gz": null
+                },
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anopheles_stephensi-GCA_000349045.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
             }
         }
     },
@@ -8596,6 +9354,36 @@
                 "homology": {
                     "2024_05": {
                         "Anthrax_anthrax-GCA_963971155.1-2024_05-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Anticarsia_gemmatalis": {
+        "GCA_050436995.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Anticarsia_gemmatalis-GCA_050436995.1-2025_07-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -10349,6 +11137,36 @@
             }
         }
     },
+    "Arabidopsis_lyrata_subsp_lyrata": {
+        "GCA_000004255.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Arabidopsis_lyrata_subsp_lyrata-GCA_000004255.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Arabidopsis_thaliana": {
         "GCA_000001735.1": {
             "community": {
@@ -10380,6 +11198,36 @@
                     "TAIR10_to_TAIR9.chain.gz": null,
                     "TAIR9_to_TAIR10.chain.gz": null
                 },
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Arabis_alpina": {
+        "GCA_000733195.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Arabis_alpina-GCA_000733195.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
                 "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
                 "md5sum.txt": null,
@@ -13528,6 +14376,35 @@
             }
         }
     },
+    "Beauveria_bassiana": {
+        "GCA_001682635.1": {
+            "community": {
+                "geneset": {
+                    "2017_05": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2017_05": {
+                        "Beauveria_bassiana-GCA_001682635.1-2017_05-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Bedellia_somnulentella": {
         "GCA_963576735.1": {
             "ensembl": {
@@ -14725,6 +15602,66 @@
             }
         }
     },
+    "Boloria_aquilonaris": {
+        "GCA_964270775.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Boloria_aquilonaris-GCA_964270775.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Boloria_dia": {
+        "GCA_964264805.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Boloria_dia-GCA_964264805.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Boloria_euphrosyne": {
         "GCA_951802675.2": {
             "braker": {
@@ -14742,6 +15679,36 @@
                 "homology": {
                     "2023_10": {
                         "Boloria_euphrosyne-GCA_951802675.2-2023_10-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Boloria_freija": {
+        "GCA_964273495.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Boloria_freija-GCA_964273495.1-2025_07-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -14805,6 +15772,36 @@
                 }
             },
             "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Boloria_titania": {
+        "GCA_964270595.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Boloria_titania-GCA_964270595.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
@@ -17005,6 +18002,36 @@
             }
         }
     },
+    "Brassica_juncea": {
+        "GCA_018703725.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Brassica_juncea-GCA_018703725.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Brassica_napus": {
         "GCA_000751015.1": {
             "community": {
@@ -17112,6 +18139,34 @@
                 "homology": {
                     "2012_05": {
                         "Brassica_rapa-GCA_000309985.1-2012_05-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_900412535.3": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Brassica_rapa-GCA_900412535.3-2025_06-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -17756,6 +18811,65 @@
             }
         }
     },
+    "Caenorhabditis_brenneri": {
+        "GCA_000143925.2": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "wormbase": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Caenorhabditis_brenneri-GCA_000143925.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Caenorhabditis_briggsae": {
+        "GCA_000004555.3": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "wormbase": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Caenorhabditis_briggsae-GCA_000004555.3-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
     "Caenorhabditis_elegans": {
         "GCA_000002985.3": {
             "genome": {
@@ -17797,6 +18911,33 @@
         }
     },
     "Caenorhabditis_remanei": {
+        "GCA_000149515.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "wormbase": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Caenorhabditis_remanei-GCA_000149515.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
         "GCF_010183535.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -18573,6 +19714,36 @@
             }
         }
     },
+    "Camelina_sativa": {
+        "GCA_000633955.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Camelina_sativa-GCA_000633955.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Camelus_dromedarius": {
         "GCA_000803125.2": {
             "ensembl": {
@@ -18787,6 +19958,95 @@
                 "homology": {
                     "2024_04": {
                         "Candelabrum_cocksii-GCA_963930725.1-2024_04-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Candida_tropicalis_mya_3404": {
+        "GCA_000006335.3": {
+            "community": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Candida_tropicalis_mya_3404-GCA_000006335.3-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Candidozyma_auris": {
+        "GCA_002759435.2": {
+            "community": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Candidozyma_auris-GCA_002759435.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Candidozyma_duobushaemuli": {
+        "GCA_002926085.1": {
+            "community": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Candidozyma_duobushaemuli-GCA_002926085.1-2025_07-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -19292,6 +20552,35 @@
             }
         }
     },
+    "Capitella_teleta": {
+        "GCA_000328365.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Capitella_teleta-GCA_000328365.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Capra_hircus": {
         "GCA_001704415.1": {
             "ensembl": {
@@ -19489,6 +20778,66 @@
             },
             "genome": {
                 "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Capsicum_annuum": {
+        "GCA_000512255.2": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Capsicum_annuum-GCA_000512255.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Carabus_banonii": {
+        "GCA_964291765.2": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Carabus_banonii-GCA_964291765.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
@@ -19710,6 +21059,36 @@
                 "homology": {
                     "2021_10": {
                         "Carcharodon_carcharias-GCA_017639515.1-2021_10-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Carcharodus_alceae": {
+        "GCA_964261735.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Carcharodus_alceae-GCA_964261735.1-2025_07-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -21709,6 +23088,35 @@
             }
         }
     },
+    "Chara_braunii": {
+        "GCA_003427395.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Chara_braunii-GCA_003427395.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Charanyca_ferruginea": {
         "GCA_947361185.1": {
             "braker": {
@@ -22925,6 +24333,36 @@
             }
         }
     },
+    "Chondrus_crispus": {
+        "GCA_000350225.2": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Chondrus_crispus-GCA_000350225.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Choreutis_nemorana": {
         "GCA_949316135.1": {
             "braker": {
@@ -23850,6 +25288,65 @@
             }
         }
     },
+    "Citrullus_lanatus": {
+        "GCA_000238415.2": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Citrullus_lanatus-GCA_000238415.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Citrus_x_clementina": {
+        "GCA_000493195.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Citrus_x_clementina-GCA_000493195.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Cladopsammia_gracilis": {
         "GCA_022457155.1": {
             "braker": {
@@ -24504,6 +26001,36 @@
             }
         }
     },
+    "Coenonympha_gardetta": {
+        "GCA_964258855.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Coenonympha_gardetta-GCA_964258855.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Coenonympha_glycerion": {
         "GCA_963855885.1": {
             "ensembl": {
@@ -24704,6 +26231,66 @@
                 }
             },
             "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Colias_hyale": {
+        "GCA_964258725.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Colias_hyale-GCA_964258725.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Colias_palaeno": {
+        "GCA_964258765.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Colias_palaeno-GCA_964258765.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
@@ -25678,6 +27265,66 @@
                 "homology": {
                     "2020_08": {
                         "Corvus_moneduloides-GCA_009650955.1-2020_08-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Corylus_avellana": {
+        "GCA_901000735.2": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Corylus_avellana-GCA_901000735.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Corymbia_citriodora_subsp_variegata": {
+        "GCA_014858505.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Corymbia_citriodora_subsp_variegata-GCA_014858505.1-2025_06-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -27183,6 +28830,35 @@
             }
         }
     },
+    "Cucumis_melo": {
+        "GCA_902497455.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Cucumis_melo-GCA_902497455.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Cucumis_sativus": {
         "GCA_000004075.2": {
             "bgi": {
@@ -27476,6 +29152,36 @@
                 }
             },
             "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Cyanidioschyzon_merolae_strain_10d": {
+        "GCA_000091205.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Cyanidioschyzon_merolae_strain_10d-GCA_000091205.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
@@ -27855,6 +29561,34 @@
         }
     },
     "Cydia_pomonella": {
+        "GCA_033807575.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Cydia_pomonella-GCA_033807575.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
         "GCF_033807575.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -30614,6 +32348,35 @@
                 "hardmasked.fa.gz": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Dinothrombium_tinctorium": {
+        "GCA_003675995.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Dinothrombium_tinctorium-GCA_003675995.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
             }
         }
     },
@@ -36313,6 +38076,36 @@
             }
         }
     },
+    "Eragrostis_curvula": {
+        "GCA_007726485.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Eragrostis_curvula-GCA_007726485.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Eragrostis_tef": {
         "GCA_024500355.1": {
             "genome": {
@@ -36532,6 +38325,36 @@
             }
         }
     },
+    "Erebia_albergana": {
+        "GCA_964188065.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_albergana-GCA_964188065.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Erebia_epiphron": {
         "GCA_963932025.1": {
             "ensembl": {
@@ -36554,6 +38377,36 @@
             "genome": {
                 "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Erebia_eriphyle": {
+        "GCA_964260725.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_eriphyle-GCA_964260725.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
@@ -36613,6 +38466,126 @@
             }
         }
     },
+    "Erebia_medusa": {
+        "GCA_964187935.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_medusa-GCA_964187935.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Erebia_melampus": {
+        "GCA_964261625.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_melampus-GCA_964261625.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Erebia_mnestra": {
+        "GCA_964260655.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_mnestra-GCA_964260655.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Erebia_montana": {
+        "GCA_964260675.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_montana-GCA_964260675.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Erebia_palarica": {
         "GCA_964035005.1": {
             "ensembl": {
@@ -36632,6 +38605,66 @@
                     "2025_02": {
                         "Erebia_palarica-GCA_964035005.1-2025_02-homology.tsv": null,
                         "Erebia_palarica-GCA_964035005.1-2025_02-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Erebia_stirius": {
+        "GCA_964264005.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_stirius-GCA_964264005.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Erebia_triaria": {
+        "GCA_964166005.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Erebia_triaria-GCA_964166005.1-2025_07-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -38175,6 +40208,36 @@
             }
         }
     },
+    "Eunicella_cavolini": {
+        "GCA_965177985.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Eunicella_cavolini-GCA_965177985.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Eunicella_verrucosa": {
         "GCA_964261655.1": {
             "ensembl": {
@@ -39553,6 +41616,35 @@
             }
         }
     },
+    "Eutrema_salsugineum": {
+        "GCA_000478725.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Eutrema_salsugineum-GCA_000478725.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Euzophera_pinguis": {
         "GCA_947363495.1": {
             "braker": {
@@ -40162,6 +42254,36 @@
             }
         }
     },
+    "Ficus_carica": {
+        "GCA_009761775.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Ficus_carica-GCA_009761775.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Filago_lutescens": {
         "GCA_964188195.1": {
             "ensembl": {
@@ -40732,6 +42854,35 @@
             },
             "genome": {
                 "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Galdieria_sulphuraria": {
+        "GCA_000341285.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Galdieria_sulphuraria-GCA_000341285.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
                 "hardmasked.fa.gz": null,
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
@@ -42139,6 +44290,64 @@
             }
         }
     },
+    "Glossina_austeni": {
+        "GCA_000688735.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Glossina_austeni-GCA_000688735.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Glossina_brevipalpis": {
+        "GCA_000671755.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Glossina_brevipalpis-GCA_000671755.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
     "Glossina_fuscipes": {
         "GCA_014805625.1": {
             "RefSeq": {
@@ -42165,6 +44374,93 @@
                 "homology": {
                     "Glossina_fuscipes-GCA_014805625.1--homology.tsv.gz": null,
                     "md5sum.txt": null
+                }
+            }
+        }
+    },
+    "Glossina_morsitans_morsitans": {
+        "GCA_001077435.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Glossina_morsitans_morsitans-GCA_001077435.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Glossina_pallidipes": {
+        "GCA_000688715.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Glossina_pallidipes-GCA_000688715.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        }
+    },
+    "Glossina_palpalis_gambiensis": {
+        "GCA_000818775.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Glossina_palpalis_gambiensis-GCA_000818775.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
                 }
             }
         }
@@ -42425,6 +44721,33 @@
         }
     },
     "Gonepteryx_rhamni": {
+        "GCA_965217415.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Gonepteryx_rhamni-GCA_965217415.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
         "GCA_965217435.1": {
             "ensembl": {
                 "geneset": {
@@ -42733,6 +45056,63 @@
                 "homology": {
                     "2023_02": {
                         "Grapholita_molesta-GCA_022674325.1-2023_02-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Graphosoma_italicum": {
+        "GCA_965282445.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Graphosoma_italicum-GCA_965282445.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_965282455.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Graphosoma_italicum-GCA_965282455.1-2025_07-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -43161,6 +45541,26 @@
                     "2021_09": {
                         "Haemaphysalis_longicornis-GCA_013339765.1-2021_09-homology.tsv.gz": null,
                         "md5sum.txt": null
+                    }
+                }
+            }
+        },
+        "GCA_013339765.2": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
                     }
                 }
             }
@@ -54788,6 +57188,1350 @@
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
+        },
+        "GCA_043304525.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_043304525.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_043304645.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_043304645.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_043304975.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_043304975.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_043305115.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_043305115.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044164695.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044164695.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044164705.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044164705.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044164725.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044164725.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044165085.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044165085.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044165645.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044165645.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044165735.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044165735.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044165925.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044165925.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166095.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166095.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166285.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166285.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166315.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166315.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166435.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166435.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166465.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166465.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166515.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166515.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166535.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166535.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166545.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166545.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166575.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166575.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166585.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166585.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166665.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166665.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166765.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166765.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044166835.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044166835.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044167135.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044167135.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_044167235.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_044167235.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045523085.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045523085.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045523115.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045523115.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045523135.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045523135.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045524125.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045524125.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045524135.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045524135.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045524165.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045524165.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045524245.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045524245.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045524515.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045524515.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045524615.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045524615.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045999885.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045999885.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045999895.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045999895.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045999905.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045999905.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_045999925.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_045999925.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046000055.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046000055.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046043145.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046043145.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046043155.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046043155.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046056425.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046056425.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046056435.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046056435.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046056445.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046056445.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046056495.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046056495.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046116015.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046116015.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_046116025.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Homo_sapiens-GCA_046116025.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
         }
     },
     "Hoplodrina_ambigua": {
@@ -56621,6 +60365,34 @@
                 "unmasked.fa.gz": null
             }
         },
+        "GCA_903813605.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Hordeum_vulgare_subsp_vulgare-GCA_903813605.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
         "GCA_904849725.1": {
             "community": {
                 "geneset": {
@@ -56902,6 +60674,26 @@
                     "2021_09": {
                         "Hyalomma_asiaticum-GCA_013339685.1-2021_09-homology.tsv.gz": null,
                         "md5sum.txt": null
+                    }
+                }
+            }
+        },
+        "GCA_013339685.2": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
                     }
                 }
             }
@@ -59213,9 +63005,64 @@
                     }
                 }
             }
+        },
+        "GCA_013358835.2": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                }
+            }
         }
     },
     "Ixodes_scapularis": {
+        "GCA_002892825.2": {
+            "genome": {
+                "assembly_mapping": {
+                    "IscaI1_to_IscaW1.chain.gz": null,
+                    "IscaW1_to_IscaI1.chain.gz": null
+                },
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes-including_alt.embl.gz": null,
+                        "genes-including_alt.gff3.gz": null,
+                        "genes-including_alt.gtf.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Ixodes_scapularis-GCA_002892825.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
         "GCF_016920785.2": {
             "genome": {
                 "hardmasked.fa.gz": null,
@@ -59299,6 +63146,36 @@
             }
         }
     },
+    "Juglans_regia": {
+        "GCA_001411555.2": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Juglans_regia-GCA_001411555.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Junco_hyemalis": {
         "GCA_003829775.2": {
             "ensembl": {
@@ -59352,6 +63229,35 @@
             "genome": {
                 "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Kalanchoe_fedtschenkoi": {
+        "GCA_002312845.1": {
+            "community": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Kalanchoe_fedtschenkoi-GCA_002312845.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
@@ -60771,6 +64677,36 @@
             }
         }
     },
+    "Lasiommata_petropolitana": {
+        "GCA_964261845.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Lasiommata_petropolitana-GCA_964261845.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Lasius_brunneus": {
         "GCA_964261615.1": {
             "ensembl": {
@@ -61138,6 +65074,36 @@
                 "homology": {
                     "2025_07": {
                         "Leersia_oryzoides-GCA_965153345.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Leersia_perrieri": {
+        "GCA_000325765.3": {
+            "community": {
+                "geneset": {
+                    "2013_09": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2013_09": {
+                        "Leersia_perrieri-GCA_000325765.3-2013_09-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -63554,6 +67520,33 @@
         }
     },
     "Lucilia_cuprina": {
+        "GCA_001187945.1": {
+            "genbank": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Lucilia_cuprina-GCA_001187945.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
         "GCF_022045245.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -63996,6 +67989,33 @@
         }
     },
     "Lutzomyia_longipalpis": {
+        "GCA_000265325.1": {
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "veupathdb": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Lutzomyia_longipalpis-GCA_000265325.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
         "GCF_024334085.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -64132,6 +68152,36 @@
                 }
             },
             "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Lycaena_virgaureae": {
+        "GCA_964263885.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Lycaena_virgaureae-GCA_964263885.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
@@ -66643,6 +70693,35 @@
             }
         }
     },
+    "Marmota_marmota_marmota": {
+        "GCA_001458135.1": {
+            "ensembl": {
+                "geneset": {
+                    "2020_03": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2020_03": {
+                        "Marmota_marmota_marmota-GCA_001458135.1-2020_03-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Marmota_monax": {
         "GCA_021218885.2": {
             "ensembl": {
@@ -66981,6 +71060,35 @@
                 "hardmasked.fa": null,
                 "softmasked.fa": null,
                 "unmasked.fa": null
+            }
+        }
+    },
+    "Mayetiola_destructor": {
+        "GCA_000149185.1": {
+            "genbank": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Mayetiola_destructor-GCA_000149185.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
             }
         }
     },
@@ -68442,6 +72550,66 @@
             "genome": {
                 "chromosomes.tsv.gz": null,
                 "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Melitaea_parthenoides": {
+        "GCA_964261285.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Melitaea_parthenoides-GCA_964261285.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Melitaea_varia": {
+        "GCA_964261405.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Melitaea_varia-GCA_964261405.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
@@ -76673,6 +80841,36 @@
             }
         }
     },
+    "Nymphalis_antiopa": {
+        "GCA_964258955.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Nymphalis_antiopa-GCA_964258955.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Nymphalis_c_album": {
         "GCA_963151315.1": {
             "ensembl": {
@@ -81268,6 +85466,90 @@
         }
     },
     "Ostrinia_nubilalis": {
+        "GCA_043791035.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Ostrinia_nubilalis-GCA_043791035.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_043791265.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Ostrinia_nubilalis-GCA_043791265.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_043791335.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Ostrinia_nubilalis-GCA_043791335.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
         "GCA_963855985.1": {
             "ensembl": {
                 "geneset": {
@@ -82555,6 +86837,36 @@
             }
         }
     },
+    "Panicum_hallii_var_hallii": {
+        "GCA_003061485.1": {
+            "genbank": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Panicum_hallii_var_hallii-GCA_003061485.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Panonychus_citri": {
         "GCF_014898815.1": {
             "genome": {
@@ -83348,6 +87660,34 @@
                     }
                 }
             }
+        },
+        "GCF_043381705.1": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "refseq": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Parasteatoda_tepidariorum-GCF_043381705.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
         }
     },
     "Parectropis_similaria": {
@@ -83670,6 +88010,36 @@
             }
         }
     },
+    "Patella_rustica": {
+        "GCA_965111895.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Patella_rustica-GCA_965111895.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Patella_ulyssiponensis": {
         "GCA_963678685.1": {
             "ensembl": {
@@ -83779,6 +88149,34 @@
                 "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
+            }
+        },
+        "GCF_932274485.2": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "refseq": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Patella_vulgata-GCF_932274485.2-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
             }
         }
     },
@@ -84236,6 +88634,34 @@
                 "homology": {
                     "2022_04": {
                         "Penaeus_vannamei-GCF_003789085.1-2022_04-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
+        "GCF_042767895.1": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "refseq": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Penaeus_vannamei-GCF_042767895.1-2025_06-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -88505,6 +92931,34 @@
         }
     },
     "Plodia_interpunctella": {
+        "GCA_027563975.2": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Plodia_interpunctella-GCA_027563975.2-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
         "GCF_027563975.1": {
             "genome": {
                 "chromosomes.tsv.gz": null,
@@ -88526,6 +92980,34 @@
                 "homology": {
                     "2024_01": {
                         "Plodia_interpunctella-GCF_027563975.1-2024_01-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
+        },
+        "GCF_027563975.2": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "refseq": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Plodia_interpunctella-GCF_027563975.2-2025_06-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
@@ -91055,6 +95537,34 @@
                     }
                 }
             }
+        },
+        "GCF_040958095.1": {
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            },
+            "refseq": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Procambarus_clarkii-GCF_040958095.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            }
         }
     },
     "Propithecus_coquereli": {
@@ -92496,6 +97006,66 @@
             },
             "genome": {
                 "hardmasked.fa.gz": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Pyrgus_alveus": {
+        "GCA_964263985.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Pyrgus_alveus-GCA_964263985.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Pyrgus_cacaliae": {
+        "GCA_964261425.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Pyrgus_cacaliae-GCA_964261425.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
@@ -99132,6 +103702,36 @@
             }
         }
     },
+    "Spialia_sertorius": {
+        "GCA_964258965.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Spialia_sertorius-GCA_964258965.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Spilarctia_lutea": {
         "GCA_916047975.1": {
             "braker": {
@@ -103878,6 +108478,35 @@
             }
         }
     },
+    "Thelohanellus_kitauei": {
+        "GCA_000827895.1": {
+            "genbank": {
+                "geneset": {
+                    "2025_06": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_06": {
+                        "Thelohanellus_kitauei-GCA_000827895.1-2025_06-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Thenea_valdiviae": {
         "GCA_964340815.1": {
             "ensembl": {
@@ -108394,6 +113023,62 @@
                 "softmasked.fa.gz": null,
                 "unmasked.fa.gz": null
             }
+        },
+        "GCA_037043105.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Vanessa_tameamea-GCA_037043105.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        },
+        "GCA_037043175.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Vanessa_tameamea-GCA_037043175.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
         }
     },
     "Varroa_destructor": {
@@ -110748,6 +115433,35 @@
             }
         }
     },
+    "Xiphophorus_couchianus": {
+        "GCA_001444195.1": {
+            "ensembl": {
+                "geneset": {
+                    "2018_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2018_07": {
+                        "Xiphophorus_couchianus-GCA_001444195.1-2018_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Xylocampa_areola": {
         "GCA_935412865.1": {
             "braker": {
@@ -111761,6 +116475,95 @@
             }
         }
     },
+    "Zosterops_lateralis_melanops": {
+        "GCA_001281735.1": {
+            "ensembl": {
+                "geneset": {
+                    "2019_12": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2019_12": {
+                        "Zosterops_lateralis_melanops-GCA_001281735.1-2019_12-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Zygaena_carniolica": {
+        "GCA_964261665.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Zygaena_carniolica-GCA_964261665.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Zygaena_exulans": {
+        "GCA_964261585.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Zygaena_exulans-GCA_964261585.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
     "Zygaena_filipendulae": {
         "GCA_907165265.1": {
             "ensembl": {
@@ -111860,6 +116663,66 @@
                 "homology": {
                     "2022_07": {
                         "Zygaena_filipendulae-GCA_907165275.2-2022_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Zygaena_purpuralis": {
+        "GCA_964270835.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Zygaena_purpuralis-GCA_964270835.1-2025_07-homology.tsv.gz": null,
+                        "md5sum.txt": null
+                    }
+                }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
+            }
+        }
+    },
+    "Zygaena_viciae": {
+        "GCA_964271875.1": {
+            "ensembl": {
+                "geneset": {
+                    "2025_07": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                },
+                "homology": {
+                    "2025_07": {
+                        "Zygaena_viciae-GCA_964271875.1-2025_07-homology.tsv.gz": null,
                         "md5sum.txt": null
                     }
                 }
