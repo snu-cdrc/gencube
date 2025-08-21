@@ -327,6 +327,7 @@
         "instrument_ion_torrent_s5_xl",
         "instrument_mgiseq_2000rs",
         "instrument_minion",
+        "instrument_miseq_i100",
         "instrument_nextseq_1000",
         "instrument_nextseq_2000",
         "instrument_nextseq_500",
@@ -405,7 +406,6 @@
         "strategy_chip_seq",
         "strategy_chromosome_immunoprecipitation",
         "strategy_clone",
-        "strategy_cloneend",
-        "strategy_cts"
+        "strategy_cloneend"
     ]
 }
