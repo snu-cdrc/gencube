@@ -286,6 +286,7 @@
         "instrument_dnbseq_g400",
         "instrument_dnbseq_g400_fast",
         "instrument_dnbseq_g50",
+        "instrument_dnbseq_t1",
         "instrument_dnbseq_t7",
         "instrument_element_aviti",
         "instrument_fastaseq_300",
@@ -405,7 +406,6 @@
         "strategy_chip",
         "strategy_chip_seq",
         "strategy_chromosome_immunoprecipitation",
-        "strategy_clone",
-        "strategy_cloneend"
+        "strategy_clone"
     ]
 }
