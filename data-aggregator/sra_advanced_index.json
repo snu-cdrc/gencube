@@ -329,6 +329,7 @@
         "instrument_mgiseq_2000rs",
         "instrument_minion",
         "instrument_miseq_i100",
+        "instrument_miseq_i100_plus",
         "instrument_nextseq_1000",
         "instrument_nextseq_2000",
         "instrument_nextseq_500",
@@ -405,7 +406,6 @@
         "strategy_chia_pet",
         "strategy_chip",
         "strategy_chip_seq",
-        "strategy_chromosome_immunoprecipitation",
-        "strategy_clone"
+        "strategy_chromosome_immunoprecipitation"
     ]
 }
