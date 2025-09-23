@@ -19027,12 +19027,32 @@
     },
     "Cajanus_cajan": {
         "GCA_000340665.1": {
+            "community": {
+                "geneset": {
+                    "2020_12": {
+                        "cdna.fa.gz": null,
+                        "genes.embl.gz": null,
+                        "genes.gff3.gz": null,
+                        "genes.gtf.gz": null,
+                        "md5sum.txt": null,
+                        "pep.fa.gz": null,
+                        "xref.tsv.gz": null
+                    }
+                }
+            },
             "ensembl": {
                 "variation": {
                     "2020-12": {
                         "variation.vcf.gz": null
                     }
                 }
+            },
+            "genome": {
+                "chromosomes.tsv.gz": null,
+                "hardmasked.fa.gz": null,
+                "md5sum.txt": null,
+                "softmasked.fa.gz": null,
+                "unmasked.fa.gz": null
             }
         },
         "GCA_000340665.2": {
