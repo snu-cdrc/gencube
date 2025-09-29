@@ -610,6 +610,8 @@ Tapirus indicus,Asiatic tapir,9802,Mammalia; Theria; Eutheria; Boreoeutheria; La
 Tapirus terrestris,Brazilian tapir,9801,Mammalia; Theria; Eutheria; Boreoeutheria; Laurasiatheria; Perissodactyla; Tapiridae; Tapirus,HLtapTer1,GCA_004025025.1,164193,186384,human
 Tapirus terrestris,Brazilian tapir,9801,Mammalia; Theria; Eutheria; Boreoeutheria; Laurasiatheria; Perissodactyla; Tapiridae; Tapirus,HLtapTer2,DNA Zoo Consortium,45588,47139982,human
 Taxidea taxus jeffersonii,American badger,2282171,Mammalia; Theria; Eutheria; Boreoeutheria; Laurasiatheria; Carnivora; Caniformia; Mustelidae; Taxidiinae; Taxidea; Taxidea taxus,HLtaxTax1,GCA_003697995.1,37750,54556,human
+Tenrec ecaudatus,Tailless tenrec,94439,Mammalia; Theria; Eutheria; Afrotheria; Tenrecidae; Tenrecinae; Tenrec,HLtenEca1A,"TBG Hillerlab, Fauna",54617000,133279229,human
+Tenrec ecaudatus,Tailless tenrec,94439,Mammalia; Theria; Eutheria; Afrotheria; Tenrecidae; Tenrecinae; Tenrec,HLtenEca1B,"TBG Hillerlab, Fauna",71825797,156487869,human
 Theropithecus gelada,gelada,9565,Mammalia; Theria; Eutheria; Boreoeutheria; Euarchontoglires; Primates; Haplorrhini; Simiiformes; Catarrhini; Cercopithecoidea; Cercopithecidae; Cercopithecinae; Theropithecus,HLtheGel1,GCA_003255815.1,310061,130230028,human
 Thryonomys swinderianus,Greater cane rat,10169,Mammalia; Theria; Eutheria; Boreoeutheria; Euarchontoglires; Glires; Rodentia; Hystricomorpha; Thryonomyidae; Thryonomys,HLthrSwi1,GCA_004025085.1,18955,21523,human
 Thylacinus cynocephalus,Tasmanian wolf,9275,Mammalia; Theria; Metatheria; Dasyuromorphia; Thylacinidae; Thylacinus,HLthyCyn1,GCA_007646695.1,461,1923833,human
