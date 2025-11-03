@@ -55,23 +55,15 @@
         "viral_rna"
     ],
     "LS_PLATFORM": [
-        "abi_solid",
-        "bgiseq",
-        "capillary",
-        "complete_genomics",
-        "dnbseq",
-        "element",
-        "genapsys",
-        "genemind",
-        "helicos",
-        "illumina",
-        "ion_torrent",
-        "ls454",
-        "oxford_nanopore",
-        "pacbio_smrt",
-        "tapestri",
-        "ultima",
-        "vela_diagnostics"
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
     ],
     "LS_SELECTION": [
         "5_methylcytidine_antibody",
