@@ -344,6 +344,7 @@
         "instrument_sequel",
         "instrument_sequel_ii",
         "instrument_sequel_iie",
+        "instrument_surfseq_5000",
         "instrument_tapestri",
         "instrument_ug_100",
         "instrument_unspecified",
@@ -405,7 +406,6 @@
         "strategy_atac_seq",
         "strategy_bisulfite_seq",
         "strategy_chia_pet",
-        "strategy_chip",
-        "strategy_chip_seq"
+        "strategy_chip"
     ]
 }
