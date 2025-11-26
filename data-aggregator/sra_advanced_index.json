@@ -69,6 +69,7 @@
         "ls454",
         "oxford_nanopore",
         "pacbio_smrt",
+        "singular_genomics",
         "tapestri",
         "ultima",
         "vela_diagnostics"
@@ -291,6 +292,7 @@
         "instrument_dnbseq_t7",
         "instrument_element_aviti",
         "instrument_fastaseq_300",
+        "instrument_g4",
         "instrument_genexus",
         "instrument_genocare_1600",
         "instrument_genolab_m",
@@ -399,13 +401,12 @@
         "platform_ls454",
         "platform_oxford_nanopore",
         "platform_pacbio_smrt",
+        "platform_singular_genomics",
         "platform_tapestri",
         "platform_ultima",
         "platform_vela_diagnostics",
         "strategy_amplicon",
         "strategy_atac_seq",
-        "strategy_bisulfite_seq",
-        "strategy_chia_pet",
-        "strategy_chip"
+        "strategy_bisulfite_seq"
     ]
 }
