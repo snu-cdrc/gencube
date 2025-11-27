@@ -21,6 +21,7 @@ Achlya_flavicornis	1
 Acipenser_ruthenus	2
 Acleris_abietana	2
 Acleris_cristana	1
+Acleris_effractana	1
 Acleris_emargana	3
 Acleris_ferrugana	1
 Acleris_holmiana	1
@@ -41,6 +42,7 @@ Acrobasis_consociella	1
 Acrobasis_repandana	1
 Acrobasis_suavella	2
 Acrocera_orbiculus	1
+Acrolepiopsis_assectella	1
 Acromyrmex_echinatior	1
 Acronicta_aceris	2
 Acronicta_alni	1
@@ -88,7 +90,7 @@ Aethina_tumida	3
 Agapeta_zoegana	2
 Agapetus_fuscipes	1
 Agaricus_bisporus	2
-Agelaius_phoeniceus	1
+Agelaius_phoeniceus	2
 Agelas_clathrodes	1
 Agelas_conifera	1
 Agelas_oroides	1
@@ -147,7 +149,7 @@ Altica_lythri	1
 Alucita_hexadactyla	1
 Alviniconcha_marisindica	1
 Alviniconcha_strummeri	1
-Amanita_rubescens	1
+Amanita_rubescens	2
 Amblyjoppa_fuscipennis	1
 Amblyjoppa_proteus	1
 Amblyomma_americanum	1
@@ -157,6 +159,8 @@ Amborella_trichopoda	1
 Ameiurus_melas	1
 Ametastegia_equiseti	1
 Ammodytes_marinus	1
+Ammospiza_caudacuta	1
+Ammospiza_nelsoni	1
 Amorpha_juglandis	2
 Amphibalanus_amphitrite	1
 Amphiduros_pacificus	1
@@ -180,6 +184,7 @@ Anania_coronata	1
 Anania_crocealis	1
 Anania_fuscalis	1
 Anania_hortulata	1
+Anania_terrealis	1
 Anaplectoides_prasina	1
 Anarsia_innoxiella	1
 Anas_acuta	1
@@ -307,6 +312,7 @@ Arabidopsis_thaliana	1
 Arabis_alpina	1
 Arabis_hirsuta	1
 Arachis_hypogaea	1
+Arachnomyces_peruvianus	1
 Araschnia_levana	1
 Arca_noae	1
 Archilochus_colubris	1
@@ -330,6 +336,7 @@ Aricia_agestis	3
 Aricia_artaxerxes	2
 Aricia_cramera	1
 Aricia_morronensis	1
+Aricia_nicias	2
 Ariolimax_columbianus	1
 Arion_vulgaris	1
 Armillaria_ostoyae	2
@@ -365,6 +372,7 @@ Athripsodes_cinereus	1
 Atrina_japonica	1
 Atta_cephalotes	1
 Aurelia_sp_4_Dawson_et_al_2005	1
+Aureoboletus_gentilis	1
 Autographa_bractea	1
 Autographa_gamma	2
 Autographa_pulchrina	2
@@ -434,6 +442,7 @@ Bolma_rugosa	1
 Boloria_aquilonaris	1
 Boloria_caucasica	1
 Boloria_dia	1
+Boloria_eunomia	1
 Boloria_euphrosyne	1
 Boloria_freija	1
 Boloria_pales	1
@@ -519,8 +528,10 @@ Buglossoporus_quercinus	1
 Bugula_neritina	1
 Bugulina_stolonifera	1
 Bulinus_truncatus	1
+Buteo_buteo	1
 Buteo_japonicus	1
 Butyriboletus_subappendiculatus	1
+CHANGELOG	0
 Cabera_pusaria	1
 Caenorhabditis_brenneri	1
 Caenorhabditis_briggsae	1
@@ -608,11 +619,12 @@ Castanea_sativa	1
 Cataclysta_lemnata	1
 Cataglyphis_hispanica	1
 Catalaphyllia_jardinei	1
-Catharus_ustulatus	1
+Catharus_ustulatus	2
 Catocala_fraxini	2
 Catocala_nupta	1
 Catocala_promissa	1
 Catocala_sponsa	1
+Catoptria_furcatella	2
 Catoptria_pinella	1
 Catostylus_mosaicus	1
 Cavia_aperea	1
@@ -624,6 +636,7 @@ Centropristis_striata	1
 Centruroides_sculpturatus	1
 Cepaea_hortensis	1
 Cepaea_nemoralis	2
+Cephus_cinctus	1
 Cephus_spinipes	1
 Ceramica_pisi	1
 Cerastis_leucographa	1
@@ -691,7 +704,7 @@ Chondrosia_reniformis	1
 Chondrus_crispus	1
 Choreutis_nemorana	1
 Chorisops_tibialis	1
-Choristoneura_rosaceana	1
+Choristoneura_rosaceana	2
 Chroicocephalus_ridibundus	2
 Chrysaora_quinquecirrha	1
 Chrysemys_picta	1
@@ -722,6 +735,7 @@ Citrullus_lanatus	1
 Citrus_x_clementina	1
 Cladonia_diversa	1
 Cladonia_portentosa	1
+Cladonia_squamosa	1
 Cladopsammia_gracilis	1
 Clarias_fuscus	1
 Clarias_gariepinus	2
@@ -771,6 +785,7 @@ Colocasia_coryli	1
 Cololabis_saira	1
 Colostygia_pectinataria	2
 Colotois_pennaria	1
+Columba_livia	1
 Colydium_elongatum	1
 Comarum_palustre	1
 Condylactis_gigantea	1
@@ -891,7 +906,7 @@ Daphnia_magna	1
 Daphnia_pulex	2
 Daphnia_pulicaria	1
 Dascillus_cervinus	1
-Dasypus_novemcinctus	1
+Dasypus_novemcinctus	3
 Dasysyrphus_albostriatus	2
 Dasysyrphus_tricinctus	1
 Daubentonia_madagascariensis	1
@@ -900,7 +915,7 @@ Daucus_carota_subsp_sativus	1
 Deilephila_elpenor	2
 Deilephila_porcellus	2
 Delphinapterus_leucas	3
-Delphinus_delphis	1
+Delphinus_delphis	2
 Dendarus_foraminosus	2
 Dendroctonus_ponderosae	2
 Dendrogyra_cylindrus	1
@@ -921,6 +936,8 @@ Desmodus_rotundus	1
 Diabrotica_balteata	1
 Diabrotica_virgifera_virgifera	2
 Diacarnus_erythraeanus	1
+Diachasma_alloeum	1
+Diachasmimorpha_longicaudata	1
 Diachrysia_chrysitis	2
 Diadumene_lineata	1
 Diaperis_boleti	1
@@ -950,6 +967,7 @@ Dioryctria_mendacella	1
 Dioscorea_cayenensis_subsp_rotundata	1
 Diplodus_puntazzo	1
 Dipodomys_ordii	1
+Diprion_similis	1
 Discoglossus_pictus	1
 Diuraphis_noxia	1
 Diurnea_fagella	1
@@ -1077,7 +1095,7 @@ Ennomos_erosarius	1
 Ennomos_fuscantarius	4
 Ennomos_quercinarius	3
 Entelurus_aequoreus	1
-Entoloma_clypeatum	1
+Entoloma_clypeatum	2
 Entomortierella_parvispora	1
 Eospalax_fontanierii	1
 Epeolus_ainsliei	1
@@ -1095,7 +1113,9 @@ Epinephelus_moara	1
 Epinotia_bilunana	1
 Epinotia_brunnichana	1
 Epinotia_demarniana	1
+Epinotia_nanana	1
 Epinotia_nisella	2
+Epinotia_pygmaeana	2
 Epinotia_ramella	1
 Epinotia_tenerana	1
 Epiphyas_postvittana	1
@@ -1154,7 +1174,7 @@ Erysiphe_necator	1
 Eschrichtius_robustus	1
 Esox_lucius	2
 Esperia_sulphurella	1
-Eubalaena_glacialis	1
+Eubalaena_glacialis	2
 Eucalyptus_grandis	1
 Euchloe_belemia	2
 Euchloe_insularis	1
@@ -1233,6 +1253,7 @@ Falcaria_lacertinaria	1
 Falco_cherrug	1
 Falco_peregrinus	2
 Falco_punctatus	1
+Falco_rusticolus	1
 Falco_tinnunculus	1
 Felimare_picta	1
 Felis_catus	3
@@ -1245,9 +1266,11 @@ Filago_lutescens	1
 Filipendula_ulmaria	1
 Fissipunctia_ypsillon	1
 Flammulina_velutipes	1
+Flavoplaca_marina	1
 Foetorepus_agassizii	1
 Folsomia_candida	1
 Folsomia_candida_str_VU_population	1
+Fopius_arisanus	1
 Formica_aserva	1
 Formica_rufa	1
 Fragaria_vesca	1
@@ -1307,8 +1330,9 @@ Gigantopelta_aegis	2
 Girardinichthys_multiradiatus	1
 Glaucopsyche_alexis	2
 Glaucopsyche_melanops	1
+Gliophorus_irrigatus	2
 Globia_sparganii	1
-Globicephala_melas	2
+Globicephala_melas	3
 Glossina_austeni	1
 Glossina_brevipalpis	1
 Glossina_fuscipes	1
@@ -1404,6 +1428,7 @@ Heterocephalus_glaber	2
 Heteromyza_rotundicornis	2
 Heteronetta_atricapilla	1
 Hipparchia_fagi	1
+Hipparchia_maderensis	1
 Hipparchia_semele	3
 Hipparchia_syriaca	1
 Hippasteria_phrygiana	1
@@ -1413,6 +1438,7 @@ Hippoglossoides_platessoides	1
 Hippoglossus_hippoglossus	1
 Hippoglossus_stenolepis	1
 Hippopotamus_amphibius	1
+Hippopotamus_amphibius_kiboko	1
 Hippopus_hippopus	2
 Hipposideros_armiger	1
 Hipposideros_galeritus	1
@@ -1448,7 +1474,7 @@ Hydrochoerus_hydrochaeris	2
 Hydrocotyle_vulgaris	1
 Hydropsyche_tenuis	1
 Hydrotaea_cyrtoneurina	1
-Hygrocybe_coccinea	1
+Hygrocybe_coccinea	2
 Hygrocybe_conica	1
 Hygrocybe_helobia	1
 Hygrocybe_punicea	2
@@ -1501,7 +1527,7 @@ Incurvaria_masculella	1
 Inga_laurina	1
 Inga_leiocalycina	1
 Inga_oerstediana	1
-Inocybe_grammopodia	1
+Inocybe_grammopodia	2
 Inocybe_obscuroides	1
 Inocybe_tigrina	1
 Iphiclides_podalirius	1
@@ -1532,10 +1558,12 @@ Lacanobia_blenna	1
 Lacanobia_oleracea	1
 Lacanobia_wlatinum	2
 Lacerta_agilis	1
+Lactarius_blennius	1
 Lactarius_evosmus	1
 Lactarius_tabidus	2
 Lactuca_saligna	1
 Lactuca_sativa	1
+Ladona_fulva	1
 Laetiporus_sulphureus	2
 Lagenorhynchus_albirostris	1
 Lagenorhynchus_obliquidens	1
@@ -1577,10 +1605,12 @@ Latimeria_chalumnae	1
 Leersia_oryzoides	1
 Leersia_perrieri	1
 Leguminivora_glycinivorella	2
+Leiobunum_subalpinum	1
 Leishmania_major	1
 Leishmania_panamensis	1
 Leistus_spinibarbis	2
 Lemur_catta	1
+Leotia_lubrica	1
 Lepeophtheirus_nordmannii	1
 Lepeophtheirus_salmonis	2
 Lepidium_didymum	1
@@ -1594,6 +1624,7 @@ Leptobrachium_leishanense	1
 Leptoclinus_maculatus	1
 Leptogaster_cylindrica	1
 Leptogorgia_sarmentosa	1
+Leptographium_flavum	1
 Leptosomus_discolor	2
 Leptotrombidium_deliense	1
 Leptura_quadrifasciata	1
@@ -1645,6 +1676,7 @@ Logfia_minima	1
 Lolium_perenne	1
 Lomographa_bimaculata	2
 Lomographa_temerata	1
+Lonchura_striata	1
 Lophiomys_imhausi	1
 Lophius_americanus	2
 Lordithon_lunulatus	1
@@ -1775,7 +1807,7 @@ Megaptera_novaeangliae	1
 Meghimatium_bilineatum	1
 Melampsora_larici_populina_98ag31	1
 Melampyrum_sylvaticum	1
-Melanaphis_sacchari	1
+Melanaphis_sacchari	2
 Melanargia_galathea	2
 Melanargia_lachesis	1
 Melanchra_persicariae	2
@@ -1793,6 +1825,7 @@ Melieria_omissa	1
 Melinaea_marsaeus_rileyi	2
 Melinaea_menophilus_n_ssp_AW_2005	2
 Melinopterus_prodromus	1
+Melipona_quadrifasciata	1
 Meliscaeva_auricollis	1
 Melitaea_aurelia	1
 Melitaea_cinxia	3
@@ -1848,7 +1881,7 @@ Miltochrista_miniata	2
 Mimachlamys_varia	2
 Mimas_tiliae	2
 Mimumesa_dahlbomi	1
-Miniopterus_schreibersii	1
+Miniopterus_schreibersii	2
 Mirounga_leonina	1
 Misgurnus_anguillicaudatus	1
 Misopates_orontium	1
@@ -1896,7 +1929,7 @@ Mustela_nivalis	1
 Mustela_putorius	1
 Mya_arenaria	2
 Myathropa_florea	2
-Mycena_galericulata	1
+Mycena_galericulata	2
 Mycosarcoma_maydis	1
 Myiopsitta_monachus	1
 Mylopharyngodon_piceus	1
@@ -1904,6 +1937,7 @@ Myodes_glareolus	1
 Myopa_tessellatipennis	2
 Myopa_testacea	1
 Myotis_myotis	1
+Myotis_mystacinus	1
 Myrica_gale	1
 Myriophyllum_alterniflorum	1
 Myripristis_murdjan	1
@@ -1945,6 +1979,7 @@ Neoarius_graeffei	1
 Neoascia_interrupta	1
 Neocochylis_molliculana	1
 Neocrepidodera_transversa	1
+Neodiprion_fabricii	1
 Neodiprion_lecontei	2
 Neodiprion_pinetum	2
 Neodiprion_virginianus	1
@@ -1971,6 +2006,7 @@ Nibea_albiflora	1
 Nibea_coibor	1
 Nicotiana_attenuata	1
 Nicrophorus_investigator	1
+Nicrophorus_vespilloides	1
 Nilaparvata_lugens	1
 Nineta_flava	1
 Nipponacmea_schrenckii	1
@@ -2002,7 +2038,9 @@ Numenius_arquata	1
 Numida_meleagris	1
 Nyctalus_leisleri	1
 Nycteola_revayana	3
+Nyctibius_grandis	1
 Nycticebus_coucang	1
+Nylanderia_fulva	1
 Nymphaea_colorata	1
 Nymphalis_antiopa	1
 Nymphalis_c_album	1
@@ -2027,7 +2065,9 @@ Odocoileus_hemionus_hemionus	1
 Odocoileus_virginianus_texanus	1
 Odontamblyopus_lacepedii	1
 Odontesthes_bonariensis	1
+Odontomachus_brunneus	1
 Oegoconia_quadripuncta	1
+Oemleria_cerasiformis	1
 Olea_europaea_subsp_europaea	1
 Olea_europaea_var_sylvestris	1
 Oligia_fasciuncula	1
@@ -2070,7 +2110,7 @@ Orgyia_recens	2
 Orius_laevigatus	1
 Ormia_ochracea	1
 Ornithodoros_turicata	1
-Ornithorhynchus_anatinus	1
+Ornithorhynchus_anatinus	2
 Orthonevra_nobilis	1
 Orthosia_cerasi	1
 Orthosia_cruda	1
@@ -2095,6 +2135,7 @@ Oryzias_melastigma	1
 Oscarella_lobularis	1
 Osedax_fenrisi	1
 Osmia_bicornis_bicornis	2
+Osmia_lignaria	1
 Ostrea_denselamellosa	1
 Ostrea_edulis	4
 Ostreococcus_lucimarinus_cce9901	1
@@ -2117,7 +2158,7 @@ Pan_troglodytes	3
 Pandemis_cinnamomeana	2
 Pandemis_corylana	2
 Pandemis_heparana	1
-Panellus_stipticus	1
+Panellus_stipticus	2
 Pangasianodon_hypophthalmus	1
 Panicum_hallii_str_FIL2	1
 Panicum_hallii_var_hallii	1
@@ -2192,6 +2233,7 @@ Petrophora_chlorosata	1
 Phacochoerus_africanus	2
 Phacoides_pectinatus	1
 Phaedon_cochleariae	1
+Phaeoclavulina_alboapiculata	2
 Phakellia_robusta	1
 Phakellia_ventilabrum	2
 Phalacrocorax_aristotelis	1
@@ -2214,7 +2256,7 @@ Philophylla_caesio	1
 Phlebotomus_argentipes	1
 Phlebotomus_papatasi	2
 Phlebotomus_perniciosus	2
-Phlegmacium_triumphans	1
+Phlegmacium_triumphans	2
 Phlogophora_meticulosa	3
 Phoca_vitulina	1
 Phocoena_phocoena	1
@@ -2272,6 +2314,7 @@ Plasmodium_vivax	7
 Plasmodium_yoelii	1
 Platichthys_flesus	1
 Platichthys_stellatus	1
+Platismatia_glauca	2
 Platycheirus_albimanus	3
 Platycheirus_rosarum	1
 Platycnemis_pennipes	1
@@ -2286,6 +2329,7 @@ Plodia_interpunctella	3
 Plotosus_lineatus	1
 Plumapathes_pennacea	1
 Plusia_festucae	2
+Plutella_hyperboreella	1
 Plutella_xylostella	2
 Pocillopora_damicornis	1
 Pocillopora_meandrina	1
@@ -2296,6 +2340,7 @@ Podarcis_cretensis	1
 Podarcis_muralis	1
 Podargus_strigoides	1
 Poecile_atricapillus	1
+Poecile_montanus	1
 Poecilia_formosa	3
 Poecilia_picta	1
 Poecilia_reticulata	1
@@ -2455,7 +2500,7 @@ Rhizomys_pruinosus	1
 Rhizosphaera_kalkhoffii	2
 Rhodactis_osculifera	1
 Rhodnius_prolixus	1
-Rhodocollybia_maculata	1
+Rhodocollybia_maculata	2
 Rhodophaea_formosa	1
 Rhogogaster_chlorosoma	2
 Rhopalosiphum_maidis	1
@@ -2476,8 +2521,12 @@ Rousettus_aegyptiacus	2
 Rubus_idaeus	1
 Ruditapes_philippinarum	3
 Rupicapra_rupicapra	1
-Russula_delica	1
-Russula_vesca	1
+Russula_aff_farinipes	1
+Russula_delica	2
+Russula_faginea	2
+Russula_nigricans	2
+Russula_olivacea	2
+Russula_vesca	2
 Rutilus_rutilus	1
 Rutpela_maculata	3
 Sabethes_cyaneus	2
@@ -2617,6 +2666,7 @@ Solidago_canadensis	1
 Sorex_araneus	1
 Sorghum_bicolor	1
 Sousa_chinensis	1
+Sparassis_minoensis	2
 Sparganium_emersum	1
 Sparus_aurata	2
 Spergularia_marina	1
@@ -2932,6 +2982,7 @@ Xanthia_icteritia	2
 Xanthia_togata	1
 Xanthium_orientale	1
 Xanthogramma_pedissequum	2
+Xanthorhoe_annotinata	1
 Xanthorhoe_designata	1
 Xanthorhoe_ferrugata	1
 Xanthorhoe_montanata	1
@@ -2952,6 +3003,7 @@ Xestospongia_muta	1
 Xiphias_gladius	1
 Xiphophorus_birchmanni	1
 Xiphophorus_couchianus	1
+Xiphophorus_hellerii	1
 Xylocampa_areola	2
 Xylocopa_virginica	1
 Xylophaga_dorsalis	1
