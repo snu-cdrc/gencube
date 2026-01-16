@@ -1,5 +1,6 @@
 {
-    "LS_STRATEGY": [
+    "LS_STRATEGY": [],
+    "LS_SOURCE": [
         "amplicon",
         "atac_seq",
         "bisulfite_seq",
@@ -42,17 +43,6 @@
         "wga",
         "wgs",
         "wxs"
-    ],
-    "LS_SOURCE": [
-        "genomic",
-        "genomic_single_cell",
-        "metagenomic",
-        "metatranscriptomic",
-        "other",
-        "synthetic",
-        "transcriptomic",
-        "transcriptomic_single_cell",
-        "viral_rna"
     ],
     "LS_PLATFORM": [
         "abi_solid",
