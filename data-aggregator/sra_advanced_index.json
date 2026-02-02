@@ -63,6 +63,7 @@
         "element",
         "genapsys",
         "genemind",
+        "geneus_tech",
         "helicos",
         "illumina",
         "ion_torrent",
@@ -292,6 +293,7 @@
         "instrument_dnbseq_t7",
         "instrument_element_aviti",
         "instrument_fastaseq_300",
+        "instrument_g_seq500",
         "instrument_g4",
         "instrument_genexus",
         "instrument_genocare_1600",
@@ -395,6 +397,7 @@
         "platform_element",
         "platform_genapsys",
         "platform_genemind",
+        "platform_geneus_tech",
         "platform_helicos",
         "platform_illumina",
         "platform_ion_torrent",
@@ -405,8 +408,6 @@
         "platform_tapestri",
         "platform_ultima",
         "platform_vela_diagnostics",
-        "strategy_amplicon",
-        "strategy_atac_seq",
-        "strategy_bisulfite_seq"
+        "strategy_amplicon"
     ]
 }
