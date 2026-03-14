@@ -70,6 +70,7 @@
         "ls454",
         "oxford_nanopore",
         "pacbio_smrt",
+        "salus",
         "singular_genomics",
         "tapestri",
         "ultima",
@@ -344,6 +345,7 @@
         "instrument_pacbio_rs_ii",
         "instrument_promethion",
         "instrument_revio",
+        "instrument_salus_pro",
         "instrument_sentosa_sq301",
         "instrument_sequel",
         "instrument_sequel_ii",
@@ -404,10 +406,9 @@
         "platform_ls454",
         "platform_oxford_nanopore",
         "platform_pacbio_smrt",
+        "platform_salus",
         "platform_singular_genomics",
         "platform_tapestri",
-        "platform_ultima",
-        "platform_vela_diagnostics",
-        "strategy_amplicon"
+        "platform_ultima"
     ]
 }
