@@ -120,6 +120,7 @@
         "filetype_cram",
         "filetype_fastq",
         "filetype_illumina_native",
+        "filetype_pacbio_hdf5",
         "filetype_sff",
         "filetype_srf",
         "genomic",
@@ -239,6 +240,7 @@
         "filetype_illumina_native",
         "filetype_nanopore",
         "filetype_pacbio_base_modification_report",
+        "filetype_pacbio_hdf5",
         "filetype_pacbio_metadata",
         "filetype_pacbio_native",
         "filetype_realign_to_de_novo_assembly",
@@ -408,7 +410,6 @@
         "platform_pacbio_smrt",
         "platform_salus",
         "platform_singular_genomics",
-        "platform_tapestri",
-        "platform_ultima"
+        "platform_tapestri"
     ]
 }
