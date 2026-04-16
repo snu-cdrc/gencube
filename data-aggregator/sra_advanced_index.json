@@ -222,6 +222,7 @@
         "filetype_10x_genomics_bam_file",
         "filetype_ab1",
         "filetype_activ_sars2_vcf",
+        "filetype_archive/gzip",
         "filetype_assembled_contigs",
         "filetype_assembly/realign_summary",
         "filetype_assembly_of_undentified_reads",
@@ -293,6 +294,7 @@
         "instrument_dnbseq_g400_fast",
         "instrument_dnbseq_g50",
         "instrument_dnbseq_t1",
+        "instrument_dnbseq_t10x4rs",
         "instrument_dnbseq_t7",
         "instrument_element_aviti",
         "instrument_fastaseq_300",
@@ -408,8 +410,6 @@
         "platform_ls454",
         "platform_oxford_nanopore",
         "platform_pacbio_smrt",
-        "platform_salus",
-        "platform_singular_genomics",
-        "platform_tapestri"
+        "platform_salus"
     ]
 }
