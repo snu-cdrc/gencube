@@ -394,7 +394,6 @@
         "location_gs_us_central1",
         "location_gs_us_east1",
         "location_s3_us_east_1",
-        "location_s3_us_west_2",
         "platform_abi_solid",
         "platform_bgiseq",
         "platform_capillary",
@@ -410,6 +409,7 @@
         "platform_ls454",
         "platform_oxford_nanopore",
         "platform_pacbio_smrt",
-        "platform_salus"
+        "platform_salus",
+        "platform_singular_genomics"
     ]
 }
