@@ -2381,7 +2381,6 @@ Oryza_sativa_Japonica_Group	1
 Oryza_sativa_aromatic_subgroup	1
 Oryza_sativa_aus_subgroup	3
 Oryza_sativa_indica_group	3
-Oryza_sativa_japonica_group	1
 Oryza_sativa_tropical_japonica_subgroup	3
 Oryzias_curvinotus	1
 Oryzias_javanicus	1
