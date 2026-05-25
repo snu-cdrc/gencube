@@ -293,6 +293,7 @@
         "instrument_dnbseq_g400",
         "instrument_dnbseq_g400_fast",
         "instrument_dnbseq_g50",
+        "instrument_dnbseq_g99",
         "instrument_dnbseq_t1",
         "instrument_dnbseq_t10x4rs",
         "instrument_dnbseq_t7",
@@ -323,6 +324,7 @@
         "instrument_illumina_iseq_100",
         "instrument_illumina_miniseq",
         "instrument_illumina_miseq",
+        "instrument_illumina_novaseq_5000",
         "instrument_illumina_novaseq_6000",
         "instrument_illumina_novaseq_x",
         "instrument_illumina_novaseq_x_plus",
@@ -408,8 +410,6 @@
         "platform_ion_torrent",
         "platform_ls454",
         "platform_oxford_nanopore",
-        "platform_pacbio_smrt",
-        "platform_salus",
-        "platform_singular_genomics"
+        "platform_pacbio_smrt"
     ]
 }
