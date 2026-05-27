@@ -338,6 +338,8 @@
         "instrument_ion_torrent_proton",
         "instrument_ion_torrent_s5",
         "instrument_ion_torrent_s5_xl",
+        "instrument_mgiseq_200",
+        "instrument_mgiseq_2000",
         "instrument_mgiseq_2000rs",
         "instrument_minion",
         "instrument_miseq_i100",
@@ -408,8 +410,6 @@
         "platform_helicos",
         "platform_illumina",
         "platform_ion_torrent",
-        "platform_ls454",
-        "platform_oxford_nanopore",
-        "platform_pacbio_smrt"
+        "platform_ls454"
     ]
 }
