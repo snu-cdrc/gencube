@@ -1,2 +1,2 @@
 TotalSpecies	TotalGenomes
-3428	5255
+3769	5672
