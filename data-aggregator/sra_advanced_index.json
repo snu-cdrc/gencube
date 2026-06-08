@@ -290,6 +290,7 @@
         "instrument_bgiseq_500",
         "instrument_complete_genomics",
         "instrument_cycloneseq",
+        "instrument_dnbseq_e25",
         "instrument_dnbseq_g400",
         "instrument_dnbseq_g400_fast",
         "instrument_dnbseq_g50",
@@ -409,7 +410,6 @@
         "platform_geneus_tech",
         "platform_helicos",
         "platform_illumina",
-        "platform_ion_torrent",
-        "platform_ls454"
+        "platform_ion_torrent"
     ]
 }
