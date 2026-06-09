@@ -286,6 +286,7 @@
         "instrument_ab_solid_system",
         "instrument_ab_solid_system_2_0",
         "instrument_ab_solid_system_3_0",
+        "instrument_bgiseq_2000",
         "instrument_bgiseq_50",
         "instrument_bgiseq_500",
         "instrument_complete_genomics",
@@ -409,7 +410,6 @@
         "platform_genemind",
         "platform_geneus_tech",
         "platform_helicos",
-        "platform_illumina",
-        "platform_ion_torrent"
+        "platform_illumina"
     ]
 }
