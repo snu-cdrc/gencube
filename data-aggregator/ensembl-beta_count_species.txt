@@ -1069,6 +1069,9 @@ Cryptococcus_neoformans_var_grubii_br795	1
 Cryptococcus_neoformans_ze90_1	1
 Cryptococcus_tetragattii_ind107	1
 Cryptococcus_wingfieldii_cbs_7118	1
+Cryptosporidium_andersoni	1
+Cryptosporidium_meleagridis	1
+Cryptosporidium_parvum_iowa_ii	1
 Cryptosula_pallasiana	1
 Cryptotermes_secundus	1
 Cryptus_armator	1
@@ -1321,6 +1324,7 @@ Eilema_depressum	2
 Eilema_griseolum	1
 Eilema_lurideolum	1
 Eilema_sororculum	2
+Eimeria_maxima	1
 Eimeria_mitis	1
 Electrona_antarctica	1
 Electrophaes_corylata	2
@@ -1870,6 +1874,7 @@ Hypsizygus_marmoreus	1
 Hypsopygia_costalis	4
 Ianthella_basta	1
 Ichneumon_xanthorius	2
+Ichthyophthirius_multifiliis	1
 Ictalurus_furcatus	1
 Ictalurus_punctatus	3
 Ictidomys_tridecemlineatus	2
@@ -2655,6 +2660,7 @@ Owenia_fusiformis	2
 Oxycarenus_hyalinipennis	1
 Oxyria_digyna	1
 Oxystoma_pomonae	1
+Oxytricha_trifallax	1
 Oxyura_jamaicensis	1
 Pachyseris_speciosa	1
 Pagrus_pagrus	1
@@ -2859,11 +2865,24 @@ Plagiothecium_denticulatum	1
 Plakobranchus_ocellatus	1
 Planococcus_citri	1
 Plasmodium_chabaudi_chabaudi	1
+Plasmodium_coatneyi	1
+Plasmodium_cynomolgi_strain_b	1
 Plasmodium_falciparum_3D7	2
+Plasmodium_falciparum_camp_malaysia	1
+Plasmodium_falciparum_dd2	1
+Plasmodium_falciparum_nf54	1
+Plasmodium_gaboni	1
+Plasmodium_gonderi	1
+Plasmodium_knowlesi	1
 Plasmodium_knowlesi_strain_h	1
 Plasmodium_ovale	2
+Plasmodium_ovale_wallikeri	1
 Plasmodium_sp_drc_itaito	1
+Plasmodium_vinckei_petteri	1
 Plasmodium_vivax	7
+Plasmodium_vivax_brazil_i	1
+Plasmodium_vivax_india_vii	1
+Plasmodium_vivax_north_korean	1
 Plasmodium_yoelii	1
 Platalea_leucorodia	1
 Platichthys_flesus	1
@@ -3377,6 +3396,7 @@ Stelletta_raphidiophora	1
 Stenella_coeruleoalba	1
 Stenoptilia_bipunctidactyla	2
 Stenotrophomonas_maltophilia_k279a	1
+Stentor_coeruleus	1
 Stenus_bimaculatus	1
 Stephanocoenia_intersepta	1
 Sternotherus_odoratus	1
@@ -3404,6 +3424,7 @@ Strongyloides_ratti	1
 Struthio_camelus_australis	1
 Sturmia_bella	1
 Sturnus_vulgaris	1
+Stylonychia_lemnae	1
 Stylophora_pistillata	3
 Subacronicta_megacephala	1
 Suberites_sp_ucmpwc859	1
@@ -3417,6 +3438,7 @@ Sycon_ciliatum	1
 Sylvia_atricapilla	1
 Sylvia_borin	1
 Sylvilagus_floridanus	1
+Symbiodinium_microadriaticum	1
 Symphalangus_syndactylus	1
 Symphodus_melops	1
 Symsagittifera_roscoffensis	1
@@ -3499,6 +3521,8 @@ Thaumetopoea_processionea	1
 Thecocarcelia_acutangulata	2
 Thecophora_atra	2
 Theileria_orientalis	2
+Theileria_orientalis_strain_shintoku	1
+Theileria_parva_strain_muguga	1
 Thelohanellus_kitauei	1
 Thenea_valdiviae	1
 Theobroma_cacao	2
@@ -3558,6 +3582,11 @@ Tortricodes_alternella	1
 Tortrix_viridana	1
 Toumeyella_liriodendri	1
 Toxonevra_muliebris	1
+Toxoplasma_gondii_ari	1
+Toxoplasma_gondii_mas	1
+Toxoplasma_gondii_p89	1
+Toxoplasma_gondii_tgcatprc2	1
+Toxoplasma_gondii_vand	1
 Toxorhynchites_rutilus_septentrionalis	1
 Toxotes_chatareus	1
 Toxotes_jaculatrix	1
