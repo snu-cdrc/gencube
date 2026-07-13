@@ -1356,7 +1356,6 @@ Elysia_chlorotica	1
 Elysia_crispata	2
 Elysia_marginata	1
 Emiliania_huxleyi_CCMP1516	1
-Emiliania_huxleyi_ccmp1516	1
 Emmelina_monodactyla	3
 Empetrum_nigrum	1
 Empis_livida	1
@@ -2282,7 +2281,6 @@ Melinaea_ludovica	2
 Melinaea_marsaeus_rileyi	2
 Melinaea_menophilus	2
 Melinaea_menophilus_n_ssp_AW_2005	2
-Melinaea_menophilus_n_ssp_aw_2005	1
 Melinaea_mothone	2
 Melinopterus_prodromus	1
 Melipona_quadrifasciata	1
