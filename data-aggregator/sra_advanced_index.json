@@ -366,6 +366,7 @@
         "instrument_sequel_ii",
         "instrument_sequel_iie",
         "instrument_surfseq_5000",
+        "instrument_surfseq_q",
         "instrument_tapestri",
         "instrument_ug_100",
         "instrument_unspecified",
@@ -410,7 +411,6 @@
         "platform_bgiseq",
         "platform_capillary",
         "platform_complete_genomics",
-        "platform_dnbseq",
-        "platform_element"
+        "platform_dnbseq"
     ]
 }
