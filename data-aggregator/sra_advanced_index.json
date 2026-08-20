@@ -71,6 +71,7 @@
         "ls454",
         "oxford_nanopore",
         "pacbio_smrt",
+        "qitan_tech",
         "salus",
         "singular_genomics",
         "tapestri",
@@ -358,6 +359,7 @@
         "instrument_pacbio_rs",
         "instrument_pacbio_rs_ii",
         "instrument_promethion",
+        "instrument_qpursue_6k",
         "instrument_revio",
         "instrument_salus_evo",
         "instrument_salus_pro",
@@ -410,7 +412,6 @@
         "platform_amcare",
         "platform_bgiseq",
         "platform_capillary",
-        "platform_complete_genomics",
-        "platform_dnbseq"
+        "platform_complete_genomics"
     ]
 }
