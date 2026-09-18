@@ -305,6 +305,7 @@
         "instrument_dnbseq_t10x4rs",
         "instrument_dnbseq_t7",
         "instrument_element_aviti",
+        "instrument_element_aviti24",
         "instrument_fastaseq_300",
         "instrument_g_seq500",
         "instrument_g4",
@@ -411,7 +412,6 @@
         "platform_abi_solid",
         "platform_amcare",
         "platform_bgiseq",
-        "platform_capillary",
-        "platform_complete_genomics"
+        "platform_capillary"
     ]
 }
