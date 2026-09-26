@@ -60960,6 +60960,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -61038,7 +61039,7 @@
                                     "md5sum.txt": null
                                 },
                                 "variation": {
-                                    "2026_08_25": {
+                                    "2025_08_13": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -61857,7 +61858,7 @@
                                     "md5sum.txt": null
                                 },
                                 "variation": {
-                                    "2025_08_13": {
+                                    "2026_08_25": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -62671,7 +62672,7 @@
                                     }
                                 },
                                 "variation": {
-                                    "2025_08_13": {
+                                    "2026_08_25": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -83701,7 +83702,7 @@
                                     "md5sum.txt": null
                                 },
                                 "variation": {
-                                    "2026_08_25": {
+                                    "2025_08_13": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -107136,10 +107137,21 @@
                         "community_jgi": {
                             "2013_01": {
                                 "geneset": {
+                                    "cdna.fa.bgz": null,
+                                    "cdna.fa.bgz.fai": null,
+                                    "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
-                                    "md5sum.txt": null
+                                    "genes.gtf.bgz": null,
+                                    "genes.gtf.bgz.csi": null,
+                                    "genes.gtf.gz": null,
+                                    "md5sum.txt": null,
+                                    "pep.fa.bgz": null,
+                                    "pep.fa.bgz.fai": null,
+                                    "pep.fa.bgz.gzi": null,
+                                    "xref.tsv.gz": null
                                 },
                                 "genome": {
                                     "hardmasked.fa.bgz": null,
@@ -178947,7 +178959,7 @@
                                     "md5sum.txt": null
                                 },
                                 "variation": {
-                                    "2026_08_25": {
+                                    "2025_08_13": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -183739,7 +183751,7 @@
                                     "md5sum.txt": null
                                 },
                                 "variation": {
-                                    "2026_08_25": {
+                                    "2025_08_13": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -198129,6 +198141,9 @@
                                 },
                                 "genome": {
                                     "chromosomes.tsv.gz": null,
+                                    "hardmasked.fa.bgz": null,
+                                    "hardmasked.fa.bgz.fai": null,
+                                    "hardmasked.fa.bgz.gzi": null,
                                     "md5sum.txt": null,
                                     "softmasked.fa.bgz": null,
                                     "softmasked.fa.bgz.fai": null,
@@ -198136,6 +198151,7 @@
                                     "unmasked.fa.bgz": null,
                                     "unmasked.fa.bgz.fai": null,
                                     "unmasked.fa.bgz.gzi": null,
+                                    "unmasked.fa.gz": null,
                                     "vep_gnomad_exomes": {
                                         "gnomad.exomes.v4.1.sites.GCA_009914755.4.trimmed_liftover.vcf.gz": null,
                                         "gnomad.exomes.v4.1.sites.GCA_009914755.4.trimmed_liftover.vcf.gz.tbi.gz": null,
@@ -205309,7 +205325,7 @@
                                     "md5sum.txt": null
                                 },
                                 "variation": {
-                                    "2026_08_25": {
+                                    "2025_08_13": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -233314,6 +233330,19 @@
                                     "pep.fa.bgz.fai": null,
                                     "pep.fa.bgz.gzi": null,
                                     "xref.tsv.gz": null
+                                },
+                                "genome": {
+                                    "chromosomes.tsv.gz": null,
+                                    "hardmasked.fa.bgz": null,
+                                    "hardmasked.fa.bgz.fai": null,
+                                    "hardmasked.fa.bgz.gzi": null,
+                                    "md5sum.txt": null,
+                                    "softmasked.fa.bgz": null,
+                                    "softmasked.fa.bgz.fai": null,
+                                    "softmasked.fa.bgz.gzi": null,
+                                    "unmasked.fa.bgz": null,
+                                    "unmasked.fa.bgz.fai": null,
+                                    "unmasked.fa.bgz.gzi": null
                                 },
                                 "homology": {
                                     "2025_06_23": {
@@ -271857,11 +271886,16 @@
                                     "hardmasked.fa.bgz": null,
                                     "hardmasked.fa.bgz.fai": null,
                                     "hardmasked.fa.bgz.gzi": null,
+                                    "hardmasked.fa.gz": null,
                                     "md5sum.txt": null,
                                     "softmasked.fa.bgz": null,
                                     "softmasked.fa.bgz.fai": null,
                                     "softmasked.fa.bgz.gzi": null,
-                                    "unmasked.fa.bgz": null
+                                    "softmasked.fa.gz": null,
+                                    "unmasked.fa.bgz": null,
+                                    "unmasked.fa.bgz.fai": null,
+                                    "unmasked.fa.bgz.gzi": null,
+                                    "unmasked.fa.gz": null
                                 },
                                 "homology": {
                                     "2024_09_18": {
@@ -276995,7 +277029,7 @@
                                     }
                                 },
                                 "variation": {
-                                    "2026_08_25": {
+                                    "2025_08_13": {
                                         "md5sum.txt": null,
                                         "variation.vcf.gz": null
                                     }
@@ -345958,6 +345992,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -355094,7 +355129,16 @@
                                 },
                                 "genome": {
                                     "chromosomes.tsv.gz": null,
-                                    "md5sum.txt": null
+                                    "hardmasked.fa.bgz": null,
+                                    "hardmasked.fa.bgz.fai": null,
+                                    "hardmasked.fa.bgz.gzi": null,
+                                    "md5sum.txt": null,
+                                    "softmasked.fa.bgz": null,
+                                    "softmasked.fa.bgz.fai": null,
+                                    "softmasked.fa.bgz.gzi": null,
+                                    "unmasked.fa.bgz": null,
+                                    "unmasked.fa.bgz.fai": null,
+                                    "unmasked.fa.bgz.gzi": null
                                 },
                                 "homology": {
                                     "2025_01_16": {
@@ -356899,6 +356943,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -363921,6 +363966,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -365040,6 +365086,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -365224,6 +365271,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -365447,6 +365495,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -368532,6 +368581,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -370654,6 +370704,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -370832,6 +370883,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -371331,6 +371383,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -377075,6 +377128,7 @@
                                     "cdna.fa.bgz": null,
                                     "cdna.fa.bgz.fai": null,
                                     "cdna.fa.bgz.gzi": null,
+                                    "genes.embl.gz": null,
                                     "genes.gff3.bgz": null,
                                     "genes.gff3.bgz.csi": null,
                                     "genes.gff3.gz": null,
@@ -417572,10 +417626,16 @@
                                 },
                                 "genome": {
                                     "chromosomes.tsv.gz": null,
+                                    "hardmasked.fa.bgz": null,
+                                    "hardmasked.fa.bgz.fai": null,
+                                    "hardmasked.fa.bgz.gzi": null,
                                     "md5sum.txt": null,
                                     "softmasked.fa.bgz": null,
                                     "softmasked.fa.bgz.fai": null,
-                                    "softmasked.fa.bgz.gzi": null
+                                    "softmasked.fa.bgz.gzi": null,
+                                    "unmasked.fa.bgz": null,
+                                    "unmasked.fa.bgz.fai": null,
+                                    "unmasked.fa.bgz.gzi": null
                                 },
                                 "homology": {
                                     "2024_09_18": {

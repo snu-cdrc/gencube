@@ -123778,7 +123778,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 02 10:09 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 02 10:10 2024_11
 
 ./GCA/000/002/075/2/ensembl/2024_11:
-drwxr-xr-x    2 ftp      ftp           439 Sep 10 12:22 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:06 geneset
 drwxr-xr-x    2 ftp      ftp           403 Sep 10 12:22 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 02 10:10 homology
 
@@ -123786,6 +123786,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 02 10:10 homology
 -rw-r--r--    1 ftp      ftp      28105823 Apr 02 10:14 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       3482162 Apr 02 10:14 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         30904 Apr 02 10:14 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      354799625 Sep 21 09:45 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      11583523 May 19 13:42 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         66919 May 19 13:42 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp      11660393 Apr 02 10:09 genes.gff3.gz
@@ -123832,7 +123833,7 @@ drwxr-xr-x    6 ftp      ftp           102 Apr 04 02:56 2020_10
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 12:22 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 10 12:23 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 15 17:35 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 23 14:29 variation
 
 ./GCA/000/002/285/4/ensembl/2020_10/geneset:
 -rw-r--r--    1 ftp      ftp      38379722 Apr 04 03:08 cdna.fa.bgz
@@ -123873,9 +123874,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 12:23 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 10 12:23 md5sum.txt
 
 ./GCA/000/002/285/4/ensembl/2020_10/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:23 2026_08_25
+drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:23 2025_08_13
 
-./GCA/000/002/285/4/ensembl/2020_10/variation/2026_08_25:
+./GCA/000/002/285/4/ensembl/2020_10/variation/2025_08_13:
 -rw-r--r--    1 ftp      ftp            51 Sep 10 12:23 md5sum.txt
 -rw-r--r--    1 ftp      ftp      204458442 Apr 04 02:56 variation.vcf.gz
 
@@ -124788,7 +124789,7 @@ drwxr-xr-x    6 ftp      ftp           102 Sep 03 16:18 2015_11
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 12:24 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 10 12:24 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 14 11:30 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:18 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 23 14:27 variation
 
 ./GCA/000/002/945/2/community/2015_11/geneset:
 -rw-r--r--    1 ftp      ftp       4477524 Apr 14 11:30 cdna.fa.bgz
@@ -124829,9 +124830,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 12:24 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 10 12:24 md5sum.txt
 
 ./GCA/000/002/945/2/community/2015_11/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:24 2025_08_13
+drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:24 2026_08_25
 
-./GCA/000/002/945/2/community/2015_11/variation/2025_08_13:
+./GCA/000/002/945/2/community/2015_11/variation/2026_08_25:
 -rw-r--r--    1 ftp      ftp            51 Sep 10 12:24 md5sum.txt
 -rw-r--r--    1 ftp      ftp      24528377 Jul 30  2025 variation.vcf.gz
 
@@ -125751,7 +125752,7 @@ drwxr-xr-x    6 ftp      ftp           102 Sep 03 16:18 2009_08
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 12:26 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 10 12:26 genome
 drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:11 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:18 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 23 14:30 variation
 
 ./GCA/000/004/695/1/genbank/2009_08/geneset:
 -rw-r--r--    1 ftp      ftp       6499400 Aug 25 20:02 cdna.fa.bgz
@@ -125791,9 +125792,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 12:26 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 10 12:26 md5sum.txt
 
 ./GCA/000/004/695/1/genbank/2009_08/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:26 2025_08_13
+drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:26 2026_08_25
 
-./GCA/000/004/695/1/genbank/2009_08/variation/2025_08_13:
+./GCA/000/004/695/1/genbank/2009_08/variation/2026_08_25:
 -rw-r--r--    1 ftp      ftp            51 Sep 10 12:26 md5sum.txt
 -rw-r--r--    1 ftp      ftp       6964079 Jul 30  2025 variation.vcf.gz
 
@@ -150278,7 +150279,7 @@ drwxr-xr-x    6 ftp      ftp           102 Apr 11 20:55 2020_03
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 12:44 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 10 12:44 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 11 20:55 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 22 11:48 variation
 
 ./GCA/000/165/445/3/ensembl/2020_03/geneset:
 -rw-r--r--    1 ftp      ftp      25144609 Apr 11 21:07 cdna.fa.bgz
@@ -150319,9 +150320,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 12:44 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 10 12:44 md5sum.txt
 
 ./GCA/000/165/445/3/ensembl/2020_03/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:44 2026_08_25
+drwxr-xr-x    2 ftp      ftp            62 Sep 10 12:44 2025_08_13
 
-./GCA/000/165/445/3/ensembl/2020_03/variation/2026_08_25:
+./GCA/000/165/445/3/ensembl/2020_03/variation/2025_08_13:
 -rw-r--r--    1 ftp      ftp            51 Sep 10 12:44 md5sum.txt
 -rw-r--r--    1 ftp      ftp       7095246 Apr 11 20:55 variation.vcf.gz
 
@@ -177575,14 +177576,25 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 13:09 2024_09_18
 drwxr-xr-x    4 ftp      ftp            49 Sep 04 00:13 2013_01
 
 ./GCA/000/327/385/1/community_jgi/2013_01:
-drwxr-xr-x    2 ftp      ftp           127 Sep 10 13:09 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 21 14:47 geneset
 drwxr-xr-x    2 ftp      ftp           361 Sep 10 13:09 genome
 
 ./GCA/000/327/385/1/community_jgi/2013_01/geneset:
+-rw-r--r--    1 ftp      ftp       9990440 Sep 21 14:33 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        792084 Sep 21 14:33 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          8440 Sep 21 14:33 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      143512082 Nov 04  2024 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       3848056 Sep 03 23:59 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         62356 Sep 03 23:59 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       3876063 Apr 03  2025 genes.gff3.gz
--rw-r--r--    1 ftp      ftp           150 Sep 10 13:09 md5sum.txt
+-rw-r--r--    1 ftp      ftp       5198487 Sep 21 14:41 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         34423 Sep 21 14:41 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       5183283 Nov 05  2024 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           680 Sep 21 14:43 md5sum.txt
+-rw-r--r--    1 ftp      ftp       5566621 Sep 21 14:33 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        724678 Sep 21 14:33 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          3128 Sep 21 14:33 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       3024904 Oct 29  2024 xref.tsv.gz
 
 ./GCA/000/327/385/1/community_jgi/2013_01/genome:
 -rw-r--r--    1 ftp      ftp      77877510 Aug 24 21:19 hardmasked.fa.bgz
@@ -261302,7 +261314,7 @@ drwxr-xr-x    6 ftp      ftp           102 Apr 13 11:53 2019_09
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 14:37 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 10 14:37 genome
 drwxr-xr-x    3 ftp      ftp            56 Aug 04 16:20 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 22 11:50 variation
 
 ./GCA/001/858/045/3/ensembl/2019_09/geneset:
 -rw-r--r--    1 ftp      ftp      42353159 Apr 13 11:59 cdna.fa.bgz
@@ -261343,9 +261355,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 14:37 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 10 14:37 md5sum.txt
 
 ./GCA/001/858/045/3/ensembl/2019_09/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 10 14:37 2026_08_25
+drwxr-xr-x    2 ftp      ftp            62 Sep 10 14:37 2025_08_13
 
-./GCA/001/858/045/3/ensembl/2019_09/variation/2026_08_25:
+./GCA/001/858/045/3/ensembl/2019_09/variation/2025_08_13:
 -rw-r--r--    1 ftp      ftp            51 Sep 10 14:37 md5sum.txt
 -rw-r--r--    1 ftp      ftp      639598741 Apr 13 11:53 variation.vcf.gz
 
@@ -266979,7 +266991,7 @@ drwxr-xr-x    6 ftp      ftp           102 Apr 13 15:10 2020_02
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 14:52 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 10 14:52 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 15 17:35 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 22 11:51 variation
 
 ./GCA/002/742/125/1/ensembl/2020_02/geneset:
 -rw-r--r--    1 ftp      ftp      20567969 Apr 13 15:25 cdna.fa.bgz
@@ -267020,9 +267032,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 14:52 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 10 14:52 md5sum.txt
 
 ./GCA/002/742/125/1/ensembl/2020_02/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 10 14:53 2026_08_25
+drwxr-xr-x    2 ftp      ftp            62 Sep 10 14:53 2025_08_13
 
-./GCA/002/742/125/1/ensembl/2020_02/variation/2026_08_25:
+./GCA/002/742/125/1/ensembl/2020_02/variation/2025_08_13:
 -rw-r--r--    1 ftp      ftp            51 Sep 10 14:53 md5sum.txt
 -rw-r--r--    1 ftp      ftp      2445473463 Apr 13 15:10 variation.vcf.gz
 
@@ -284010,7 +284022,7 @@ drwxr-xr-x    6 ftp      ftp           102 Apr 06 01:50 2022_07
 
 ./GCA/009/914/755/4/ensembl/2022_07:
 drwxr-xr-x    2 ftp      ftp           525 Sep 10 16:18 geneset
-drwxr-xr-x    4 ftp      ftp           355 Sep 10 16:34 genome
+drwxr-xr-x    4 ftp      ftp           500 Sep 22 13:20 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 15 17:35 homology
 drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
 
@@ -284035,13 +284047,17 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
 
 ./GCA/009/914/755/4/ensembl/2022_07/genome:
 -rw-r--r--    1 ftp      ftp           304 Apr 06 01:50 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp           861 Sep 10 16:34 md5sum.txt
+-rw-r--r--    1 ftp      ftp      818997922 Sep 22 12:56 hardmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp           688 Sep 22 13:12 hardmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        776888 Sep 22 13:12 hardmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp           861 Sep 11 21:25 md5sum.txt
 -rw-r--r--    1 ftp      ftp      818997935 Apr 06 02:00 softmasked.fa.bgz
 -rw-r--r--    1 ftp      ftp           688 Apr 06 02:00 softmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp        776888 Apr 06 02:00 softmasked.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      818997721 Apr 06 02:12 unmasked.fa.bgz
 -rw-r--r--    1 ftp      ftp           688 Apr 06 02:13 unmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp        776888 Apr 06 02:13 unmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      903664636 Apr 06 01:50 unmasked.fa.gz
 drwxr-xr-x    2 ftp      ftp           199 Sep 10 16:37 vep_gnomad_exomes
 drwxr-xr-x    2 ftp      ftp           201 Sep 10 16:49 vep_gnomad_genomes
 
@@ -292520,7 +292536,7 @@ drwxr-xr-x    6 ftp      ftp           102 Apr 14 07:15 2025_06
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 17:34 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 10 17:34 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 15 17:35 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 22 11:52 variation
 
 ./GCA/015/227/675/2/ensembl/2022_03/geneset:
 -rw-r--r--    1 ftp      ftp      36085785 Apr 14 07:29 cdna.fa.bgz
@@ -292561,9 +292577,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 17:34 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 10 17:34 md5sum.txt
 
 ./GCA/015/227/675/2/ensembl/2022_03/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 10 17:34 2026_08_25
+drwxr-xr-x    2 ftp      ftp            62 Sep 10 17:34 2025_08_13
 
-./GCA/015/227/675/2/ensembl/2022_03/variation/2026_08_25:
+./GCA/015/227/675/2/ensembl/2022_03/variation/2025_08_13:
 -rw-r--r--    1 ftp      ftp            51 Sep 10 17:34 md5sum.txt
 -rw-r--r--    1 ftp      ftp      568007959 Apr 14 06:48 variation.vcf.gz
 
@@ -325828,10 +325844,11 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 11 07:01 community_lablab_gsc
 drwxr-xr-x    3 ftp      ftp            25 Apr 11 07:02 ensembl
 
 ./GCA/030/347/555/1/community_lablab_gsc:
-drwxr-xr-x    4 ftp      ftp            51 Apr 11 07:02 2025_05
+drwxr-xr-x    5 ftp      ftp            75 Sep 21 14:18 2025_05
 
 ./GCA/030/347/555/1/community_lablab_gsc/2025_05:
 drwxr-xr-x    2 ftp      ftp           470 Sep 11 00:00 geneset
+drwxr-xr-x    2 ftp      ftp           397 Sep 21 14:19 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 11 07:02 homology
 
 ./GCA/030/347/555/1/community_lablab_gsc/2025_05/geneset:
@@ -325850,6 +325867,19 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 11 07:02 homology
 -rw-r--r--    1 ftp      ftp        794658 Apr 11 07:02 pep.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp          3624 Apr 11 07:02 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        664887 Apr 11 07:01 xref.tsv.gz
+
+./GCA/030/347/555/1/community_lablab_gsc/2025_05/genome:
+-rw-r--r--    1 ftp      ftp           249 Apr 11 07:03 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      73799775 Apr 11 07:07 hardmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         67805 Apr 11 07:07 hardmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        106264 Apr 11 07:07 hardmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp           539 Sep 11 00:00 md5sum.txt
+-rw-r--r--    1 ftp      ftp      125784679 Apr 11 07:07 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         67805 Apr 11 07:07 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        106264 Apr 11 07:07 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      109435202 Apr 11 07:08 unmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         67805 Apr 11 07:08 unmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        106264 Apr 11 07:08 unmasked.fa.bgz.gzi
 
 ./GCA/030/347/555/1/community_lablab_gsc/2025_05/homology:
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 00:00 2025_06_23
@@ -371457,7 +371487,7 @@ drwxr-xr-x    6 ftp      ftp           102 Apr 15 05:26 2018_04
 
 ./GCA/900/519/105/1/community_iwgsc/2018_04:
 drwxr-xr-x    2 ftp      ftp           498 Sep 11 03:50 geneset
-drwxr-xr-x    3 ftp      ftp           357 Sep 11 03:50 genome
+drwxr-xr-x    3 ftp      ftp           531 Sep 25 16:39 genome
 drwxr-xr-x    3 ftp      ftp            28 Aug 04 16:20 homology
 drwxr-xr-x    4 ftp      ftp            56 Jun 29 14:39 variation
 
@@ -371485,11 +371515,16 @@ drwxr-xr-x    2 ftp      ftp           112 Sep 11 03:50 assembly_mapping
 -rw-r--r--    1 ftp      ftp      702567629 Apr 18 16:39 hardmasked.fa.bgz
 -rw-r--r--    1 ftp      ftp           659 Apr 18 16:40 hardmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp       3625480 Apr 18 16:40 hardmasked.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp           583 Sep 11 03:50 md5sum.txt
--rw-r--r--    1 ftp      ftp            28 Apr 18 16:43 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp           659 Apr 18 16:35 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp       3625480 Apr 18 16:35 softmasked.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp            28 Apr 18 16:43 unmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp      800391235 Apr 15 05:26 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           583 Sep 11 23:48 md5sum.txt
+-rw-r--r--    1 ftp      ftp      4327604109 Sep 25 16:27 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp           659 Sep 25 16:34 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp       3625480 Sep 25 16:34 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      4057333760 Apr 15 05:27 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      3855820227 Sep 25 16:00 unmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp           659 Sep 25 16:15 unmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp       3625480 Sep 25 16:15 unmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      1522622464 Apr 15 05:28 unmasked.fa.gz
 
 ./GCA/900/519/105/1/community_iwgsc/2018_04/genome/assembly_mapping:
 -rw-r--r--    1 ftp      ftp      107721952 Apr 15 05:26 IWGSC_to_TGACv1.chain.gz
@@ -377533,7 +377568,7 @@ drwxr-xr-x    6 ftp      ftp           102 Sep 03 16:13 2021_04
 drwxr-xr-x    2 ftp      ftp           470 Sep 11 04:44 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 04:44 genome
 drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:13 homology
-drwxr-xr-x    3 ftp      ftp            28 Sep 15 17:35 variation
+drwxr-xr-x    3 ftp      ftp            28 Sep 22 11:58 variation
 
 ./GCA/904/849/725/1/community_ipk/2021_04/geneset:
 -rw-r--r--    1 ftp      ftp      17638846 Aug 27 15:14 cdna.fa.bgz
@@ -377573,9 +377608,9 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 04:44 2024_09_18
 -rw-r--r--    1 ftp      ftp            50 Sep 11 04:44 md5sum.txt
 
 ./GCA/904/849/725/1/community_ipk/2021_04/variation:
-drwxr-xr-x    2 ftp      ftp            62 Sep 11 04:45 2026_08_25
+drwxr-xr-x    2 ftp      ftp            62 Sep 11 04:45 2025_08_13
 
-./GCA/904/849/725/1/community_ipk/2021_04/variation/2026_08_25:
+./GCA/904/849/725/1/community_ipk/2021_04/variation/2025_08_13:
 -rw-r--r--    1 ftp      ftp            51 Sep 11 04:45 md5sum.txt
 -rw-r--r--    1 ftp      ftp      2369916626 Apr 10 23:22 variation.vcf.gz
 
@@ -459146,7 +459181,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 11 15:06 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 11 15:07 2025_01
 
 ./GCA/963/082/935/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 07:57 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 07:57 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 11 15:07 homology
 
@@ -459154,6 +459189,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 11 15:07 homology
 -rw-r--r--    1 ftp      ftp      11851205 Apr 11 15:10 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       1101920 Apr 11 15:10 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         10824 Apr 11 15:10 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      286731281 Sep 21 14:29 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      10788210 May 19 12:06 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         35278 May 19 12:06 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp      10771477 Apr 11 15:06 genes.gff3.gz
@@ -469873,7 +469909,7 @@ drwxr-xr-x    5 ftp      ftp            75 Apr 04 07:58 2024_09
 
 ./GCA/963/921/405/1/ensembl/2024_09:
 drwxr-xr-x    2 ftp      ftp           470 Sep 11 08:20 geneset
-drwxr-xr-x    2 ftp      ftp            64 Sep 11 08:20 genome
+drwxr-xr-x    2 ftp      ftp           397 Sep 22 13:21 genome
 drwxr-xr-x    3 ftp      ftp            28 Apr 04 07:58 homology
 
 ./GCA/963/921/405/1/ensembl/2024_09/geneset:
@@ -469895,7 +469931,16 @@ drwxr-xr-x    3 ftp      ftp            28 Apr 04 07:58 homology
 
 ./GCA/963/921/405/1/ensembl/2024_09/genome:
 -rw-r--r--    1 ftp      ftp           293 Apr 04 07:58 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp            53 Sep 11 08:20 md5sum.txt
+-rw-r--r--    1 ftp      ftp      282967571 Sep 22 12:59 hardmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         29815 Sep 22 13:14 hardmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        789800 Sep 22 13:14 hardmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp            53 Sep 12 00:44 md5sum.txt
+-rw-r--r--    1 ftp      ftp      926314658 Sep 22 13:08 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         29815 Sep 22 13:14 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        789800 Sep 22 13:14 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      780026072 Sep 22 13:05 unmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         29815 Sep 22 13:15 unmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        789800 Sep 22 13:15 unmasked.fa.bgz.gzi
 
 ./GCA/963/921/405/1/ensembl/2024_09/homology:
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:20 2025_01_16
@@ -472008,7 +472053,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 11 15:37 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 11 15:37 2025_02
 
 ./GCA/963/931/845/1/ensembl/2025_02:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 08:26 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 08:26 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 11 15:37 homology
 
@@ -472016,6 +472061,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 11 15:37 homology
 -rw-r--r--    1 ftp      ftp       3758607 Apr 11 16:03 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp        403182 Apr 11 16:03 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp          3752 Apr 11 16:03 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      2496942000 Sep 21 16:35 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       6996955 May 19 12:11 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        231593 May 19 12:11 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       7028747 Apr 11 15:37 genes.gff3.gz
@@ -480368,7 +480414,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 02 11:10 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 02 11:11 2025_01
 
 ./GCA/964/056/655/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 08:42 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           439 Sep 11 08:42 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 02 11:11 homology
 
@@ -480376,6 +480422,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 02 11:11 homology
 -rw-r--r--    1 ftp      ftp      27799282 Apr 02 11:14 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       2808813 Apr 02 11:14 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         25160 Apr 02 11:14 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      269488790 Sep 21 13:57 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      11064858 May 19 12:27 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         47719 May 19 12:27 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp      11037632 Apr 02 11:10 genes.gff3.gz
@@ -481686,7 +481733,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 04 02:11 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 04 02:11 2025_03
 
 ./GCA/964/059/645/1/ensembl/2025_03:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 08:45 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 08:45 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 04 02:11 homology
 
@@ -481694,6 +481741,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 04 02:11 homology
 -rw-r--r--    1 ftp      ftp       5808776 Apr 04 02:15 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp        486999 Apr 04 02:15 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp          5608 Apr 04 02:15 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      366384690 Sep 21 13:56 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       4184713 May 19 12:35 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         37892 May 19 12:35 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       4180572 Apr 04 02:11 genes.gff3.gz
@@ -481915,7 +481963,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 14 02:53 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 14 02:54 2025_01
 
 ./GCA/964/106/015/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 08:46 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 08:46 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 14 02:54 homology
 
@@ -481923,6 +481971,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 14 02:54 homology
 -rw-r--r--    1 ftp      ftp      26492869 Apr 14 02:56 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       2757022 Apr 14 02:56 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         27272 Apr 14 02:56 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      184965310 Sep 21 15:03 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9855165 May 19 12:36 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         16439 May 19 12:36 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       9836215 Apr 14 02:53 genes.gff3.gz
@@ -482173,7 +482222,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 11 22:16 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 11 22:17 2025_01
 
 ./GCA/964/106/765/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           375 Sep 11 08:46 geneset
+drwxr-xr-x    2 ftp      ftp           406 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 08:47 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 11 22:17 homology
 
@@ -482181,6 +482230,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 11 22:17 homology
 -rw-r--r--    1 ftp      ftp       3737436 Apr 11 22:22 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp        404032 Apr 11 22:22 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp          3352 Apr 11 22:22 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      528063389 Sep 21 15:27 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       6578859 May 19 12:36 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        111167 May 19 12:36 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       6622630 Apr 11 22:16 genes.gff3.gz
@@ -485804,7 +485854,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 19 01:10 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 19 01:11 2025_01
 
 ./GCA/964/197/575/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 08:57 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 08:58 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 19 01:11 homology
 
@@ -485812,6 +485862,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 19 01:11 homology
 -rw-r--r--    1 ftp      ftp       1560049 Apr 19 01:18 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp        112733 Apr 19 01:18 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp          1384 Apr 19 01:18 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      751063017 Sep 21 15:50 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       7714122 May 19 12:34 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        122951 May 19 12:34 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       7708384 Apr 19 01:10 genes.gff3.gz
@@ -488287,7 +488338,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 05 15:21 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 05 15:22 2025_01
 
 ./GCA/964/211/995/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 09:03 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 09:03 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 05 15:22 homology
 
@@ -488295,6 +488346,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 05 15:22 homology
 -rw-r--r--    1 ftp      ftp      28721491 Apr 05 15:24 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       3220904 Apr 05 15:24 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         29608 Apr 05 15:24 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      216064922 Sep 21 14:52 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9914764 May 19 12:31 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         16668 May 19 12:31 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       9970830 Apr 05 15:21 genes.gff3.gz
@@ -488497,7 +488549,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 04 05:34 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 04 05:34 2025_01
 
 ./GCA/964/212/585/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 09:04 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 09:04 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 04 05:34 homology
 
@@ -488505,6 +488557,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 04 05:34 homology
 -rw-r--r--    1 ftp      ftp      19450270 Apr 04 05:36 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       1821146 Apr 04 05:36 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         18120 Apr 04 05:36 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      100947481 Sep 21 15:03 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       6942273 May 19 12:32 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         16192 May 19 12:32 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       6928938 Apr 04 05:34 genes.gff3.gz
@@ -489084,7 +489137,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 11 17:17 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 11 17:17 2025_01
 
 ./GCA/964/234/995/1/ensembl/2025_01:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 09:05 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 09:05 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 11 17:17 homology
 
@@ -489092,6 +489145,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 11 17:17 homology
 -rw-r--r--    1 ftp      ftp       1946947 Apr 11 17:28 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp        173164 Apr 11 17:28 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp          1720 Apr 11 17:28 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      1051880574 Sep 21 16:45 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9124332 May 19 12:28 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        227699 May 19 12:28 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       9144039 Apr 11 17:17 genes.gff3.gz
@@ -495840,7 +495894,7 @@ drwxr-xr-x    3 ftp      ftp            25 Apr 14 00:05 ensembl
 drwxr-xr-x    5 ftp      ftp            75 Apr 14 00:06 2025_03
 
 ./GCA/964/276/725/1/ensembl/2025_03:
-drwxr-xr-x    2 ftp      ftp           439 Sep 11 09:19 geneset
+drwxr-xr-x    2 ftp      ftp           470 Sep 22 11:08 geneset
 drwxr-xr-x    2 ftp      ftp           397 Sep 11 09:19 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 14 00:06 homology
 
@@ -495848,6 +495902,7 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 14 00:06 homology
 -rw-r--r--    1 ftp      ftp      15580663 Apr 14 00:08 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       1312568 Apr 14 00:08 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         14664 Apr 14 00:08 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      204878653 Sep 21 14:53 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       6343819 May 19 12:28 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         17021 May 19 12:28 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       6332362 Apr 14 00:05 genes.gff3.gz
@@ -543789,7 +543844,7 @@ drwxr-xr-x    5 ftp      ftp            75 Apr 04 17:21 2023_04
 
 ./GCF/025/612/915/1/refseq/2023_04:
 drwxr-xr-x    2 ftp      ftp           470 Sep 11 11:01 geneset
-drwxr-xr-x    2 ftp      ftp           177 Sep 11 11:01 genome
+drwxr-xr-x    2 ftp      ftp           397 Sep 22 13:20 genome
 drwxr-xr-x    3 ftp      ftp            56 Apr 04 17:21 homology
 
 ./GCF/025/612/915/1/refseq/2023_04/geneset:
@@ -543811,10 +543866,16 @@ drwxr-xr-x    3 ftp      ftp            56 Apr 04 17:21 homology
 
 ./GCF/025/612/915/1/refseq/2023_04/genome:
 -rw-r--r--    1 ftp      ftp           245 Oct 10  2024 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp           217 Sep 11 11:01 md5sum.txt
+-rw-r--r--    1 ftp      ftp      104805219 Sep 22 12:49 hardmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         16377 Sep 22 13:17 hardmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        155592 Sep 22 13:17 hardmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp           217 Sep 12 01:08 md5sum.txt
 -rw-r--r--    1 ftp      ftp      196128740 Apr 04 17:21 softmasked.fa.bgz
 -rw-r--r--    1 ftp      ftp         16377 Apr 04 17:21 softmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp        155592 Apr 04 17:21 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      165047693 Sep 22 13:00 unmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         16377 Sep 22 13:17 unmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        155592 Sep 22 13:17 unmasked.fa.bgz.gzi
 
 ./GCF/025/612/915/1/refseq/2023_04/homology:
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:01 2024_09_18
@@ -565409,7 +565470,7 @@ drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_041900245.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_041900255.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 16  2025 GCA_041900265.1
 drwxr-xr-x    5 ftp      ftp            70 Oct 03  2025 GCA_041900275.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 20:20 GCA_041900365.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_041900365.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_041900385.1
 drwxr-xr-x    5 ftp      ftp            70 Aug 18  2025 GCA_042026455.1
 drwxr-xr-x    5 ftp      ftp            70 Apr 14  2025 GCA_042026465.1
@@ -565421,7 +565482,7 @@ drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_042027095.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042027105.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042027135.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042027145.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 20:17 GCA_042027445.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042027445.1
 drwxr-xr-x    5 ftp      ftp            70 Oct 03  2025 GCA_042027455.1
 drwxr-xr-x    5 ftp      ftp            70 Apr 14  2025 GCA_042027475.1
 drwxr-xr-x    5 ftp      ftp            70 Oct 03  2025 GCA_042027485.1
@@ -565434,7 +565495,7 @@ drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042027645.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042027655.1
 drwxr-xr-x    5 ftp      ftp            70 Oct 03  2025 GCA_042027665.1
 drwxr-xr-x    5 ftp      ftp            70 Apr 07  2025 GCA_042027765.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 16:02 GCA_042028025.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042028025.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042028065.1
 drwxr-xr-x    5 ftp      ftp            70 Oct 10  2025 GCA_042028145.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_042028155.1
@@ -565509,7 +565570,7 @@ drwxr-xr-x    5 ftp      ftp            70 Apr 14  2025 GCA_042032345.1
 drwxr-xr-x    5 ftp      ftp            70 Jun 29  2025 GCA_042032395.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_042032445.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 16  2025 GCA_042032465.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 20:19 GCA_042032525.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042032525.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042032535.1
 drwxr-xr-x    5 ftp      ftp            70 Oct 03  2025 GCA_042032545.1
 drwxr-xr-x    5 ftp      ftp            70 Oct 03  2025 GCA_042032555.1
@@ -565565,11 +565626,11 @@ drwxr-xr-x    5 ftp      ftp            70 Apr 27  2025 GCA_042037435.1
 drwxr-xr-x    5 ftp      ftp            70 Aug 18  2025 GCA_042037445.1
 drwxr-xr-x    5 ftp      ftp            70 Aug 18  2025 GCA_042037555.1
 drwxr-xr-x    5 ftp      ftp            70 Apr 14  2025 GCA_042037625.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 20:21 GCA_042037705.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042037705.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_042037715.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 15:59 GCA_042037725.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042037725.1
 drwxr-xr-x    5 ftp      ftp            70 Apr 14  2025 GCA_042037735.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 20:16 GCA_042037765.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042037765.1
 drwxr-xr-x    5 ftp      ftp            70 Jun 29  2025 GCA_042037825.1
 drwxr-xr-x    5 ftp      ftp            70 May 04  2025 GCA_042037855.1
 drwxr-xr-x    5 ftp      ftp            70 Aug 31  2025 GCA_042037875.1
@@ -565649,10 +565710,10 @@ drwxr-xr-x    5 ftp      ftp            70 Mar 16  2025 GCA_042077885.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_042077965.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_042077985.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 16  2025 GCA_042077995.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 20:16 GCA_042078005.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042078005.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 16  2025 GCA_042078025.1
 drwxr-xr-x    5 ftp      ftp            70 Mar 17  2025 GCA_042078065.1
-drwxr-xr-x    5 ftp      ftp            70 Mar 24 20:19 GCA_042078085.1
+drwxr-xr-x    5 ftp      ftp            70 Mar 24  2026 GCA_042078085.1
 drwxr-xr-x    5 ftp      ftp            70 Sep 09  2025 GCA_043304515.1
 drwxr-xr-x    5 ftp      ftp            70 Aug 06  2025 GCA_043304525.1
 drwxr-xr-x    5 ftp      ftp            70 Sep 09  2025 GCA_043304535.1
@@ -577632,17 +577693,17 @@ drwxr-xr-x    2 ftp      ftp            68 Oct 03  2025 2024_10
 -rw-r--r--    1 ftp      ftp        756856 Oct 03  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_041900365.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 18:04 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 21:01 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:24 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_041900365.1/ensembl:
-drwxr-xr-x    4 ftp      ftp            50 Mar 24 18:04 geneset
+drwxr-xr-x    4 ftp      ftp            50 Mar 24  2026 geneset
 drwxr-xr-x    4 ftp      ftp            50 May 18  2025 homology
 
 ./Homo_sapiens/GCA_041900365.1/ensembl/geneset:
 drwxr-xr-x    2 ftp      ftp           176 Sep 15  2025 2024_10
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 21:01 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_041900365.1/ensembl/geneset/2024_10:
 -rw-r--r--    1 ftp      ftp      113917658 Apr 02  2025 cdna.fa.gz
@@ -577653,13 +577714,13 @@ drwxr-xr-x    2 ftp      ftp           204 Mar 24 21:01 2025_04
 -rw-r--r--    1 ftp      ftp       3203015 Mar 16  2025 xref.tsv.gz
 
 ./Homo_sapiens/GCA_041900365.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      113917468 Mar 24 21:00 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1298367361 Mar 24 19:28 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39373887 Mar 24 20:28 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59669997 Mar 24 19:55 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 21:01 md5sum.txt
--rw-r--r--    1 ftp      ftp      12341609 Mar 24 20:59 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5085230 Mar 24 18:27 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      113917468 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1298367361 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39373887 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59669997 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12341609 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5085230 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_041900365.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 Sep 15  2025 2024_10
@@ -577674,35 +577735,35 @@ drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 26  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_041900365.1/genome:
--rw-r--r--    1 ftp      ftp           263 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      485467183 Mar 24 20:50 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 21:01 md5sum.txt
--rw-r--r--    1 ftp      ftp      948888598 Mar 24 21:01 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      888359477 Mar 24 20:58 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           263 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      485467183 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      948888598 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      888359477 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_041900365.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:24 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 20:24 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_041900365.1/vep/ensembl:
-drwxr-xr-x    4 ftp      ftp            50 Mar 24 20:24 geneset
+drwxr-xr-x    4 ftp      ftp            50 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_041900365.1/vep/ensembl/geneset:
 drwxr-xr-x    2 ftp      ftp            68 Mar 23  2025 2024_10
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:24 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_041900365.1/vep/ensembl/geneset/2024_10:
 -rw-r--r--    1 ftp      ftp      37681706 Apr 05  2025 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        123068 Apr 05  2025 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_041900365.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      37609779 Mar 24 20:24 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        122924 Mar 24 20:24 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      37609779 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        122924 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_041900365.1/vep/genome:
--rw-r--r--    1 ftp      ftp      950124261 Mar 24 20:23 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          3233 Mar 24 20:24 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        754504 Mar 24 20:24 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      950124261 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          3233 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        754504 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_041900385.1:
 drwxr-xr-x    4 ftp      ftp            51 May 13  2025 ensembl
@@ -578340,25 +578401,25 @@ drwxr-xr-x    2 ftp      ftp            68 May 04  2025 2024_10
 -rw-r--r--    1 ftp      ftp        758088 May 05  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042027445.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 16:06 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 20:51 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:23 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042027445.1/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 16:06 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 drwxr-xr-x    3 ftp      ftp            25 May 18  2025 homology
 
 ./Homo_sapiens/GCA_042027445.1/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 21:17 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042027445.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      113162434 Mar 24 21:16 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1298788023 Mar 24 19:02 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39022236 Mar 24 20:29 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59367900 Mar 24 20:15 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 21:17 md5sum.txt
--rw-r--r--    1 ftp      ftp      12293775 Mar 24 21:15 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5040297 Mar 24 18:29 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      113162434 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1298788023 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39022236 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59367900 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12293775 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5040297 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042027445.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
@@ -578368,30 +578429,30 @@ drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 26  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042027445.1/genome:
--rw-r--r--    1 ftp      ftp           248 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      484922119 Mar 24 20:50 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 20:51 md5sum.txt
--rw-r--r--    1 ftp      ftp      949067811 Mar 24 20:37 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      888607144 Mar 24 20:28 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           248 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      484922119 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      949067811 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      888607144 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042027445.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 20:20 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042027445.1/vep/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042027445.1/vep/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:24 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042027445.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      36872060 Mar 24 20:24 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        123368 Mar 24 20:24 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      36872060 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        123368 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042027445.1/vep/genome:
--rw-r--r--    1 ftp      ftp      950337069 Mar 24 20:20 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          2695 Mar 24 20:20 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        756888 Mar 24 20:20 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      950337069 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          2695 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        756888 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042027455.1:
 drwxr-xr-x    4 ftp      ftp            51 Oct 02  2025 ensembl
@@ -579128,25 +579189,25 @@ drwxr-xr-x    2 ftp      ftp            68 May 19  2025 2025_04
 -rw-r--r--    1 ftp      ftp        756120 May 19  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042028025.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 11:22 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 16:27 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:23 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042028025.1/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 11:22 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 drwxr-xr-x    3 ftp      ftp            25 May 18  2025 homology
 
 ./Homo_sapiens/GCA_042028025.1/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 20:56 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042028025.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      113220397 Mar 24 20:55 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1300286006 Mar 24 16:24 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39114887 Mar 24 20:28 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59378498 Mar 24 19:30 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 20:56 md5sum.txt
--rw-r--r--    1 ftp      ftp      12300475 Mar 24 20:54 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5029136 Mar 24 18:30 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      113220397 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1300286006 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39114887 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59378498 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12300475 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5029136 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042028025.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
@@ -579156,30 +579217,30 @@ drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 26  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042028025.1/genome:
--rw-r--r--    1 ftp      ftp           235 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      485536995 Mar 24 16:13 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 16:27 md5sum.txt
--rw-r--r--    1 ftp      ftp      950158320 Mar 24 16:27 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      889669929 Mar 24 16:24 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           235 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      485536995 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      950158320 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      889669929 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042028025.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 16:06 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042028025.1/vep/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042028025.1/vep/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:23 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042028025.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      37082229 Mar 24 20:23 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        125907 Mar 24 20:23 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      37082229 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        125907 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042028025.1/vep/genome:
--rw-r--r--    1 ftp      ftp      951417597 Mar 24 16:05 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          4760 Mar 24 16:06 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        757416 Mar 24 16:06 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      951417597 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          4760 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        757416 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042028065.1:
 drwxr-xr-x    4 ftp      ftp            51 May 13  2025 ensembl
@@ -583360,25 +583421,25 @@ drwxr-xr-x    2 ftp      ftp            68 Mar 24  2025 2024_10
 -rw-r--r--    1 ftp      ftp        757496 Apr 02  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042032525.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 11:22 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 20:48 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:23 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042032525.1/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 11:22 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 drwxr-xr-x    3 ftp      ftp            25 May 18  2025 homology
 
 ./Homo_sapiens/GCA_042032525.1/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 20:34 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042032525.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      113940155 Mar 24 18:03 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1299159594 Mar 24 16:15 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39472955 Mar 24 20:33 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59620917 Mar 24 19:30 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 20:34 md5sum.txt
--rw-r--r--    1 ftp      ftp      12354185 Mar 24 18:02 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5174999 Mar 24 18:29 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      113940155 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1299159594 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39472955 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59620917 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12354185 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5174999 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042032525.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
@@ -583388,30 +583449,30 @@ drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 26  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042032525.1/genome:
--rw-r--r--    1 ftp      ftp           248 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      485118349 Mar 24 20:44 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 20:48 md5sum.txt
--rw-r--r--    1 ftp      ftp      949030138 Mar 24 20:47 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      888570576 Mar 24 20:45 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           248 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      485118349 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      949030138 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      888570576 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042032525.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 20:22 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042032525.1/vep/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042032525.1/vep/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:23 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042032525.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      37976495 Mar 24 20:23 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        124268 Mar 24 20:23 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      37976495 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        124268 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042032525.1/vep/genome:
--rw-r--r--    1 ftp      ftp      950266591 Mar 24 20:22 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          4906 Mar 24 20:22 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        756680 Mar 24 20:22 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      950266591 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          4906 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        756680 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042032535.1:
 drwxr-xr-x    4 ftp      ftp            51 May 13  2025 ensembl
@@ -586611,25 +586672,25 @@ drwxr-xr-x    2 ftp      ftp            68 Apr 14  2025 2024_10
 -rw-r--r--    1 ftp      ftp        758056 Apr 14  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042037705.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 15:53 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 21:01 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:23 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042037705.1/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 15:53 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 drwxr-xr-x    3 ftp      ftp            25 May 26  2025 homology
 
 ./Homo_sapiens/GCA_042037705.1/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 22:31 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042037705.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      120250131 Mar 24 22:30 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1294701854 Mar 24 19:04 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39841156 Mar 24 20:28 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59864876 Mar 24 20:45 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 22:31 md5sum.txt
--rw-r--r--    1 ftp      ftp      12453024 Mar 24 22:29 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5196767 Mar 24 18:30 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      120250131 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1294701854 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39841156 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59864876 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12453024 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5196767 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042037705.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 May 28  2025 2025_04
@@ -586639,30 +586700,30 @@ drwxr-xr-x    2 ftp      ftp            98 May 28  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 28  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042037705.1/genome:
--rw-r--r--    1 ftp      ftp           272 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      485022652 Mar 24 20:36 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 21:01 md5sum.txt
--rw-r--r--    1 ftp      ftp      947162297 Mar 24 21:00 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      886635230 Mar 24 20:54 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           272 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      485022652 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      947162297 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      886635230 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042037705.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 20:24 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042037705.1/vep/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042037705.1/vep/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:24 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042037705.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      38562884 Mar 24 20:24 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        121884 Mar 24 20:24 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      38562884 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        121884 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042037705.1/vep/genome:
--rw-r--r--    1 ftp      ftp      948367166 Mar 24 20:24 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          2624 Mar 24 20:24 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        751464 Mar 24 20:24 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      948367166 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          2624 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        751464 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042037715.1:
 drwxr-xr-x    4 ftp      ftp            51 Mar 16  2025 ensembl
@@ -586719,25 +586780,25 @@ drwxr-xr-x    2 ftp      ftp            68 Mar 23  2025 2024_10
 -rw-r--r--    1 ftp      ftp        753784 Apr 02  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042037725.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 11:22 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 16:27 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:24 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042037725.1/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 11:22 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 drwxr-xr-x    3 ftp      ftp            25 May 18  2025 homology
 
 ./Homo_sapiens/GCA_042037725.1/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 21:05 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042037725.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      114203519 Mar 24 21:04 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1302523334 Mar 24 16:09 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39439832 Mar 24 20:28 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59715662 Mar 24 19:36 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 21:05 md5sum.txt
--rw-r--r--    1 ftp      ftp      12336634 Mar 24 21:03 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5098919 Mar 24 18:32 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      114203519 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1302523334 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39439832 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59715662 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12336634 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5098919 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042037725.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
@@ -586747,30 +586808,30 @@ drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 26  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042037725.1/genome:
--rw-r--r--    1 ftp      ftp           268 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      485657535 Mar 24 16:07 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 16:28 md5sum.txt
--rw-r--r--    1 ftp      ftp      950734632 Mar 24 16:25 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      890207698 Mar 24 16:21 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           268 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      485657535 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      950734632 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      890207698 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042037725.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:24 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 16:02 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042037725.1/vep/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:24 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042037725.1/vep/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:24 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042037725.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      37723899 Mar 24 20:24 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        121052 Mar 24 20:24 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      37723899 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        121052 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042037725.1/vep/genome:
--rw-r--r--    1 ftp      ftp      952020189 Mar 24 16:02 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          4563 Mar 24 16:02 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        759448 Mar 24 16:02 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      952020189 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          4563 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        759448 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042037735.1:
 drwxr-xr-x    4 ftp      ftp            51 Apr 14  2025 ensembl
@@ -586828,17 +586889,17 @@ drwxr-xr-x    2 ftp      ftp            68 Apr 14  2025 2024_10
 -rw-r--r--    1 ftp      ftp        754392 Apr 14  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042037765.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 11:22 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 20:39 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:24 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042037765.1/ensembl:
-drwxr-xr-x    4 ftp      ftp            50 Mar 24 11:22 geneset
+drwxr-xr-x    4 ftp      ftp            50 Mar 24  2026 geneset
 drwxr-xr-x    4 ftp      ftp            50 May 18  2025 homology
 
 ./Homo_sapiens/GCA_042037765.1/ensembl/geneset:
 drwxr-xr-x    2 ftp      ftp           176 Oct 01  2025 2024_10
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 21:24 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042037765.1/ensembl/geneset/2024_10:
 -rw-r--r--    1 ftp      ftp      114933906 Apr 01  2025 cdna.fa.gz
@@ -586849,13 +586910,13 @@ drwxr-xr-x    2 ftp      ftp           204 Mar 24 21:24 2025_04
 -rw-r--r--    1 ftp      ftp       3238271 Mar 16  2025 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042037765.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      114933844 Mar 24 21:23 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1295363631 Mar 24 16:08 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39439464 Mar 24 20:29 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59567566 Mar 24 20:17 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 21:25 md5sum.txt
--rw-r--r--    1 ftp      ftp      12358626 Mar 24 21:22 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5138907 Mar 24 20:16 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      114933844 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1295363631 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39439464 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59567566 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12358626 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5138907 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042037765.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 Oct 01  2025 2024_10
@@ -586870,35 +586931,35 @@ drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 26  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042037765.1/genome:
--rw-r--r--    1 ftp      ftp           274 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      484828218 Mar 24 20:25 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 20:39 md5sum.txt
--rw-r--r--    1 ftp      ftp      947477185 Mar 24 20:39 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      886965369 Mar 24 20:27 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           274 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      484828218 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      947477185 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      886965369 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042037765.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:24 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 20:19 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042037765.1/vep/ensembl:
-drwxr-xr-x    4 ftp      ftp            50 Mar 24 20:24 geneset
+drwxr-xr-x    4 ftp      ftp            50 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042037765.1/vep/ensembl/geneset:
 drwxr-xr-x    2 ftp      ftp            68 Mar 23  2025 2024_10
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:24 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042037765.1/vep/ensembl/geneset/2024_10:
 -rw-r--r--    1 ftp      ftp      38032033 Apr 05  2025 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        123421 Apr 05  2025 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042037765.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      38030471 Mar 24 20:24 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        123591 Mar 24 20:24 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      38030471 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        123591 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042037765.1/vep/genome:
--rw-r--r--    1 ftp      ftp      948741632 Mar 24 20:19 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          2873 Mar 24 20:19 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        752520 Mar 24 20:19 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      948741632 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          2873 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        752520 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042037825.1:
 drwxr-xr-x    4 ftp      ftp            51 Jun 27  2025 ensembl
@@ -591226,25 +591287,25 @@ drwxr-xr-x    2 ftp      ftp            68 Mar 23  2025 2024_10
 -rw-r--r--    1 ftp      ftp        749752 Apr 02  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042078005.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 18:31 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 20:39 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:23 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042078005.1/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 18:31 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 drwxr-xr-x    3 ftp      ftp            25 May 26  2025 homology
 
 ./Homo_sapiens/GCA_042078005.1/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 22:40 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042078005.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      119744995 Mar 24 22:39 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1295344258 Mar 24 21:00 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39831604 Mar 24 20:28 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59826846 Mar 24 19:52 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 22:40 md5sum.txt
--rw-r--r--    1 ftp      ftp      12438690 Mar 24 22:38 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5224524 Mar 24 18:32 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      119744995 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1295344258 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39831604 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59826846 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12438690 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5224524 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042078005.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 May 28  2025 2025_04
@@ -591254,30 +591315,30 @@ drwxr-xr-x    2 ftp      ftp            98 May 28  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 28  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042078005.1/genome:
--rw-r--r--    1 ftp      ftp           273 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      484856743 Mar 24 20:33 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 20:39 md5sum.txt
--rw-r--r--    1 ftp      ftp      946744055 Mar 24 20:38 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      886321020 Mar 24 20:28 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           273 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      484856743 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      946744055 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      886321020 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042078005.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 20:19 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042078005.1/vep/ensembl:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:23 geneset
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042078005.1/vep/ensembl/geneset:
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:23 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042078005.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      38745163 Mar 24 20:23 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        124439 Mar 24 20:23 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      38745163 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        124439 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042078005.1/vep/genome:
--rw-r--r--    1 ftp      ftp      948022141 Mar 24 20:19 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          2496 Mar 24 20:19 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        753288 Mar 24 20:19 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      948022141 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          2496 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        753288 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042078025.1:
 drwxr-xr-x    4 ftp      ftp            51 Mar 16  2025 ensembl
@@ -591388,17 +591449,17 @@ drwxr-xr-x    2 ftp      ftp            68 Mar 23  2025 2024_10
 -rw-r--r--    1 ftp      ftp        734168 Apr 02  2025 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_042078085.1:
-drwxr-xr-x    4 ftp      ftp            51 Mar 24 11:22 ensembl
-drwxr-xr-x    2 ftp      ftp           164 Mar 24 20:48 genome
-drwxr-xr-x    4 ftp      ftp            49 Mar 24 20:22 vep
+drwxr-xr-x    4 ftp      ftp            51 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           164 Mar 24  2026 genome
+drwxr-xr-x    4 ftp      ftp            49 Mar 24  2026 vep
 
 ./Homo_sapiens/GCA_042078085.1/ensembl:
-drwxr-xr-x    4 ftp      ftp            50 Mar 24 11:22 geneset
+drwxr-xr-x    4 ftp      ftp            50 Mar 24  2026 geneset
 drwxr-xr-x    4 ftp      ftp            50 May 18  2025 homology
 
 ./Homo_sapiens/GCA_042078085.1/ensembl/geneset:
 drwxr-xr-x    2 ftp      ftp           176 Oct 01  2025 2024_10
-drwxr-xr-x    2 ftp      ftp           204 Mar 24 20:34 2025_04
+drwxr-xr-x    2 ftp      ftp           204 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042078085.1/ensembl/geneset/2024_10:
 -rw-r--r--    1 ftp      ftp      114244531 Apr 02  2025 cdna.fa.gz
@@ -591409,13 +591470,13 @@ drwxr-xr-x    2 ftp      ftp           204 Mar 24 20:34 2025_04
 -rw-r--r--    1 ftp      ftp       3226749 Mar 16  2025 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042078085.1/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      114244381 Mar 24 18:05 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      1308499680 Mar 24 16:13 genes.embl.gz
--rw-r--r--    1 ftp      ftp      39521753 Mar 24 20:33 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      59746182 Mar 24 19:03 genes.gtf.gz
--rw-r--r--    1 ftp      ftp           278 Mar 24 20:34 md5sum.txt
--rw-r--r--    1 ftp      ftp      12338513 Mar 24 18:04 pep.fa.gz
--rw-r--r--    1 ftp      ftp       5124972 Mar 24 18:09 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp      114244381 Mar 24  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      1308499680 Mar 24  2026 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      39521753 Mar 24  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp      59746182 Mar 24  2026 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp           278 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      12338513 Mar 24  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       5124972 Mar 24  2026 xref.tsv.gz
 
 ./Homo_sapiens/GCA_042078085.1/ensembl/homology:
 drwxr-xr-x    2 ftp      ftp            98 Oct 01  2025 2024_10
@@ -591430,35 +591491,35 @@ drwxr-xr-x    2 ftp      ftp            98 May 26  2025 2025_04
 -rw-r--r--    1 ftp      ftp            87 May 26  2025 md5sum.txt
 
 ./Homo_sapiens/GCA_042078085.1/genome:
--rw-r--r--    1 ftp      ftp           250 Mar 24 11:23 chromosomes.tsv.gz
--rw-r--r--    1 ftp      ftp      487106258 Mar 24 20:43 hardmasked.fa.gz
--rw-r--r--    1 ftp      ftp           204 Mar 24 20:48 md5sum.txt
--rw-r--r--    1 ftp      ftp      955720032 Mar 24 20:47 softmasked.fa.gz
--rw-r--r--    1 ftp      ftp      894996248 Mar 24 20:31 unmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           250 Mar 24  2026 chromosomes.tsv.gz
+-rw-r--r--    1 ftp      ftp      487106258 Mar 24  2026 hardmasked.fa.gz
+-rw-r--r--    1 ftp      ftp           204 Mar 24  2026 md5sum.txt
+-rw-r--r--    1 ftp      ftp      955720032 Mar 24  2026 softmasked.fa.gz
+-rw-r--r--    1 ftp      ftp      894996248 Mar 24  2026 unmasked.fa.gz
 
 ./Homo_sapiens/GCA_042078085.1/vep:
-drwxr-xr-x    3 ftp      ftp            25 Mar 24 20:22 ensembl
-drwxr-xr-x    2 ftp      ftp           113 Mar 24 20:22 genome
+drwxr-xr-x    3 ftp      ftp            25 Mar 24  2026 ensembl
+drwxr-xr-x    2 ftp      ftp           113 Mar 24  2026 genome
 
 ./Homo_sapiens/GCA_042078085.1/vep/ensembl:
-drwxr-xr-x    4 ftp      ftp            50 Mar 24 20:22 geneset
+drwxr-xr-x    4 ftp      ftp            50 Mar 24  2026 geneset
 
 ./Homo_sapiens/GCA_042078085.1/vep/ensembl/geneset:
 drwxr-xr-x    2 ftp      ftp            68 Mar 23  2025 2024_10
-drwxr-xr-x    2 ftp      ftp            68 Mar 24 20:23 2025_04
+drwxr-xr-x    2 ftp      ftp            68 Mar 24  2026 2025_04
 
 ./Homo_sapiens/GCA_042078085.1/vep/ensembl/geneset/2024_10:
 -rw-r--r--    1 ftp      ftp      37899332 Apr 05  2025 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        124330 Apr 05  2025 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042078085.1/vep/ensembl/geneset/2025_04:
--rw-r--r--    1 ftp      ftp      37903167 Mar 24 20:23 genes.gff3.bgz
--rw-r--r--    1 ftp      ftp        124501 Mar 24 20:23 genes.gff3.bgz.csi
+-rw-r--r--    1 ftp      ftp      37903167 Mar 24  2026 genes.gff3.bgz
+-rw-r--r--    1 ftp      ftp        124501 Mar 24  2026 genes.gff3.bgz.csi
 
 ./Homo_sapiens/GCA_042078085.1/vep/genome:
--rw-r--r--    1 ftp      ftp      956819717 Mar 24 20:22 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          3420 Mar 24 20:22 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp        762984 Mar 24 20:22 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      956819717 Mar 24  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          3420 Mar 24  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp        762984 Mar 24  2026 softmasked.fa.bgz.gzi
 
 ./Homo_sapiens/GCA_043304515.1:
 drwxr-xr-x    4 ftp      ftp            51 Sep 13  2025 ensembl

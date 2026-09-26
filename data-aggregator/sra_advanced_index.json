@@ -1,5 +1,6 @@
 {
     "LS_STRATEGY": [
+        "16s_rrna_seq",
         "amplicon",
         "atac_seq",
         "bisulfite_seq",
@@ -302,6 +303,7 @@
         "instrument_dnbseq_g50",
         "instrument_dnbseq_g99",
         "instrument_dnbseq_t1",
+        "instrument_dnbseq_t10x4",
         "instrument_dnbseq_t10x4rs",
         "instrument_dnbseq_t7",
         "instrument_element_aviti",
@@ -411,7 +413,6 @@
         "location_s3_us_east_1",
         "platform_abi_solid",
         "platform_amcare",
-        "platform_bgiseq",
-        "platform_capillary"
+        "platform_bgiseq"
     ]
 }
