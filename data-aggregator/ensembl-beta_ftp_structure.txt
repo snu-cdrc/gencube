@@ -3516,7 +3516,7 @@ drwxr-xr-x    3 ftp      ftp            28 Jul 23 16:37 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 10 12:26 2026_05_21
 
 ./GCA/000/004/515/5/genbank/2026_01/homology/2026_05_21:
--rw-r--r--    1 ftp      ftp      17241969 Apr 28 05:07 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp      17241969 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 12:26 md5sum.txt
 
 ./GCA/000/004/555:
@@ -89794,16 +89794,16 @@ drwxr-xr-x    2 ftp      ftp           361 Sep 10 13:20 genome
 -rw-r--r--    1 ftp      ftp          9880 May 19 16:04 unmasked.fa.bgz.gzi
 
 ./GCA/000/716:
-drwxr-xr-x    3 ftp      ftp            19 Apr 28 15:33 385
+drwxr-xr-x    3 ftp      ftp            19 Apr 28  2026 385
 
 ./GCA/000/716/385:
 drwxr-xr-x    3 ftp      ftp            33 Aug 28 11:52 1
 
 ./GCA/000/716/385/1:
-drwxr-xr-x    3 ftp      ftp            25 Apr 28 15:33 community_gfbgp
+drwxr-xr-x    3 ftp      ftp            25 Apr 28  2026 community_gfbgp
 
 ./GCA/000/716/385/1/community_gfbgp:
-drwxr-xr-x    5 ftp      ftp            75 Apr 28 15:33 2015_04
+drwxr-xr-x    5 ftp      ftp            75 Apr 28  2026 2015_04
 
 ./GCA/000/716/385/1/community_gfbgp/2015_04:
 drwxr-xr-x    2 ftp      ftp           470 Sep 10 13:20 geneset
@@ -89811,33 +89811,33 @@ drwxr-xr-x    2 ftp      ftp           361 Sep 10 13:20 genome
 drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:12 homology
 
 ./GCA/000/716/385/1/community_gfbgp/2015_04/geneset:
--rw-r--r--    1 ftp      ftp       8373118 Apr 28 15:35 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        589815 Apr 28 15:35 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          6856 Apr 28 15:35 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      173349871 Apr 28 15:33 genes.embl.gz
+-rw-r--r--    1 ftp      ftp       8373118 Apr 28  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        589815 Apr 28  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          6856 Apr 28  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      173349871 Apr 28  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       2964632 May 19 13:45 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        107964 May 19 13:45 genes.gff3.bgz.csi
--rw-r--r--    1 ftp      ftp       3069521 Apr 28 15:33 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       3889978 Apr 28 15:35 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         75682 Apr 28 15:35 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       3873746 Apr 28 15:33 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       3069521 Apr 28  2026 genes.gff3.gz
+-rw-r--r--    1 ftp      ftp       3889978 Apr 28  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         75682 Apr 28  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       3873746 Apr 28  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 13:20 md5sum.txt
--rw-r--r--    1 ftp      ftp       3472516 Apr 28 15:35 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        546054 Apr 28 15:35 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          2008 Apr 28 15:35 pep.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp        540525 Apr 28 15:33 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp       3472516 Apr 28  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        546054 Apr 28  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          2008 Apr 28  2026 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp        540525 Apr 28  2026 xref.tsv.gz
 
 ./GCA/000/716/385/1/community_gfbgp/2015_04/genome:
--rw-r--r--    1 ftp      ftp      69943100 Apr 28 15:36 hardmasked.fa.bgz
--rw-r--r--    1 ftp      ftp        286541 Apr 28 15:36 hardmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         97336 Apr 28 15:36 hardmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      69943100 Apr 28  2026 hardmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp        286541 Apr 28  2026 hardmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         97336 Apr 28  2026 hardmasked.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp           486 Sep 10 13:20 md5sum.txt
--rw-r--r--    1 ftp      ftp      121435628 Apr 28 15:36 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp        286541 Apr 28 15:36 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         97336 Apr 28 15:36 softmasked.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      101610513 Apr 28 15:37 unmasked.fa.bgz
--rw-r--r--    1 ftp      ftp        286541 Apr 28 15:37 unmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         97320 Apr 28 15:37 unmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      121435628 Apr 28  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp        286541 Apr 28  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         97336 Apr 28  2026 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      101610513 Apr 28  2026 unmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp        286541 Apr 28  2026 unmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         97320 Apr 28  2026 unmasked.fa.bgz.gzi
 
 ./GCA/000/716/385/1/community_gfbgp/2015_04/homology:
 drwxr-xr-x    2 ftp      ftp            61 Sep 10 13:20 2024_09_18
@@ -498052,7 +498052,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 10 17:22 2026_05_06
 
 ./GCA/013/339/695/2/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4363943 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4363943 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 17:22 md5sum.txt
 
 ./GCA/013/339/725:
@@ -498154,7 +498154,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 10 17:23 2026_05_06
 
 ./GCA/013/339/745/2/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4245221 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4245221 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 17:23 md5sum.txt
 
 ./GCA/013/339/765:
@@ -506068,7 +506068,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 17:48 2026_05_06
 -rw-r--r--    1 ftp      ftp            94 Apr 05  2026 md5sum.txt
 
 ./GCA/018/152/295/1/community_uc_davis/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3037835 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3037835 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 17:48 md5sum.txt
 
 ./GCA/018/292:
@@ -525729,7 +525729,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 10 23:20 2026_05_06
 
 ./GCA/023/375/885/3/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4479726 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4479726 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 23:20 md5sum.txt
 
 ./GCA/023/375/975:
@@ -527321,7 +527321,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 10 23:26 2026_05_06
 
 ./GCA/024/256/435/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8300143 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8300143 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 23:26 md5sum.txt
 
 ./GCA/024/322:
@@ -530139,7 +530139,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 10 23:36 2026_05_06
 
 ./GCA/026/930/045/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3450472 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3450472 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 23:36 md5sum.txt
 
 ./GCA/026/936:
@@ -535756,7 +535756,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 10 23:59 2026_05_06
 -rw-r--r--    1 ftp      ftp            92 Apr 15  2026 md5sum.txt
 
 ./GCA/030/324/105/1/community_iis/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       2113968 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       2113968 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 10 23:59 md5sum.txt
 
 ./GCA/030/347:
@@ -541249,7 +541249,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 00:17 2026_05_06
 -rw-r--r--    1 ftp      ftp            96 Apr 05  2026 md5sum.txt
 
 ./GCA/036/346/975/1/community_uc_davis/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3200967 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3200967 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 00:17 md5sum.txt
 
 ./GCA/036/365:
@@ -542983,7 +542983,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 00:22 2026_05_06
 -rw-r--r--    1 ftp      ftp            96 Apr 13  2026 md5sum.txt
 
 ./GCA/037/126/465/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4058366 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4058366 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 00:22 md5sum.txt
 
 ./GCA/037/127:
@@ -548195,7 +548195,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 00:45 2026_05_06
 
 ./GCA/041/902/795/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8542800 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8542800 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 00:45 md5sum.txt
 
 ./GCA/041/903:
@@ -548298,7 +548298,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 00:45 2026_05_06
 -rw-r--r--    1 ftp      ftp            97 Apr 15  2026 md5sum.txt
 
 ./GCA/041/937/245/1/community_uf/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3652761 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3652761 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 00:45 md5sum.txt
 
 ./GCA/041/937/265:
@@ -564992,7 +564992,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 02:27 2026_05_06
 
 ./GCA/042/242/135/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8003298 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8003298 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 02:27 md5sum.txt
 
 ./GCA/042/242/935:
@@ -570222,7 +570222,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 02:57 2026_05_06
 
 ./GCA/045/362/495/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8817896 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8817896 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 02:57 md5sum.txt
 
 ./GCA/045/523:
@@ -576103,7 +576103,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:31 2026_05_06
 
 ./GCA/047/511/565/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8224889 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8224889 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:31 md5sum.txt
 
 ./GCA/047/652:
@@ -576431,7 +576431,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:32 2026_05_06
 
 ./GCA/048/126/635/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       7636634 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       7636634 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:32 md5sum.txt
 
 ./GCA/048/126/745:
@@ -576904,7 +576904,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:34 2026_05_06
 
 ./GCA/048/128/805/1/ensembl/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8530614 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8530614 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:34 md5sum.txt
 
 ./GCA/048/164:
@@ -577169,7 +577169,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:35 2026_05_06
 
 ./GCA/048/537/225/1/ensembl/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8272884 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8272884 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:35 md5sum.txt
 
 ./GCA/048/537/945:
@@ -577220,7 +577220,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:13 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:35 2026_05_06
 
 ./GCA/048/537/945/1/genbank/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       2647429 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       2647429 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:35 md5sum.txt
 
 ./GCA/048/544:
@@ -577384,7 +577384,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:35 2026_05_06
 
 ./GCA/048/628/825/1/ensembl/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       7642837 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       7642837 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:35 md5sum.txt
 
 ./GCA/048/771:
@@ -577490,7 +577490,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:13 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:36 2026_05_06
 
 ./GCA/049/114/765/1/genbank/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3047517 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3047517 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:36 md5sum.txt
 
 ./GCA/049/190:
@@ -579095,7 +579095,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:13 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 03:40 2026_05_06
 
 ./GCA/051/530/055/1/genbank/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       1195989 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       1195989 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 03:40 md5sum.txt
 
 ./GCA/051/820:
@@ -675561,7 +675561,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 05:50 2026_05_06
 -rw-r--r--    1 ftp      ftp            88 Apr 11  2026 md5sum.txt
 
 ./GCA/933/210/815/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3255187 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3255187 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 05:50 md5sum.txt
 
 ./GCA/933/228:
@@ -695807,7 +695807,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 06:45 2026_05_06
 
 ./GCA/947/563/725/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4148239 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4148239 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 06:45 md5sum.txt
 
 ./GCA/947/563/755:
@@ -701467,7 +701467,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 06:56 2026_05_06
 -rw-r--r--    1 ftp      ftp            94 Apr 13  2026 md5sum.txt
 
 ./GCA/949/128/135/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4084315 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4084315 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 06:56 md5sum.txt
 
 ./GCA/949/128/145:
@@ -705938,7 +705938,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 07:02 2026_05_06
 
 ./GCA/949/748/355/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       7919048 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       7919048 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 07:02 md5sum.txt
 
 ./GCA/949/748/445:
@@ -724962,7 +724962,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:00 2026_05_06
 
 ./GCA/963/383/615/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       7919980 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       7919980 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:00 md5sum.txt
 
 ./GCA/963/383/655:
@@ -725442,7 +725442,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:01 2026_05_06
 
 ./GCA/963/422/515/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       7526243 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       7526243 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:01 md5sum.txt
 
 ./GCA/963/422/695:
@@ -726481,7 +726481,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:04 2026_05_06
 
 ./GCA/963/514/095/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8268313 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8268313 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:04 md5sum.txt
 
 ./GCA/963/555:
@@ -731378,7 +731378,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:16 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:13 2026_05_06
 
 ./GCA/963/680/715/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3642240 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3642240 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:13 md5sum.txt
 
 ./GCA/963/680/855:
@@ -732058,7 +732058,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:15 2026_05_06
 
 ./GCA/963/691/815/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       8003447 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       8003447 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:15 md5sum.txt
 
 ./GCA/963/691/925:
@@ -733909,7 +733909,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:16 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:18 2026_05_06
 
 ./GCA/963/920/705/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3417790 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3417790 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:18 md5sum.txt
 
 ./GCA/963/920/725:
@@ -736051,7 +736051,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:25 2026_05_06
 -rw-r--r--    1 ftp      ftp            92 Apr 14  2026 md5sum.txt
 
 ./GCA/963/930/645/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3793081 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3793081 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:25 md5sum.txt
 
 ./GCA/963/930/655:
@@ -737116,7 +737116,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:28 2026_05_06
 -rw-r--r--    1 ftp      ftp           100 Apr 18  2026 md5sum.txt
 
 ./GCA/963/932/185/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3956800 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3956800 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:28 md5sum.txt
 
 ./GCA/963/932/195:
@@ -746002,7 +746002,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:45 2026_05_06
 -rw-r--r--    1 ftp      ftp            93 Apr 05  2026 md5sum.txt
 
 ./GCA/964/059/485/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3860421 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3860421 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:45 md5sum.txt
 
 ./GCA/964/059/495:
@@ -748281,7 +748281,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:17 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 08:52 2026_05_06
 
 ./GCA/964/187/665/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3054491 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3054491 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 08:52 md5sum.txt
 
 ./GCA/964/187/815:
@@ -761725,7 +761725,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 09:21 2026_05_06
 
 ./GCA/964/291/345/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3485094 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3485094 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 09:21 md5sum.txt
 
 ./GCA/964/291/435:
@@ -764649,7 +764649,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 09:27 2026_05_06
 
 ./GCA/964/340/895/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4159720 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4159720 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 09:27 md5sum.txt
 
 ./GCA/964/340/915:
@@ -766541,7 +766541,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 09:31 2026_05_06
 
 ./GCA/964/417/605/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3515440 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3515440 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 09:31 md5sum.txt
 
 ./GCA/964/467:
@@ -772379,7 +772379,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 09:45 2026_05_06
 
 ./GCA/965/113/295/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       9159746 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       9159746 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 09:45 md5sum.txt
 
 ./GCA/965/113/345:
@@ -773289,7 +773289,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 09:48 2026_05_06
 
 ./GCA/965/122/215/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3173514 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3173514 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 09:48 md5sum.txt
 
 ./GCA/965/122/385:
@@ -776458,7 +776458,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 09:57 2026_05_06
 
 ./GCA/965/183/905/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3570506 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3570506 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 09:57 md5sum.txt
 
 ./GCA/965/183/915:
@@ -776608,7 +776608,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:17 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 09:57 2026_05_06
 
 ./GCA/965/184/155/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3272521 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3272521 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 09:57 md5sum.txt
 
 ./GCA/965/194:
@@ -777920,7 +777920,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:00 2026_05_06
 -rw-r--r--    1 ftp      ftp            93 Apr 14  2026 md5sum.txt
 
 ./GCA/965/199/075/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp      10578933 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp      10578933 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:00 md5sum.txt
 
 ./GCA/965/199/465:
@@ -778023,7 +778023,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:47 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:00 2026_05_21
 
 ./GCA/965/199/475/1/ensembl/2026_02/homology/2026_05_21:
--rw-r--r--    1 ftp      ftp      17718162 Apr 28 05:07 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp      17718162 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:00 md5sum.txt
 
 ./GCA/965/199/485:
@@ -778230,7 +778230,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:47 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:01 2026_05_21
 
 ./GCA/965/199/645/1/ensembl/2026_02/homology/2026_05_21:
--rw-r--r--    1 ftp      ftp      17801854 Apr 28 05:07 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp      17801854 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:01 md5sum.txt
 
 ./GCA/965/200:
@@ -778664,7 +778664,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:47 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:02 2026_05_06
 
 ./GCA/965/212/095/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp      11304357 Apr 28 05:50 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp      11304357 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:02 md5sum.txt
 
 ./GCA/965/212/255:
@@ -779350,7 +779350,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:04 2026_05_06
 
 ./GCA/965/217/325/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp           283 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp           283 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:04 md5sum.txt
 
 ./GCA/965/217/355:
@@ -780973,7 +780973,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:08 2026_05_06
 
 ./GCA/965/233/435/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       6268408 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       6268408 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:08 md5sum.txt
 
 ./GCA/965/233/475:
@@ -781076,7 +781076,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:08 2026_05_06
 
 ./GCA/965/233/575/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       6266349 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       6266349 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:08 md5sum.txt
 
 ./GCA/965/233/645:
@@ -781285,7 +781285,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:08 2026_05_06
 -rw-r--r--    1 ftp      ftp            95 Apr 02  2026 md5sum.txt
 
 ./GCA/965/233/935/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3965442 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3965442 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:08 md5sum.txt
 
 ./GCA/965/234:
@@ -785469,7 +785469,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:17 2026_05_06
 
 ./GCA/965/601/635/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       7348781 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       7348781 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:17 md5sum.txt
 
 ./GCA/965/605:
@@ -786056,7 +786056,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:18 2026_05_06
 
 ./GCA/965/636/905/1/ensembl/2025_11/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       6314741 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       6314741 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:18 md5sum.txt
 
 ./GCA/965/636/925:
@@ -787067,7 +787067,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:21 2026_05_06
 
 ./GCA/965/642/455/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       2967890 Apr 28 05:49 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       2967890 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:21 md5sum.txt
 
 ./GCA/965/642/505:
@@ -787118,7 +787118,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:21 2026_05_06
 
 ./GCA/965/642/505/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       2974006 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       2974006 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:21 md5sum.txt
 
 ./GCA/965/642/525:
@@ -787171,7 +787171,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:21 2026_05_06
 -rw-r--r--    1 ftp      ftp            93 Apr 19  2026 md5sum.txt
 
 ./GCA/965/642/525/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3057803 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3057803 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:21 md5sum.txt
 
 ./GCA/965/642/535:
@@ -787222,7 +787222,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:22 2026_05_06
 
 ./GCA/965/642/535/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3428420 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3428420 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:22 md5sum.txt
 
 ./GCA/965/642/565:
@@ -787273,7 +787273,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:22 2026_05_06
 
 ./GCA/965/642/565/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3476788 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3476788 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:22 md5sum.txt
 
 ./GCA/965/643:
@@ -787382,7 +787382,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:22 2026_05_06
 
 ./GCA/965/643/835/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3550345 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3550345 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:22 md5sum.txt
 
 ./GCA/965/643/845:
@@ -787435,7 +787435,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:23 2026_05_06
 -rw-r--r--    1 ftp      ftp            92 Apr 15  2026 md5sum.txt
 
 ./GCA/965/643/845/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3495420 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3495420 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:23 md5sum.txt
 
 ./GCA/965/644:
@@ -787648,7 +787648,7 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 09 16:39 homology
 drwxr-xr-x    2 ftp      ftp            61 Sep 11 10:24 2026_05_06
 
 ./GCA/965/645/275/1/ensembl/2025_12/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4268203 Apr 28 05:48 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4268203 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 10:24 md5sum.txt
 
 ./GCA/965/648:
@@ -800951,11 +800951,11 @@ drwxr-xr-x    2 ftp      ftp           361 Sep 11 10:43 genome
 drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:17 homology
 
 ./GCF/002/443/255/2/refseq/2020_06/geneset:
--rw-r--r--    1 ftp      ftp      27103092 Apr 28 15:38 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1203119 Apr 28 15:38 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         37320 Apr 28 15:38 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      27504586 Apr 28 15:37 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      169675966 Apr 28 15:37 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      27103092 Apr 28  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1203119 Apr 28  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         37320 Apr 28  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      27504586 Apr 28  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      169675966 Apr 28  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       6331803 Oct 20 14:19 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         25051 Oct 20 14:19 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       6001489 Oct 20 14:19 genes.gff3.gz
@@ -800963,20 +800963,20 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:17 homology
 -rw-r--r--    1 ftp      ftp         15589 Oct 20 14:19 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       7682142 Oct 20 14:19 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 12 01:04 md5sum.txt
--rw-r--r--    1 ftp      ftp       5226957 Apr 28 15:39 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        959360 Apr 28 15:39 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          6648 Apr 28 15:39 pep.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp       5228184 Apr 28 15:37 pep.fa.gz
--rw-r--r--    1 ftp      ftp       1614342 Apr 28 15:37 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp       5226957 Apr 28  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        959360 Apr 28  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          6648 Apr 28  2026 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       5228184 Apr 28  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       1614342 Apr 28  2026 xref.tsv.gz
 
 ./GCF/002/443/255/2/refseq/2020_06/genome:
 -rw-r--r--    1 ftp      ftp      102808323 Sep 01 17:05 hardmasked.fa.bgz
 -rw-r--r--    1 ftp      ftp         51458 Sep 01 17:05 hardmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         91976 Sep 01 17:05 hardmasked.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp           486 Sep 11 10:43 md5sum.txt
--rw-r--r--    1 ftp      ftp      117204630 Apr 28 15:38 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp         51458 Apr 28 15:38 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         91976 Apr 28 15:38 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      117204630 Apr 28  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp         51458 Apr 28  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         91976 Apr 28  2026 softmasked.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      103482291 Sep 01 17:05 unmasked.fa.bgz
 -rw-r--r--    1 ftp      ftp         51458 Sep 01 17:05 unmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         91976 Sep 01 17:05 unmasked.fa.bgz.gzi
@@ -801666,11 +801666,11 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 16:17 homology
 drwxr-xr-x    4 ftp      ftp            56 Sep 15 15:27 variation
 
 ./GCF/003/254/395/2/refseq/2020_06/geneset:
--rw-r--r--    1 ftp      ftp      19503250 Apr 28 15:50 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        925532 Apr 28 15:50 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         26008 Apr 28 15:50 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      19973851 Apr 28 15:49 cdna.fa.gz
--rw-r--r--    1 ftp      ftp      103782060 Apr 28 15:49 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      19503250 Apr 28  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        925532 Apr 28  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         26008 Apr 28  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      19973851 Apr 28  2026 cdna.fa.gz
+-rw-r--r--    1 ftp      ftp      103782060 Apr 28  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       5529518 Oct 20 14:19 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         12608 Oct 20 14:19 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       5366379 Oct 20 14:19 genes.gff3.gz
@@ -801678,11 +801678,11 @@ drwxr-xr-x    4 ftp      ftp            56 Sep 15 15:27 variation
 -rw-r--r--    1 ftp      ftp         14139 Oct 20 14:19 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       6947629 Oct 20 14:19 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 12 01:04 md5sum.txt
--rw-r--r--    1 ftp      ftp       5466626 Apr 28 15:50 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        737502 Apr 28 15:50 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          6072 Apr 28 15:50 pep.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp       5314967 Apr 28 15:49 pep.fa.gz
--rw-r--r--    1 ftp      ftp       2181314 Apr 28 15:49 xref.tsv.gz
+-rw-r--r--    1 ftp      ftp       5466626 Apr 28  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        737502 Apr 28  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          6072 Apr 28  2026 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       5314967 Apr 28  2026 pep.fa.gz
+-rw-r--r--    1 ftp      ftp       2181314 Apr 28  2026 xref.tsv.gz
 
 ./GCF/003/254/395/2/refseq/2020_06/genome:
 -rw-r--r--    1 ftp      ftp           282 Nov 03  2024 chromosomes.tsv.gz
@@ -801690,9 +801690,9 @@ drwxr-xr-x    4 ftp      ftp            56 Sep 15 15:27 variation
 -rw-r--r--    1 ftp      ftp          6478 Aug 27 15:14 hardmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         56136 Aug 27 15:14 hardmasked.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp           539 Sep 11 10:44 md5sum.txt
--rw-r--r--    1 ftp      ftp      69062991 Apr 28 15:50 softmasked.fa.bgz
--rw-r--r--    1 ftp      ftp          1955 Apr 28 15:50 softmasked.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         56136 Apr 28 15:50 softmasked.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      69062991 Apr 28  2026 softmasked.fa.bgz
+-rw-r--r--    1 ftp      ftp          1955 Apr 28  2026 softmasked.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         56136 Apr 28  2026 softmasked.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      60331333 Aug 27 15:14 unmasked.fa.bgz
 -rw-r--r--    1 ftp      ftp          6478 Aug 27 15:14 unmasked.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         56136 Aug 27 15:14 unmasked.fa.bgz.gzi
@@ -810647,7 +810647,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:01 2026_05_06
 -rw-r--r--    1 ftp      ftp            96 Apr 03  2026 md5sum.txt
 
 ./GCF/026/151/205/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       2660290 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       2660290 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:01 md5sum.txt
 
 ./GCF/026/212:
@@ -812357,7 +812357,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:04 2026_05_06
 -rw-r--r--    1 ftp      ftp            96 Apr 04  2026 md5sum.txt
 
 ./GCF/030/686/945/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       4837265 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       4837265 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:04 md5sum.txt
 
 ./GCF/030/705:
@@ -814221,7 +814221,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:08 2026_05_06
 -rw-r--r--    1 ftp      ftp            91 Apr 14  2026 md5sum.txt
 
 ./GCF/041/260/155/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       6004623 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       6004623 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:08 md5sum.txt
 
 ./GCF/042:
@@ -814621,7 +814621,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:09 2026_05_06
 -rw-r--r--    1 ftp      ftp            92 Apr 14  2026 md5sum.txt
 
 ./GCF/049/639/745/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3627877 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3627877 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:09 md5sum.txt
 
 ./GCF/050:
@@ -816153,7 +816153,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:12 2026_05_06
 -rw-r--r--    1 ftp      ftp           102 Apr 14  2026 md5sum.txt
 
 ./GCF/963/678/635/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       2875497 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       2875497 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:12 md5sum.txt
 
 ./GCF/963/853:
@@ -816270,7 +816270,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:12 2026_05_06
 -rw-r--r--    1 ftp      ftp            89 Apr 14  2026 md5sum.txt
 
 ./GCF/964/019/385/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       3283714 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       3283714 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:12 md5sum.txt
 
 ./GCF/964/194:
@@ -816326,7 +816326,7 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:12 2026_05_06
 -rw-r--r--    1 ftp      ftp            99 Apr 04  2026 md5sum.txt
 
 ./GCF/964/194/025/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       2926444 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       2926444 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:12 md5sum.txt
 
 ./GCF/964/275:
@@ -816437,5 +816437,5 @@ drwxr-xr-x    2 ftp      ftp            61 Sep 11 11:13 2026_05_06
 -rw-r--r--    1 ftp      ftp            94 Apr 05  2026 md5sum.txt
 
 ./GCF/964/340/395/1/refseq/2026_01/homology/2026_05_06:
--rw-r--r--    1 ftp      ftp       5106333 Apr 28 05:19 homology.tsv.gz
+-rw-r--r--    1 ftp      ftp       5106333 Apr 28  2026 homology.tsv.gz
 -rw-r--r--    1 ftp      ftp            50 Sep 11 11:13 md5sum.txt
