@@ -26,6 +26,7 @@
         "fl_cdna",
         "gbs",
         "hi_c",
+        "hichip",
         "inverse_rrna",
         "mbd_seq",
         "medip_seq",
@@ -70,6 +71,7 @@
         "bgiseq",
         "capillary",
         "complete_genomics",
+        "daan_gene",
         "dnbseq",
         "element",
         "genapsys",
@@ -306,6 +308,7 @@
         "instrument_bgiseq_500",
         "instrument_complete_genomics",
         "instrument_cycloneseq",
+        "instrument_da8600",
         "instrument_dnbseq_e25",
         "instrument_dnbseq_g400",
         "instrument_dnbseq_g400_fast",
@@ -421,7 +424,6 @@
         "location_gs_us_central1",
         "location_gs_us_east1",
         "location_s3_us_east_1",
-        "platform_abi_solid",
-        "platform_amcare"
+        "platform_abi_solid"
     ]
 }

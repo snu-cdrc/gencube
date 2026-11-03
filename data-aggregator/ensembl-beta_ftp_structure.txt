@@ -3196,10 +3196,10 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 17:57 homology
 drwxr-xr-x    3 ftp      ftp            28 Sep 15 14:55 variation
 
 ./GCA/000/004/075/3/genbank/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      13782817 May 01 20:51 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        971715 May 01 20:51 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         11288 May 01 20:51 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      106193095 May 01 20:05 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      13782817 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        971715 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         11288 May 01  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      106193095 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       3727851 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp          6577 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       3774622 May 01  2026 genes.gff3.gz
@@ -3207,9 +3207,9 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 15 14:55 variation
 -rw-r--r--    1 ftp      ftp          7615 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       5032502 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 12:25 md5sum.txt
--rw-r--r--    1 ftp      ftp       5898525 May 01 20:51 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        715424 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          3320 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       5898525 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        715424 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          3320 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       1267627 May 01  2026 xref.tsv.gz
 
 ./GCA/000/004/075/3/genbank/2026_01/genome:
@@ -492882,9 +492882,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 10 16:15 genome
 drwxr-xr-x    3 ftp      ftp            28 Sep 03 17:57 homology
 
 ./GCA/009/829/735/1/genbank/2026_01/geneset:
--rw-r--r--    1 ftp      ftp       9078230 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        564838 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          7768 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       9078230 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        564838 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          7768 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      50699656 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       1174230 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp          4493 May 01  2026 genes.gff3.bgz.csi
@@ -492893,9 +492893,9 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 17:57 homology
 -rw-r--r--    1 ftp      ftp          5536 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       1537132 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 16:15 md5sum.txt
--rw-r--r--    1 ftp      ftp       3784917 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        405262 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          2168 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       3784917 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        405262 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          2168 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        669129 May 01  2026 xref.tsv.gz
 
 ./GCA/009/829/735/1/genbank/2026_01/genome:
@@ -499544,20 +499544,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 10 17:28 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/014/529/535/3/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      19780228 May 01 21:59 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1391486 May 01 21:59 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         18216 May 01 21:59 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      19780228 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1391486 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         18216 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      140545927 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       5779867 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         17491 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       5724869 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       7947174 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         17779 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       7413772 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       7947174 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         17779 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       7413772 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 17:28 md5sum.txt
--rw-r--r--    1 ftp      ftp       7456435 May 01 21:59 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1252163 May 01 21:59 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          5784 May 01 21:59 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       7456435 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1252163 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          5784 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        375598 May 01  2026 xref.tsv.gz
 
 ./GCA/014/529/535/3/ensembl/2026_01/genome:
@@ -504814,9 +504814,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 10 17:43 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/017/309/665/1/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      10287647 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        796045 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          9528 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      10287647 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        796045 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          9528 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      104509609 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       3208486 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         19912 May 01  2026 genes.gff3.bgz.csi
@@ -504825,9 +504825,9 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 -rw-r--r--    1 ftp      ftp         16681 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       4082368 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 17:43 md5sum.txt
--rw-r--r--    1 ftp      ftp       5189262 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        730340 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          3496 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       5189262 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        730340 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          3496 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        101476 May 01  2026 xref.tsv.gz
 
 ./GCA/017/309/665/1/ensembl/2026_01/genome:
@@ -529500,20 +529500,20 @@ drwxr-xr-x    2 ftp      ftp           361 Sep 10 23:33 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/026/230/055/1/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      23653757 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1687385 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         26792 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      23653757 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1687385 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         26792 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      911389395 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9672060 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        135324 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       9602426 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      13690974 May 01 20:50 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp        165148 May 01 20:50 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      12731972 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      13690974 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp        165148 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      12731972 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 23:33 md5sum.txt
--rw-r--r--    1 ftp      ftp       8753016 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1408355 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          7768 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       8753016 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1408355 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          7768 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        434006 May 01  2026 xref.tsv.gz
 
 ./GCA/026/230/055/1/ensembl/2026_01/genome:
@@ -532124,9 +532124,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 10 23:45 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/028/408/465/1/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      19783628 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1488557 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         18552 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      19783628 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1488557 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         18552 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      360643898 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       5018245 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         38571 May 01  2026 genes.gff3.bgz.csi
@@ -532135,9 +532135,9 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 -rw-r--r--    1 ftp      ftp         50218 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       6300595 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 23:45 md5sum.txt
--rw-r--r--    1 ftp      ftp       6690002 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1117718 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          5384 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       6690002 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1117718 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          5384 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        303960 May 01  2026 xref.tsv.gz
 
 ./GCA/028/408/465/1/ensembl/2026_01/genome:
@@ -533793,9 +533793,9 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 17:57 homology
 -rw-r--r--    1 ftp      ftp       5536846 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         96989 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       5604195 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       7040575 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp        107402 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       6997631 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       7040575 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp        107402 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       6997631 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 10 23:52 md5sum.txt
 -rw-r--r--    1 ftp      ftp       9942633 May 01  2026 pep.fa.bgz
 -rw-r--r--    1 ftp      ftp       1064153 May 01  2026 pep.fa.bgz.fai
@@ -565010,20 +565010,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 02:27 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/042/242/935/1/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      18795247 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1416126 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         18136 May 01 20:52 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      200585874 May 01 20:48 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      18795247 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1416126 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         18136 May 01  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      200585874 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       4855457 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         17782 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       4823920 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       6604399 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         23198 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       6146605 May 01 20:57 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       6604399 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         23198 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       6146605 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 02:27 md5sum.txt
--rw-r--r--    1 ftp      ftp       6354391 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1082174 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          5256 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       6354391 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1082174 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          5256 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        307343 May 01  2026 xref.tsv.gz
 
 ./GCA/042/242/935/1/ensembl/2026_01/genome:
@@ -575911,9 +575911,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 03:30 genome
 drwxr-xr-x    3 ftp      ftp            28 Sep 03 17:57 homology
 
 ./GCA/047/288/015/1/genbank/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      15646304 May 01 21:19 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        865698 May 01 21:19 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         13016 May 01 21:19 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      15646304 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        865698 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         13016 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      346377960 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       4958622 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         26404 May 01  2026 genes.gff3.bgz.csi
@@ -575922,9 +575922,9 @@ drwxr-xr-x    3 ftp      ftp            28 Sep 03 17:57 homology
 -rw-r--r--    1 ftp      ftp         33632 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       6651133 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 03:30 md5sum.txt
--rw-r--r--    1 ftp      ftp       7995073 May 01 21:19 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        782206 May 01 21:19 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          4280 May 01 21:19 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       7995073 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        782206 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          4280 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       1059324 May 01  2026 xref.tsv.gz
 
 ./GCA/047/288/015/1/genbank/2026_01/genome:
@@ -577889,20 +577889,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 03:37 genome
 drwxr-xr-x    3 ftp      ftp            28 Sep 03 17:57 homology
 
 ./GCA/050/415/755/1/genbank/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      28967185 May 01 22:32 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       6569076 May 01 22:32 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         25848 May 01 22:32 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      28967185 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       6569076 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         25848 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      935705631 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9863498 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        144620 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp      10045077 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      12321287 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp        176712 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      11777513 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      12321287 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp        176712 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      11777513 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 03:36 md5sum.txt
--rw-r--r--    1 ftp      ftp       9914653 May 01 22:32 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        864800 May 01 22:32 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          5352 May 01 22:32 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       9914653 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        864800 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          5352 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       1272306 May 01  2026 xref.tsv.gz
 
 ./GCA/050/415/755/1/genbank/2026_01/genome:
@@ -578122,20 +578122,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 03:37 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/051/013/405/1/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      19031428 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1411729 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         18184 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      19031428 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1411729 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         18184 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      196006155 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       4845388 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         16604 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       4813464 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       6594181 May 01 20:50 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         21493 May 01 20:50 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       6134534 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       6594181 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         21493 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       6134534 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 03:37 md5sum.txt
--rw-r--r--    1 ftp      ftp       6397261 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1078451 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          5336 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       6397261 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1078451 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          5336 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        271522 May 01  2026 xref.tsv.gz
 
 ./GCA/051/013/405/1/ensembl/2026_01/genome:
@@ -682106,20 +682106,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 06:03 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/943/734/665/2/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      14133633 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        893572 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         13096 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      14133633 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        893572 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         13096 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      84105903 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       3301713 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp          5540 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       3278347 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       4478199 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp          7103 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       4210850 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       4478199 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp          7103 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       4210850 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 06:03 md5sum.txt
--rw-r--r--    1 ftp      ftp       5730990 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        792420 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          4168 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       5730990 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        792420 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          4168 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        243447 May 01  2026 xref.tsv.gz
 
 ./GCA/943/734/665/2/ensembl/2026_01/genome:
@@ -729440,7 +729440,7 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 -rw-r--r--    1 ftp      ftp      14961709 May 01  2026 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp        984414 May 01  2026 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         13880 May 01  2026 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      91017658 May 01 20:59 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      91017658 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       3632508 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp          6619 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       3605811 May 01  2026 genes.gff3.gz
@@ -735233,20 +735233,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 08:23 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/963/924/065/2/ensembl/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      21061808 May 01 21:23 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1446727 May 01 21:24 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         19400 May 01 21:24 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      21061808 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1446727 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         19400 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      115873106 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       4763878 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp          6139 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       4730470 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       6409771 May 01 20:50 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp          7361 May 01 20:50 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       5987449 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       6409771 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp          7361 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       5987449 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 08:23 md5sum.txt
--rw-r--r--    1 ftp      ftp       7203709 May 01 21:23 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1187894 May 01 21:23 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          5656 May 01 21:23 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       7203709 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1187894 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          5656 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        258517 May 01  2026 xref.tsv.gz
 
 ./GCA/963/924/065/2/ensembl/2026_01/genome:
@@ -749353,20 +749353,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 08:54 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/964/188/245/1/ensembl/2026_02/geneset:
--rw-r--r--    1 ftp      ftp      25822564 May 01 22:58 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       2853826 May 01 22:58 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         23624 May 01 22:58 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      336698728 May 01 20:38 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      25822564 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       2853826 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         23624 May 01  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      336698728 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9704468 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         58177 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       9660201 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      12986859 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         76255 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      12153730 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      12986859 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         76255 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      12153730 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 08:54 md5sum.txt
--rw-r--r--    1 ftp      ftp       9645133 May 01 22:58 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1937960 May 01 22:58 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          7240 May 01 22:58 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       9645133 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1937960 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          7240 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        266310 May 01  2026 xref.tsv.gz
 
 ./GCA/964/188/245/1/ensembl/2026_02/genome:
@@ -780248,20 +780248,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 10:06 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/965/225/835/1/ensembl/2026_02/geneset:
--rw-r--r--    1 ftp      ftp      24375604 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       3030815 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         25288 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      24375604 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       3030815 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         25288 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      412306333 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9828757 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         64746 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       9815525 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      12847183 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         83017 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      12105221 May 01 20:57 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      12847183 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         83017 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      12105221 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 10:06 md5sum.txt
--rw-r--r--    1 ftp      ftp       9999276 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1943672 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          7160 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       9999276 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1943672 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          7160 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        224537 May 01  2026 xref.tsv.gz
 
 ./GCA/965/225/835/1/ensembl/2026_02/genome:
@@ -782681,9 +782681,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 10:11 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/965/260/945/1/ensembl/2026_02/geneset:
--rw-r--r--    1 ftp      ftp      31497751 May 01 20:56 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       3226659 May 01 20:56 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         31464 May 01 20:56 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      31497751 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       3226659 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         31464 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      161322377 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      11258155 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         10062 May 01  2026 genes.gff3.bgz.csi
@@ -782692,9 +782692,9 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 -rw-r--r--    1 ftp      ftp         12864 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp      14297909 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 10:11 md5sum.txt
--rw-r--r--    1 ftp      ftp      11051816 May 01 20:56 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       2367794 May 01 20:56 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          8952 May 01 20:56 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      11051816 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       2367794 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          8952 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       1558039 May 01  2026 xref.tsv.gz
 
 ./GCA/965/260/945/1/ensembl/2026_02/genome:
@@ -784903,20 +784903,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 10:16 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/965/285/875/1/ensembl/2026_02/geneset:
--rw-r--r--    1 ftp      ftp      28084758 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       2797050 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         26744 May 01 20:52 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      185928811 May 01 20:19 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      28084758 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       2797050 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         26744 May 01  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      185928811 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       9534993 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp          9421 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       9495743 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      12925542 May 01 20:50 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         12219 May 01 20:50 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      12049953 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      12925542 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         12219 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      12049953 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 10:16 md5sum.txt
--rw-r--r--    1 ftp      ftp       9552272 May 01 20:51 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       2030974 May 01 20:51 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          7624 May 01 20:51 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       9552272 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       2030974 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          7624 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        189452 May 01  2026 xref.tsv.gz
 
 ./GCA/965/285/875/1/ensembl/2026_02/genome:
@@ -787830,20 +787830,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 10:24 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:39 homology
 
 ./GCA/965/649/795/1/ensembl/2026_02/geneset:
--rw-r--r--    1 ftp      ftp      24789287 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       2300172 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         25320 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      24789287 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       2300172 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         25320 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      184204992 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       8695640 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         25427 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       8652804 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      12066643 May 01 20:50 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         34207 May 01 20:50 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      11228093 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      12066643 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         34207 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      11228093 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 10:24 md5sum.txt
--rw-r--r--    1 ftp      ftp       8688968 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1803803 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          7160 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       8688968 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1803803 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          7160 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp        157684 May 01  2026 xref.tsv.gz
 
 ./GCA/965/649/795/1/ensembl/2026_02/genome:
@@ -801507,13 +801507,13 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 -rw-r--r--    1 ftp      ftp      37624384 May 01  2026 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       3119730 May 01  2026 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         43304 May 01  2026 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      2104989943 May 02 01:51 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      2104989943 May 02  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      10877182 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        312447 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp      11032234 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      12994177 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp        311044 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      12576740 May 01 20:57 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      12994177 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp        311044 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      12576740 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 10:44 md5sum.txt
 -rw-r--r--    1 ftp      ftp      11521063 May 01  2026 pep.fa.bgz
 -rw-r--r--    1 ftp      ftp       1636767 May 01  2026 pep.fa.bgz.fai
@@ -812609,9 +812609,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 11:04 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 
 ./GCF/032/118/995/1/refseq/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      30968000 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1112221 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         33944 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      30968000 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1112221 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         33944 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      213989568 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       7167832 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         11828 May 01  2026 genes.gff3.bgz.csi
@@ -812620,9 +812620,9 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 -rw-r--r--    1 ftp      ftp         14526 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp       9423525 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 11:04 md5sum.txt
--rw-r--r--    1 ftp      ftp       7799215 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        896988 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          6328 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       7799215 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        896988 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          6328 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       1555126 May 01  2026 xref.tsv.gz
 
 ./GCF/032/118/995/1/refseq/2026_01/genome:
@@ -812722,7 +812722,7 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 -rw-r--r--    1 ftp      ftp      31789392 May 01  2026 cdna.fa.bgz
 -rw-r--r--    1 ftp      ftp       1267538 May 01  2026 cdna.fa.bgz.fai
 -rw-r--r--    1 ftp      ftp         37960 May 01  2026 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      687686345 May 01 20:58 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      687686345 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       6425053 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        115063 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       6594701 May 01  2026 genes.gff3.gz
@@ -813964,9 +813964,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 11:07 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 
 ./GCF/040/183/065/1/refseq/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      48389652 May 01 23:17 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       1773392 May 01 23:17 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         57736 May 01 23:17 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      48389652 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       1773392 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         57736 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      1374016475 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       8621970 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        174554 May 01  2026 genes.gff3.bgz.csi
@@ -813975,9 +813975,9 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 -rw-r--r--    1 ftp      ftp        214850 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp      11279448 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 11:07 md5sum.txt
--rw-r--r--    1 ftp      ftp       8087637 May 01 23:17 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1260060 May 01 23:17 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          8584 May 01 23:17 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       8087637 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1260060 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          8584 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       2277059 May 01  2026 xref.tsv.gz
 
 ./GCF/040/183/065/1/refseq/2026_01/genome:
@@ -814416,9 +814416,9 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 11:09 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 
 ./GCF/043/290/135/1/refseq/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      41893091 May 02 00:03 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       3544873 May 02 00:03 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         48712 May 02 00:03 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      41893091 May 02  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       3544873 May 02  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         48712 May 02  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      1365005599 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      11941560 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        209776 May 01  2026 genes.gff3.bgz.csi
@@ -814427,9 +814427,9 @@ drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 -rw-r--r--    1 ftp      ftp        254813 May 01  2026 genes.gtf.bgz.csi
 -rw-r--r--    1 ftp      ftp      14736144 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 11:09 md5sum.txt
--rw-r--r--    1 ftp      ftp       9529171 May 02 00:02 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1502070 May 02 00:02 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          8376 May 02 00:02 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       9529171 May 02  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1502070 May 02  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          8376 May 02  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       4684079 May 01  2026 xref.tsv.gz
 
 ./GCF/043/290/135/1/refseq/2026_01/genome:
@@ -814870,20 +814870,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 11:10 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 
 ./GCF/052/857/255/1/refseq/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      36942390 May 01 22:58 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       2254316 May 01 22:58 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         41608 May 01 22:58 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      1064753537 May 01 22:24 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      36942390 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       2254316 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         41608 May 01  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      1064753537 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      10160154 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp        133893 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp      10410492 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      13383377 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp        164632 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      13044053 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      13383377 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp        164632 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      13044053 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 11:10 md5sum.txt
--rw-r--r--    1 ftp      ftp       9356207 May 01 22:58 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1439514 May 01 22:58 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          8200 May 01 22:58 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       9356207 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1439514 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          8200 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       2116806 May 01  2026 xref.tsv.gz
 
 ./GCF/052/857/255/1/refseq/2026_01/genome:
@@ -814928,20 +814928,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 11:10 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 
 ./GCF/053/477/285/1/refseq/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      41317948 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp       2265913 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         50216 May 01 20:52 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      41317948 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp       2265913 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         50216 May 01  2026 cdna.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp      246938701 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp      13111096 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp          5894 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp      13376749 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp      17869251 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp          7564 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp      17349109 May 01 20:56 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp      17869251 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp          7564 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp      17349109 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 11:10 md5sum.txt
--rw-r--r--    1 ftp      ftp      12542938 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp       1826710 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         12072 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      12542938 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp       1826710 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         12072 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       2644088 May 01  2026 xref.tsv.gz
 
 ./GCF/053/477/285/1/refseq/2026_01/genome:
@@ -816347,20 +816347,20 @@ drwxr-xr-x    2 ftp      ftp           397 Sep 11 11:12 genome
 drwxr-xr-x    3 ftp      ftp            56 Sep 09 16:47 homology
 
 ./GCF/964/275/005/1/refseq/2026_01/geneset:
--rw-r--r--    1 ftp      ftp      17126829 May 01 20:52 cdna.fa.bgz
--rw-r--r--    1 ftp      ftp        800216 May 01 20:52 cdna.fa.bgz.fai
--rw-r--r--    1 ftp      ftp         14520 May 01 20:52 cdna.fa.bgz.gzi
--rw-r--r--    1 ftp      ftp      402721821 May 01 19:57 genes.embl.gz
+-rw-r--r--    1 ftp      ftp      17126829 May 01  2026 cdna.fa.bgz
+-rw-r--r--    1 ftp      ftp        800216 May 01  2026 cdna.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp         14520 May 01  2026 cdna.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp      402721821 May 01  2026 genes.embl.gz
 -rw-r--r--    1 ftp      ftp       5125708 May 01  2026 genes.gff3.bgz
 -rw-r--r--    1 ftp      ftp         40995 May 01  2026 genes.gff3.bgz.csi
 -rw-r--r--    1 ftp      ftp       5149405 May 01  2026 genes.gff3.gz
--rw-r--r--    1 ftp      ftp       6504207 May 01 20:51 genes.gtf.bgz
--rw-r--r--    1 ftp      ftp         52451 May 01 20:51 genes.gtf.bgz.csi
--rw-r--r--    1 ftp      ftp       6447936 May 01 20:57 genes.gtf.gz
+-rw-r--r--    1 ftp      ftp       6504207 May 01  2026 genes.gtf.bgz
+-rw-r--r--    1 ftp      ftp         52451 May 01  2026 genes.gtf.bgz.csi
+-rw-r--r--    1 ftp      ftp       6447936 May 01  2026 genes.gtf.gz
 -rw-r--r--    1 ftp      ftp           680 Sep 11 11:12 md5sum.txt
--rw-r--r--    1 ftp      ftp       7252041 May 01 20:52 pep.fa.bgz
--rw-r--r--    1 ftp      ftp        660807 May 01 20:52 pep.fa.bgz.fai
--rw-r--r--    1 ftp      ftp          4008 May 01 20:52 pep.fa.bgz.gzi
+-rw-r--r--    1 ftp      ftp       7252041 May 01  2026 pep.fa.bgz
+-rw-r--r--    1 ftp      ftp        660807 May 01  2026 pep.fa.bgz.fai
+-rw-r--r--    1 ftp      ftp          4008 May 01  2026 pep.fa.bgz.gzi
 -rw-r--r--    1 ftp      ftp       1255690 May 01  2026 xref.tsv.gz
 
 ./GCF/964/275/005/1/refseq/2026_01/genome:
