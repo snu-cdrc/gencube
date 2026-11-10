@@ -4,12 +4,12 @@ drwxr-xr-x  125 ftp      ftp          2583 Oct 09 20:40 GCA
 drwxr-xr-x   62 ftp      ftp          1260 May 31 23:40 GCF
 -rwxr-xr-x    1 ftp      ftp        186306 Jun 08 12:44 PRIVACY-NOTICE.pdf
 -rw-r--r--    1 ftp      ftp          6658 Jun 25 15:07 README.md
--rw-r--r--    1 ftp      ftp      37496994 Oct 29 08:54 species.json
+-rw-r--r--    1 ftp      ftp      58931216 Nov 02 09:20 species.json
 
 ./CHANGELOG:
 -rw-r--r--    1 ftp      ftp          2759 Apr 15  2026 README.md
 drwxr-xr-x    2 ftp      ftp            96 Oct 15 13:52 integrated_releases
-drwxr-xr-x    2 ftp      ftp           931 Oct 15 13:50 partial_releases
+drwxr-xr-x    2 ftp      ftp           963 Nov 08 13:33 partial_releases
 
 ./CHANGELOG/integrated_releases:
 -rw-r--r--    1 ftp      ftp        260231 Nov 27  2025 2025-02.csv
@@ -45,7 +45,8 @@ drwxr-xr-x    2 ftp      ftp           931 Oct 15 13:50 partial_releases
 -rw-r--r--    1 ftp      ftp         43043 Sep 15 12:56 2026-08-25.csv
 -rw-r--r--    1 ftp      ftp        563446 Sep 28 14:19 2026-09-22.csv
 -rw-r--r--    1 ftp      ftp          6455 Oct 05 15:23 2026-10-05.csv
--rw-r--r--    1 ftp      ftp          1407 Oct 05 15:23 stats.partial.csv
+-rw-r--r--    1 ftp      ftp        679619 Nov 01 18:42 2026-11-01.csv
+-rw-r--r--    1 ftp      ftp          1452 Nov 01 18:42 stats.partial.csv
 
 ./GCA:
 drwxr-xr-x  426 ftp      ftp          8904 Nov 06 16:40 000
