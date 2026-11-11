@@ -312,6 +312,7 @@
         "instrument_cycloneseq",
         "instrument_da8600",
         "instrument_dnbseq_e25",
+        "instrument_dnbseq_g100",
         "instrument_dnbseq_g400",
         "instrument_dnbseq_g400_fast",
         "instrument_dnbseq_g50",
@@ -425,7 +426,6 @@
         "location_gs_us",
         "location_gs_us_central1",
         "location_gs_us_east1",
-        "location_s3_us_east_1",
-        "platform_abi_solid"
+        "location_s3_us_east_1"
     ]
 }
