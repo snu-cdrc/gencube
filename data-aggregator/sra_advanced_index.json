@@ -7,6 +7,7 @@
         "bcr_seq",
         "bisulfite_seq",
         "capture_c",
+        "chec_seq",
         "chia_pet",
         "chip",
         "chip_seq",
@@ -377,6 +378,7 @@
         "instrument_pacbio_rs",
         "instrument_pacbio_rs_ii",
         "instrument_promethion",
+        "instrument_qnome_3841",
         "instrument_qpursue_6k",
         "instrument_revio",
         "instrument_salus_evo",
@@ -425,7 +427,6 @@
         "library_selection_unspecified",
         "location_gs_us",
         "location_gs_us_central1",
-        "location_gs_us_east1",
-        "location_s3_us_east_1"
+        "location_gs_us_east1"
     ]
 }
