@@ -392,6 +392,7 @@
         "instrument_surfseq_q",
         "instrument_tapestri",
         "instrument_ug_100",
+        "instrument_ug_200",
         "instrument_unspecified",
         "library_layout_paired",
         "library_layout_single",
@@ -426,7 +427,6 @@
         "library_selection_size_fractionation",
         "library_selection_unspecified",
         "location_gs_us",
-        "location_gs_us_central1",
-        "location_gs_us_east1"
+        "location_gs_us_central1"
     ]
 }
