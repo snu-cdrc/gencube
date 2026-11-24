@@ -379,6 +379,7 @@
         "instrument_pacbio_rs_ii",
         "instrument_promethion",
         "instrument_qnome_3841",
+        "instrument_qpinnacle2",
         "instrument_qpursue_6k",
         "instrument_revio",
         "instrument_salus_evo",
@@ -426,7 +427,6 @@
         "library_selection_rt_pcr",
         "library_selection_size_fractionation",
         "library_selection_unspecified",
-        "location_gs_us",
-        "location_gs_us_central1"
+        "location_gs_us"
     ]
 }
